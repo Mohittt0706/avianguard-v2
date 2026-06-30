@@ -43,7 +43,7 @@ export function CircularProgress({
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            stroke="#e5e7eb"
+            stroke="rgba(255,255,255,0.1)"
             strokeWidth={strokeWidth}
             fill="none"
           />
@@ -75,7 +75,7 @@ export function CircularProgress({
         </div>
       </div>
       <div className="text-center">
-        <div className="text-sm font-semibold text-gray-700">{label}</div>
+        <div className="text-sm font-semibold text-gray-300">{label}</div>
       </div>
     </div>
   );
