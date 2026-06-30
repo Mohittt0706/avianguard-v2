@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 interface SensorChartProps {
@@ -12,8 +13,7 @@ interface SensorChartProps {
 }
 
 export function SensorChart({ data, title }: SensorChartProps) {
-  // Create a unique key based on all data IDs to force complete remount
-  const chartKey = data.map(d => d.id).join(',');
+  const chartKey = useMemo(() => data.map(d => d.id).join(','), [data]);
 
   return (
     <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/[0.06] p-6">

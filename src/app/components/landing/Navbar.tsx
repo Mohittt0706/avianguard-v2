@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Droplets, Menu, X, Github } from 'lucide-react';
+import { Droplets, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Features', href: '#features' },
-  { label: 'How It Works', href: '#solution' },
-  { label: 'Dashboard', href: '#preview' },
-  { label: 'Technology', href: '#tech' },
+  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Contact', href: '#contact' },
-  { label: 'GitHub', href: '#github' },
 ];
 
 export function Navbar() {
@@ -24,10 +21,6 @@ export function Navbar() {
 
   const handleNav = (href: string) => {
     setMobileOpen(false);
-    if (href === '#github') {
-      window.open('https://github.com', '_blank');
-      return;
-    }
     const el = document.querySelector(href);
     el?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -52,23 +45,15 @@ export function Navbar() {
           </a>
 
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.slice(0, 4).map((link) => (
+            {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => handleNav(link.href)}
                 className="px-4 py-2 text-sm text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200"
               >
-                {link.label === 'GitHub' ? (
-                  <span className="flex items-center gap-1.5"><Github size={14} />{link.label}</span>
-                ) : link.label}
+                {link.label}
               </button>
             ))}
-            <button
-              onClick={() => handleNav('#github')}
-              className="px-4 py-2 text-sm text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200"
-            >
-              <span className="flex items-center gap-1.5"><Github size={14} />GitHub</span>
-            </button>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -79,7 +64,7 @@ export function Navbar() {
               Log In
             </button>
             <button
-              onClick={() => navigate('/login')}
+              onClick={() => navigate('/register')}
               className="relative group px-5 py-2 rounded-full text-sm font-medium text-white overflow-hidden"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />
@@ -111,6 +96,12 @@ export function Navbar() {
           <hr className="border-white/5 my-2" />
           <button
             onClick={() => { setMobileOpen(false); navigate('/login'); }}
+            className="block w-full px-4 py-2.5 text-sm text-gray-300 hover:text-white rounded-lg hover:bg-white/5 text-left transition-all"
+          >
+            Log In
+          </button>
+          <button
+            onClick={() => { setMobileOpen(false); navigate('/register'); }}
             className="block w-full px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-emerald-500 to-blue-600 rounded-lg text-center"
           >
             Get Started

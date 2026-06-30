@@ -189,8 +189,6 @@ const ElectricBorder = ({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.scale(dpr, dpr);
 
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 1;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
 
@@ -225,7 +223,26 @@ const ElectricBorder = ({
       }
 
       ctx.closePath();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
+      ctx.lineWidth = 8;
       ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = `rgba(0, 229, 255, 0.4)`;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 4;
+      ctx.stroke();
+      ctx.restore();
 
       animationRef.current = requestAnimationFrame(drawElectricBorder);
     };

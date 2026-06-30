@@ -1,17 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { motion } from 'motion/react';
-import { Droplets, ArrowRight, Eye, EyeOff, Shield, TreePine, GraduationCap } from 'lucide-react';
-
-const roles = [
-  { id: 'admin', label: 'Admin', icon: Shield, desc: 'Full system access & control' },
-  { id: 'officer', label: 'Forest Officer', icon: TreePine, desc: 'Monitor & manage protected wetlands' },
-  { id: 'researcher', label: 'Researcher', icon: GraduationCap, desc: 'Access data & analytics' },
-];
+import { Droplets, ArrowRight, Eye, EyeOff, ArrowLeft, Shield } from 'lucide-react';
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const [selectedRole, setSelectedRole] = useState('admin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -22,86 +15,59 @@ export default function LoginPage() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      navigate('/dashboard');
+      navigate('/dashboard/citizens');
     }, 1200);
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col font-['Inter',sans-serif] overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px]" />
+    <div className="min-h-screen flex flex-col font-['Inter',sans-serif] overflow-hidden bg-black">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[180px]" style={{ backgroundColor: 'rgba(0,229,255,0.05)' }} />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[150px]" style={{ backgroundColor: 'rgba(52,211,153,0.05)' }} />
+        <div className="absolute top-[30%] left-[60%] w-[400px] h-[400px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(99,102,241,0.03)' }} />
+
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }} />
+        </div>
       </div>
 
       <div className="relative z-10 flex-1 flex items-center justify-center px-4 py-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
           <div className="text-center mb-8">
             <button onClick={() => navigate('/')} className="inline-flex items-center gap-2.5 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-shadow">
-                <Droplets className="text-white" size={20} />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-shadow">
+                <Droplets className="text-white" size={18} />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
+              <span className="text-lg font-bold tracking-tight text-white">
                 Avian<span className="text-emerald-400">Guard</span>
               </span>
             </button>
-            <h1 className="text-2xl font-bold text-white mb-2">Welcome back</h1>
-            <p className="text-gray-400 text-sm">Sign in to your monitoring dashboard</p>
+            <h1 className="text-2xl font-bold text-white mb-2">Admin Login</h1>
+            <p className="text-sm text-gray-500">Sign in to manage citizen registrations and alerts</p>
           </div>
 
-          <div className="bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-white/[0.08] p-6 sm:p-8">
-            <div className="mb-6">
-              <label className="text-sm font-medium text-gray-300 mb-3 block">Select Role</label>
-              <div className="grid gap-2">
-                {roles.map((role) => {
-                  const Icon = role.icon;
-                  const isSelected = selectedRole === role.id;
-                  return (
-                    <button
-                      key={role.id}
-                      type="button"
-                      onClick={() => setSelectedRole(role.id)}
-                      className={`flex items-center gap-3 p-3 rounded-xl border transition-all duration-200 text-left ${
-                        isSelected
-                          ? 'border-emerald-500/40 bg-emerald-500/10'
-                          : 'border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04]'
-                      }`}
-                    >
-                      <div className={`p-2 rounded-lg ${isSelected ? 'bg-emerald-500/20' : 'bg-white/5'}`}>
-                        <Icon size={18} className={isSelected ? 'text-emerald-400' : 'text-gray-400'} />
-                      </div>
-                      <div className="flex-1">
-                        <div className={`text-sm font-medium ${isSelected ? 'text-white' : 'text-gray-300'}`}>{role.label}</div>
-                        <div className="text-xs text-gray-500">{role.desc}</div>
-                      </div>
-                      {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
-                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                            <path d="M1 4l2.5 2.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="bg-white/[0.03] backdrop-blur-2xl rounded-2xl border border-white/[0.06] p-6 sm:p-8 shadow-[0_0_0_1px_rgba(0,229,255,0.03),0_8px_40px_rgba(0,0,0,0.45)]">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="text-sm font-medium text-gray-300 mb-1.5 block">Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@example.com"
+                  placeholder="admin@aviangov.in"
                   required
-                  className="w-full px-4 py-2.5 bg-white/5 border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-emerald-500/40 focus:ring-1 focus:ring-emerald-500/20 transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl text-sm bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none transition-all focus:border-emerald-500/40 focus:bg-emerald-500/[0.03] focus:shadow-[0_0_0_1px_rgba(52,211,153,0.1)]"
                 />
               </div>
 
@@ -114,12 +80,12 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                     required
-                    className="w-full px-4 py-2.5 bg-white/5 border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-emerald-500/40 focus:ring-1 focus:ring-emerald-500/20 transition-all pr-10"
+                    className="w-full px-4 py-2.5 rounded-xl text-sm bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none transition-all focus:border-emerald-500/40 focus:bg-emerald-500/[0.03] focus:shadow-[0_0_0_1px_rgba(52,211,153,0.1)] pr-10"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors"
                   >
                     {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                   </button>
@@ -127,46 +93,57 @@ export default function LoginPage() {
               </div>
 
               <div className="flex items-center justify-between text-xs">
-                <label className="flex items-center gap-2 text-gray-500 cursor-pointer">
-                  <input type="checkbox" className="w-3.5 h-3.5 rounded border-gray-600 bg-white/5 accent-emerald-500" />
+                <label className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-gray-300 transition-colors">
+                  <input
+                    type="checkbox"
+                    className="w-3.5 h-3.5 rounded accent-emerald-500 bg-white/[0.04] border border-white/[0.1]"
+                  />
                   Remember me
                 </label>
-                <button type="button" className="text-emerald-400 hover:text-emerald-300 transition-colors">Forgot password?</button>
+                <button type="button" className="text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+                  Forgot password?
+                </button>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="relative w-full py-2.5 rounded-xl text-sm font-semibold text-white overflow-hidden group"
+                className="relative w-full py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-600" />
-                <span className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10 flex items-center justify-center gap-2">
+                <span className="flex items-center justify-center gap-2">
                   {loading ? (
-                    <span className="flex items-center gap-2">
+                    <>
                       <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                       </svg>
                       Signing in...
-                    </span>
+                    </>
                   ) : (
-                    <span className="flex items-center gap-2">
+                    <>
                       Sign In
                       <ArrowRight size={16} />
-                    </span>
+                    </>
                   )}
                 </span>
               </button>
             </form>
+
+            <div className="mt-5 pt-5 border-t border-white/[0.06]">
+              <div className="flex items-center gap-2 text-xs text-gray-600">
+                <Shield size={12} />
+                <span>Demo credentials: admin@aviangov.in / admin123</span>
+              </div>
+            </div>
           </div>
 
-          <p className="text-center mt-6 text-xs text-gray-600">
-            By signing in, you agree to our{' '}
-            <button className="text-emerald-400/70 hover:text-emerald-300">Terms of Service</button>
-            {' '}and{' '}
-            <button className="text-emerald-400/70 hover:text-emerald-300">Privacy Policy</button>
-          </p>
+          <button
+            onClick={() => navigate('/')}
+            className="mt-8 mx-auto flex items-center gap-2 text-sm text-gray-500 hover:text-gray-300 transition-colors group"
+          >
+            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </button>
         </motion.div>
       </div>
     </div>

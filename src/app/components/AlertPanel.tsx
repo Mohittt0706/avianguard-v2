@@ -36,22 +36,22 @@ export function AlertPanel({ alerts, onDismiss }: AlertPanelProps) {
   const getAlertStyles = (type: Alert['type']) => {
     switch (type) {
       case 'critical':
-        return 'bg-red-50 border-red-300 border-l-4 border-l-red-500';
+        return 'bg-red-500/10 border-red-500/30 border-l-4 border-l-red-500';
       case 'warning':
-        return 'bg-orange-50 border-orange-300 border-l-4 border-l-orange-500';
+        return 'bg-orange-500/10 border-orange-500/30 border-l-4 border-l-orange-500';
       case 'info':
-        return 'bg-blue-50 border-blue-300 border-l-4 border-l-blue-500';
+        return 'bg-blue-500/10 border-blue-500/30 border-l-4 border-l-blue-500';
       case 'success':
-        return 'bg-green-50 border-green-300 border-l-4 border-l-green-500';
+        return 'bg-emerald-500/10 border-emerald-500/30 border-l-4 border-l-emerald-500';
     }
   };
 
   if (alerts.length === 0) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <CheckCircle size={48} className="text-green-500 mx-auto mb-3" />
-        <h3 className="text-lg font-semibold text-green-800 mb-1">All Systems Normal</h3>
-        <p className="text-sm text-green-600">No environmental threats detected</p>
+      <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-6 text-center">
+        <CheckCircle size={48} className="text-emerald-400 mx-auto mb-3" />
+        <h3 className="text-lg font-semibold text-emerald-300 mb-1">All Systems Normal</h3>
+        <p className="text-sm text-emerald-400/70">No environmental threats detected</p>
       </div>
     );
   }
@@ -60,13 +60,13 @@ export function AlertPanel({ alerts, onDismiss }: AlertPanelProps) {
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <Bell className={activeAlerts.length > 0 ? 'text-red-500 animate-pulse' : 'text-gray-400'} size={24} />
-          <h3 className="text-xl font-bold">
+          <Bell className={activeAlerts.length > 0 ? 'text-red-400 animate-pulse' : 'text-gray-500'} size={24} />
+          <h3 className="text-xl font-bold text-white">
             Active Alerts ({activeAlerts.length})
           </h3>
         </div>
         {activeAlerts.length > 0 && (
-          <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+          <span className="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full animate-pulse border border-red-500/30">
             ACTION REQUIRED
           </span>
         )}
@@ -79,14 +79,14 @@ export function AlertPanel({ alerts, onDismiss }: AlertPanelProps) {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className={`${getAlertStyles(alert.type)} border rounded-lg p-4 shadow-md`}
+            className={`${getAlertStyles(alert.type)} rounded-lg p-4`}
           >
             <div className="flex items-start gap-3">
               <div className="mt-1">{getAlertIcon(alert.type)}</div>
               <div className="flex-1">
                 <div className="flex items-start justify-between mb-2">
                   <div>
-                    <h4 className="font-semibold text-lg">{alert.title}</h4>
+                    <h4 className="font-semibold text-lg text-white">{alert.title}</h4>
                     <p className="text-xs text-gray-500 mt-1">
                       {alert.timestamp.toLocaleString('en-US')}
                     </p>
@@ -94,19 +94,19 @@ export function AlertPanel({ alerts, onDismiss }: AlertPanelProps) {
                   {onDismiss && (
                     <button
                       onClick={() => onDismiss(alert.id)}
-                      className="text-gray-400 hover:text-gray-600"
+                      className="text-gray-500 hover:text-gray-300"
                     >
                       ×
                     </button>
                   )}
                 </div>
-                <p className="text-sm text-gray-700 mb-2">{alert.message}</p>
-                <div className="bg-white bg-opacity-50 rounded p-2 text-sm mb-2">
-                  <strong>Sensor:</strong> {alert.sensor} | <strong>Reading:</strong> {alert.value}
+                <p className="text-sm text-gray-300 mb-2">{alert.message}</p>
+                <div className="bg-black/30 rounded p-2 text-sm mb-2 text-gray-400">
+                  <strong className="text-gray-300">Sensor:</strong> {alert.sensor} | <strong className="text-gray-300">Reading:</strong> {alert.value}
                 </div>
-                <div className="bg-white bg-opacity-70 rounded p-3 mt-3">
-                  <p className="text-sm font-semibold text-gray-800 mb-1">Recommended Action:</p>
-                  <p className="text-sm text-gray-700">{alert.recommended_action}</p>
+                <div className="bg-black/20 rounded p-3 mt-3">
+                  <p className="text-sm font-semibold text-gray-200 mb-1">Recommended Action:</p>
+                  <p className="text-sm text-gray-400">{alert.recommended_action}</p>
                 </div>
               </div>
             </div>

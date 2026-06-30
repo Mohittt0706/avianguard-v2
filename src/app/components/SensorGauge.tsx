@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 
 interface SensorGaugeProps {
@@ -22,11 +21,6 @@ export function SensorGauge({
   warningThreshold,
   dangerThreshold,
 }: SensorGaugeProps) {
-  const [displayValue, setDisplayValue] = useState(min);
-
-  useEffect(() => {
-    setDisplayValue(value);
-  }, [value]);
 
   const percentage = ((value - min) / (max - min)) * 100;
   const clampedPercentage = Math.min(Math.max(percentage, 0), 100);
@@ -73,14 +67,14 @@ export function SensorGauge({
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <motion.div
-            key={displayValue}
+            key={Math.round(value * 10)}
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="text-4xl font-bold"
             style={{ color: gaugeColor }}
           >
-            {displayValue.toFixed(1)}
+            {value.toFixed(1)}
           </motion.div>
           <div className="text-sm text-gray-500 mt-1">{unit}</div>
         </div>
