@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import { LayoutDashboard, Bell, Activity, Map, FileText, Users, LogOut, Droplets, UserCheck, AlertTriangle } from 'lucide-react';
+import { LayoutDashboard, Bell, Activity, Map, FileText, Users, LogOut, Droplets, UserCheck, AlertTriangle, Settings } from 'lucide-react';
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard', end: true },
@@ -9,7 +9,8 @@ const navItems = [
   { to: '/dashboard/maps', icon: Map, label: 'Maps' },
   { to: '/dashboard/reports', icon: FileText, label: 'Reports' },
   { to: '/dashboard/users', icon: Users, label: 'Users' },
-  { to: '/dashboard/citizens', icon: UserCheck, label: 'Citizen Requests' },
+  { to: '/dashboard/citizens', icon: UserCheck, label: 'Citizen Management' },
+  { to: '/dashboard/settings', icon: Settings, label: 'Settings' },
 ];
 
 interface SidebarProps {

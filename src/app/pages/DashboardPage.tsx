@@ -7,6 +7,7 @@ import { MapsPage } from '../components/dashboard/MapsPage';
 import { ReportsPage } from '../components/dashboard/ReportsPage';
 import { UserManagementPage } from '../components/dashboard/UserManagementPage';
 import { CitizenRequestsPage } from '../components/dashboard/CitizenRequestsPage';
+import { SettingsPage } from '../components/dashboard/SettingsPage';
 import { AlertCenterPage } from '../components/dashboard/AlertCenterPage';
 
 export default function DashboardPage() {
@@ -26,6 +27,7 @@ export default function DashboardPage() {
             <Route path="reports" element={<ReportsPage />} />
             <Route path="users" element={<UserManagementPage />} />
             <Route path="citizens" element={<CitizenRequestsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
             <Route path="alert-center" element={<AlertCenterPage />} />
           </Routes>
         </div>
