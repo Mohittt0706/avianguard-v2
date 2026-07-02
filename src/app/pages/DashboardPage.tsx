@@ -1,5 +1,6 @@
-import { useNavigate, Routes, Route } from 'react-router';
+import { Routes, Route } from 'react-router';
 import { Sidebar } from '../components/dashboard/Sidebar';
+import { ProfileMenu } from '@/components/auth/ProfileMenu';
 import { DashboardHome } from '../components/dashboard/DashboardHome';
 import { AIAlertsPage } from '../components/dashboard/AIAlertsPage';
 import { LiveSensorsPage } from '../components/dashboard/LiveSensorsPage';
@@ -11,13 +12,16 @@ import { SettingsPage } from '../components/dashboard/SettingsPage';
 import { AlertCenterPage } from '../components/dashboard/AlertCenterPage';
 
 export default function DashboardPage() {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-black text-white font-['Inter',sans-serif]">
-      <Sidebar onSignOut={() => navigate('/')} />
+      <Sidebar />
 
       <main className="ml-56 min-h-screen">
+        <div className="sticky top-0 z-30 bg-black/80 backdrop-blur-md border-b border-white/[0.06] px-6 py-2">
+          <div className="flex items-center justify-end">
+            <ProfileMenu />
+          </div>
+        </div>
         <div className="max-w-6xl mx-auto px-6 py-8">
           <Routes>
             <Route index element={<DashboardHome />} />

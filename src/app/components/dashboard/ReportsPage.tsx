@@ -5,6 +5,7 @@ import {
   Brain, AlertTriangle, CheckCircle, Activity, MapPin, Droplets,
   Settings, BarChart3, Upload, Printer, X, Users, Radio,
 } from 'lucide-react';
+import ShinyText from '../ShinyText';
 
 // ===================== TYPES =====================
 
@@ -219,7 +220,7 @@ export function ReportsPage() {
           <FileText size={22} className="text-blue-400" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white">Environmental Reporting Center</h1>
+          <h1 className="text-xl font-bold"><ShinyText text="Environmental Reporting Center" color="#FFFFFF" shineColor="#22D3EE" spread={100} speed={3} className="text-xl font-bold" /></h1>
           <p className="text-sm text-gray-400">Generate, schedule, and manage environmental monitoring reports</p>
         </div>
       </div>

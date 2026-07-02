@@ -1,0 +1,244 @@
+[2026-07-02T10:30:24.318Z] [INFO] Socket.io initialized
+[2026-07-02T10:30:24.753Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T10:30:24.755Z] [ERROR] Failed to connect to database: "\"beforeExit\" hook is not applicable to the library engine since Prisma 5.0.0, it is only relevant and implemented for the binary engine. Please add your event listener to the `process` object directly instead."
+[2026-07-02T10:34:08.958Z] [INFO] Socket.io initialized
+[2026-07-02T10:34:09.073Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T10:34:09.150Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T10:34:09.152Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T10:43:32.750Z] [INFO] [0mGET /api/v1 [33m404[0m 111.676 ms - 70[0m
+[2026-07-02T10:43:33.250Z] [INFO] [0mGET /favicon.ico [33m404[0m 0.957 ms - 75[0m
+[2026-07-02T10:44:54.461Z] [INFO] [0mGET / [32m200[0m 1.649 ms - 110[0m
+[2026-07-02T10:45:07.556Z] [INFO] [0mGET /api [33m404[0m 0.881 ms - 67[0m
+[2026-07-02T10:45:21.194Z] [INFO] [0mGET /api/v1/auth [33m404[0m 1.212 ms - 75[0m
+[2026-07-02T10:45:50.001Z] [INFO] [0mGET /api/v1/health [32m200[0m 55.226 ms - 89[0m
+[2026-07-02T10:49:47.378Z] [INFO] [0mPOST /api/v1/auth/login [33m400[0m 40.256 ms - 1666[0m
+[2026-07-02T10:49:57.562Z] [INFO] Socket.io initialized
+[2026-07-02T10:49:57.913Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T10:49:57.918Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T10:49:57.963Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T10:50:08.540Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 1365.907 ms - 781[0m
+[2026-07-02T11:02:30.769Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 527.068 ms - 803[0m
+[2026-07-02T11:17:31.492Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-02T11:17:31.558Z] [INFO] HTTP server closed
+[2026-07-02T11:17:31.649Z] [INFO] Prisma disconnected
+[2026-07-02T11:18:09.174Z] [INFO] Socket.io initialized
+[2026-07-02T11:18:09.345Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:18:09.350Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T11:18:09.353Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T11:20:06.119Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 565.574 ms - 803[0m
+[2026-07-02T11:30:34.631Z] [INFO] Socket.io initialized
+[2026-07-02T11:30:34.735Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:30:36.873Z] [INFO] Socket.io initialized
+[2026-07-02T11:30:36.991Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:31:07.054Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T11:31:07.062Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T11:31:07.071Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T11:31:07.074Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T11:32:08.281Z] [INFO] Socket.io initialized
+[2026-07-02T11:32:08.708Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:32:38.768Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T11:32:38.770Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T11:32:38.778Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T11:32:38.779Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T11:33:20.059Z] [ERROR] Unhandled error: {"message":"Operation `sensors.aggregate()` buffering timed out after 10000ms","stack":"MongooseError: Operation `sensors.aggregate()` buffering timed out after 10000ms\n    at Timeout._onTimeout (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:142:25)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-02T11:33:20.072Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 10142.554 ms - 494[0m
+[2026-07-02T11:33:37.011Z] [ERROR] Unhandled error: {"message":"Operation `sensors.aggregate()` buffering timed out after 10000ms","stack":"MongooseError: Operation `sensors.aggregate()` buffering timed out after 10000ms\n    at Timeout._onTimeout (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:142:25)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-02T11:33:37.021Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 10056.313 ms - 494[0m
+[2026-07-02T11:35:16.790Z] [INFO] Socket.io initialized
+[2026-07-02T11:35:16.932Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:35:46.988Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T11:35:46.994Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T11:35:47.517Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T11:35:47.520Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T11:36:50.757Z] [ERROR] Unhandled error: {"message":"Operation `sensors.aggregate()` buffering timed out after 10000ms","stack":"MongooseError: Operation `sensors.aggregate()` buffering timed out after 10000ms\n    at Timeout._onTimeout (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:142:25)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-02T11:36:50.777Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 10114.828 ms - 494[0m
+[2026-07-02T11:37:04.442Z] [INFO] [0mPOST /api/v1/auth/logout [32m200[0m 323.605 ms - 52[0m
+[2026-07-02T11:37:06.331Z] [ERROR] Unhandled error: {"message":"Operation `sensors.aggregate()` buffering timed out after 10000ms","stack":"MongooseError: Operation `sensors.aggregate()` buffering timed out after 10000ms\n    at Timeout._onTimeout (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:142:25)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-02T11:37:06.334Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 10046.669 ms - 494[0m
+[2026-07-02T11:37:42.179Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 567.101 ms - 803[0m
+[2026-07-02T11:37:52.267Z] [ERROR] Unhandled error: {"message":"Operation `sensors.aggregate()` buffering timed out after 10000ms","stack":"MongooseError: Operation `sensors.aggregate()` buffering timed out after 10000ms\n    at Timeout._onTimeout (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:142:25)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-02T11:37:54.300Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 10013.102 ms - 494[0m
+[2026-07-02T11:47:19.079Z] [INFO] Socket.io initialized
+[2026-07-02T11:47:19.357Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:47:27.110Z] [INFO] Socket.io initialized
+[2026-07-02T11:47:27.302Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:47:57.377Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T11:47:57.379Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T11:47:57.385Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T11:47:57.387Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T11:48:40.792Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 109.849 ms - 372[0m
+[2026-07-02T11:52:01.765Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 10.601 ms - -[0m
+[2026-07-02T11:55:17.349Z] [INFO] Socket.io initialized
+[2026-07-02T11:55:17.642Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T11:55:51.015Z] [INFO] Socket.io initialized
+[2026-07-02T11:55:51.155Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T12:01:35.338Z] [INFO] Socket.io initialized
+[2026-07-02T12:01:36.715Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T12:02:06.780Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T12:02:06.781Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T12:02:06.787Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T12:02:06.789Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T12:03:05.302Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 926.599 ms - 358[0m
+[2026-07-02T12:03:10.871Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 67.667 ms - 94[0m
+[2026-07-02T12:03:26.603Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.569 ms - -[0m
+[2026-07-02T12:03:41.595Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.209 ms - -[0m
+[2026-07-02T12:03:53.903Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 35.475 ms - -[0m
+[2026-07-02T12:03:59.430Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 7.190 ms - 358[0m
+[2026-07-02T12:04:30.319Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.324 ms - -[0m
+[2026-07-02T12:04:45.591Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.409 ms - -[0m
+[2026-07-02T12:05:00.636Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.277 ms - -[0m
+[2026-07-02T12:05:15.606Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.820 ms - -[0m
+[2026-07-02T12:05:30.593Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.201 ms - -[0m
+[2026-07-02T12:05:47.084Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.295 ms - -[0m
+[2026-07-02T12:06:00.596Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.531 ms - -[0m
+[2026-07-02T12:06:15.601Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.216 ms - -[0m
+[2026-07-02T12:06:33.614Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 4.171 ms - 1655[0m
+[2026-07-02T12:06:35.338Z] [INFO] [0mGET /favicon.ico [33m404[0m 1.053 ms - 75[0m
+[2026-07-02T12:07:09.712Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 124.471 ms - -[0m
+[2026-07-02T12:07:35.929Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.497 ms - -[0m
+[2026-07-02T12:07:37.487Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 18.025 ms - -[0m
+[2026-07-02T12:07:59.879Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 13.727 ms - -[0m
+[2026-07-02T12:08:49.922Z] [INFO] Socket.io initialized
+[2026-07-02T12:08:50.007Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T12:09:20.062Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T12:09:20.065Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T12:09:20.080Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T12:09:20.085Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T12:11:32.029Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 9.908 ms - 1655[0m
+[2026-07-02T12:11:40.107Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 1.652 ms - 1655[0m
+[2026-07-02T12:11:40.916Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 1.225 ms - 1655[0m
+[2026-07-02T12:11:41.064Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 1.145 ms - 1655[0m
+[2026-07-02T12:11:41.283Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 1.370 ms - 1655[0m
+[2026-07-02T12:11:51.260Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 264.412 ms - -[0m
+[2026-07-02T12:11:58.139Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 129.108 ms - -[0m
+[2026-07-02T12:12:13.607Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.472 ms - -[0m
+[2026-07-02T12:12:15.560Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 1.008 ms - 1655[0m
+[2026-07-02T12:12:16.400Z] [INFO] [0mGET /api/v1/sensors [33m401[0m 1.707 ms - 1655[0m
+[2026-07-02T12:12:29.003Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.692 ms - -[0m
+[2026-07-02T12:12:43.011Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.506 ms - -[0m
+[2026-07-02T12:12:43.668Z] [INFO] [0mPOST /api/v1/auth/logout [32m200[0m 1382.048 ms - 52[0m
+[2026-07-02T12:16:54.185Z] [INFO] Socket.io initialized
+[2026-07-02T12:16:54.375Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T12:17:24.427Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T12:17:24.430Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T12:17:24.466Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T12:17:24.471Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T12:18:46.231Z] [INFO] [0mGET /api/v1/health [32m200[0m 6.049 ms - 90[0m
+[2026-07-02T12:19:02.322Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 608.131 ms - 803[0m
+[2026-07-02T12:26:20.858Z] [INFO] [0mGET /api/v1/health [32m200[0m 1.748 ms - 90[0m
+[2026-07-02T12:26:34.097Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 1258.527 ms - 803[0m
+[2026-07-02T12:26:34.517Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 168.502 ms - -[0m
+[2026-07-02T12:26:37.931Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 218.047 ms - -[0m
+[2026-07-02T12:26:42.587Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 232.492 ms - -[0m
+[2026-07-02T12:26:57.358Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.378 ms - -[0m
+[2026-07-02T12:27:12.390Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.305 ms - -[0m
+[2026-07-02T12:27:27.360Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.456 ms - -[0m
+[2026-07-02T12:27:42.647Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.426 ms - -[0m
+[2026-07-02T12:27:57.601Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.457 ms - -[0m
+[2026-07-02T12:28:12.599Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.848 ms - -[0m
+[2026-07-02T12:28:27.612Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.928 ms - -[0m
+[2026-07-02T12:29:09.609Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.767 ms - -[0m
+[2026-07-02T12:30:09.609Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.295 ms - -[0m
+[2026-07-02T12:34:40.090Z] [INFO] Socket.io initialized
+[2026-07-02T12:34:40.315Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-02T12:35:10.361Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-02T12:35:10.363Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-02T12:35:10.370Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-02T12:35:10.371Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-02T12:35:10.518Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 121.054 ms - -[0m
+[2026-07-02T12:35:24.136Z] [INFO] [0mGET /api/v1/health [32m200[0m 4.466 ms - 89[0m
+[2026-07-02T12:36:09.598Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.282 ms - -[0m
+[2026-07-02T12:37:09.622Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.366 ms - -[0m
+[2026-07-02T12:38:09.620Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.417 ms - -[0m
+[2026-07-02T12:39:09.592Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.710 ms - -[0m
+[2026-07-02T12:40:09.694Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 96.209 ms - -[0m
+[2026-07-02T12:41:10.175Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 221.332 ms - -[0m
+[2026-07-02T12:42:09.611Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.999 ms - -[0m
+[2026-07-02T12:43:09.605Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.220 ms - -[0m
+[2026-07-02T12:44:11.014Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.107 ms - -[0m
+[2026-07-02T12:45:09.665Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.882 ms - -[0m
+[2026-07-02T12:46:12.665Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 3029.182 ms - -[0m
+[2026-07-02T12:47:10.499Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 162.001 ms - -[0m
+[2026-07-02T12:48:09.666Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.645 ms - -[0m
+[2026-07-02T12:49:09.605Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.546 ms - -[0m
+[2026-07-02T12:50:10.102Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 244.537 ms - -[0m
+[2026-07-02T12:51:09.788Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.835 ms - -[0m
+[2026-07-02T12:52:09.857Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 267.399 ms - -[0m
+[2026-07-02T12:53:10.118Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 183.424 ms - -[0m
+[2026-07-02T12:54:10.234Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 624.533 ms - -[0m
+[2026-07-02T12:55:09.737Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.995 ms - -[0m
+[2026-07-02T12:56:09.704Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.041 ms - -[0m
+[2026-07-02T12:57:09.956Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 102.004 ms - -[0m
+[2026-07-02T12:58:09.663Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.371 ms - -[0m
+[2026-07-02T12:59:11.148Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 1215.225 ms - -[0m
+[2026-07-02T13:00:09.794Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 162.380 ms - -[0m
+[2026-07-02T13:01:09.640Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.503 ms - -[0m
+[2026-07-02T13:02:11.291Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 1653.637 ms - -[0m
+[2026-07-02T13:03:09.603Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.938 ms - -[0m
+[2026-07-02T13:04:06.304Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.375 ms - -[0m
+[2026-07-02T13:04:21.873Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 248.945 ms - -[0m
+[2026-07-02T13:04:36.651Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.143 ms - -[0m
+[2026-07-02T13:04:51.635Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.138 ms - -[0m
+[2026-07-02T13:05:06.636Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.665 ms - -[0m
+[2026-07-02T13:05:22.585Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 959.519 ms - -[0m
+[2026-07-02T13:05:36.633Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.039 ms - -[0m
+[2026-07-02T13:05:51.721Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 91.135 ms - -[0m
+[2026-07-02T13:06:06.630Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.467 ms - -[0m
+[2026-07-02T13:06:21.631Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.498 ms - -[0m
+[2026-07-02T13:06:36.640Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.215 ms - -[0m
+[2026-07-02T13:06:51.628Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.823 ms - -[0m
+[2026-07-02T13:07:06.627Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.550 ms - -[0m
+[2026-07-02T13:07:21.840Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 208.131 ms - -[0m
+[2026-07-02T13:07:36.636Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.722 ms - -[0m
+[2026-07-02T13:07:51.628Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.510 ms - -[0m
+[2026-07-02T13:08:06.646Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.207 ms - -[0m
+[2026-07-02T13:08:21.629Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.726 ms - -[0m
+[2026-07-02T13:08:36.627Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.888 ms - -[0m
+[2026-07-02T13:08:51.638Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.163 ms - -[0m
+[2026-07-02T13:09:06.655Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.288 ms - -[0m
+[2026-07-02T13:09:21.641Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.918 ms - -[0m
+[2026-07-02T13:09:36.820Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 191.196 ms - -[0m
+[2026-07-02T13:09:51.648Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.462 ms - -[0m
+[2026-07-02T13:10:06.635Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.603 ms - -[0m
+[2026-07-02T13:10:23.497Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.250 ms - -[0m
+[2026-07-02T13:10:37.610Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.628 ms - -[0m
+[2026-07-02T13:10:51.720Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.534 ms - -[0m
+[2026-07-02T13:11:07.704Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 108.579 ms - -[0m
+[2026-07-02T13:11:39.288Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.662 ms - -[0m
+[2026-07-02T13:11:51.660Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.646 ms - -[0m
+[2026-07-02T13:12:06.642Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.635 ms - -[0m
+[2026-07-02T13:12:21.668Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.808 ms - -[0m
+[2026-07-02T13:12:36.762Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 123.955 ms - -[0m
+[2026-07-02T13:12:51.633Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.969 ms - -[0m
+[2026-07-02T13:13:01.140Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 454.203 ms - 487[0m
+[2026-07-02T13:13:01.199Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 26.398 ms - 506[0m
+[2026-07-02T13:13:06.637Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.778 ms - -[0m
+[2026-07-02T13:13:14.900Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.490 ms - -[0m
+[2026-07-02T13:13:17.028Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 172.160 ms - 358[0m
+[2026-07-02T13:13:24.649Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.159 ms - -[0m
+[2026-07-02T13:13:40.612Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.003 ms - -[0m
+[2026-07-02T13:13:55.635Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.890 ms - -[0m
+[2026-07-02T13:14:10.633Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.941 ms - -[0m
+[2026-07-02T13:14:25.643Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.323 ms - -[0m
+[2026-07-02T13:14:40.645Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.745 ms - -[0m
+[2026-07-02T13:14:55.616Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.661 ms - -[0m
+[2026-07-02T13:16:09.606Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.877 ms - -[0m
+[2026-07-02T13:17:09.681Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.826 ms - -[0m
+[2026-07-02T13:18:09.641Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.570 ms - -[0m
+[2026-07-02T13:19:09.994Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 402.681 ms - -[0m
+[2026-07-02T13:20:09.745Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.811 ms - -[0m
+[2026-07-02T13:21:09.645Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.624 ms - -[0m
+[2026-07-02T13:22:09.633Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.621 ms - -[0m
+[2026-07-02T13:23:09.702Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.207 ms - -[0m
+[2026-07-02T13:24:09.802Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 165.908 ms - -[0m
+[2026-07-02T13:25:07.353Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 456.279 ms - -[0m
+[2026-07-02T13:25:14.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.366 ms - -[0m
+[2026-07-02T13:25:25.697Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.961 ms - -[0m
+[2026-07-02T13:25:33.661Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.860 ms - -[0m
+[2026-07-02T13:25:41.678Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.845 ms - -[0m
+[2026-07-02T13:25:51.778Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.327 ms - -[0m
+[2026-07-02T13:26:07.612Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.452 ms - -[0m
+[2026-07-02T13:26:22.669Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.041 ms - -[0m
+[2026-07-02T13:26:37.683Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.579 ms - -[0m
+[2026-07-02T13:26:52.628Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.128 ms - -[0m
+[2026-07-02T13:27:07.630Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.552 ms - -[0m
