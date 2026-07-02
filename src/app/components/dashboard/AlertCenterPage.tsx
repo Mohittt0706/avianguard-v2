@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { AlertTriangle, Send, X, CheckCircle, MessageSquare, Smartphone, Mail, Zap, Shield, Droplets, Flame, Bird, CloudRain, Trash2, Clock, Users, MapPin, Brain, Eye, Bell } from 'lucide-react';
+import ShinyText from '../ShinyText';
+import ElectricBorder from '../ElectricBorder';
 
 interface AlertRecord {
   id: string;
@@ -319,7 +321,7 @@ export function AlertCenterPage() {
           <AlertTriangle size={22} className="text-red-400" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white">Emergency Alert Center</h1>
+          <h1 className="text-xl font-bold"><ShinyText text="Emergency Alert Center" color="#FFFFFF" shineColor="#22D3EE" spread={100} speed={3} className="text-xl font-bold" /></h1>
           <p className="text-sm text-gray-400">Government-grade disaster management and citizen notification system</p>
         </div>
       </div>
@@ -864,7 +866,8 @@ export function AlertCenterPage() {
       {quickModal && !sendingChannels && !successModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => { if (!sending) setQuickModal(null); }} />
-          <div className="relative bg-gray-900 border border-white/[0.08] rounded-2xl w-full max-w-md p-6 shadow-2xl">
+          <ElectricBorder color="#EF4444" speed={0.8} chaos={0.1} borderRadius={16}>
+            <div className="relative bg-gray-900 border border-white/[0.08] rounded-2xl w-full max-w-md p-6 shadow-2xl">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${quickModal.color}25` }}>
@@ -921,6 +924,7 @@ export function AlertCenterPage() {
               </button>
             </div>
           </div>
+          </ElectricBorder>
         </div>
       )}
     </div>

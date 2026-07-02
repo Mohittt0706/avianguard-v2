@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import { LayoutDashboard, Bell, Activity, Map, FileText, Users, LogOut, Droplets, UserCheck, AlertTriangle, Settings } from 'lucide-react';
+import { LayoutDashboard, Bell, Activity, Map, FileText, Users, Droplets, UserCheck, AlertTriangle, Settings } from 'lucide-react';
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard', end: true },
@@ -13,11 +13,7 @@ const navItems = [
   { to: '/dashboard/settings', icon: Settings, label: 'Settings' },
 ];
 
-interface SidebarProps {
-  onSignOut?: () => void;
-}
-
-export function Sidebar({ onSignOut }: SidebarProps) {
+export function Sidebar() {
   return (
     <aside className="fixed left-0 top-0 bottom-0 w-56 bg-black border-r border-white/[0.06] flex flex-col z-40">
       <div className="flex items-center gap-2.5 px-5 h-14 border-b border-white/[0.06]">
@@ -46,16 +42,6 @@ export function Sidebar({ onSignOut }: SidebarProps) {
           </NavLink>
         ))}
       </nav>
-
-      <div className="px-2 pb-3 border-t border-white/[0.06] pt-3">
-        <button
-          onClick={onSignOut}
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-red-400 hover:bg-red-500/5 w-full transition-all duration-200"
-        >
-          <LogOut size={16} />
-          Sign Out
-        </button>
-      </div>
     </aside>
   );
 }

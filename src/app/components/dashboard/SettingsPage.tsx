@@ -9,6 +9,7 @@ import {
   ChevronRight, CheckCircle, XCircle, ToggleLeft, ToggleRight,
   FileText, Search, Calendar,
 } from 'lucide-react';
+import ShinyText from '../ShinyText';
 import { settingsApi } from '@/services/settingsApi';
 
 // ===================== TYPES =====================
@@ -810,7 +811,7 @@ export function SettingsPage() {
             <Settings size={22} className="text-emerald-400" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-white">Settings</h1>
+            <h1 className="text-xl font-bold"><ShinyText text="Settings" color="#FFFFFF" shineColor="#22D3EE" spread={100} speed={3} className="text-xl font-bold" /></h1>
             <p className="text-sm text-gray-400">Manage platform configuration, AI behavior, notifications, users and system preferences</p>
           </div>
         </div>

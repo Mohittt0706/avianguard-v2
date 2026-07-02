@@ -8,6 +8,7 @@ import {
   Edit3, ToggleLeft, ToggleRight, Trash2, Send, Activity, Calendar,
   Smartphone, AtSign, Bell, RotateCcw, FileDown, Upload, Ban,
 } from 'lucide-react';
+import ShinyText from '../ShinyText';
 import type { Citizen, CitizenStatus, NotificationRecord } from '@/types/citizen';
 import { citizenApi, notificationApi } from '@/services/api';
 import {
@@ -1053,7 +1054,7 @@ export function CitizenRequestsPage() {
             <Users size={22} className="text-emerald-400" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-white">Citizen Management</h1>
+            <h1 className="text-xl font-bold"><ShinyText text="Citizen Management" color="#FFFFFF" shineColor="#22D3EE" spread={100} speed={3} className="text-xl font-bold" /></h1>
             <p className="text-sm text-gray-400">Manage the complete citizen lifecycle</p>
           </div>
         </div>

@@ -1,0 +1,15 @@
+const ROLES = {
+  SUPER_ADMIN: 'SUPER_ADMIN',
+  ADMIN: 'ADMIN',
+  OPERATOR: 'OPERATOR',
+  VIEWER: 'VIEWER',
+};
+
+const ROLE_HIERARCHY = {
+  SUPER_ADMIN: 4,
+  ADMIN: 3,
+  OPERATOR: 2,
+  VIEWER: 1,
+};
+
+module.exports = { ROLES, ROLE_HIERARCHY };

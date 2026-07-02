@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { Brain, Activity, AlertTriangle, Shield, MapPin, Droplets, Thermometer, Gauge, BarChart3, Crosshair, Target, Send, Eye, Zap, Radio, Cpu, Clock, Users, X, Bell } from 'lucide-react';
+import ElectricBorder from '../ElectricBorder';
 
 interface AIAlert {
   id: string;
@@ -213,7 +214,8 @@ function SensorDetailModal({ alert, onClose }: SensorDetailModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-      <div className="relative bg-gray-900 border border-white/[0.08] rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden" onClick={e => e.stopPropagation()}>
+      <ElectricBorder color="#DC2626" speed={0.6} chaos={0.08} borderRadius={16}>
+        <div className="relative bg-gray-900 border border-white/[0.08] rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden" onClick={e => e.stopPropagation()}>
         {/* Header */}
         <div className={`px-6 py-4 border-b border-white/[0.06] flex items-center justify-between`}>
           <div className="flex items-center gap-3">
@@ -306,6 +308,7 @@ function SensorDetailModal({ alert, onClose }: SensorDetailModalProps) {
           </button>
         </div>
       </div>
+      </ElectricBorder>
     </div>
   );
 }

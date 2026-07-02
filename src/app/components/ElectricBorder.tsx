@@ -9,16 +9,18 @@ interface ElectricBorderProps {
   borderRadius?: number;
   className?: string;
   style?: React.CSSProperties;
+  active?: boolean;
 }
 
 const ElectricBorder = ({
   children,
   color = '#5227FF',
-  speed = 1,
-  chaos = 0.12,
+  speed = 0.15,
+  chaos = 0.06,
   borderRadius = 24,
   className,
-  style
+  style,
+  active = true
 }: ElectricBorderProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -138,6 +140,8 @@ const ElectricBorder = ({
   );
 
   useEffect(() => {
+    if (!active) return;
+
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
@@ -154,18 +158,18 @@ const ElectricBorder = ({
     const displacement = 60;
     const borderOffset = 60;
 
-    const updateSize = () => {
-      const rect = container.getBoundingClientRect();
-      const width = rect.width + borderOffset * 2;
-      const height = rect.height + borderOffset * 2;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      ctx.scale(dpr, dpr);
-      return { width, height };
-    };
+      const updateSize = () => {
+        const rect = container.getBoundingClientRect();
+        const width = rect.width + borderOffset * 2;
+        const height = rect.height + borderOffset * 2;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.scale(dpr, dpr);
+        return { width, height };
+      };
 
     let { width, height } = updateSize();
     let lastDpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -225,22 +229,11 @@ const ElectricBorder = ({
       ctx.closePath();
 
       ctx.save();
-      ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
-      ctx.lineWidth = 8;
-      ctx.stroke();
-      ctx.restore();
-
-      ctx.save();
-      ctx.strokeStyle = `rgba(0, 229, 255, 0.4)`;
-      ctx.lineWidth = 3;
-      ctx.stroke();
-      ctx.restore();
-
-      ctx.save();
       ctx.strokeStyle = color;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 2;
       ctx.shadowColor = color;
-      ctx.shadowBlur = 4;
+      ctx.shadowBlur = 6;
+      ctx.globalAlpha = 0.6;
       ctx.stroke();
       ctx.restore();
 
@@ -262,7 +255,7 @@ const ElectricBorder = ({
       }
       resizeObserver.disconnect();
     };
-  }, [color, speed, chaos, borderRadius, octavedNoise, getRoundedRectPoint]);
+    }, [color, speed, chaos, borderRadius, active, octavedNoise, getRoundedRectPoint]);
 
   const vars = {
     '--electric-border-color': color,
@@ -270,15 +263,19 @@ const ElectricBorder = ({
   } as React.CSSProperties;
 
   return (
-    <div ref={containerRef} className={`electric-border ${className ?? ''}`} style={{ ...vars, ...style }}>
-      <div className="eb-canvas-container">
-        <canvas ref={canvasRef} className="eb-canvas" />
-      </div>
-      <div className="eb-layers">
-        <div className="eb-glow-1" />
-        <div className="eb-glow-2" />
-        <div className="eb-background-glow" />
-      </div>
+    <div ref={containerRef} className={`electric-border ${className ?? ''} ${active ? 'eb-active' : 'eb-inactive'}`} style={{ ...vars, ...style }}>
+      {active && (
+        <>
+          <div className="eb-canvas-container">
+            <canvas ref={canvasRef} className="eb-canvas" />
+          </div>
+          <div className="eb-layers">
+            <div className="eb-glow-1" />
+            <div className="eb-glow-2" />
+            <div className="eb-background-glow" />
+          </div>
+        </>
+      )}
       <div className="eb-content">{children}</div>
     </div>
   );

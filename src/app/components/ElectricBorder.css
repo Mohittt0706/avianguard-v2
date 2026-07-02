@@ -1,4 +1,5 @@
 .electric-border {
+  --electric-light-color: oklch(from var(--electric-border-color) l c h);
   position: relative;
   border-radius: inherit;
   overflow: visible;
@@ -26,7 +27,7 @@
 
 .eb-layers {
   position: absolute;
-  inset: -4px;
+  inset: 0;
   border-radius: inherit;
   pointer-events: none;
   z-index: 0;
@@ -43,23 +44,19 @@
 }
 
 .eb-glow-1 {
-  border: 2px solid #00E5FF;
-  filter: blur(2px);
-  opacity: 0.7;
-  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4), inset 0 0 6px rgba(0, 229, 255, 0.15);
+  border: 2px solid oklch(from var(--electric-border-color) l c h / 0.6);
+  filter: blur(1px);
 }
 
 .eb-glow-2 {
-  border: 2px solid #3B82F6;
-  filter: blur(12px);
-  opacity: 0.5;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  border: 2px solid var(--electric-light-color);
+  filter: blur(4px);
 }
 
 .eb-background-glow {
   z-index: -1;
-  transform: scale(1.12);
-  filter: blur(60px);
-  opacity: 0.35;
-  background: radial-gradient(ellipse at center, #00E5FF 0%, #3B82F6 35%, transparent 60%);
+  transform: scale(1.1);
+  filter: blur(32px);
+  opacity: 0.3;
+  background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
 }
