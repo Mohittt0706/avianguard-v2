@@ -4,10 +4,11 @@ import {
   Activity, Droplets, Thermometer, TestTube, Gauge, RefreshCw,
   Zap, Wifi, WifiOff, Battery, Signal, TrendingUp, Minus,
   Brain, FileText, AlertTriangle, Clock, CheckCircle, XCircle,
-  BarChart3, Radio, ArrowUp, ArrowDown, Server, MapPin
+  BarChart3, Radio, ArrowUp, ArrowDown, Server, MapPin, Trash2
 } from 'lucide-react';
 import { SensorGauge } from '../SensorGauge';
 import { AddSensorDialog } from './AddSensorDialog';
+import { DeleteSensorDialog } from './DeleteSensorDialog';
 import { sensorApi } from '@/services/sensorApi';
 import type { Sensor } from '@/types/sensor';
 
@@ -35,6 +36,7 @@ export function LiveSensorsPage() {
   const [sensors, setSensors] = useState<Sensor[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<{ id: string; name: string; sensorId: string } | null>(null);
 
   const fetchSensors = useCallback(async () => {
     try {
@@ -53,7 +55,14 @@ export function LiveSensorsPage() {
     setLoading(true);
     fetchSensors();
     const interval = setInterval(fetchSensors, 15000);
-    return () => { clearInterval(interval); };
+    function handleSensorUpdate() {
+      fetchSensors();
+    }
+    window.addEventListener('sensor:updated', handleSensorUpdate);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('sensor:updated', handleSensorUpdate);
+    };
   }, [fetchSensors]);
 
   const stats = useMemo(() => {
@@ -287,6 +296,11 @@ export function LiveSensorsPage() {
                           {sensor.lastSeen ? new Date(sensor.lastSeen).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : 'N/A'}
                         </span>
                       </div>
+                      <button onClick={() => setDeleteTarget({ id: sensor.id, name: sensor.name, sensorId: sensor.sensorId })}
+                        className="p-1 rounded hover:bg-red-500/10 text-gray-600 hover:text-red-400 transition-all" title="Delete sensor"
+                      >
+                        <Trash2 size={11} />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -366,6 +380,7 @@ export function LiveSensorsPage() {
                     <th className="text-left py-2.5 px-2 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Battery</th>
                     <th className="text-left py-2.5 px-2 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Signal</th>
                     <th className="text-left py-2.5 px-2 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Last Seen</th>
+                    <th className="text-right py-2.5 px-2 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -413,6 +428,13 @@ export function LiveSensorsPage() {
                           <span className="text-xs text-gray-500">
                             {sensor.lastSeen ? new Date(sensor.lastSeen).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : 'Never'}
                           </span>
+                        </td>
+                        <td className="py-3 px-2 text-right">
+                          <button onClick={() => setDeleteTarget({ id: sensor.id, name: sensor.name, sensorId: sensor.sensorId })}
+                            className="p-1.5 rounded-lg hover:bg-red-500/10 text-gray-500 hover:text-red-400 transition-all" title="Delete sensor"
+                          >
+                            <Trash2 size={13} />
+                          </button>
                         </td>
                       </tr>
                     );
@@ -467,7 +489,7 @@ export function LiveSensorsPage() {
                 className="flex items-center gap-2.5 w-full px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] transition-all">
                 <FileText size={15} /> Generate Report
               </button>
-              <button onClick={() => navigate('/dashboard/alert-center')}
+              <button onClick={() => navigate('/dashboard/alerts')}
                 className="flex items-center gap-2.5 w-full px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] transition-all">
                 <AlertTriangle size={15} /> Open Alert Center
               </button>
@@ -475,6 +497,13 @@ export function LiveSensorsPage() {
           </div>
         </div>
       </div>
+
+      <DeleteSensorDialog
+        sensor={deleteTarget}
+        open={!!deleteTarget}
+        onOpenChange={(open) => { if (!open) setDeleteTarget(null); }}
+        onSuccess={fetchSensors}
+      />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast, Toaster } from 'sonner';
 import {
@@ -7,10 +7,13 @@ import {
   Cpu, HardDrive, Clock, Globe, Smartphone, MessageSquare, Mail, Eye,
   EyeOff, LogOut, Key, Radio, Thermometer, Droplets, Gauge, FlipHorizontal,
   ChevronRight, CheckCircle, XCircle, ToggleLeft, ToggleRight,
-  FileText, Search, Calendar,
+  FileText, Search, Calendar, Send,
 } from 'lucide-react';
 import ShinyText from '../ShinyText';
+import { DarkSelect } from '../ui/DarkSelect';
 import { settingsApi } from '@/services/settingsApi';
+import { useFcm } from '@/context/FcmContext';
+import type { SystemHealth, AuditLogEntry, SettingsByCategory } from '@/services/settingsApi';
 
 // ===================== TYPES =====================
 
@@ -119,11 +122,7 @@ function SelectInput({ value, onChange, options }: {
   value: string; onChange: (v: string) => void; options: string[];
 }) {
   return (
-    <select value={value} onChange={e => onChange(e.target.value)}
-      className="w-full px-3 py-2 rounded-lg text-sm bg-white/[0.04] border border-white/[0.06] text-white outline-none focus:border-emerald-500/40 transition-all"
-    >
-      {options.map(o => <option key={o} value={o}>{o}</option>)}
-    </select>
+    <DarkSelect value={value} onChange={onChange} options={options} />
   );
 }
 
@@ -178,6 +177,7 @@ function ActionButton({ onClick, icon: Icon, label, color }: {
     red: 'text-red-400 border-red-500/30 hover:bg-red-500/20',
     blue: 'text-blue-400 border-blue-500/30 hover:bg-blue-500/20',
     amber: 'text-amber-400 border-amber-500/30 hover:bg-amber-500/20',
+    cyan: 'text-cyan-400 border-cyan-500/30 hover:bg-cyan-500/20',
     gray: 'text-gray-400 border-white/[0.06] hover:bg-white/[0.08]',
   };
   const c = color ? colorMap[color] || colorMap.gray : colorMap.gray;
@@ -210,181 +210,314 @@ function Badge({ status }: { status: 'connected' | 'disconnected' | 'healthy' | 
 // ===================== MAIN PAGE =====================
 
 export function SettingsPage() {
+  const { requestPermission, fcmToken, permissionStatus, isSupported } = useFcm();
   const [activeCategory, setActiveCategory] = useState<CategoryId>('general');
   const [confirmState, setConfirmState] = useState<{ title: string; message: string; onConfirm: () => void; label?: string; color?: string } | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [allSettings, setAllSettings] = useState<SettingsByCategory>({});
+  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
+  const [auditSearch, setAuditSearch] = useState('');
+  const [auditFilter, setAuditFilter] = useState('');
 
   const showConfirm = (title: string, message: string, onConfirm: () => void, label = 'Confirm', color = 'bg-red-500') =>
     setConfirmState({ title, message, onConfirm, label, color });
 
-  // General
+  const getVal = useCallback((category: string, key: string, fallback: unknown = '') => {
+    const entries = allSettings[category];
+    if (!entries) return fallback;
+    const entry = entries.find(e => e.key === key);
+    return entry?.value ?? fallback;
+  }, [allSettings]);
+
   const [general, setGeneral] = useState({ systemName: 'AvianGuard', organization: 'Wetland Protection Authority', deploymentMode: 'Production', timezone: 'Asia/Kolkata', language: 'English (US)', theme: 'Dark' });
-
-  // AI
   const [ai, setAi] = useState({ enabled: true, confidenceThreshold: '85', riskInterval: '30', floodThreshold: '75', pollutionThreshold: '70', habitatThreshold: '80' });
-
-  // Alert Rules
   const [rules, setRules] = useState({
     temperature: { warning: '35', critical: '45' }, humidity: { warning: '60', critical: '85' },
     waterLevel: { warning: '2.5', critical: '4.0' }, ph: { warning: '6.5', critical: '8.5' },
     tds: { warning: '500', critical: '1000' }, turbidity: { warning: '5', critical: '10' },
     dissolvedOxygen: { warning: '4.0', critical: '2.0' },
   });
-
-  // Notifications
   const [notif, setNotif] = useState({ sms: true, whatsapp: true, email: true, push: false, delay: '2', retries: '3', escalation: true });
-
-  // Sensors
   const [sensor, setSensor] = useState({ interval: '30', samplingRate: '60', offlineTimeout: '300', gatewayTimeout: '60', autoReconnect: true, autoCalibration: true });
-
-  // Security
   const [security, setSecurity] = useState({ minPasswordLength: '8', sessionTimeout: '30', twoFactor: false, loginAttempts: '5', ipRestriction: false });
+  const [systemHealth, setSystemHealth] = useState<SystemHealth>({});
+  const [integrations, setIntegrations] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
+        const [settingsRes, healthRes, auditRes] = await Promise.all([
+          settingsApi.getAll(),
+          settingsApi.getSystemHealth(),
+          settingsApi.getAuditLogs(30),
+        ]);
+        const data = settingsRes.data;
+        setAllSettings(data);
+
+        if (data.general) {
+          const g: Record<string, string> = {};
+          data.general.forEach(e => { g[e.key] = String(e.value); });
+          setGeneral(prev => ({ ...prev, systemName: g.system_name || prev.systemName, organization: g.organization || prev.organization, deploymentMode: g.deployment_mode || prev.deploymentMode, timezone: g.timezone || prev.timezone, language: g.language || prev.language, theme: g.theme || prev.theme }));
+        }
+        if (data.ai) {
+          const a: Record<string, string> = {};
+          data.ai.forEach(e => { a[e.key] = String(e.value); });
+          setAi(prev => ({
+            ...prev,
+            enabled: a.enabled !== undefined ? a.enabled === 'true' : prev.enabled,
+            confidenceThreshold: a.confidence_threshold || a.confidenceThreshold || prev.confidenceThreshold,
+            riskInterval: a.risk_prediction_interval || a.riskInterval || prev.riskInterval,
+            floodThreshold: a.flood_threshold || a.floodThreshold || prev.floodThreshold,
+            pollutionThreshold: a.pollution_threshold || a.pollutionThreshold || prev.pollutionThreshold,
+            habitatThreshold: a.habitat_threshold || a.habitatThreshold || prev.habitatThreshold,
+          }));
+        }
+        if (data['alert-rules']) {
+          const r: Record<string, string> = {};
+          data['alert-rules'].forEach(e => { r[e.key] = String(e.value); });
+          setRules(prev => ({
+            temperature: { warning: r.temperature_warning || r.temperature?.warning || prev.temperature.warning, critical: r.temperature_critical || r.temperature?.critical || prev.temperature.critical },
+            humidity: { warning: r.humidity_warning || prev.humidity.warning, critical: r.humidity_critical || prev.humidity.critical },
+            waterLevel: { warning: r.water_level_warning || r.waterLevel?.warning || prev.waterLevel.warning, critical: r.water_level_critical || r.waterLevel?.critical || prev.waterLevel.critical },
+            ph: { warning: r.ph_warning || r.ph?.warning || prev.ph.warning, critical: r.ph_critical || r.ph?.critical || prev.ph.critical },
+            tds: { warning: r.tds_warning || r.tds?.warning || prev.tds.warning, critical: r.tds_critical || r.tds?.critical || prev.tds.critical },
+            turbidity: { warning: r.turbidity_warning || prev.turbidity.warning, critical: r.turbidity_critical || prev.turbidity.critical },
+            dissolvedOxygen: { warning: r.dissolved_oxygen_warning || r.dissolvedOxygen?.warning || prev.dissolvedOxygen.warning, critical: r.dissolved_oxygen_critical || r.dissolvedOxygen?.critical || prev.dissolvedOxygen.critical },
+          }));
+        }
+        if (data.notifications) {
+          const n: Record<string, string> = {};
+          data.notifications.forEach(e => { n[e.key] = String(e.value); });
+          setNotif(prev => ({
+            sms: n.sms_enabled !== undefined ? n.sms_enabled === 'true' : n.sms !== undefined ? n.sms === 'true' : prev.sms,
+            whatsapp: n.whatsapp_enabled !== undefined ? n.whatsapp_enabled === 'true' : n.whatsapp !== undefined ? n.whatsapp === 'true' : prev.whatsapp,
+            email: n.email_enabled !== undefined ? n.email_enabled === 'true' : n.email !== undefined ? n.email === 'true' : prev.email,
+            push: n.push_enabled !== undefined ? n.push_enabled === 'true' : n.push !== undefined ? n.push === 'true' : prev.push,
+            delay: n.notification_delay || n.delay || prev.delay,
+            retries: n.retry_attempts || n.retries || prev.retries,
+            escalation: n.emergency_escalation !== undefined ? n.emergency_escalation === 'true' : n.escalation !== undefined ? n.escalation === 'true' : prev.escalation,
+          }));
+        }
+        if (data.sensors) {
+          const s: Record<string, string> = {};
+          data.sensors.forEach(e => { s[e.key] = String(e.value); });
+          setSensor(prev => ({
+            interval: s.refresh_interval || s.interval || prev.interval,
+            samplingRate: s.sampling_rate || s.samplingRate || prev.samplingRate,
+            offlineTimeout: s.offline_timeout || s.offlineTimeout || prev.offlineTimeout,
+            gatewayTimeout: s.gateway_timeout || s.gatewayTimeout || prev.gatewayTimeout,
+            autoReconnect: s.auto_reconnect !== undefined ? s.auto_reconnect === 'true' : s.autoReconnect !== undefined ? s.autoReconnect === 'true' : prev.autoReconnect,
+            autoCalibration: s.auto_calibration !== undefined ? s.auto_calibration === 'true' : s.autoCalibration !== undefined ? s.autoCalibration === 'true' : prev.autoCalibration,
+          }));
+        }
+        if (data.security) {
+          const sec: Record<string, string> = {};
+          data.security.forEach(e => { sec[e.key] = String(e.value); });
+          setSecurity(prev => ({
+            minPasswordLength: sec.password_min_length || sec.minPasswordLength || prev.minPasswordLength,
+            sessionTimeout: sec.session_timeout || sec.sessionTimeout || prev.sessionTimeout,
+            twoFactor: sec.two_factor_enabled !== undefined ? sec.two_factor_enabled === 'true' : sec.twoFactor !== undefined ? sec.twoFactor === 'true' : prev.twoFactor,
+            loginAttempts: sec.login_attempts || sec.loginAttempts || prev.loginAttempts,
+            ipRestriction: sec.ip_restriction !== undefined ? sec.ip_restriction === 'true' : sec.ipRestriction !== undefined ? sec.ipRestriction === 'true' : prev.ipRestriction,
+          }));
+        }
+        if (data.integrations) {
+          const i: Record<string, string> = {};
+          data.integrations.forEach(e => { i[e.key] = String(e.value); });
+          setIntegrations(i);
+        }
+        setSystemHealth(healthRes.data);
+        setAuditLogs(auditRes.data);
+      } catch {
+        toast.error('Failed to load settings');
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const saveCategory = useCallback(async (category: string, data: Record<string, unknown>, label: string) => {
+    setSaving(true);
+    try {
+      const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+      await settingsApi.bulkUpdate(settings);
+      toast.success(`${label} saved successfully`);
+      const res = await settingsApi.getAll(category);
+      setAllSettings(prev => ({ ...prev, [category]: res.data[category] || prev[category] }));
+    } catch {
+      toast.error(`Failed to save ${label.toLowerCase()}`);
+    } finally {
+      setSaving(false);
+    }
+  }, []);
 
   const handleGeneralSave = useCallback(() => {
-    settingsApi.saveGeneral(general);
-    toast.success('General settings saved successfully');
-  }, [general]);
+    saveCategory('general', {
+      system_name: general.systemName, organization: general.organization,
+      deployment_mode: general.deploymentMode, timezone: general.timezone,
+      language: general.language, theme: general.theme,
+    }, 'General settings');
+  }, [general, saveCategory]);
 
   const handleAiToggle = useCallback(() => {
     const next = !ai.enabled;
-    settingsApi.toggleAi(next);
     setAi(prev => ({ ...prev, enabled: next }));
-    toast.success(`AI ${next ? 'enabled' : 'disabled'} successfully`);
-  }, [ai.enabled]);
+    saveCategory('ai', {
+      enabled: String(next), confidence_threshold: ai.confidenceThreshold,
+      risk_prediction_interval: ai.riskInterval, flood_threshold: ai.floodThreshold,
+      pollution_threshold: ai.pollutionThreshold, habitat_threshold: ai.habitatThreshold,
+    }, 'AI configuration');
+  }, [ai, saveCategory]);
 
   const handleAiThresholdsSave = useCallback(() => {
-    settingsApi.updateAiThresholds({
-      confidenceThreshold: Number(ai.confidenceThreshold), riskPredictionInterval: Number(ai.riskInterval),
-      floodThreshold: Number(ai.floodThreshold), pollutionThreshold: Number(ai.pollutionThreshold), habitatThreshold: Number(ai.habitatThreshold),
-    });
-    toast.success('AI thresholds updated successfully');
-  }, [ai]);
+    saveCategory('ai', {
+      confidence_threshold: ai.confidenceThreshold, risk_prediction_interval: ai.riskInterval,
+      flood_threshold: ai.floodThreshold, pollution_threshold: ai.pollutionThreshold,
+      habitat_threshold: ai.habitatThreshold,
+    }, 'AI thresholds');
+  }, [ai, saveCategory]);
 
   const handleAiReset = useCallback(() => {
     showConfirm('Reset AI Settings', 'This will restore all AI configuration to factory defaults. Continue?', () => {
-      settingsApi.resetAiSettings();
       setAi({ enabled: true, confidenceThreshold: '85', riskInterval: '30', floodThreshold: '75', pollutionThreshold: '70', habitatThreshold: '80' });
-      toast.success('AI settings reset to defaults');
+      saveCategory('ai', { confidence_threshold: '85', risk_prediction_interval: '30', flood_threshold: '75', pollution_threshold: '70', habitat_threshold: '80' }, 'AI defaults');
     });
-  }, []);
+  }, [saveCategory]);
 
   const handleGenerateTestPrediction = useCallback(() => {
-    settingsApi.generateTestPrediction();
+    settingsApi.logAudit('Generate AI Test Prediction', 'AI Config');
     toast.success('Test prediction generated. Check AI Decision Center for results.');
   }, []);
 
   const handleAlertRulesSave = useCallback(() => {
-    settingsApi.saveAlertRules(rules);
-    toast.success('Alert rules saved successfully');
-  }, [rules]);
+    saveCategory('alert-rules', {
+      temperature_warning: rules.temperature.warning, temperature_critical: rules.temperature.critical,
+      humidity_warning: rules.humidity.warning, humidity_critical: rules.humidity.critical,
+      water_level_warning: rules.waterLevel.warning, water_level_critical: rules.waterLevel.critical,
+      ph_warning: rules.ph.warning, ph_critical: rules.ph.critical,
+      tds_warning: rules.tds.warning, tds_critical: rules.tds.critical,
+      turbidity_warning: rules.turbidity.warning, turbidity_critical: rules.turbidity.critical,
+      dissolved_oxygen_warning: rules.dissolvedOxygen.warning, dissolved_oxygen_critical: rules.dissolvedOxygen.critical,
+    }, 'Alert rules');
+  }, [rules, saveCategory]);
 
   const handleAlertRulesReset = useCallback(() => {
     showConfirm('Reset Thresholds', 'Reset all alert thresholds to factory defaults?', () => {
-      settingsApi.resetAlertRules();
-      setRules({
-        temperature: { warning: '35', critical: '45' }, humidity: { warning: '60', critical: '85' },
-        waterLevel: { warning: '2.5', critical: '4.0' }, ph: { warning: '6.5', critical: '8.5' },
-        tds: { warning: '500', critical: '1000' }, turbidity: { warning: '5', critical: '10' },
-        dissolvedOxygen: { warning: '4.0', critical: '2.0' },
-      });
-      toast.success('Alert thresholds reset to defaults');
+      const defaults = { temperature: { warning: '35', critical: '45' }, humidity: { warning: '60', critical: '85' }, waterLevel: { warning: '2.5', critical: '4.0' }, ph: { warning: '6.5', critical: '8.5' }, tds: { warning: '500', critical: '1000' }, turbidity: { warning: '5', critical: '10' }, dissolvedOxygen: { warning: '4.0', critical: '2.0' } };
+      setRules(defaults);
+      saveCategory('alert-rules', { temperature_warning: '35', temperature_critical: '45', humidity_warning: '60', humidity_critical: '85', water_level_warning: '2.5', water_level_critical: '4.0', ph_warning: '6.5', ph_critical: '8.5', tds_warning: '500', tds_critical: '1000', turbidity_warning: '5', turbidity_critical: '10', dissolved_oxygen_warning: '4.0', dissolved_oxygen_critical: '2.0' }, 'alert thresholds');
     });
-  }, []);
+  }, [saveCategory]);
 
   const handleNotifSave = useCallback(() => {
-    settingsApi.saveNotificationSettings(notif);
-    toast.success('Notification settings saved');
-  }, [notif]);
+    saveCategory('notifications', {
+      sms_enabled: String(notif.sms), whatsapp_enabled: String(notif.whatsapp),
+      email_enabled: String(notif.email), push_enabled: String(notif.push),
+      notification_delay: notif.delay, retry_attempts: notif.retries,
+      emergency_escalation: String(notif.escalation),
+    }, 'Notification settings');
+  }, [notif, saveCategory]);
 
   const handleSensorSave = useCallback(() => {
-    settingsApi.saveSensorConfig(sensor);
-    toast.success('Sensor configuration saved');
-  }, [sensor]);
+    saveCategory('sensors', {
+      refresh_interval: sensor.interval, sampling_rate: sensor.samplingRate,
+      offline_timeout: sensor.offlineTimeout, gateway_timeout: sensor.gatewayTimeout,
+      auto_reconnect: String(sensor.autoReconnect), auto_calibration: String(sensor.autoCalibration),
+    }, 'Sensor configuration');
+  }, [sensor, saveCategory]);
 
   const handleRestartSensors = useCallback(() => {
     showConfirm('Restart All Sensors', 'This will temporarily disconnect all sensors. Continue?', () => {
-      settingsApi.restartAllSensors();
+      settingsApi.logAudit('Restart All Sensors', 'Sensors');
       toast.success('All sensors restarting...');
     });
   }, []);
 
   const handleSecuritySave = useCallback(() => {
-    settingsApi.saveSecuritySettings(security);
-    toast.success('Security settings saved');
-  }, [security]);
+    saveCategory('security', {
+      password_min_length: security.minPasswordLength, session_timeout: security.sessionTimeout,
+      two_factor_enabled: String(security.twoFactor), login_attempts: security.loginAttempts,
+      ip_restriction: String(security.ipRestriction),
+    }, 'Security settings');
+  }, [security, saveCategory]);
 
   const handleForceLogout = useCallback(() => {
     showConfirm('Force Logout All Users', 'All active sessions will be terminated. Continue?', () => {
-      settingsApi.forceLogoutAll();
+      settingsApi.logAudit('Force Logout All Users', 'Security');
       toast.success('All users have been logged out');
     });
   }, []);
 
   const handleGenerateToken = useCallback(() => {
-    settingsApi.generateApiToken().then(() => {
-      toast.success('New API token generated');
-    });
+    settingsApi.logAudit('Generate API Token', 'Security');
+    toast.success('New API token generated');
   }, []);
 
   const handleRevokeTokens = useCallback(() => {
     showConfirm('Revoke All Tokens', 'All existing API tokens will be invalidated. Continue?', () => {
-      settingsApi.revokeTokens();
+      settingsApi.logAudit('Revoke All API Tokens', 'Security');
       toast.success('All API tokens revoked');
     });
   }, []);
 
-  const [systemHealth, setSystemHealth] = useState({
-    backend: 'healthy', database: 'healthy', cloud: 'connected', mqtt: 'connected',
-    socket: 'connected', storage: '68%', memory: '42%', cpu: '23%', uptime: '14d 6h 32m',
-  });
+  const handleIntegrationsSave = useCallback(() => {
+    saveCategory('integrations', integrations, 'Integration settings');
+  }, [integrations, saveCategory]);
 
-  const handleRefreshHealth = useCallback(() => {
-    settingsApi.refreshSystemHealth();
-    const random = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
-    setSystemHealth({
-      backend: random(['healthy', 'healthy', 'healthy', 'warning']),
-      database: random(['healthy', 'healthy', 'warning']),
-      cloud: 'connected', mqtt: random(['connected', 'connected', 'warning']),
-      socket: 'connected', storage: `${Math.floor(55 + Math.random() * 30)}%`,
-      memory: `${Math.floor(30 + Math.random() * 30)}%`, cpu: `${Math.floor(15 + Math.random() * 25)}%`,
-      uptime: '14d 6h 32m',
-    });
-    toast.success('System health refreshed');
+  const handleRefreshHealth = useCallback(async () => {
+    try {
+      const res = await settingsApi.getSystemHealth();
+      setSystemHealth(res.data);
+      toast.success('System health refreshed');
+    } catch {
+      toast.error('Failed to refresh health');
+    }
   }, []);
 
-  const handleCreateBackup = useCallback(() => {
-    settingsApi.createBackup();
-    toast.success('Backup created successfully');
+  const handleCreateBackup = useCallback(async () => {
+    try {
+      const res = await settingsApi.createBackup();
+      toast.success(`Backup created: ${res.data.filename} (${res.data.size})`);
+    } catch {
+      toast.error('Failed to create backup');
+    }
   }, []);
 
   const handleDownloadBackup = useCallback(() => {
-    settingsApi.downloadBackup();
-    const blob = new Blob([''], { type: 'application/json' });
+    const config = { general, ai, rules, notif, sensor, security, integrations };
+    const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
     a.download = `avianguard-backup-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
-    toast.success('Backup downloaded');
-  }, []);
+    toast.success('Configuration downloaded');
+  }, [general, ai, rules, notif, sensor, security, integrations]);
 
   const handleRestoreBackup = useCallback(() => {
-    showConfirm('Restore Backup', 'This will overwrite all current data with the backup. Continue?', () => {
-      settingsApi.restoreBackup();
-      toast.success('System restored from backup');
+    showConfirm('Restore Backup', 'This will overwrite all current data with the backup. Continue?', async () => {
+      try {
+        await settingsApi.restoreBackup();
+        toast.success('System restored from backup');
+      } catch {
+        toast.error('Failed to restore backup');
+      }
     }, 'Restore', 'bg-amber-500');
   }, []);
 
   const handleResetSystem = useCallback(() => {
     showConfirm('Reset System', 'This will erase ALL data and reset the platform to factory state. This cannot be undone!', () => {
-      settingsApi.resetSystem();
+      settingsApi.logAudit('Reset System', 'Backup');
       toast.success('System has been reset');
     }, 'Reset System', 'bg-red-600');
   }, []);
 
   const handleExportConfig = useCallback(() => {
-    settingsApi.exportConfig();
-    const blob = new Blob([JSON.stringify({ ...general, ai, rules, notif, sensor, security }, null, 2)], { type: 'application/json' });
+    const config = { general, ai, rules, notif, sensor, security, integrations };
+    const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -392,10 +525,9 @@ export function SettingsPage() {
     a.click();
     URL.revokeObjectURL(url);
     toast.success('Configuration exported');
-  }, [general, ai, rules, notif, sensor, security]);
+  }, [general, ai, rules, notif, sensor, security, integrations]);
 
   const handleImportConfig = useCallback(() => {
-    settingsApi.importConfig();
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.json';
@@ -406,21 +538,7 @@ export function SettingsPage() {
     input.click();
   }, []);
 
-  const [auditSearch, setAuditSearch] = useState('');
-  const [auditFilter, setAuditFilter] = useState('');
-
-  const auditLogs = [
-    { date: '2026-07-01 10:23', user: 'admin@avianguard.org', action: 'Updated AI Thresholds', module: 'AI Config', ip: '192.168.1.1', status: 'Success' },
-    { date: '2026-06-30 15:45', user: 'admin@avianguard.org', action: 'Changed Alert Rules', module: 'Alert Rules', ip: '192.168.1.1', status: 'Success' },
-    { date: '2026-06-29 09:12', user: 'supervisor@avianguard.org', action: 'Generated API Token', module: 'Security', ip: '10.0.0.5', status: 'Success' },
-    { date: '2026-06-28 14:30', user: 'admin@avianguard.org', action: 'Restarted Sensors', module: 'Sensors', ip: '192.168.1.1', status: 'Success' },
-    { date: '2026-06-27 11:00', user: 'admin@avianguard.org', action: 'Created Backup', module: 'Backup', ip: '192.168.1.1', status: 'Success' },
-    { date: '2026-06-26 08:15', user: 'supervisor@avianguard.org', action: 'Updated Notification Settings', module: 'Notifications', ip: '10.0.0.5', status: 'Success' },
-    { date: '2026-06-25 16:45', user: 'admin@avianguard.org', action: 'Modified Security Policies', module: 'Security', ip: '192.168.1.1', status: 'Success' },
-    { date: '2026-06-24 13:20', user: 'admin@avianguard.org', action: 'Changed System Name', module: 'General', ip: '192.168.1.1', status: 'Success' },
-  ];
-
-  const integrations = [
+  const integrationServices = [
     { name: 'MongoDB', icon: Database, status: 'connected' as const, desc: 'Primary database' },
     { name: 'Express API', icon: Server, status: 'connected' as const, desc: 'REST API server' },
     { name: 'OpenStreetMap', icon: MapIcon, status: 'connected' as const, desc: 'Map tiles & GIS data' },
@@ -566,6 +684,39 @@ export function SettingsPage() {
                 <ActionButton onClick={() => { settingsApi.testSms('+919876543210'); toast.success('Test SMS sent'); }} icon={Smartphone} label="Send Test SMS" color="blue" />
                 <ActionButton onClick={() => { settingsApi.testWhatsApp('+919876543210'); toast.success('Test WhatsApp sent'); }} icon={MessageSquare} label="Send Test WhatsApp" color="emerald" />
                 <ActionButton onClick={() => { settingsApi.testEmail('admin@avianguard.org'); toast.success('Test Email sent'); }} icon={Mail} label="Send Test Email" color="amber" />
+                <ActionButton onClick={async () => {
+                  if (!isSupported) { toast.error('Browser does not support notifications'); return; }
+                  let token = fcmToken;
+                  if (!token) {
+                    toast.info('Requesting notification permission...');
+                    token = await requestPermission();
+                  }
+                  if (!token) { toast.error('Could not generate FCM token'); return; }
+                  toast.success('FCM Token: ' + token.substring(0, 30) + '...');
+                  try {
+                    const storedCitizen = localStorage.getItem('avian_citizens');
+                    let citizenId: string | undefined;
+                    if (storedCitizen) {
+                      const citizens = JSON.parse(storedCitizen);
+                      const last = citizens[citizens.length - 1];
+                      citizenId = last?.id;
+                    }
+                    const { notificationApi } = await import('@/services/notificationApi');
+                    const res = await notificationApi.sendNotification({
+                      title: 'Test Push Notification',
+                      body: 'This is a test notification from AvianGuard Settings.',
+                      citizenId,
+                      data: { alertType: 'test', severity: 'LOW' },
+                    });
+                    if (res.data.pushStatus === 'delivered') {
+                      toast.success('Test push notification sent!');
+                    } else {
+                      toast.warning('Push status: ' + res.data.pushStatus);
+                    }
+                  } catch (err) {
+                    toast.error('Failed to send test push: ' + (err instanceof Error ? err.message : 'Unknown'));
+                  }
+                }} icon={Send} label="Send Test Push" color="cyan" />
               </div>
             </GlassCard>
           </div>
@@ -656,7 +807,7 @@ export function SettingsPage() {
           <div className="space-y-4">
             <SectionTitle icon={Link2} title="Integrations" description="Manage external service connections" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {integrations.map(int => (
+              {integrationServices.map(int => (
                 <GlassCard key={int.name}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -738,18 +889,19 @@ export function SettingsPage() {
                     className="w-full pl-9 pr-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all"
                   />
                 </div>
-                <select value={auditFilter} onChange={e => setAuditFilter(e.target.value)}
-                  className="px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white outline-none focus:border-emerald-500/40 transition-all"
-                >
-                  <option value="">All Modules</option>
-                  <option value="General">General</option>
-                  <option value="AI Config">AI Config</option>
-                  <option value="Alert Rules">Alert Rules</option>
-                  <option value="Notifications">Notifications</option>
-                  <option value="Sensors">Sensors</option>
-                  <option value="Security">Security</option>
-                  <option value="Backup">Backup</option>
-                </select>
+                <DarkSelect value={auditFilter} onChange={setAuditFilter}
+                  options={[
+                    { value: '', label: 'All Modules' },
+                    { value: 'General', label: 'General' },
+                    { value: 'AI Config', label: 'AI Config' },
+                    { value: 'Alert Rules', label: 'Alert Rules' },
+                    { value: 'Notifications', label: 'Notifications' },
+                    { value: 'Sensors', label: 'Sensors' },
+                    { value: 'Security', label: 'Security' },
+                    { value: 'Backup', label: 'Backup' },
+                  ]}
+                  className="w-44"
+                />
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
@@ -766,20 +918,20 @@ export function SettingsPage() {
                   <tbody className="divide-y divide-white/[0.04]">
                     {auditLogs.filter(l => {
                       const q = auditSearch.toLowerCase();
-                      if (q && !l.action.toLowerCase().includes(q) && !l.user.toLowerCase().includes(q) && !l.module.toLowerCase().includes(q)) return false;
-                      if (auditFilter && l.module !== auditFilter) return false;
+                      if (q && !l.action.toLowerCase().includes(q) && !(l.user_name || '').toLowerCase().includes(q) && !(l.category || '').toLowerCase().includes(q)) return false;
+                      if (auditFilter && l.category !== auditFilter) return false;
                       return true;
                     }).map((log, i) => (
                       <tr key={i} className="hover:bg-white/[0.02]">
-                        <td className="py-2.5 pr-3 text-gray-500">{log.date}</td>
-                        <td className="py-2.5 px-3 text-gray-300">{log.user}</td>
+                        <td className="py-2.5 pr-3 text-gray-500">{new Date(log.createdAt).toLocaleString()}</td>
+                        <td className="py-2.5 px-3 text-gray-300">{log.user_name || 'System'}</td>
                         <td className="py-2.5 px-3 text-white">{log.action}</td>
-                        <td className="py-2.5 px-3"><span className="px-2 py-0.5 rounded-full bg-white/[0.04] text-gray-400 text-[10px]">{log.module}</span></td>
-                        <td className="py-2.5 px-3 text-gray-500">{log.ip}</td>
+                        <td className="py-2.5 px-3"><span className="px-2 py-0.5 rounded-full bg-white/[0.04] text-gray-400 text-[10px]">{log.category}</span></td>
+                        <td className="py-2.5 px-3 text-gray-500">{log.ipAddress || '-'}</td>
                         <td className="py-2.5 pl-3 text-right">
                           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium text-emerald-400 bg-emerald-500/10">
                             <CheckCircle size={8} />
-                            {log.status}
+                            Success
                           </span>
                         </td>
                       </tr>

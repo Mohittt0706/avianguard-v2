@@ -13,9 +13,12 @@ export interface DashboardStats {
   activeSensors: number;
   faultySensors: number;
   activeAlerts: number;
+  criticalAlerts?: number;
+  highAlerts?: number;
   totalCitizens: number;
   totalReports: number;
   aiRecommendation: string;
+  aiConfidence?: number;
   sensorReadings: SensorReadingSummary[];
   recentActivity: RecentActivity[];
 }

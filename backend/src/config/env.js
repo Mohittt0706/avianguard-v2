@@ -14,6 +14,11 @@ const env = {
 
   CORS_ORIGIN: process.env.CORS_ORIGIN || 'http://localhost:5173',
 
+  FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || '',
+  FIREBASE_PRIVATE_KEY: (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+  FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL || '',
+  FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET || '',
+
   UPLOAD_DIR: path.resolve(__dirname, '../uploads'),
   LOG_DIR: path.resolve(__dirname, '../logs'),
   MAX_FILE_SIZE: 5 * 1024 * 1024,

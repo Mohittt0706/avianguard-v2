@@ -153,6 +153,8 @@ export function DashboardHome() {
   }
 
   const activeAlerts = data?.activeAlerts ?? 0;
+  const criticalAlerts = data?.criticalAlerts ?? 0;
+  const highAlerts = data?.highAlerts ?? 0;
   const citizenTotal = data?.totalCitizens ?? 0;
   const totalStations = data?.totalSensorStations ?? 0;
   const totalSensors = data?.totalSensors ?? 0;
@@ -200,7 +202,7 @@ export function DashboardHome() {
             { icon: Server, label: 'Sensor Stations', value: String(activeStations), color: 'text-cyan-400', bg: 'bg-cyan-500/10' },
             { icon: Radio, label: 'Connected Sensors', value: String(totalSensors), color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
             { icon: Users, label: 'Registered Citizens', value: String(citizenTotal), color: 'text-blue-400', bg: 'bg-blue-500/10' },
-            { icon: AlertTriangle, label: 'Active Alerts', value: String(activeAlerts), color: 'text-red-400', bg: 'bg-red-500/10' },
+            { icon: AlertTriangle, label: 'Active Alerts', value: String(activeAlerts), color: 'text-red-400', bg: 'bg-red-500/10', badge: activeAlerts > 0 ? `${criticalAlerts} Critical · ${highAlerts} High` : undefined },
             { icon: Activity, label: 'Online Stations', value: String(activeStations), color: 'text-purple-400', bg: 'bg-purple-500/10' },
             { icon: Clock, label: 'Last Sync', value: 'Live', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
           ].map(stat => (
@@ -211,6 +213,13 @@ export function DashboardHome() {
               <div>
                 <div className="text-lg font-bold text-white">{stat.value}</div>
                 <div className="text-[10px] text-gray-500">{stat.label}</div>
+                {stat.badge && (
+                  <div className="flex items-center gap-1.5 mt-0.5">
+                    {stat.badge.split('·').map((part: string, i: number) => (
+                      <span key={i} className={`text-[8px] font-medium ${part.includes('Critical') ? 'text-red-400 bg-red-500/10' : 'text-orange-400 bg-orange-500/10'} px-1 py-0.5 rounded`}>{part.trim()}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -304,7 +313,7 @@ export function DashboardHome() {
               <h2 className="text-sm font-bold text-white">Live Alert Feed</h2>
             </div>
             <button
-              onClick={() => navigate('/dashboard/alert-center')}
+              onClick={() => navigate('/dashboard/alerts')}
               className="text-[10px] text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
             >
               View All →
@@ -339,7 +348,7 @@ export function DashboardHome() {
           </div>
           <div className="mt-3 pt-3 border-t border-white/[0.06]">
             <button
-              onClick={() => navigate('/dashboard/alert-center')}
+              onClick={() => navigate('/dashboard/alerts')}
               className="w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-600 text-xs font-semibold text-white hover:from-emerald-400 hover:to-blue-500 transition-all shadow-lg shadow-emerald-500/20"
             >
               <Send size={12} />
@@ -423,14 +432,14 @@ export function DashboardHome() {
               <div className="flex items-center gap-4 mt-3">
                 <div className="flex items-center gap-1.5 text-xs text-emerald-400">
                   <CheckCircle size={12} />
-                  Confidence: 96%
+                  {data?.aiConfidence != null ? `Confidence: ${data.aiConfidence}%` : 'Real-time Analysis'}
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-gray-500">
                   <Clock size={12} />
                   Real-time
                 </div>
                 <button
-                  onClick={() => navigate('/dashboard/alerts')}
+                  onClick={() => navigate('/dashboard/ai')}
                   className="text-xs text-purple-400 hover:text-purple-300 transition-colors font-medium"
                 >
                   Full AI Analysis →

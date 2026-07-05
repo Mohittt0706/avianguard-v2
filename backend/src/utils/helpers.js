@@ -52,14 +52,6 @@ function buildSearchQuery(searchTerm, fields) {
   };
 }
 
-function toObjectId(id) {
-  const mongoose = require('mongoose');
-  if (mongoose.Types.ObjectId.isValid(id)) {
-    return new mongoose.Types.ObjectId(id);
-  }
-  return null;
-}
-
 function formatBytes(bytes) {
   if (bytes === 0) return '0 Bytes';
   const k = 1024;
@@ -75,6 +67,5 @@ module.exports = {
   buildPaginationResponse,
   sanitizeQuery,
   buildSearchQuery,
-  toObjectId,
   formatBytes,
 };

@@ -8,6 +8,10 @@ const sensorRoutes = require('./sensors');
 const alertRoutes = require('./alerts');
 const citizenRoutes = require('./citizens');
 const reportRoutes = require('./reports');
+const aiRoutes = require('./ai');
+const citizenNotificationRoutes = require('./citizenNotifications');
+const settingsRoutes = require('./settings');
+const notificationsRoutes = require('./notifications');
 
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
@@ -16,6 +20,10 @@ router.use('/sensors', sensorRoutes);
 router.use('/alerts', alertRoutes);
 router.use('/citizens', citizenRoutes);
 router.use('/reports', reportRoutes);
+router.use('/ai', aiRoutes);
+router.use('/citizen-notifications', citizenNotificationRoutes);
+router.use('/settings', settingsRoutes);
+router.use('/notifications', notificationsRoutes);
 
 router.get('/health', (_req, res) => {
   res.json({

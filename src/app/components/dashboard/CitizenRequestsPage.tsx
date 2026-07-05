@@ -1,4 +1,5 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast, Toaster } from 'sonner';
 import {
@@ -7,14 +8,15 @@ import {
   User, Globe, Shield, FileText, CheckSquare, Square, Info, HelpCircle,
   Edit3, ToggleLeft, ToggleRight, Trash2, Send, Activity, Calendar,
   Smartphone, AtSign, Bell, RotateCcw, FileDown, Upload, Ban,
+  Radio, Loader2, BarChart3, RefreshCw,
 } from 'lucide-react';
 import ShinyText from '../ShinyText';
-import type { Citizen, CitizenStatus, NotificationRecord } from '@/types/citizen';
-import { citizenApi, notificationApi } from '@/services/api';
-import {
-  loadCitizens, saveCitizens, DISTRICTS, TALUKAS, WETLANDS, ALL_VILLAGES,
-  isToday, formatDate, formatShortDate,
-} from '@/lib/mockData';
+import { DarkSelect } from '../ui/DarkSelect';
+import { SendAlertModal } from '../ui/SendAlertModal';
+import { EmergencyBroadcastModal } from '../ui/EmergencyBroadcastModal';
+import type { Citizen, CitizenStatus, CitizenAlertNotification, CitizenStats, CitizenAnalytics, DeliveryStats } from '@/types/citizen';
+import { STATUS_CONFIG } from '@/types/citizen';
+import { citizenApi } from '@/services/citizenApi';
 
 // ===================== CONSTANTS =====================
 
@@ -27,26 +29,77 @@ const TABS: { id: TabId; label: string; icon: typeof Clock; color: string }[] = 
   { id: 'disabled', label: 'Disabled', icon: Ban, color: 'text-gray-400' },
 ];
 
-const STATUS_CONFIG: Record<CitizenStatus, { label: string; color: string; bg: string; icon: typeof Clock }> = {
-  pending: { label: 'Pending', color: 'text-amber-400', bg: 'bg-amber-500/10', icon: Clock },
-  active: { label: 'Approved', color: 'text-emerald-400', bg: 'bg-emerald-500/10', icon: CheckCircle },
-  rejected: { label: 'Rejected', color: 'text-red-400', bg: 'bg-red-500/10', icon: XCircle },
-  'pending-verification': { label: 'Pending Verification', color: 'text-blue-400', bg: 'bg-blue-500/10', icon: HelpCircle },
-  disabled: { label: 'Disabled', color: 'text-gray-400', bg: 'bg-gray-500/10', icon: Ban },
+const STATUS_ICONS: Record<CitizenStatus, typeof Clock> = {
+  PENDING: Clock,
+  ACTIVE: CheckCircle,
+  REJECTED: XCircle,
+  PENDING_VERIFICATION: HelpCircle,
+  DISABLED: Ban,
 };
 
 const REJECT_REASONS = ['Invalid Information', 'Duplicate Registration', 'Outside Coverage Area', 'Other'];
 
+const DISTRICTS = ['Ahmedabad', 'Mehsana', 'Jamnagar', 'Anand', 'Vadodara', 'Bharuch', 'Kutch'];
+
+const WETLANDS = ['Nal Sarovar', 'Thol Lake', 'Khijadiya', 'Pariej', 'Wadhvana', 'Narmada Estuary', 'Gulf of Kutch'];
+
+const TAB_COLUMNS: Record<TabId, { key: string; label: string }[]> = {
+  pending: [
+    { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
+    { key: 'village', label: 'Village' }, { key: 'district', label: 'District' },
+    { key: 'date', label: 'Registered' }, { key: 'status', label: 'Status' },
+  ],
+  approved: [
+    { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
+    { key: 'village', label: 'Village' }, { key: 'wetland', label: 'Wetland' },
+    { key: 'risk', label: 'Risk' }, { key: 'status', label: 'Status' },
+    { key: 'language', label: 'Language' }, { key: 'lastAlert', label: 'Last Alert' },
+  ],
+  rejected: [
+    { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
+    { key: 'village', label: 'Village' }, { key: 'district', label: 'District' },
+    { key: 'reason', label: 'Reason' }, { key: 'date', label: 'Registered' },
+  ],
+  disabled: [
+    { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
+    { key: 'village', label: 'Village' }, { key: 'district', label: 'District' },
+    { key: 'status', label: 'Status' },
+  ],
+};
+
+// ===================== HELPERS =====================
+
+function formatShortDate(dateStr: string | null): string {
+  if (!dateStr) return '—';
+  return new Date(dateStr).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function formatDate(dateStr: string | null): string {
+  if (!dateStr) return '—';
+  return new Date(dateStr).toLocaleDateString('en-IN', {
+    day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
+  });
+}
+
+function getRiskBadge(level: string) {
+  const l = (level || 'safe').toLowerCase();
+  const config: Record<string, { label: string; color: string; bg: string }> = {
+    safe: { label: 'Safe', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+    medium: { label: 'Medium', color: 'text-amber-400', bg: 'bg-amber-500/10' },
+    high: { label: 'High', color: 'text-red-400', bg: 'bg-red-500/10' },
+  };
+  return config[l] || config.safe;
+}
+
 // ===================== SUB-COMPONENTS =====================
 
-function SelectFilter({ value, onChange, options, placeholder, label }: {
+function SelectFilter({ value, onChange, options, placeholder }: {
   value: string; onChange: (v: string) => void; options: string[];
-  placeholder: string; label?: string;
+  placeholder: string;
 }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative">
-      {label && <label className="text-[10px] font-medium text-gray-500 mb-1 block">{label}</label>}
       <button type="button" onClick={() => setOpen(!open)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-gray-400 hover:text-white hover:bg-white/[0.08] transition-all whitespace-nowrap w-full"
       >
@@ -102,157 +155,6 @@ const BriefcaseIcon = (props: { size?: number; className?: string }) => (
     <rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
   </svg>
 );
-
-function CitizenTimeline({ citizen }: { citizen: Citizen }) {
-  const entries: { event: string; date: string | null; icon: typeof Clock; color: string }[] = [
-    { event: 'Registration Submitted', date: citizen.createdAt, icon: FileText, color: 'text-gray-400' },
-    ...(citizen.verificationRequestedAt ? [{ event: 'Additional Info Requested', date: citizen.verificationRequestedAt, icon: HelpCircle, color: 'text-blue-400' }] : []),
-    ...(citizen.approvedAt ? [{ event: 'Registration Approved', date: citizen.approvedAt, icon: CheckCircle, color: 'text-emerald-400' }] : []),
-    ...(citizen.rejectedAt ? [{ event: 'Registration Rejected', date: citizen.rejectedAt, icon: XCircle, color: 'text-red-400' }] : []),
-    ...(citizen.disabledAt ? [{ event: 'Account Disabled', date: citizen.disabledAt, icon: Ban, color: 'text-gray-400' }] : []),
-  ];
-  return (
-    <div className="space-y-0">
-      {entries.map((entry, idx) => {
-        const Icon = entry.icon;
-        const isLast = idx === entries.length - 1;
-        return (
-          <div key={entry.event} className="relative flex gap-3 pb-4">
-            {!isLast && <div className="absolute left-[11px] top-6 bottom-0 w-px bg-white/[0.06]" />}
-            <div className={`shrink-0 w-6 h-6 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center ${entry.color}`}>
-              <Icon size={12} />
-            </div>
-            <div className="min-w-0 pt-0.5">
-              <p className="text-xs font-medium text-white">{entry.event}</p>
-              <p className="text-[10px] text-gray-500">{formatDate(entry.date)}</p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-// ===================== PROFILE DRAWER =====================
-
-function ProfileDrawer({ citizen, onClose }: { citizen: Citizen | null; onClose: () => void }) {
-  if (!citizen) return null;
-  const sc = STATUS_CONFIG[citizen.status];
-  const StatusIcon = sc.icon;
-
-  return (
-    <AnimatePresence>
-      {citizen && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm" onClick={onClose}
-        >
-          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            onClick={e => e.stopPropagation()}
-            className="absolute right-0 top-0 h-full w-full max-w-lg bg-gray-900 border-l border-white/[0.08] shadow-2xl overflow-y-auto"
-          >
-            <div className="p-5 space-y-4">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center text-lg font-bold text-white shrink-0">
-                    {citizen.fullName.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <h2 className="text-base font-bold text-white">{citizen.fullName}</h2>
-                    <p className="text-xs text-gray-500">{citizen.id}</p>
-                  </div>
-                </div>
-                <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/[0.08] text-gray-500 hover:text-white transition-all">
-                  <X size={16} />
-                </button>
-              </div>
-
-              <div className={`flex items-center gap-2 px-3 py-2 rounded-lg ${sc.bg} ${sc.color} text-xs font-medium`}>
-                <StatusIcon size={14} />
-                {sc.label}
-              </div>
-
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                  <User size={11} className="inline mr-1.5" />
-                  Personal Information
-                </h3>
-                <div className="space-y-2.5">
-                  <DetailRow icon={User} label="Full Name" value={citizen.fullName} />
-                  <DetailRow icon={Smartphone} label="Mobile" value={citizen.mobile} />
-                  <DetailRow icon={AtSign} label="Email" value={citizen.email || '—'} />
-                  <DetailRow icon={Calendar} label="Date of Birth" value={citizen.dateOfBirth || '—'} />
-                  <DetailRow icon={User} label="Gender" value={citizen.gender || '—'} />
-                  <DetailRow icon={BriefcaseIcon} label="Occupation" value={citizen.occupation + (citizen.occupationOther ? ` (${citizen.occupationOther})` : '')} />
-                  <DetailRow icon={Globe} label="Language" value={citizen.language} />
-                </div>
-              </div>
-
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                  <MapPin size={11} className="inline mr-1.5" />
-                  Location
-                </h3>
-                <div className="space-y-2.5">
-                  <DetailRow icon={MapPin} label="Village" value={citizen.village} />
-                  <DetailRow icon={MapPin} label="Taluka" value={citizen.taluka} />
-                  <DetailRow icon={MapPin} label="District" value={citizen.district} />
-                  <DetailRow icon={Globe} label="State" value={citizen.state} />
-                  <DetailRow icon={MapPin} label="Pincode" value={citizen.pincode} />
-                </div>
-              </div>
-
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                  <Droplets size={11} className="inline mr-1.5" />
-                  Wetland Assignment
-                </h3>
-                <div className="space-y-2.5">
-                  <DetailRow icon={Droplets} label="Assigned Wetland" value={citizen.nearbyWetland} />
-                  <DetailRow icon={MapPin} label="GPS Location" value={citizen.gpsLocation || '—'} />
-                  <DetailRow icon={MapPin} label="Distance" value={citizen.distanceFromWetland} />
-                </div>
-              </div>
-
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                  <Bell size={11} className="inline mr-1.5" />
-                  Notification Preferences
-                </h3>
-                <div className="space-y-2.5">
-                  <DetailRow icon={MessageSquare} label="Channels" value={citizen.alertMethods.join(', ')} />
-                  <DetailRow icon={Shield} label="Alert Types" value={citizen.alertTypes.join(', ')} />
-                </div>
-              </div>
-
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                  <Clock size={11} className="inline mr-1.5" />
-                  Registration Timeline
-                </h3>
-                <CitizenTimeline citizen={citizen} />
-              </div>
-
-              {citizen.status === 'rejected' && citizen.rejectionReason && (
-                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
-                  <p className="text-[10px] font-medium text-red-400 uppercase tracking-wider mb-1">Rejection Reason</p>
-                  <p className="text-sm text-red-300">{citizen.rejectionReason}</p>
-                </div>
-              )}
-
-              {citizen.adminNotes && (
-                <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
-                  <p className="text-[10px] font-medium text-blue-400 uppercase tracking-wider mb-1">Admin Notes</p>
-                  <p className="text-sm text-blue-300">{citizen.adminNotes}</p>
-                </div>
-              )}
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
 
 // ===================== CONFIRM DIALOG =====================
 
@@ -435,18 +337,18 @@ function EditCitizenModal({ citizen, onConfirm, onCancel }: {
             {field('language', 'Preferred Language')}
             <div>
               <label className="text-[10px] font-medium text-gray-500 mb-1 block">Notification Preference</label>
-              <select defaultValue={(citizen.alertMethods || []).join(', ')}
-                onChange={e => handleChange('alertMethods' as keyof Citizen, e.target.value)}
-                className="w-full px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white outline-none focus:border-emerald-500/40 transition-all"
-              >
-                <option value="SMS">SMS</option>
-                <option value="WhatsApp">WhatsApp</option>
-                <option value="Email">Email</option>
-                <option value="SMS, WhatsApp">SMS + WhatsApp</option>
-                <option value="SMS, Email">SMS + Email</option>
-                <option value="WhatsApp, Email">WhatsApp + Email</option>
-                <option value="SMS, WhatsApp, Email">All Channels</option>
-              </select>
+              <DarkSelect value={(citizen.alertMethods || []).join(', ')}
+                onChange={v => handleChange('alertMethods' as keyof Citizen, v)}
+                options={[
+                  { value: 'SMS', label: 'SMS' },
+                  { value: 'WhatsApp', label: 'WhatsApp' },
+                  { value: 'Email', label: 'Email' },
+                  { value: 'SMS, WhatsApp', label: 'SMS + WhatsApp' },
+                  { value: 'SMS, Email', label: 'SMS + Email' },
+                  { value: 'WhatsApp, Email', label: 'WhatsApp + Email' },
+                  { value: 'SMS, WhatsApp, Email', label: 'All Channels' },
+                ]}
+              />
             </div>
           </div>
           <div className="flex items-center justify-end gap-3 mt-5">
@@ -531,58 +433,79 @@ function TestAlertModal({ citizen, onConfirm, onCancel }: {
 function NotificationHistoryDrawer({ citizen, onClose }: {
   citizen: Citizen | null; onClose: () => void;
 }) {
-  if (!citizen) return null;
+  const [notifications, setNotifications] = useState<CitizenAlertNotification[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  const mockNotifications: NotificationRecord[] = [
-    { id: '1', alertName: 'Flood Warning', deliveryMethod: 'SMS', status: 'Delivered', sentAt: '2026-06-28T06:00:00Z' },
-    { id: '2', alertName: 'Water Quality Alert', deliveryMethod: 'WhatsApp', status: 'Delivered', sentAt: '2026-06-25T14:30:00Z' },
-    { id: '3', alertName: 'Weather Advisory', deliveryMethod: 'Email', status: 'Sent', sentAt: '2026-06-20T09:00:00Z' },
-    { id: '4', alertName: 'Registration Approved', deliveryMethod: 'SMS', status: 'Sent', sentAt: citizen.approvedAt || '—' },
-  ];
+  useEffect(() => {
+    if (!citizen) return;
+    setLoading(true);
+    citizenApi.getNotifications(citizen.id, 20).then(res => {
+      setNotifications(res.data);
+    }).catch(() => {
+      toast.error('Failed to load notification history');
+    }).finally(() => setLoading(false));
+  }, [citizen]);
+
+  if (!citizen) return null;
 
   return (
     <AnimatePresence>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm" onClick={onClose}
-      >
-        <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
-          transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-          onClick={e => e.stopPropagation()}
-          className="absolute right-0 top-0 h-full w-full max-w-md bg-gray-900 border-l border-white/[0.08] shadow-2xl overflow-y-auto"
+      {citizen && (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm" onClick={onClose}
         >
-          <div className="p-5 space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-blue-500/10"><Bell size={18} className="text-blue-400" /></div>
-                <h2 className="text-base font-bold text-white">Notification History</h2>
-              </div>
-              <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/[0.08] text-gray-500 hover:text-white transition-all">
-                <X size={16} />
-              </button>
-            </div>
-            <p className="text-xs text-gray-500">
-              Notifications for <span className="text-white font-medium">{citizen.fullName}</span>
-            </p>
-            <div className="space-y-2">
-              {mockNotifications.map(n => (
-                <div key={n.id} className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-3">
-                  <div className="flex items-center justify-between mb-1">
-                    <p className="text-xs font-medium text-white">{n.alertName}</p>
-                    <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
-                      n.status === 'Delivered' ? 'text-emerald-400 bg-emerald-500/10' : 'text-gray-400 bg-gray-500/10'
-                    }`}>{n.status}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-[10px] text-gray-500">
-                    <span>{n.deliveryMethod}</span>
-                    <span>·</span>
-                    <span>{formatShortDate(n.sentAt)}</span>
-                  </div>
+          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            onClick={e => e.stopPropagation()}
+            className="absolute right-0 top-0 h-full w-full max-w-md bg-gray-900 border-l border-white/[0.08] shadow-2xl overflow-y-auto"
+          >
+            <div className="p-5 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-blue-500/10"><Bell size={18} className="text-blue-400" /></div>
+                  <h2 className="text-base font-bold text-white">Notification History</h2>
                 </div>
-              ))}
+                <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/[0.08] text-gray-500 hover:text-white transition-all">
+                  <X size={16} />
+                </button>
+              </div>
+              <p className="text-xs text-gray-500">
+                Notifications for <span className="text-white font-medium">{citizen.fullName}</span>
+              </p>
+              {loading ? (
+                <div className="flex items-center justify-center py-8">
+                  <Loader2 size={20} className="text-gray-500 animate-spin" />
+                </div>
+              ) : notifications.length === 0 ? (
+                <div className="text-center py-8">
+                  <Bell size={24} className="text-gray-600 mx-auto mb-2" />
+                  <p className="text-xs text-gray-500">No notifications yet</p>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {notifications.map(n => (
+                    <div key={n.id} className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-3">
+                      <div className="flex items-center justify-between mb-1">
+                        <p className="text-xs font-medium text-white">{n.title}</p>
+                        <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
+                          n.deliveryStatus === 'delivered' ? 'text-emerald-400 bg-emerald-500/10' :
+                          n.deliveryStatus === 'sent' ? 'text-blue-400 bg-blue-500/10' :
+                          'text-gray-400 bg-gray-500/10'
+                        }`}>{n.deliveryStatus}</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-[10px] text-gray-500">
+                        <span>{n.deliveryMethod}</span>
+                        <span>·</span>
+                        <span>{formatShortDate(n.sentAt)}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      )}
     </AnimatePresence>
   );
 }
@@ -636,20 +559,146 @@ function ExportFormatModal({ open, onConfirm, onCancel }: {
   );
 }
 
+// ===================== ANALYTICS PANEL =====================
+
+function AnalyticsPanel({ analytics }: { analytics: CitizenAnalytics | null }) {
+  if (!analytics) return null;
+
+  const maxDistrict = Math.max(...analytics.byDistrict.map(d => d.count), 1);
+  const maxWetland = Math.max(...analytics.byWetland.map(w => w.count), 1);
+  const maxLanguage = Math.max(...analytics.byLanguage.map(l => l.count), 1);
+  const maxRisk = Math.max(...analytics.riskDistribution.map(r => r.count), 1);
+
+  return (
+    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
+      className="overflow-hidden"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+        {/* Citizens by District */}
+        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
+          <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+            <MapPin size={11} className="inline mr-1.5" />
+            Citizens by District
+          </h3>
+          <div className="space-y-2">
+            {analytics.byDistrict.map(d => (
+              <div key={d.district} className="flex items-center gap-2">
+                <span className="text-[10px] text-gray-400 w-20 truncate">{d.district}</span>
+                <div className="flex-1 h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                  <div className="h-full bg-emerald-500 rounded-full transition-all" style={{ width: `${(d.count / maxDistrict) * 100}%` }} />
+                </div>
+                <span className="text-[10px] text-gray-500 w-6 text-right">{d.count}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Citizens by Wetland */}
+        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
+          <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+            <Droplets size={11} className="inline mr-1.5" />
+            Citizens by Wetland
+          </h3>
+          <div className="space-y-2">
+            {analytics.byWetland.map(w => (
+              <div key={w.wetland} className="flex items-center gap-2">
+                <span className="text-[10px] text-gray-400 w-20 truncate">{w.wetland}</span>
+                <div className="flex-1 h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                  <div className="h-full bg-blue-500 rounded-full transition-all" style={{ width: `${(w.count / maxWetland) * 100}%` }} />
+                </div>
+                <span className="text-[10px] text-gray-500 w-6 text-right">{w.count}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Language Distribution */}
+        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
+          <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+            <Globe size={11} className="inline mr-1.5" />
+            Language Distribution
+          </h3>
+          <div className="space-y-2">
+            {analytics.byLanguage.map(l => (
+              <div key={l.language} className="flex items-center gap-2">
+                <span className="text-[10px] text-gray-400 w-20 truncate">{l.language}</span>
+                <div className="flex-1 h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                  <div className="h-full bg-purple-500 rounded-full transition-all" style={{ width: `${(l.count / maxLanguage) * 100}%` }} />
+                </div>
+                <span className="text-[10px] text-gray-500 w-6 text-right">{l.count}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Risk Level Distribution */}
+        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4">
+          <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+            <Shield size={11} className="inline mr-1.5" />
+            Risk Level Distribution
+          </h3>
+          <div className="space-y-2">
+            {analytics.riskDistribution.map(r => {
+              const badge = getRiskBadge(r.riskLevel);
+              return (
+                <div key={r.riskLevel} className="flex items-center gap-2">
+                  <span className={`text-[10px] w-20 truncate ${badge.color}`}>{r.riskLevel}</span>
+                  <div className="flex-1 h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                    <div className={`h-full rounded-full transition-all ${badge.color.replace('text-', 'bg-')}`} style={{ width: `${(r.count / maxRisk) * 100}%` }} />
+                  </div>
+                  <span className="text-[10px] text-gray-500 w-6 text-right">{r.count}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Alert Response Rate */}
+        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4 flex flex-col items-center justify-center">
+          <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+            <Activity size={11} className="inline mr-1.5" />
+            Alert Response Rate
+          </h3>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">{analytics.alertResponseRate.rate}%</p>
+            <p className="text-[10px] text-gray-500 mt-1">
+              {analytics.alertResponseRate.delivered} / {analytics.alertResponseRate.total} delivered
+            </p>
+          </div>
+          <div className="w-full h-2 bg-white/[0.06] rounded-full overflow-hidden mt-3">
+            <div
+              className={`h-full rounded-full transition-all ${
+                analytics.alertResponseRate.rate >= 90 ? 'bg-emerald-500' :
+                analytics.alertResponseRate.rate >= 70 ? 'bg-amber-500' : 'bg-red-500'
+              }`}
+              style={{ width: `${analytics.alertResponseRate.rate}%` }}
+            />
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 // ===================== MAIN PAGE =====================
 
 export function CitizenRequestsPage() {
-  const [citizens, setCitizens] = useState<Citizen[]>(() => loadCitizens());
+  const navigate = useNavigate();
+
+  const [citizens, setCitizens] = useState<Citizen[]>([]);
+  const [stats, setStats] = useState<CitizenStats | null>(null);
+  const [analytics, setAnalytics] = useState<CitizenAnalytics | null>(null);
+
   const [activeTab, setActiveTab] = useState<TabId>('pending');
   const [search, setSearch] = useState('');
   const [filterDistrict, setFilterDistrict] = useState('');
-  const [filterTaluka, setFilterTaluka] = useState('');
-  const [filterVillage, setFilterVillage] = useState('');
   const [filterWetland, setFilterWetland] = useState('');
   const [filterDate, setFilterDate] = useState('');
-  const [filterStatus, setFilterStatus] = useState('');
+
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
-  const [profileTarget, setProfileTarget] = useState<Citizen | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const [approveTarget, setApproveTarget] = useState<Citizen | null>(null);
   const [rejectTarget, setRejectTarget] = useState<Citizen | null>(null);
   const [requestInfoTarget, setRequestInfoTarget] = useState<Citizen | null>(null);
@@ -657,256 +706,280 @@ export function CitizenRequestsPage() {
   const [deleteTarget, setDeleteTarget] = useState<Citizen | null>(null);
   const [testAlertTarget, setTestAlertTarget] = useState<Citizen | null>(null);
   const [notifHistoryTarget, setNotifHistoryTarget] = useState<Citizen | null>(null);
+
+  const [sendAlertTarget, setSendAlertTarget] = useState<Citizen | null>(null);
+  const [showEmergencyBroadcastModal, setShowEmergencyBroadcastModal] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showDeliveryStats, setShowDeliveryStats] = useState(false);
+  const [deliveryStats, setDeliveryStats] = useState<DeliveryStats | null>(null);
   const [showExportModal, setShowExportModal] = useState(false);
   const [bulkAction, setBulkAction] = useState<string | null>(null);
 
-  const tabFiltered = useMemo(() => {
-    if (activeTab === 'pending') return citizens.filter(c => c.status === 'pending' || c.status === 'pending-verification');
-    if (activeTab === 'approved') return citizens.filter(c => c.status === 'active');
-    if (activeTab === 'rejected') return citizens.filter(c => c.status === 'rejected');
-    return citizens.filter(c => c.status === 'disabled');
-  }, [citizens, activeTab]);
+  // ===================== DATA FETCHING =====================
 
-  const sync = (updated: Citizen[]) => {
-    setCitizens(updated);
-    saveCitizens(updated);
-  };
+  const fetchCitizens = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const params: Record<string, string> = { page: '1', limit: '50' };
 
-  const stats = useMemo(() => {
-    const all = citizens;
-    return {
-      pending: all.filter(c => c.status === 'pending' || c.status === 'pending-verification').length,
-      approved: all.filter(c => c.status === 'active').length,
-      rejected: all.filter(c => c.status === 'rejected').length,
-      disabled: all.filter(c => c.status === 'disabled').length,
-      total: all.length,
-      registeredToday: all.filter(c => isToday(c.createdAt)).length,
-      alertsSentToday: all.filter(c => c.lastAlertAt && isToday(c.lastAlertAt)).length,
-    };
-  }, [citizens]);
+      const statusMap: Record<TabId, string | undefined> = {
+        pending: undefined,
+        approved: 'ACTIVE',
+        rejected: 'REJECTED',
+        disabled: 'DISABLED',
+      };
 
-  const filtered = useMemo(() => {
-    return tabFiltered.filter(c => {
-      const q = search.toLowerCase();
-      if (q && !(c.fullName?.toLowerCase() || '').includes(q) && !(c.mobile || '').includes(q) && !(c.village?.toLowerCase() || '').includes(q) && !(c.taluka?.toLowerCase() || '').includes(q)) return false;
-      if (filterDistrict && c.district !== filterDistrict) return false;
-      if (filterTaluka && c.taluka !== filterTaluka) return false;
-      if (filterVillage && c.village !== filterVillage) return false;
-      if (filterWetland && c.nearbyWetland !== filterWetland) return false;
-      if (filterDate) {
-        const regDate = new Date(c.createdAt).toISOString().split('T')[0];
-        if (regDate !== filterDate) return false;
+      const apiStatus = statusMap[activeTab];
+      if (apiStatus) params.status = apiStatus;
+      if (search) params.search = search;
+      if (filterDistrict) params.district = filterDistrict;
+      if (filterWetland) params.wetland = filterWetland;
+      if (filterDate) params.date = filterDate;
+
+      const response = await citizenApi.getAll(params);
+      let data = response.data.citizens;
+
+      if (activeTab === 'pending') {
+        data = data.filter(c => c.status === 'PENDING' || c.status === 'PENDING_VERIFICATION');
       }
-      if (filterStatus && c.status !== filterStatus) return false;
-      return true;
-    });
-  }, [tabFiltered, search, filterDistrict, filterTaluka, filterVillage, filterWetland, filterDate, filterStatus]);
 
-  const availableTalukas = filterDistrict ? TALUKAS[filterDistrict] || [] : [];
+      setCitizens(data);
+    } catch (err) {
+      setError('Failed to load citizen data');
+      toast.error('Failed to load citizens');
+    } finally {
+      setLoading(false);
+    }
+  }, [activeTab, search, filterDistrict, filterWetland, filterDate]);
 
-  // ===== HANDLERS =====
+  const fetchStats = useCallback(async () => {
+    try {
+      const response = await citizenApi.getStats();
+      setStats(response.data);
+    } catch (err) {
+      console.error('Failed to fetch stats', err);
+    }
+  }, []);
 
-  const handleApprove = (citizen: Citizen) => {
-    const smsMsg = 'Your AvianGuard registration has been approved. You will now receive real-time environmental alerts.';
-    Promise.all([
-      citizenApi.approve(citizen),
-      citizenApi.addToDirectory(citizen),
-      notificationApi.sendSms(citizen.mobile, smsMsg),
-      notificationApi.sendEmail(citizen.email || 'no-reply@avianguard.org', 'Registration Approved', smsMsg),
-      citizen.whatsapp ? notificationApi.sendSms(citizen.whatsapp, `WhatsApp: ${smsMsg}`) : Promise.resolve(),
-    ]).then(() => {
-      const updated = citizens.map(c =>
-        c.id === citizen.id ? { ...c, status: 'active' as const, approvedAt: new Date().toISOString() } : c
-      );
-      sync(updated);
+  const fetchAnalytics = useCallback(async () => {
+    try {
+      const response = await citizenApi.getAnalytics();
+      setAnalytics(response.data);
+    } catch (err) {
+      console.error('Failed to fetch analytics', err);
+    }
+  }, []);
+
+  const fetchDeliveryStats = useCallback(async () => {
+    try {
+      const response = await citizenApi.getDeliveryStats();
+      setDeliveryStats(response.data);
+    } catch (err) {
+      console.error('Failed to fetch delivery stats', err);
+    }
+  }, []);
+
+  useEffect(() => { fetchCitizens(); }, [fetchCitizens]);
+  useEffect(() => { fetchStats(); }, [fetchStats]);
+  useEffect(() => {
+    if (showAnalytics) fetchAnalytics();
+  }, [showAnalytics, fetchAnalytics]);
+  useEffect(() => {
+    if (showDeliveryStats) fetchDeliveryStats();
+  }, [showDeliveryStats, fetchDeliveryStats]);
+
+  // ===================== HANDLERS =====================
+
+  const handleApprove = useCallback(async (citizen: Citizen) => {
+    try {
+      await citizenApi.updateStatus(citizen.id, 'ACTIVE');
       toast.success('Citizen Approved Successfully');
       setApproveTarget(null);
-    });
-  };
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to approve citizen');
+    }
+  }, [fetchCitizens, fetchStats]);
 
-  const handleReject = (citizen: Citizen, reason: string) => {
-    const smsMsg = `Your AvianGuard registration has been rejected. Reason: ${reason}`;
-    Promise.all([
-      citizenApi.reject(citizen, reason),
-      notificationApi.sendSms(citizen.mobile, smsMsg),
-      citizen.email ? notificationApi.sendEmail(citizen.email, 'Registration Update', smsMsg) : Promise.resolve(),
-    ]).then(() => {
-      const updated = citizens.map(c =>
-        c.id === citizen.id ? { ...c, status: 'rejected' as const, rejectionReason: reason, rejectedAt: new Date().toISOString() } : c
-      );
-      sync(updated);
+  const handleReject = useCallback(async (citizen: Citizen, reason: string) => {
+    try {
+      await citizenApi.updateStatus(citizen.id, 'REJECTED', reason);
       toast.error('Citizen Rejected');
       setRejectTarget(null);
-      setProfileTarget(null);
-    });
-  };
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to reject citizen');
+    }
+  }, [fetchCitizens, fetchStats]);
 
-  const handleRequestInfo = (citizen: Citizen, message: string) => {
-    const smsMsg = `Additional information needed for your AvianGuard registration: ${message}`;
-    Promise.all([
-      citizenApi.requestInfo(citizen, message),
-      notificationApi.sendSms(citizen.mobile, smsMsg),
-      citizen.email ? notificationApi.sendEmail(citizen.email, 'Action Required: Additional Information', smsMsg) : Promise.resolve(),
-    ]).then(() => {
-      const updated = citizens.map(c =>
-        c.id === citizen.id ? { ...c, status: 'pending-verification' as const, verificationRequestedAt: new Date().toISOString(), adminNotes: message } : c
-      );
-      sync(updated);
+  const handleRequestInfo = useCallback(async (citizen: Citizen, message: string) => {
+    try {
+      await citizenApi.requestInfo(citizen.id, message);
       toast.success('Information request sent');
       setRequestInfoTarget(null);
-    });
-  };
-
-  const handleEdit = (citizen: Citizen, data: Partial<Citizen>) => {
-    citizenApi.update(citizen.id, data);
-    const merged = { ...citizen, ...data };
-    if (data.alertMethods && typeof data.alertMethods === 'string') {
-      merged.alertMethods = data.alertMethods.split(',').map(s => s.trim());
+      fetchCitizens();
+    } catch {
+      toast.error('Failed to send request');
     }
-    const updated = citizens.map(c => c.id === citizen.id ? merged as Citizen : c);
-    sync(updated);
-    toast.success('Citizen profile updated');
-    setEditTarget(null);
-  };
+  }, [fetchCitizens]);
 
-  const handleDisable = (citizen: Citizen) => {
-    citizenApi.disable(citizen.id);
-    const updated = citizens.map(c =>
-      c.id === citizen.id ? { ...c, status: 'disabled' as const, disabledAt: new Date().toISOString() } : c
-    );
-    sync(updated);
-    notificationApi.sendSms(citizen.mobile, 'Your AvianGuard account has been disabled.');
-    toast.success('Citizen disabled');
-  };
+  const handleEdit = useCallback(async (citizen: Citizen, data: Partial<Citizen>) => {
+    try {
+      const payload = { ...data };
+      if (payload.alertMethods && typeof payload.alertMethods === 'string') {
+        payload.alertMethods = (payload.alertMethods as string).split(',').map(s => s.trim());
+      }
+      await citizenApi.update(citizen.id, payload);
+      toast.success('Citizen profile updated');
+      setEditTarget(null);
+      fetchCitizens();
+    } catch {
+      toast.error('Failed to update citizen');
+    }
+  }, [fetchCitizens]);
 
-  const handleEnable = (citizen: Citizen) => {
-    citizenApi.enable(citizen.id);
-    const updated = citizens.map(c =>
-      c.id === citizen.id ? { ...c, status: 'active' as const, disabledAt: null } : c
-    );
-    sync(updated);
-    notificationApi.sendSms(citizen.mobile, 'Your AvianGuard account has been re-enabled.');
-    toast.success('Citizen enabled');
-  };
+  const handleDelete = useCallback(async (citizen: Citizen) => {
+    try {
+      await citizenApi.delete(citizen.id);
+      toast.success('Citizen deleted from records');
+      setDeleteTarget(null);
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to delete citizen');
+    }
+  }, [fetchCitizens, fetchStats]);
 
-  const handleRestore = (citizen: Citizen) => {
-    citizenApi.restore(citizen);
-    const updated = citizens.map(c =>
-      c.id === citizen.id ? { ...c, status: 'pending' as const, rejectionReason: '', rejectedAt: null, adminNotes: '' } : c
-    );
-    sync(updated);
-    toast.success('Citizen restored to Pending');
-  };
+  const handleDisable = useCallback(async (citizen: Citizen) => {
+    try {
+      await citizenApi.updateStatus(citizen.id, 'DISABLED');
+      toast.success('Citizen disabled');
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to disable citizen');
+    }
+  }, [fetchCitizens, fetchStats]);
 
-  const handleDelete = (citizen: Citizen) => {
-    citizenApi.remove(citizen.id);
-    const updated = citizens.filter(c => c.id !== citizen.id);
-    sync(updated);
-    toast.success('Citizen deleted from records');
-    setDeleteTarget(null);
-  };
+  const handleEnable = useCallback(async (citizen: Citizen) => {
+    try {
+      await citizenApi.updateStatus(citizen.id, 'ACTIVE');
+      toast.success('Citizen enabled');
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to enable citizen');
+    }
+  }, [fetchCitizens, fetchStats]);
 
-  const handleTestAlert = (citizen: Citizen, methods: string[]) => {
-    citizenApi.sendTestAlert(citizen.id, methods);
-    const now = new Date().toISOString();
-    const updated = citizens.map(c =>
-      c.id === citizen.id ? { ...c, lastAlertAt: now } : c
-    );
-    sync(updated);
-    methods.forEach(m => {
-      if (m === 'SMS') notificationApi.sendSms(citizen.mobile, 'This is a test alert from AvianGuard.');
-      if (m === 'WhatsApp') notificationApi.sendSms(citizen.whatsapp, 'This is a test alert from AvianGuard.');
-      if (m === 'Email' && citizen.email) notificationApi.sendEmail(citizen.email, 'Test Alert', 'This is a test alert from AvianGuard.');
-    });
-    toast.success('Test notification sent successfully.');
-    setTestAlertTarget(null);
-  };
+  const handleRestore = useCallback(async (citizen: Citizen) => {
+    try {
+      await citizenApi.updateStatus(citizen.id, 'PENDING');
+      toast.success('Citizen restored to Pending');
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to restore citizen');
+    }
+  }, [fetchCitizens, fetchStats]);
 
-  const handleBulkApprove = () => {
+  const handleTestAlert = useCallback(async (citizen: Citizen, methods: string[]) => {
+    try {
+      await citizenApi.sendTestAlert(citizen.id, methods);
+      toast.success('Test notification sent successfully');
+      setTestAlertTarget(null);
+      fetchCitizens();
+    } catch {
+      toast.error('Failed to send test alert');
+    }
+  }, [fetchCitizens]);
+
+  const handleBulkApprove = useCallback(async () => {
     const ids = Array.from(selectedIds);
-    citizenApi.bulkApprove(ids);
-    const updated = citizens.map(c =>
-      selectedIds.has(c.id) && (c.status === 'pending' || c.status === 'pending-verification')
-        ? { ...c, status: 'active' as const, approvedAt: new Date().toISOString() }
-        : c
-    );
-    sync(updated);
-    toast.success(`${ids.length} citizens approved`);
-    setSelectedIds(new Set());
-    setBulkAction(null);
-  };
+    try {
+      await citizenApi.bulkAction(ids, 'ACTIVE');
+      toast.success(`${ids.length} citizens approved`);
+      setSelectedIds(new Set());
+      setBulkAction(null);
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to bulk approve');
+    }
+  }, [selectedIds, fetchCitizens, fetchStats]);
 
-  const handleBulkReject = () => {
+  const handleBulkReject = useCallback(async () => {
     const ids = Array.from(selectedIds);
-    citizenApi.bulkReject(ids, 'Bulk rejection');
-    const updated = citizens.map(c =>
-      selectedIds.has(c.id) && (c.status === 'pending' || c.status === 'pending-verification')
-        ? { ...c, status: 'rejected' as const, rejectionReason: 'Bulk rejection by administrator', rejectedAt: new Date().toISOString() }
-        : c
-    );
-    sync(updated);
-    toast.error(`${ids.length} citizens rejected`);
-    setSelectedIds(new Set());
-    setBulkAction(null);
-  };
+    try {
+      await citizenApi.bulkAction(ids, 'REJECTED');
+      toast.error(`${ids.length} citizens rejected`);
+      setSelectedIds(new Set());
+      setBulkAction(null);
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to bulk reject');
+    }
+  }, [selectedIds, fetchCitizens, fetchStats]);
 
-  const handleBulkDisable = () => {
+  const handleBulkDelete = useCallback(async () => {
     const ids = Array.from(selectedIds);
-    citizenApi.bulkStatus(ids, 'disabled');
-    const updated = citizens.map(c =>
-      selectedIds.has(c.id) && c.status === 'active'
-        ? { ...c, status: 'disabled' as const, disabledAt: new Date().toISOString() }
-        : c
-    );
-    sync(updated);
-    toast.success(`${ids.length} citizens disabled`);
-    setSelectedIds(new Set());
-    setBulkAction(null);
-  };
+    try {
+      await citizenApi.bulkAction(ids, 'DELETE');
+      toast.success(`${ids.length} citizens deleted`);
+      setSelectedIds(new Set());
+      setBulkAction(null);
+      fetchCitizens();
+      fetchStats();
+    } catch {
+      toast.error('Failed to bulk delete');
+    }
+  }, [selectedIds, fetchCitizens, fetchStats]);
 
-  const handleBulkEnable = () => {
-    const ids = Array.from(selectedIds);
-    citizenApi.bulkStatus(ids, 'active');
-    const updated = citizens.map(c =>
-      selectedIds.has(c.id) && c.status === 'disabled'
-        ? { ...c, status: 'active' as const, disabledAt: null }
-        : c
-    );
-    sync(updated);
-    toast.success(`${ids.length} citizens enabled`);
-    setSelectedIds(new Set());
-    setBulkAction(null);
-  };
+  const handleExport = useCallback(async (format: 'csv' | 'pdf' | 'excel') => {
+    try {
+      const filters: Record<string, string> = {};
+      if (filterDistrict) filters.district = filterDistrict;
+      if (filterWetland) filters.wetland = filterWetland;
+      if (search) filters.search = search;
 
-  const handleBulkDelete = () => {
-    const ids = Array.from(selectedIds);
-    const updated = citizens.filter(c => !selectedIds.has(c.id));
-    sync(updated);
-    toast.success(`${ids.length} citizens deleted`);
-    setSelectedIds(new Set());
-    setBulkAction(null);
-  };
+      const response = await citizenApi.exportData(format, filters);
+      const data = response.data.data;
 
-  const handleExport = (format: 'csv' | 'pdf' | 'excel') => {
-    const ids = Array.from(selectedIds);
-    if (ids.length === 0) { toast.error('No citizens selected for export'); return; }
-    const fn = format === 'csv' ? citizenApi.exportCsv : format === 'pdf' ? citizenApi.exportPdf : citizenApi.exportExcel;
-    fn(ids);
-    const data = citizens.filter(c => ids.includes(c.id));
-    const csv = [
-      ['ID', 'Name', 'Mobile', 'Email', 'District', 'Taluka', 'Village', 'Wetland', 'Status', 'Language', 'Registered'],
-      ...data.map(c => [c.id, c.fullName, c.mobile, c.email, c.district, c.taluka, c.village, c.nearbyWetland, c.status, c.language, c.createdAt]),
-    ].map(row => row.join(',')).join('\n');
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `citizens-export-${format}-${new Date().toISOString().split('T')[0]}.${format === 'pdf' ? 'csv' : format}`;
-    a.click();
-    URL.revokeObjectURL(url);
-    toast.success(`Exported ${data.length} citizens as ${format.toUpperCase()}`);
-    setShowExportModal(false);
-  };
+      const csv = [
+        ['ID', 'Name', 'Mobile', 'Email', 'District', 'Village', 'Wetland', 'Status', 'Language', 'Registered'],
+        ...data.map(c => [c.id, c.fullName, c.mobile, c.email || '', c.district, c.village || '', c.nearbyWetland, c.status, c.language, c.createdAt]),
+      ].map(row => row.join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `citizens-export-${format}-${new Date().toISOString().split('T')[0]}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      toast.success(`Exported ${data.length} citizens as ${format.toUpperCase()}`);
+      setShowExportModal(false);
+    } catch {
+      toast.error('Failed to export data');
+    }
+  }, [filterDistrict, filterWetland, search]);
+
+  const handleAlertSent = useCallback(() => {
+    setSendAlertTarget(null);
+    fetchCitizens();
+    fetchStats();
+  }, [fetchCitizens, fetchStats]);
+
+  const handleBroadcastSent = useCallback(() => {
+    setShowEmergencyBroadcastModal(false);
+    fetchCitizens();
+    fetchStats();
+  }, [fetchCitizens, fetchStats]);
+
+  // ===================== SELECTION =====================
 
   const toggleSelect = (id: string) => {
     setSelectedIds(prev => {
@@ -917,93 +990,40 @@ export function CitizenRequestsPage() {
   };
 
   const toggleSelectAll = () => {
-    if (selectedIds.size === filtered.length) {
+    if (selectedIds.size === citizens.length) {
       setSelectedIds(new Set());
     } else {
-      setSelectedIds(new Set(filtered.map(c => c.id)));
+      setSelectedIds(new Set(citizens.map(c => c.id)));
     }
   };
+
+  // ===================== FILTERS =====================
 
   const clearFilters = () => {
     setSearch('');
     setFilterDistrict('');
-    setFilterTaluka('');
-    setFilterVillage('');
     setFilterWetland('');
     setFilterDate('');
-    setFilterStatus('');
   };
 
-  const hasActiveFilters = search || filterDistrict || filterTaluka || filterVillage || filterWetland || filterDate || filterStatus;
+  const hasActiveFilters = search || filterDistrict || filterWetland || filterDate;
 
-  const tabColumns: Record<TabId, { key: string; label: string }[]> = {
-    pending: [
-      { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
-      { key: 'village', label: 'Village' }, { key: 'district', label: 'District' },
-      { key: 'date', label: 'Registered' }, { key: 'status', label: 'Status' },
-    ],
-    approved: [
-      { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
-      { key: 'village', label: 'Village' }, { key: 'taluka', label: 'Taluka' },
-      { key: 'district', label: 'District' }, { key: 'wetland', label: 'Wetland' },
-      { key: 'status', label: 'Status' }, { key: 'language', label: 'Language' },
-      { key: 'lastAlert', label: 'Last Alert' }, { key: 'date', label: 'Registered' },
-    ],
-    rejected: [
-      { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
-      { key: 'village', label: 'Village' }, { key: 'district', label: 'District' },
-      { key: 'reason', label: 'Reason' }, { key: 'date', label: 'Registered' },
-    ],
-    disabled: [
-      { key: 'citizen', label: 'Citizen' }, { key: 'mobile', label: 'Mobile' },
-      { key: 'village', label: 'Village' }, { key: 'district', label: 'District' },
-      { key: 'status', label: 'Status' }, { key: 'date', label: 'Registered' },
-    ],
-  };
+  const statValues = useMemo(() => ({
+    pending: stats?.pending ?? 0,
+    approved: stats?.active ?? 0,
+    rejected: stats?.rejected ?? 0,
+    disabled: stats?.disabled ?? 0,
+    total: stats?.total ?? 0,
+    registeredToday: stats?.registeredToday ?? 0,
+    alertsSentToday: stats?.alertsSentToday ?? 0,
+  }), [stats]);
 
-  const renderTableActions = (citizen: Citizen) => {
-    switch (activeTab) {
-      case 'pending':
-        return (
-          <div className="flex items-center justify-end gap-0.5">
-            <button onClick={() => setProfileTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
-            <button onClick={() => setApproveTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="Approve"><CheckCircle size={13} /></button>
-            <button onClick={() => setRejectTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title="Reject"><XCircle size={13} /></button>
-            <button onClick={() => setRequestInfoTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-blue-400 transition-all" title="Request More Info"><Info size={13} /></button>
-          </div>
-        );
-      case 'approved':
-        return (
-          <div className="flex items-center justify-end gap-0.5">
-            <button onClick={() => setProfileTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
-            <button onClick={() => setEditTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-blue-400 transition-all" title="Edit"><Edit3 size={13} /></button>
-            <button onClick={() => handleDisable(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-gray-300 transition-all" title="Disable"><ToggleLeft size={13} /></button>
-            <button onClick={() => setTestAlertTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-sky-400 transition-all" title="Send Test Alert"><Send size={13} /></button>
-            <button onClick={() => setNotifHistoryTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-purple-400 transition-all" title="Notification History"><Bell size={13} /></button>
-          </div>
-        );
-      case 'rejected':
-        return (
-          <div className="flex items-center justify-end gap-0.5">
-            <button onClick={() => setProfileTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
-            <button onClick={() => handleRestore(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-amber-400 transition-all" title="Restore to Pending"><RotateCcw size={13} /></button>
-            <button onClick={() => setDeleteTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title="Delete"><Trash2 size={13} /></button>
-          </div>
-        );
-      case 'disabled':
-        return (
-          <div className="flex items-center justify-end gap-0.5">
-            <button onClick={() => setProfileTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
-            <button onClick={() => handleEnable(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="Enable"><ToggleRight size={13} /></button>
-            <button onClick={() => setDeleteTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title="Delete"><Trash2 size={13} /></button>
-          </div>
-        );
-    }
-  };
+  // ===================== TABLE CELL RENDERING =====================
 
   const renderTableCell = (citizen: Citizen, key: string) => {
-    const sc = STATUS_CONFIG[citizen.status];
-    const StatusIcon = sc.icon;
+    const status = STATUS_CONFIG[citizen.status];
+    const StatusIcon = STATUS_ICONS[citizen.status];
+
     switch (key) {
       case 'citizen':
         return (
@@ -1018,18 +1038,25 @@ export function CitizenRequestsPage() {
           </div>
         );
       case 'mobile': return <span className="text-gray-400">{citizen.mobile}</span>;
-      case 'village': return <span className="text-gray-400">{citizen.village}</span>;
-      case 'taluka': return <span className="text-gray-400">{citizen.taluka}</span>;
+      case 'village': return <span className="text-gray-400">{citizen.village || '—'}</span>;
       case 'district': return <span className="text-gray-400">{citizen.district}</span>;
       case 'wetland': return <span className="text-gray-400">{citizen.nearbyWetland}</span>;
       case 'language': return <span className="text-gray-400">{citizen.language}</span>;
       case 'lastAlert': return <span className="text-gray-500 text-[10px]">{formatShortDate(citizen.lastAlertAt)}</span>;
       case 'date': return <span className="text-gray-500 text-[10px]">{formatShortDate(citizen.createdAt)}</span>;
+      case 'risk': {
+        const risk = getRiskBadge(citizen.riskLevel);
+        return (
+          <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium ${risk.bg} ${risk.color}`}>
+            {risk.label}
+          </span>
+        );
+      }
       case 'status':
         return (
-          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${sc.bg} ${sc.color}`}>
+          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${status.bg} ${status.color}`}>
             <StatusIcon size={10} />
-            {sc.label}
+            {status.label}
           </span>
         );
       case 'reason':
@@ -1038,6 +1065,50 @@ export function CitizenRequestsPage() {
         return null;
     }
   };
+
+  // ===================== TABLE ACTIONS =====================
+
+  const renderTableActions = (citizen: Citizen) => {
+    switch (activeTab) {
+      case 'pending':
+        return (
+          <div className="flex items-center justify-end gap-0.5">
+            <button onClick={() => navigate(`/dashboard/citizens/${citizen.id}`)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
+            <button onClick={() => setApproveTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="Approve"><CheckCircle size={13} /></button>
+            <button onClick={() => setRejectTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title="Reject"><XCircle size={13} /></button>
+            <button onClick={() => setRequestInfoTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-blue-400 transition-all" title="Request More Info"><Info size={13} /></button>
+          </div>
+        );
+      case 'approved':
+        return (
+          <div className="flex items-center justify-end gap-0.5">
+            <button onClick={() => navigate(`/dashboard/citizens/${citizen.id}`)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
+            <button onClick={() => setEditTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-blue-400 transition-all" title="Edit"><Edit3 size={13} /></button>
+            <button onClick={() => setSendAlertTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-sky-400 transition-all" title="Send Alert"><Send size={13} /></button>
+            <button onClick={() => setNotifHistoryTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-purple-400 transition-all" title="Notification History"><Bell size={13} /></button>
+            <button onClick={() => handleDisable(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-gray-300 transition-all" title="Disable"><ToggleLeft size={13} /></button>
+          </div>
+        );
+      case 'rejected':
+        return (
+          <div className="flex items-center justify-end gap-0.5">
+            <button onClick={() => navigate(`/dashboard/citizens/${citizen.id}`)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
+            <button onClick={() => handleRestore(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-amber-400 transition-all" title="Restore to Pending"><RotateCcw size={13} /></button>
+            <button onClick={() => setDeleteTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title="Delete"><Trash2 size={13} /></button>
+          </div>
+        );
+      case 'disabled':
+        return (
+          <div className="flex items-center justify-end gap-0.5">
+            <button onClick={() => navigate(`/dashboard/citizens/${citizen.id}`)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View"><Eye size={13} /></button>
+            <button onClick={() => handleEnable(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="Enable"><ToggleRight size={13} /></button>
+            <button onClick={() => setDeleteTarget(citizen)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title="Delete"><Trash2 size={13} /></button>
+          </div>
+        );
+    }
+  };
+
+  // ===================== RENDER =====================
 
   return (
     <div className="space-y-5">
@@ -1048,6 +1119,7 @@ export function CitizenRequestsPage() {
         }}
       />
 
+      {/* ===== HEADER ===== */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-gradient-to-br from-emerald-400/20 to-blue-500/20 rounded-xl">
@@ -1058,17 +1130,37 @@ export function CitizenRequestsPage() {
             <p className="text-sm text-gray-400">Manage the complete citizen lifecycle</p>
           </div>
         </div>
+        <div className="flex items-center gap-2">
+          <button onClick={() => { setShowAnalytics(!showAnalytics); }}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 bg-white/[0.04] border border-white/[0.06] hover:text-white hover:bg-white/[0.08] transition-all"
+          >
+            <BarChart3 size={14} />
+            Analytics
+          </button>
+          <button onClick={() => { setShowDeliveryStats(!showDeliveryStats); }}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 bg-white/[0.04] border border-white/[0.06] hover:text-white hover:bg-white/[0.08] transition-all"
+          >
+            <Radio size={14} />
+            Delivery Stats
+          </button>
+          <button onClick={() => setShowEmergencyBroadcastModal(true)}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-red-400 bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 transition-all"
+          >
+            <Radio size={14} />
+            Emergency Broadcast
+          </button>
+        </div>
       </div>
 
       {/* ===== TOP STATISTICS ===== */}
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
-        <StatCard label="Pending Requests" value={stats.pending} icon={Clock} color="text-amber-400" />
-        <StatCard label="Approved Citizens" value={stats.approved} icon={CheckCircle} color="text-emerald-400" />
-        <StatCard label="Rejected Requests" value={stats.rejected} icon={XCircle} color="text-red-400" />
-        <StatCard label="Disabled Citizens" value={stats.disabled} icon={Ban} color="text-gray-400" />
-        <StatCard label="Total Registered" value={stats.total} icon={Users} color="text-blue-400" />
-        <StatCard label="Today's Registrations" value={stats.registeredToday} icon={Calendar} color="text-cyan-400" />
-        <StatCard label="Alerts Sent Today" value={stats.alertsSentToday} icon={Send} color="text-purple-400" />
+        <StatCard label="Pending Requests" value={statValues.pending} icon={Clock} color="text-amber-400" />
+        <StatCard label="Approved Citizens" value={statValues.approved} icon={CheckCircle} color="text-emerald-400" />
+        <StatCard label="Rejected Requests" value={statValues.rejected} icon={XCircle} color="text-red-400" />
+        <StatCard label="Disabled Citizens" value={statValues.disabled} icon={Ban} color="text-gray-400" />
+        <StatCard label="Total Registered" value={statValues.total} icon={Users} color="text-blue-400" />
+        <StatCard label="Today's Registrations" value={statValues.registeredToday} icon={Calendar} color="text-cyan-400" />
+        <StatCard label="Alerts Sent Today" value={statValues.alertsSentToday} icon={Send} color="text-purple-400" />
       </div>
 
       {/* ===== TAB NAVIGATION ===== */}
@@ -1085,7 +1177,7 @@ export function CitizenRequestsPage() {
               <TabIcon size={14} className={isActive ? tab.color : ''} />
               {tab.label}
               <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${isActive ? 'bg-white/[0.08]' : 'bg-white/[0.04]'}`}>
-                {tab.id === 'pending' ? stats.pending : tab.id === 'approved' ? stats.approved : tab.id === 'rejected' ? stats.rejected : stats.disabled}
+                {tab.id === 'pending' ? statValues.pending : tab.id === 'approved' ? statValues.approved : tab.id === 'rejected' ? statValues.rejected : statValues.disabled}
               </span>
             </button>
           );
@@ -1098,20 +1190,12 @@ export function CitizenRequestsPage() {
           <div className="relative flex-1 min-w-[220px]">
             <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
             <input type="text" value={search} onChange={e => setSearch(e.target.value)}
-              placeholder="Search by name, mobile, village, or taluka..."
+              placeholder="Search by name, mobile, village..."
               className="w-full pl-9 pr-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all"
             />
           </div>
-          <SelectFilter value={filterDistrict} onChange={v => { setFilterDistrict(v); setFilterTaluka(''); }} options={DISTRICTS} placeholder="District: All" />
-          <SelectFilter value={filterTaluka} onChange={setFilterTaluka} options={availableTalukas} placeholder="Taluka: All" />
-          <SelectFilter value={filterVillage} onChange={setFilterVillage} options={ALL_VILLAGES} placeholder="Village: All" />
+          <SelectFilter value={filterDistrict} onChange={setFilterDistrict} options={DISTRICTS} placeholder="District: All" />
           <SelectFilter value={filterWetland} onChange={setFilterWetland} options={WETLANDS} placeholder="Wetland: All" />
-          {(activeTab === 'pending' || activeTab === 'approved') && (
-            <SelectFilter value={filterStatus} onChange={setFilterStatus}
-              options={activeTab === 'pending' ? ['pending', 'pending-verification'] : ['active']}
-              placeholder="Status: All"
-            />
-          )}
           <div className="relative">
             <label className="text-[10px] font-medium text-gray-500 mb-1 block">Registration Date</label>
             <div className="relative">
@@ -1128,6 +1212,80 @@ export function CitizenRequestsPage() {
           )}
         </div>
       </div>
+
+      {/* ===== ANALYTICS PANEL ===== */}
+      <AnimatePresence>
+        {showAnalytics && <AnalyticsPanel analytics={analytics} />}
+      </AnimatePresence>
+
+      {/* ===== DELIVERY STATS PANEL ===== */}
+      <AnimatePresence>
+        {showDeliveryStats && (
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
+            className="bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.06] p-5 mb-4"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <Radio size={16} className="text-cyan-400" />
+                <h3 className="text-sm font-semibold text-white">Notification Delivery Statistics</h3>
+              </div>
+              <button onClick={() => fetchDeliveryStats()} className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/[0.06] transition-all">
+                <RefreshCw size={14} />
+              </button>
+            </div>
+            {!deliveryStats ? (
+              <div className="flex items-center gap-2 text-gray-400 text-sm py-4 justify-center">
+                <Loader2 size={16} className="animate-spin" /> Loading delivery stats...
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-cyan-400">{deliveryStats.totalPushTokens}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">Push Tokens</p>
+                </div>
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-blue-400">{deliveryStats.totalNotifications}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">Total Sent</p>
+                </div>
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-emerald-400">{deliveryStats.deliveredCount}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">Delivered</p>
+                </div>
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-red-400">{deliveryStats.failedCount}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">Failed</p>
+                </div>
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-purple-400">{deliveryStats.readCount}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">Read</p>
+                </div>
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-amber-400">{deliveryStats.acknowledgedCount}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">Acknowledged</p>
+                </div>
+                <div className="bg-white/[0.03] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-rose-400">{deliveryStats.noTokenCount}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">No Token</p>
+                </div>
+              </div>
+            )}
+            {deliveryStats && deliveryStats.byMethod && (
+              <div className="mt-4">
+                <p className="text-xs text-gray-400 mb-2 font-medium">By Delivery Method</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {Object.entries(deliveryStats.byMethod).map(([method, count]) => (
+                    <div key={method} className="bg-white/[0.02] rounded-lg p-2.5 flex items-center gap-2">
+                      <Radio size={12} className="text-gray-500" />
+                      <span className="text-[11px] text-gray-300 capitalize">{method}</span>
+                      <span className="text-xs font-semibold text-white ml-auto">{count}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ===== BULK ACTIONS TOOLBAR ===== */}
       <AnimatePresence>
@@ -1148,11 +1306,6 @@ export function CitizenRequestsPage() {
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-400 bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 transition-all"
                   ><XCircle size={12} /> Reject Selected</button>
                 </>
-              )}
-              {activeTab === 'approved' && (
-                <button onClick={() => setBulkAction('disable')}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-400 bg-gray-500/10 border border-gray-500/30 hover:bg-gray-500/20 transition-all"
-                ><ToggleLeft size={12} /> Disable Selected</button>
               )}
               {activeTab === 'disabled' && (
                 <button onClick={() => setBulkAction('enable')}
@@ -1181,21 +1334,42 @@ export function CitizenRequestsPage() {
               <tr className="border-b border-white/[0.06] bg-white/[0.02]">
                 <th className="px-3 py-3 w-10">
                   <button onClick={toggleSelectAll} className="text-gray-500 hover:text-white transition-colors">
-                    {selectedIds.size === filtered.length && filtered.length > 0
+                    {selectedIds.size === citizens.length && citizens.length > 0
                       ? <CheckSquare size={14} className="text-emerald-400" />
                       : <Square size={14} />}
                   </button>
                 </th>
-                {tabColumns[activeTab].map(col => (
+                {TAB_COLUMNS[activeTab].map(col => (
                   <th key={col.key} className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">{col.label}</th>
                 ))}
                 <th className="text-right px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/[0.04]">
-              {filtered.length === 0 ? (
+              {loading ? (
                 <tr>
-                  <td colSpan={tabColumns[activeTab].length + 2} className="px-4 py-16 text-center">
+                  <td colSpan={TAB_COLUMNS[activeTab].length + 2} className="px-4 py-16 text-center">
+                    <div className="flex flex-col items-center gap-3">
+                      <Loader2 size={24} className="text-gray-500 animate-spin" />
+                      <p className="text-xs text-gray-500">Loading citizens...</p>
+                    </div>
+                  </td>
+                </tr>
+              ) : error ? (
+                <tr>
+                  <td colSpan={TAB_COLUMNS[activeTab].length + 2} className="px-4 py-16 text-center">
+                    <div className="flex flex-col items-center gap-3">
+                      <AlertTriangle size={24} className="text-red-400" />
+                      <p className="text-xs text-red-400">{error}</p>
+                      <button onClick={fetchCitizens} className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1">
+                        <RefreshCw size={12} /> Retry
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ) : citizens.length === 0 ? (
+                <tr>
+                  <td colSpan={TAB_COLUMNS[activeTab].length + 2} className="px-4 py-16 text-center">
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-16 h-16 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center">
                         <Users size={28} className="text-gray-600" />
@@ -1215,14 +1389,14 @@ export function CitizenRequestsPage() {
                   </td>
                 </tr>
               ) : (
-                filtered.map(citizen => (
+                citizens.map(citizen => (
                   <tr key={citizen.id} className="hover:bg-white/[0.02] transition-all">
                     <td className="px-3 py-3">
                       <button onClick={() => toggleSelect(citizen.id)} className="text-gray-500 hover:text-white transition-colors">
                         {selectedIds.has(citizen.id) ? <CheckSquare size={14} className="text-emerald-400" /> : <Square size={14} />}
                       </button>
                     </td>
-                    {tabColumns[activeTab].map(col => (
+                    {TAB_COLUMNS[activeTab].map(col => (
                       <td key={col.key} className="px-3 py-3">{renderTableCell(citizen, col.key)}</td>
                     ))}
                     <td className="px-3 py-3">{renderTableActions(citizen)}</td>
@@ -1235,8 +1409,6 @@ export function CitizenRequestsPage() {
       </div>
 
       {/* ===== MODALS & DRAWERS ===== */}
-
-      <ProfileDrawer citizen={profileTarget} onClose={() => setProfileTarget(null)} />
 
       <NotificationHistoryDrawer citizen={notifHistoryTarget} onClose={() => setNotifHistoryTarget(null)} />
 
@@ -1276,7 +1448,7 @@ export function CitizenRequestsPage() {
 
       <ConfirmDialog
         open={!!deleteTarget}
-        title={activeTab === 'rejected' ? 'Delete Citizen' : 'Remove Citizen'}
+        title="Delete Citizen"
         message={`Are you sure you want to delete ${deleteTarget?.fullName}'s record? This cannot be undone.`}
         confirmLabel="Delete"
         onConfirm={() => { if (deleteTarget) handleDelete(deleteTarget); }}
@@ -1288,6 +1460,21 @@ export function CitizenRequestsPage() {
         onConfirm={handleExport}
         onCancel={() => setShowExportModal(false)}
       />
+
+      {sendAlertTarget && (
+        <SendAlertModal
+          citizen={sendAlertTarget}
+          onClose={() => setSendAlertTarget(null)}
+          onSent={handleAlertSent}
+        />
+      )}
+
+      {showEmergencyBroadcastModal && (
+        <EmergencyBroadcastModal
+          onClose={() => setShowEmergencyBroadcastModal(false)}
+          onSent={handleBroadcastSent}
+        />
+      )}
 
       {/* Bulk action confirmation dialogs */}
       <ConfirmDialog
@@ -1308,12 +1495,11 @@ export function CitizenRequestsPage() {
         onCancel={() => setBulkAction(null)}
       />
       <ConfirmDialog
-        open={bulkAction === 'disable'}
-        title="Bulk Disable"
-        message={`Disable ${selectedIds.size} selected citizen(s)?`}
-        confirmLabel={`Disable ${selectedIds.size}`}
-        confirmColor="bg-gray-500"
-        onConfirm={handleBulkDisable}
+        open={bulkAction === 'delete'}
+        title="Bulk Delete"
+        message={`Delete ${selectedIds.size} selected citizen(s)? This cannot be undone.`}
+        confirmLabel={`Delete ${selectedIds.size}`}
+        onConfirm={handleBulkDelete}
         onCancel={() => setBulkAction(null)}
       />
       <ConfirmDialog
@@ -1322,15 +1508,19 @@ export function CitizenRequestsPage() {
         message={`Enable ${selectedIds.size} selected citizen(s)?`}
         confirmLabel={`Enable ${selectedIds.size}`}
         confirmColor="bg-emerald-500"
-        onConfirm={handleBulkEnable}
-        onCancel={() => setBulkAction(null)}
-      />
-      <ConfirmDialog
-        open={bulkAction === 'delete'}
-        title="Bulk Delete"
-        message={`Delete ${selectedIds.size} selected citizen(s)? This cannot be undone.`}
-        confirmLabel={`Delete ${selectedIds.size}`}
-        onConfirm={handleBulkDelete}
+        onConfirm={async () => {
+          const ids = Array.from(selectedIds);
+          try {
+            await citizenApi.bulkAction(ids, 'ACTIVE');
+            toast.success(`${ids.length} citizens enabled`);
+            setSelectedIds(new Set());
+            setBulkAction(null);
+            fetchCitizens();
+            fetchStats();
+          } catch {
+            toast.error('Failed to bulk enable');
+          }
+        }}
         onCancel={() => setBulkAction(null)}
       />
     </div>

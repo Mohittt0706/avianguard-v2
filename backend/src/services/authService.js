@@ -34,18 +34,20 @@ class AuthService {
     return { user: userWithoutSensitive, accessToken, refreshToken };
   }
 
-  async login(email, password) {
+  async login(email, password, meta = {}) {
     const user = await prisma.user.findUnique({ where: { email } });
     if (!user) {
       throw new AppError('Invalid email or password', 401);
     }
 
     if (!user.isActive) {
+      await this._logLogin(user.id, { success: false, ...meta });
       throw new AppError('Your account has been deactivated. Contact an administrator.', 403);
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
+      await this._logLogin(user.id, { success: false, ...meta });
       throw new AppError('Invalid email or password', 401);
     }
 
@@ -59,6 +61,9 @@ class AuthService {
         lastLoginAt: new Date(),
       },
     });
+
+    await this._logLogin(user.id, { success: true, ...meta });
+    await this._logAudit(user.id, 'login', 'auth', { email: user.email });
 
     const { password: _, refreshToken: _rt, ...userWithoutSensitive } = user;
     return { user: userWithoutSensitive, accessToken, refreshToken };
@@ -108,6 +113,7 @@ class AuthService {
       where: { id: userId },
       data: { refreshToken: null },
     });
+    await this._logAudit(userId, 'logout', 'auth', {});
   }
 
   async changePassword(userId, currentPassword, newPassword) {
@@ -130,6 +136,36 @@ class AuthService {
         refreshToken: null,
       },
     });
+
+    await this._logAudit(userId, 'update', 'auth', { action: 'password_change' });
+  }
+
+  async _logLogin(userId, data) {
+    try {
+      await prisma.loginHistory.create({
+        data: {
+          userId,
+          device: data.device || null,
+          browser: data.browser || null,
+          ipAddress: data.ipAddress || null,
+          location: data.location || null,
+          success: data.success ?? true,
+        },
+      });
+    } catch { /* non-critical, don't throw */ }
+  }
+
+  async _logAudit(userId, action, target, details) {
+    try {
+      await prisma.auditLog.create({
+        data: {
+          userId,
+          action,
+          target: target || null,
+          details: details || null,
+        },
+      });
+    } catch { /* non-critical, don't throw */ }
   }
 
   async getUsers(filters = {}) {

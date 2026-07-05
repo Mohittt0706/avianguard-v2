@@ -1,20 +1,15 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router';
-import { AnimatePresence } from 'motion/react';
 import {
-  Map, MapPin, Radio, Brain, Clock, Navigation, CheckCircle,
-  Target, Droplets, Ruler, Activity, Wifi, Signal, Battery,
-  Thermometer, TestTube, Gauge, Eye,
+  MapPin, Radio, Brain, Clock, Navigation,
+  Target, Droplets, Ruler, Activity, Eye, Search, Filter, AlertTriangle, Shield,
 } from 'lucide-react';
-import {
-  MapContainer,
-  type MapRenderProps,
-  SensorMarker,
-  StationPopup,
-  MapToolbar,
-  mockDataSource,
-} from '../map';
-import type { WetlandStation, Coordinates } from '../map';
+import { LeafletMap, type StatusFilter, computeVisualStatus } from '../map/LeafletMap';
+import { sensorApi } from '@/services/sensorApi';
+import { alertApi } from '@/services/alertApi';
+import * as alertSocket from '@/services/alertSocket';
+import type { Sensor } from '@/types/sensor';
+import type { AlertStats } from '@/types/alert';
 
 const futureExpansions = [
   { name: 'Thol Lake', district: 'Mehsana', status: 'Planned' },
@@ -23,29 +18,61 @@ const futureExpansions = [
   { name: 'Narmada Estuary', district: 'Bharuch', status: 'Planned' },
 ];
 
+const filterOptions: { key: StatusFilter; label: string; color: string; activeBg: string; activeBorder: string }[] = [
+  { key: 'all',        label: 'All',        color: 'text-gray-300',  activeBg: 'bg-white/10',    activeBorder: 'border-white/20' },
+  { key: 'online',     label: 'Healthy',    color: 'text-emerald-400', activeBg: 'bg-emerald-500/15', activeBorder: 'border-emerald-500/30' },
+  { key: 'warning',    label: 'Warning',    color: 'text-amber-400',  activeBg: 'bg-amber-500/15',  activeBorder: 'border-amber-500/30' },
+  { key: 'offline',    label: 'Critical',   color: 'text-red-400',    activeBg: 'bg-red-500/15',    activeBorder: 'border-red-500/30' },
+  { key: 'maintenance', label: 'Offline',   color: 'text-gray-400',   activeBg: 'bg-gray-500/15',   activeBorder: 'border-gray-500/30' },
+];
+
 export function MapsPage() {
   const navigate = useNavigate();
-  const [stations] = useState<WetlandStation[]>(() =>
-    (mockDataSource.getStations() as WetlandStation[]),
-  );
-  const [selectedStation, setSelectedStation] = useState<WetlandStation | null>(null);
-  const flyToRef = useRef<(coords: Coordinates, zoom?: number) => void>(() => {});
+  const [sensors, setSensors] = useState<Sensor[]>([]);
+  const [alertStats, setAlertStats] = useState<AlertStats | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+  const [filter, setFilter] = useState<StatusFilter>('all');
+  const [search, setSearch] = useState('');
 
-  const healthyCount = stations.filter(s => s.status === 'healthy').length;
-  const warningCount = stations.filter(s => s.status === 'warning').length;
-  const criticalCount = stations.filter(s => s.status === 'critical').length;
-  const totalSensors = stations.reduce(
-    (sum, s) => sum + s.sensors.filter(sen => sen.label !== 'Battery').length, 0,
-  );
+  const fetchSidebarData = useCallback(async () => {
+    try {
+      const [sensorRes, statsRes] = await Promise.all([
+        sensorApi.getAll({ limit: '200' }),
+        alertApi.getStats().catch(() => null),
+      ]);
+      setSensors(sensorRes.data.sensors);
+      setAlertStats(statsRes?.data ?? null);
+      setLastUpdated(new Date());
+    } catch (err) {
+      console.error('Failed to fetch sidebar data:', err);
+    }
+  }, []);
 
-  const popupSensors = selectedStation
-    ? selectedStation.sensors.filter(s => s.label !== 'Battery')
-    : [];
+  useEffect(() => {
+    fetchSidebarData();
+    const interval = setInterval(fetchSidebarData, 15000);
+    return () => clearInterval(interval);
+  }, [fetchSidebarData]);
+
+  useEffect(() => {
+    const unsub = alertSocket.subscribe(() => { fetchSidebarData(); });
+    const onSensorUpdate = () => { fetchSidebarData(); };
+    window.addEventListener('sensor:updated', onSensorUpdate);
+    return () => { unsub(); window.removeEventListener('sensor:updated', onSensorUpdate); };
+  }, [fetchSidebarData]);
+
+  const totalSensors = sensors.length;
+  const healthyCount = sensors.filter(s => computeVisualStatus(s) === 'online').length;
+  const warningCount = sensors.filter(s => computeVisualStatus(s) === 'warning').length;
+  const criticalCount = sensors.filter(s => computeVisualStatus(s) === 'offline' || computeVisualStatus(s) === 'maintenance').length;
+  const offlineCount = sensors.filter(s => computeVisualStatus(s) === 'offline').length;
+
+  const wetlands = [...new Set(sensors.map(s => s.wetland).filter(Boolean))];
+  const citizenAlertsSent = alertStats?.active ?? 0;
 
   return (
     <div className="space-y-4">
-
-      {/* ===== PILOT DEPLOYMENT HEADER ===== */}
+      {/* ===== HEADER ===== */}
       <div className="bg-gradient-to-r from-emerald-500/[0.06] to-blue-500/[0.04] backdrop-blur-sm rounded-xl border border-white/[0.06] p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -53,8 +80,10 @@ export function MapsPage() {
               <MapPin size={18} className="text-white" />
             </div>
             <div>
-              <h1 className="text-base font-bold text-white">Nal Sarovar — Pilot Deployment</h1>
-              <p className="text-[11px] text-gray-500">Ahmedabad District · Sanand Taluka · Gujarat</p>
+              <h1 className="text-base font-bold text-white">Live Wetland Monitoring Map</h1>
+              <p className="text-[11px] text-gray-500">
+                {wetlands.length > 0 ? wetlands.join(' · ') : 'No sensors deployed yet'}
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -68,12 +97,13 @@ export function MapsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-3 border-t border-white/[0.06]">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-4 pt-3 border-t border-white/[0.06]">
           {[
-            { label: 'Monitoring Stations', value: `${stations.length} deployed`, icon: Radio, color: 'text-emerald-400' },
-            { label: 'Connected Sensors', value: `${totalSensors} online`, icon: Activity, color: 'text-blue-400' },
-            { label: 'Coverage Area', value: '~18 km²', icon: Ruler, color: 'text-cyan-400' },
-            { label: 'AI Status', value: 'Healthy', icon: Brain, color: 'text-emerald-400' },
+            { label: 'Total Sensors', value: `${totalSensors}`, icon: Radio, color: 'text-emerald-400' },
+            { label: 'Healthy', value: `${healthyCount}`, icon: Activity, color: 'text-emerald-400' },
+            { label: 'Wetlands', value: `${wetlands.length || 0}`, icon: Droplets, color: 'text-cyan-400' },
+            { label: 'Citizen Alerts', value: `${citizenAlertsSent}`, icon: AlertTriangle, color: 'text-amber-400' },
+            { label: 'AI Status', value: criticalCount === 0 ? 'Healthy' : `${criticalCount} alert`, icon: Brain, color: criticalCount === 0 ? 'text-emerald-400' : 'text-red-400' },
           ].map(s => {
             const Icon = s.icon;
             return (
@@ -91,166 +121,72 @@ export function MapsPage() {
         </div>
       </div>
 
+      {/* ===== FILTERS + SEARCH ===== */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        <div className="flex items-center gap-1.5">
+          <Filter size={12} className="text-gray-500 shrink-0" />
+          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-lg p-1">
+            {filterOptions.map(opt => (
+              <button
+                key={opt.key}
+                onClick={() => setFilter(opt.key)}
+                className={`px-3 py-1.5 rounded-md text-[10px] font-semibold transition-all border ${
+                  filter === opt.key
+                    ? `${opt.activeBg} ${opt.activeBorder} ${opt.color}`
+                    : 'border-transparent text-gray-500 hover:text-gray-300 hover:bg-white/[0.04]'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="relative flex-1 max-w-xs">
+          <Search size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+          <input
+            type="text"
+            placeholder="Search sensor ID, name, wetland..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="w-full pl-8 pr-3 py-2 bg-white/[0.03] border border-white/[0.06] rounded-lg text-[11px] text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500/40 transition-colors"
+          />
+        </div>
+      </div>
+
       {/* ===== MAP + DEPLOYMENT SUMMARY ===== */}
       <div className="grid lg:grid-cols-5 gap-4">
         {/* MAP */}
         <div className="lg:col-span-3">
-          <MapContainer className="aspect-[16/10]">
-            {(renderProps: MapRenderProps) => {
-              const { project, zoomIn, zoomOut, resetView, flyTo } = renderProps;
-              flyToRef.current = flyTo;
-
-              return (
-                <>
-                  {stations.map(station => (
-                    <SensorMarker
-                      key={station.id}
-                      station={station}
-                      isSelected={selectedStation?.id === station.id}
-                      position={project(station.coordinates)}
-                      visible={true}
-                      onClick={() => {
-                        setSelectedStation(station);
-                        flyTo(station.coordinates, 12);
-                      }}
-                    />
-                  ))}
-
-                  <AnimatePresence>
-                    {selectedStation && (
-                      <div className="absolute top-3 left-3 z-20 w-72">
-                        <div className="bg-[#1a1d23] border border-white/[0.12] rounded-xl shadow-2xl overflow-hidden">
-                          {/* Header */}
-                          <div className="flex items-center justify-between px-3.5 py-2.5 border-b border-white/[0.08]">
-                            <div className="flex items-center gap-2 min-w-0">
-                              <div className={`w-2 h-2 rounded-full shrink-0 ${
-                                selectedStation.status === 'healthy' ? 'bg-emerald-500' :
-                                selectedStation.status === 'warning' ? 'bg-amber-500' : 'bg-red-500'
-                              }`} />
-                              <div className="min-w-0">
-                                <div className="text-sm font-bold text-white">{selectedStation.id}</div>
-                                <div className="text-[10px] text-gray-500 truncate">{selectedStation.name}</div>
-                              </div>
-                            </div>
-                            <button
-                              onClick={() => setSelectedStation(null)}
-                              className="p-1 rounded-md hover:bg-white/[0.08] transition-colors text-gray-500 hover:text-white shrink-0 ml-2"
-                            >
-                              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                <path d="M2 2L11 11M11 2L2 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                              </svg>
-                            </button>
-                          </div>
-
-                          {/* Body */}
-                          <div className="px-3.5 py-2.5 space-y-2">
-                            <div className="flex items-center gap-1.5 text-[10px] text-gray-500 font-mono">
-                              <MapPin size={10} className="text-gray-600" />
-                              {selectedStation.coordinates.lat.toFixed(4)}°N, {selectedStation.coordinates.lng.toFixed(4)}°E
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-1.5">
-                              {popupSensors.map(s => {
-                                const c = s.status === 'critical' ? 'text-red-400' : s.status === 'warning' ? 'text-amber-400' : 'text-emerald-400';
-                                const bg = s.status === 'critical' ? 'bg-red-500/10' : s.status === 'warning' ? 'bg-amber-500/10' : 'bg-emerald-500/10';
-                                return (
-                                  <div key={s.label} className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg ${bg}`}>
-                                    <div className="flex items-center gap-1.5 min-w-0">
-                                      <s.icon size={9} className={c} />
-                                      <span className="text-[9px] text-gray-500 truncate">{s.label}</span>
-                                    </div>
-                                    <span className={`text-[10px] font-semibold ${c} shrink-0 ml-1`}>
-                                      {s.value}{s.unit}
-                                    </span>
-                                  </div>
-                                );
-                              })}
-                            </div>
-
-                            <div className="flex items-center justify-between text-[9px] text-gray-600 pt-1.5 border-t border-white/[0.06]">
-                              <span className="flex items-center gap-1">
-                                <Battery size={9} className={selectedStation.battery > 20 ? 'text-emerald-400' : 'text-red-400'} />
-                                {selectedStation.battery}%
-                              </span>
-                              <span className="flex items-center gap-1">
-                                <Signal size={9} className={selectedStation.signal > 50 ? 'text-emerald-400' : 'text-amber-400'} />
-                                {selectedStation.signal}%
-                              </span>
-                              <span className="flex items-center gap-1">
-                                <Clock size={9} />
-                                {selectedStation.lastUpdated}
-                              </span>
-                            </div>
-                          </div>
-
-                          {/* Footer */}
-                          <div className="px-3.5 py-2.5 border-t border-white/[0.06]">
-                            <button
-                              onClick={() => navigate('/dashboard/sensors')}
-                              className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-medium text-emerald-400 hover:bg-emerald-500/20 transition-all"
-                            >
-                              <Eye size={13} />
-                              View Sensor Details
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </AnimatePresence>
-
-                  {/* Scale bar */}
-                  <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2 text-[8px] text-gray-600 bg-[#1a1d23]/80 backdrop-blur-sm px-2.5 py-1.5 rounded-md border border-white/[0.06]">
-                    <Ruler size={9} />
-                    <span>1 km</span>
-                    <div className="w-10 h-[2px] bg-gray-600 rounded" />
-                  </div>
-
-                  {/* Legend */}
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3 text-[8px] bg-[#1a1d23]/80 backdrop-blur-sm px-3 py-1.5 rounded-md border border-white/[0.06]">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)]" />
-                      <span className="text-gray-400">Healthy ({healthyCount})</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
-                      <span className="text-gray-400">Warning ({warningCount})</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_6px_rgba(239,68,68,0.5)]" />
-                      <span className="text-gray-400">Critical ({criticalCount})</span>
-                    </div>
-                  </div>
-
-                  <MapToolbar
-                    onZoomIn={zoomIn}
-                    onZoomOut={zoomOut}
-                    onResetView={resetView}
-                  />
-                </>
-              );
-            }}
-          </MapContainer>
+          <div className="aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.06]">
+            <LeafletMap filter={filter} search={search} onSensorsLoaded={setSensors} onAlertStatsLoaded={setAlertStats} />
+          </div>
         </div>
 
-        {/* ===== DEPLOYMENT SUMMARY ===== */}
+        {/* ===== LIVE SUMMARY ===== */}
         <div className="lg:col-span-2 space-y-3">
           <div className="bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.06] overflow-hidden">
             <div className="px-4 py-3 bg-emerald-500/[0.04] border-b border-white/[0.06]">
-              <div className="flex items-center gap-2">
-                <Navigation size={14} className="text-emerald-400" />
-                <h2 className="text-sm font-bold text-white">Deployment Summary</h2>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Navigation size={14} className="text-emerald-400" />
+                  <h2 className="text-sm font-bold text-white">Live Summary</h2>
+                </div>
+                <div className="flex items-center gap-1 text-[9px] text-gray-500">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  {lastUpdated ? formatSyncTime(lastUpdated) : '...'}
+                </div>
               </div>
             </div>
-            <div className="p-4 space-y-2.5">
+            <div className="p-4 space-y-2">
               {[
-                { label: 'District', value: 'Ahmedabad', icon: MapPin },
-                { label: 'Taluka', value: 'Sanand', icon: MapPin },
-                { label: 'Wetland', value: 'Nal Sarovar', icon: Droplets },
-                { label: 'Stations', value: `${stations.length} deployed`, icon: Radio },
-                { label: 'Sensors', value: `${totalSensors} online`, icon: Activity },
-                { label: 'Coverage', value: '~18 km²', icon: Ruler },
-                { label: 'AI Health', value: '87%', icon: Brain },
-                { label: 'Last Sync', value: '3 sec ago', icon: Clock },
+                { label: 'Total Sensors', value: `${totalSensors}`, icon: Radio },
+                { label: 'Healthy', value: `${healthyCount}`, icon: Shield },
+                { label: 'Warning', value: `${warningCount}`, icon: AlertTriangle },
+                { label: 'Critical', value: `${criticalCount}`, icon: Target },
+                { label: 'Offline', value: `${offlineCount}`, icon: Activity },
+                { label: 'Wetlands Covered', value: `${wetlands.length || 0}`, icon: Droplets },
+                { label: 'Citizen Alerts Sent', value: `${citizenAlertsSent}`, icon: AlertTriangle },
+                { label: 'Last Updated', value: lastUpdated ? formatSyncTime(lastUpdated) : 'Loading...', icon: Clock },
               ].map(d => {
                 const Icon = d.icon;
                 return (
@@ -280,14 +216,23 @@ export function MapsPage() {
             ))}
           </div>
 
-          {/* Quick link */}
-          <button
-            onClick={() => navigate('/dashboard/sensors')}
-            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-medium text-emerald-400 hover:bg-emerald-500/20 transition-all"
-          >
-            <Activity size={14} />
-            View All Sensor Data
-          </button>
+          {/* Quick links */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => navigate('/dashboard/sensors')}
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-medium text-emerald-400 hover:bg-emerald-500/20 transition-all"
+            >
+              <Eye size={14} />
+              View Sensors
+            </button>
+            <button
+              onClick={() => navigate('/dashboard/alerts')}
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs font-medium text-red-400 hover:bg-red-500/20 transition-all"
+            >
+              <AlertTriangle size={14} />
+              View Alerts
+            </button>
+          </div>
         </div>
       </div>
 
@@ -330,4 +275,12 @@ export function MapsPage() {
       </div>
     </div>
   );
+}
+
+function formatSyncTime(date: Date): string {
+  const diff = Math.floor((Date.now() - date.getTime()) / 1000);
+  if (diff < 5) return 'Just now';
+  if (diff < 60) return `${diff}s ago`;
+  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+  return `${Math.floor(diff / 3600)}h ago`;
 }

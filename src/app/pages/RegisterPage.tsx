@@ -1,49 +1,47 @@
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
-import { Droplets, ArrowRight, ArrowLeft, Check, ChevronDown, Bell, MapPin, Shield, Users, Radio } from 'lucide-react';
+import { Droplets, ArrowRight, ArrowLeft, Check, Bell, MapPin, Shield, Users, Radio } from 'lucide-react';
+import { citizenApi } from '@/services/citizenApi';
+import { useFcm } from '@/context/FcmContext';
+import { SearchableDropdown } from '@/components/ui/SearchableDropdown';
+import gujaratLocations from '@/data/gujarat-locations.json';
+
+const wetlandMapping: Record<string, string[]> = gujaratLocations.wetlandMapping as Record<string, string[]>;
+
+const allWetlands = Object.keys(wetlandMapping);
+
+function getWetlandsForDistrict(district: string): string[] {
+  return allWetlands.filter((w) => wetlandMapping[w]?.includes(district));
+}
 
 const indianStates = ['Gujarat', 'Maharashtra', 'Rajasthan', 'Madhya Pradesh', 'Uttar Pradesh', 'West Bengal', 'Odisha', 'Kerala', 'Tamil Nadu', 'Andhra Pradesh'];
 
-const districtsByState: Record<string, string[]> = {
-  Gujarat: ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar', 'Jamnagar', 'Junagadh', 'Kutch', 'Anand', 'Narmada'],
-  Maharashtra: ['Mumbai', 'Pune', 'Nagpur', 'Thane', 'Nashik', 'Aurangabad', 'Solapur', 'Kolhapur', 'Amravati'],
-  Rajasthan: ['Jaipur', 'Jodhpur', 'Udaipur', 'Bikaner', 'Ajmer', 'Kota', 'Jaisalmer', 'Alwar'],
-  'Madhya Pradesh': ['Bhopal', 'Indore', 'Jabalpur', 'Gwalior', 'Ujjain', 'Sagar', 'Rewa'],
-  'Uttar Pradesh': ['Lucknow', 'Kanpur', 'Varanasi', 'Agra', 'Prayagraj', 'Gorakhpur', 'Meerut'],
-  'West Bengal': ['Kolkata', 'Howrah', 'Darjeeling', 'Sundarbans', 'Midnapore', 'Burdwan'],
-  Odisha: ['Bhubaneswar', 'Cuttack', 'Puri', 'Sambalpur', 'Rourkela'],
-  Kerala: ['Thiruvananthapuram', 'Kochi', 'Kozhikode', 'Alappuzha', 'Kollam'],
-  'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem'],
-  'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool'],
-};
+const gujaratDistricts = Object.keys(gujaratLocations.Gujarat.districts);
 
-const talukasByDistrict: Record<string, string[]> = {
-  Ahmedabad: ['Daskroi', 'Sanand', 'Viramgam', 'Bavla', 'Dholka'],
-  Surat: ['Choryasi', 'Olpad', 'Kamrej', 'Mahuva', 'Palsana'],
-  Vadodara: ['Vadodara City', 'Padra', 'Savli', 'Karjan', 'Sinor'],
-  Kutch: ['Bhuj', 'Anjar', 'Mandvi', 'Rapar', 'Nakhatrana'],
-  Sundarbans: ['Gosaba', 'Basanti', 'Canning', 'Kultali', 'Patharpratima'],
-  Bhopal: ['Huzur', 'Berasia', 'Govindpura'],
-  Jaipur: ['Amer', 'Sanganer', 'Chaksu', 'Phagi', 'Jamwa Ramgarh'],
-  Chennai: ['Egmore', 'Mylapore', 'Perambur', 'Guindy', 'Sholinganallur'],
-};
+function getDistrictsForState(state: string): string[] {
+  if (state === 'Gujarat') return gujaratDistricts;
+  return [];
+}
 
-const villagesByTaluka: Record<string, string[]> = {
-  Daskroi: ['Navrangpura', 'Ranip', 'Jashodanagar', 'Sarkhej', 'Bopal'],
-  Sanand: ['Sanand Town', 'Vasna', 'Bavla Road', 'Sathal', 'Godhavi'],
-  Choryasi: ['Ghod Dod Road', 'Piplod', 'Athwa', 'Adajan', 'Pal'],
-  Bhuj: ['Bhujodi', 'Ludiya', 'Madhapar', 'Kukma', 'Moti Beral'],
-  Gosaba: ['Gosaba Bazar', 'Rangabelia', 'Pathankhali', 'Chhota Mollakhali', 'Sajna Khali'],
-  Huzur: ['Kolar', 'Kerwa', 'Jatkhedi', 'Mungalia Kot', 'Bhairopur'],
-  'Mylapore': ['Mylapore Village', 'San Thome', 'Royapettah', 'Triplicane'],
-};
+function getTalukasForDistrict(state: string, district: string): string[] {
+  if (state === 'Gujarat' && district) {
+    const d = (gujaratLocations.Gujarat.districts as Record<string, { talukas: Record<string, string[]> }>)?.[district];
+    return d ? Object.keys(d.talukas) : [];
+  }
+  return [];
+}
 
-const wetlands = [
-  'Chilika Lake', 'Sundarbans Wetland', 'Keoladeo National Park', 'Loktak Lake',
-  'Wular Lake', 'Harike Wetland', 'Sambhar Lake', 'Bhitarkanika Mangroves',
-  'Point Calimere', 'Kolleru Lake', 'Nal Sarovar', 'Thane Creek Flamingo Sanctuary',
-];
+function getVillagesForTaluka(state: string, district: string, taluka: string): string[] {
+  if (state === 'Gujarat' && district && taluka) {
+    const d = (gujaratLocations.Gujarat.districts as Record<string, { talukas: Record<string, string[]> }>)?.[district];
+    if (d) {
+      const villages = d.talukas?.[taluka];
+      return villages || [];
+    }
+  }
+  return [];
+}
 
 const occupations = [
   'Farmer', 'Fisherman', 'Villager', 'Forest Staff', 'Student', 'NGO Volunteer', 'Other',
@@ -72,6 +70,7 @@ interface FormData {
   district: string;
   taluka: string;
   village: string;
+  pincode: string;
   nearbyWetland: string;
   occupation: string;
   language: string;
@@ -88,6 +87,7 @@ const initialForm: FormData = {
   district: '',
   taluka: '',
   village: '',
+  pincode: '',
   nearbyWetland: '',
   occupation: '',
   language: '',
@@ -97,10 +97,20 @@ const initialForm: FormData = {
 
 export default function RegisterPage() {
   const navigate = useNavigate();
+  const { requestPermission, permissionStatus } = useFcm();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
+
+  const districts = useMemo(() => getDistrictsForState(form.state), [form.state]);
+  const talukas = useMemo(() => getTalukasForDistrict(form.state, form.district), [form.state, form.district]);
+  const villages = useMemo(() => getVillagesForTaluka(form.state, form.district, form.taluka), [form.state, form.district, form.taluka]);
+  const suggestedWetlands = useMemo(() => {
+    if (!form.district) return [];
+    return getWetlandsForDistrict(form.district);
+  }, [form.district]);
+  const allWetlandsList = useMemo(() => allWetlands, []);
 
   const update = (field: keyof FormData, value: string | boolean) => {
     setForm(prev => ({ ...prev, [field]: value }));
@@ -147,26 +157,84 @@ export default function RegisterPage() {
     setErrors({});
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(async () => {
     setSubmitting(true);
-    const registration = {
-      id: `CIT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`,
-      ...form,
-      status: 'pending' as const,
-      createdAt: new Date().toISOString(),
-    };
-    const existing = JSON.parse(localStorage.getItem('avian_citizens') || '[]');
-    existing.push(registration);
-    localStorage.setItem('avian_citizens', JSON.stringify(existing));
-    setTimeout(() => {
-      setSubmitting(false);
-      navigate('/register/success', { state: { id: registration.id } });
-    }, 800);
-  };
+    try {
+      const payload = {
+        fullName: form.fullName,
+        mobile: form.mobile,
+        whatsapp: form.whatsapp || undefined,
+        email: form.email || undefined,
+        state: form.state,
+        district: form.district,
+        taluka: form.taluka,
+        village: form.village,
+        pincode: form.pincode || undefined,
+        nearbyWetland: form.nearbyWetland,
+        occupation: form.occupation,
+        language: form.language,
+        alertMethods: form.alertMethod ? [form.alertMethod] : [],
+        alertTypes: [],
+        agree: form.agree,
+      };
 
-  const districts = form.state ? districtsByState[form.state] || [] : [];
-  const talukas = form.district ? talukasByDistrict[form.district] || [] : [];
-  const villages = form.taluka ? villagesByTaluka[form.taluka] || [] : [];
+      const res = await citizenApi.publicRegister(payload);
+      const citizenId = res.data?.citizen?.id;
+
+      let fcmPermission: NotificationPermission | string = permissionStatus;
+      let fcmTokenSaved = false;
+
+      if ('Notification' in window && 'serviceWorker' in navigator) {
+        try {
+          const token = await requestPermission();
+          if (token) {
+            console.log('[Register] FCM Token:', token);
+            fcmTokenSaved = true;
+            fcmPermission = 'granted';
+          }
+        } catch (fcmErr) {
+          console.warn('[Register] FCM setup failed (non-blocking):', fcmErr);
+        }
+      }
+
+      const registration = {
+        id: citizenId || `CIT-${Date.now().toString(36).toUpperCase()}`,
+        ...form,
+        status: 'pending' as const,
+        createdAt: new Date().toISOString(),
+        fcmPermission,
+        fcmTokenSaved,
+      };
+      const existing = JSON.parse(localStorage.getItem('avian_citizens') || '[]');
+      existing.push(registration);
+      localStorage.setItem('avian_citizens', JSON.stringify(existing));
+
+      setSubmitting(false);
+      navigate('/register/success', {
+        state: {
+          id: registration.id,
+          fcmPermission,
+          fcmTokenSaved,
+        },
+      });
+    } catch (err) {
+      console.error('[Register] Submission failed:', err);
+      const registration = {
+        id: `CIT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`,
+        ...form,
+        status: 'pending' as const,
+        createdAt: new Date().toISOString(),
+      };
+      const existing = JSON.parse(localStorage.getItem('avian_citizens') || '[]');
+      existing.push(registration);
+      localStorage.setItem('avian_citizens', JSON.stringify(existing));
+      setTimeout(() => {
+        setSubmitting(false);
+        navigate('/register/success', { state: { id: registration.id } });
+      }, 800);
+    }
+  }, [form, navigate]);
+
   const progress = ((step - 1) / (steps.length - 1)) * 100;
 
   return (
@@ -270,7 +338,7 @@ export default function RegisterPage() {
                     />
                   </div>
                   <div className="flex items-center justify-between mt-4">
-                    {steps.map((s, i) => {
+                    {steps.map((s) => {
                       const Icon = s.icon;
                       return (
                         <div key={s.id} className="flex flex-col items-center">
@@ -369,7 +437,7 @@ export default function RegisterPage() {
                         </div>
                       )}
 
-                      {/* Step 2: Location */}
+                      {/* Step 2: Location — Cascading Dropdowns */}
                       {step === 2 && (
                         <div className="space-y-5">
                           <div>
@@ -377,53 +445,91 @@ export default function RegisterPage() {
                               <MapPin size={18} className="text-emerald-400" />
                               Location
                             </h2>
-                            <p className="text-sm text-gray-500 mt-1">Where are you located?</p>
+                            <p className="text-sm text-gray-500 mt-1">Where are you located? (Gujarat — complete data)</p>
                           </div>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <SelectField
+                            <SearchableDropdown
                               label="State"
-                              value={form.state}
-                              onChange={v => { update('state', v); update('district', ''); update('taluka', ''); update('village', ''); }}
                               options={indianStates}
+                              value={form.state}
+                              onChange={v => {
+                                update('state', v);
+                                update('district', '');
+                                update('taluka', '');
+                                update('village', '');
+                                update('pincode', '');
+                                update('nearbyWetland', '');
+                              }}
                               placeholder="Select your state"
+                              required
                               error={errors.state}
                             />
-                            <SelectField
+                            <SearchableDropdown
                               label="District"
-                              value={form.district}
-                              onChange={v => { update('district', v); update('taluka', ''); update('village', ''); }}
                               options={districts}
+                              value={form.district}
+                              onChange={v => {
+                                update('district', v);
+                                update('taluka', '');
+                                update('village', '');
+                                update('pincode', '');
+                                update('nearbyWetland', '');
+                              }}
                               placeholder={form.state ? 'Select district' : 'Select a state first'}
+                              required
                               error={errors.district}
                               disabled={!form.state}
                             />
-                            <SelectField
+                            <SearchableDropdown
                               label="Taluka"
-                              value={form.taluka}
-                              onChange={v => { update('taluka', v); update('village', ''); }}
                               options={talukas}
+                              value={form.taluka}
+                              onChange={v => {
+                                update('taluka', v);
+                                update('village', '');
+                                update('pincode', '');
+                              }}
                               placeholder={form.district ? 'Select taluka' : 'Select district first'}
+                              required
                               error={errors.taluka}
                               disabled={!form.district}
                             />
-                            <SelectField
-                              label="Village"
+                            <SearchableDropdown
+                              label="Village / Town"
+                              options={villages}
                               value={form.village}
                               onChange={v => update('village', v)}
-                              options={villages}
                               placeholder={form.taluka ? 'Select village' : 'Select taluka first'}
+                              required
                               error={errors.village}
                               disabled={!form.taluka}
                             />
                           </div>
-                          <SelectField
+                          <div>
+                            <label className="text-sm font-medium text-gray-300 mb-1.5 block">Pincode <span className="text-gray-500">(Optional)</span></label>
+                            <input
+                              type="text"
+                              value={form.pincode}
+                              onChange={e => update('pincode', e.target.value.replace(/\D/g, '').slice(0, 6))}
+                              placeholder="e.g. 380001"
+                              className="w-full px-4 py-2.5 rounded-xl text-sm bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none transition-all focus:border-emerald-500/40 focus:bg-emerald-500/[0.03] focus:shadow-[0_0_0_1px_rgba(52,211,153,0.1)]"
+                            />
+                          </div>
+                          <SearchableDropdown
                             label="Nearby Wetland / Lake / River"
+                            options={form.district ? (suggestedWetlands.length > 0 ? suggestedWetlands : allWetlandsList) : allWetlandsList}
                             value={form.nearbyWetland}
                             onChange={v => update('nearbyWetland', v)}
-                            options={wetlands}
-                            placeholder="Select a wetland"
+                            placeholder={form.district ? 'Select a wetland' : 'Select district to see suggestions'}
+                            required
                             error={errors.nearbyWetland}
+                            disabled={!form.district}
                           />
+                          {form.district && suggestedWetlands.length > 0 && (
+                            <p className="text-xs text-emerald-400/70 mt-1">
+                              Suggested wetlands near {form.district}
+                            </p>
+                          )}
                         </div>
                       )}
 
@@ -529,7 +635,10 @@ export default function RegisterPage() {
                               <span className="text-xs font-medium text-gray-500">Location</span>
                               <button onClick={() => setStep(2)} className="text-[10px] text-emerald-400 hover:text-emerald-300 transition-colors">Edit</button>
                             </div>
-                            <p className="text-sm text-white">{form.village}, {form.taluka}, {form.district}, {form.state}</p>
+                            <p className="text-sm text-white">
+                              {form.village}{form.taluka ? `, ${form.taluka}` : ''}{form.district ? `, ${form.district}` : ''}{form.state ? `, ${form.state}` : ''}
+                            </p>
+                            {form.pincode && <p className="text-sm text-gray-400">Pincode: <span className="text-white">{form.pincode}</span></p>}
                             <p className="text-sm text-gray-400">Nearby: <span className="text-white">{form.nearbyWetland}</span></p>
                           </div>
 
@@ -609,63 +718,6 @@ export default function RegisterPage() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function SelectField({
-  label,
-  value,
-  onChange,
-  options,
-  placeholder,
-  error,
-  disabled,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: string[];
-  placeholder: string;
-  error?: string;
-  disabled?: boolean;
-}) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="relative">
-      <label className="text-sm font-medium text-gray-300 mb-1.5 block">{label} <span className="text-red-400">*</span></label>
-      <button
-        type="button"
-        onClick={() => !disabled && setOpen(!open)}
-        className={`w-full px-4 py-2.5 rounded-xl text-sm border text-left flex items-center justify-between transition-all ${
-          error ? 'border-red-500/50' : 'border-white/[0.06]'
-        } ${disabled ? 'bg-white/[0.02] text-gray-600 cursor-not-allowed' : 'bg-white/[0.04] text-white hover:border-white/[0.12]'}`}
-      >
-        <span className={value ? 'text-white' : 'text-gray-600'}>{value || placeholder}</span>
-        <ChevronDown size={14} className={`text-gray-500 transition-transform ${open ? 'rotate-180' : ''}`} />
-      </button>
-      {open && !disabled && (
-        <div className="absolute z-20 top-full mt-1 left-0 right-0 bg-gray-900 border border-white/[0.1] rounded-xl max-h-48 overflow-y-auto shadow-xl">
-          {options.length === 0 ? (
-            <div className="px-4 py-3 text-sm text-gray-500">No options available</div>
-          ) : (
-            options.map(opt => (
-              <button
-                key={opt}
-                type="button"
-                onClick={() => { onChange(opt); setOpen(false); }}
-                className={`block w-full text-left px-4 py-2.5 text-sm transition-colors ${
-                  value === opt ? 'text-emerald-400 bg-emerald-500/5' : 'text-gray-300 hover:text-white hover:bg-white/[0.04]'
-                }`}
-              >
-                {opt}
-              </button>
-            ))
-          )}
-        </div>
-      )}
-      {error && <p className="text-xs text-red-400 mt-1">{error}</p>}
     </div>
   );
 }
