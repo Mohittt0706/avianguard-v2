@@ -6,6 +6,7 @@ export { LayerControl } from './LayerControl';
 export { Legend } from './Legend';
 export { StationList } from './StationList';
 export { MapToolbar } from './MapToolbar';
+export { LeafletMap } from './LeafletMap';
 export { mockDataSource, initialViewport } from './data';
 export type {
   Coordinates,

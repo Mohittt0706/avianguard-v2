@@ -4,6 +4,7 @@ const sensorController = require('../controllers/sensorController');
 const readingController = require('../controllers/readingController');
 const { authenticate } = require('../middlewares/auth');
 const { authorize } = require('../middlewares/role');
+const { authorizePermission } = require('../middlewares/permission');
 const { validate } = require('../middlewares/validate');
 const { createSensorSchema, updateSensorSchema, updateSensorStatusSchema } = require('../validations/sensor');
 const { createReadingSchema, readingQuerySchema } = require('../validations/reading');
@@ -11,22 +12,22 @@ const { ROLES } = require('../utils/constants');
 
 router.use(authenticate);
 
-router.get('/stats', authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.OPERATOR), sensorController.getSensorStats);
+router.get('/stats', authorizePermission('sensors', 'read'), sensorController.getSensorStats);
 
-router.get('/live', authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.OPERATOR), readingController.getLiveReadings);
+router.get('/live', authorizePermission('sensors', 'read'), readingController.getLiveReadings);
 
 router.route('/')
-  .get(authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.OPERATOR), sensorController.getSensors)
-  .post(authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN), validate(createSensorSchema), sensorController.createSensor);
+  .get(authorizePermission('sensors', 'read'), sensorController.getSensors)
+  .post(authorizePermission('sensors', 'create'), validate(createSensorSchema), sensorController.createSensor);
 
-router.post('/:id/reading', authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.OPERATOR), validate(createReadingSchema), readingController.createReading);
-router.get('/:id/readings', authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.OPERATOR), validate(readingQuerySchema), readingController.getReadings);
+router.post('/:id/reading', authorizePermission('sensors', 'update'), validate(createReadingSchema), readingController.createReading);
+router.get('/:id/readings', authorizePermission('sensors', 'read'), validate(readingQuerySchema), readingController.getReadings);
 
 router.route('/:id')
-  .get(sensorController.getSensor)
-  .patch(authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN), validate(updateSensorSchema), sensorController.updateSensor)
-  .delete(authorize(ROLES.SUPER_ADMIN), sensorController.deleteSensor);
+  .get(authorizePermission('sensors', 'read'), sensorController.getSensor)
+  .patch(authorizePermission('sensors', 'update'), validate(updateSensorSchema), sensorController.updateSensor)
+  .delete(authorizePermission('sensors', 'delete'), sensorController.deleteSensor);
 
-router.patch('/:id/status', authorize(ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.OPERATOR), validate(updateSensorStatusSchema), sensorController.updateSensorStatus);
+router.patch('/:id/status', authorizePermission('sensors', 'update'), validate(updateSensorStatusSchema), sensorController.updateSensorStatus);
 
 module.exports = router;

@@ -2,28 +2,36 @@ const express = require('express');
 const router = express.Router();
 const citizenController = require('../controllers/citizenController');
 const { authenticate } = require('../middlewares/auth');
-const { validate, updateCitizenSchema } = require('../middlewares/validate');
-const { authorize } = require('../middlewares/role');
-const { ROLES } = require('../utils/constants');
+const { authorizePermission } = require('../middlewares/permission');
+
+router.post('/fcm-token', citizenController.saveFcmToken);
+router.post('/notifications/inbox', citizenController.getNotificationInbox);
+router.post('/public-register', citizenController.publicRegister);
 
 router.use(authenticate);
 
-router.get('/stats', authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER, ROLES.OPERATOR), citizenController.getCitizenStats);
-router.post('/export', authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), citizenController.exportCitizens);
-router.post('/bulk-status', authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), citizenController.bulkUpdateStatus);
+router.get('/stats', authorizePermission('citizens', 'read'), citizenController.getCitizenStats);
+router.get('/analytics', authorizePermission('citizens', 'read'), citizenController.getAnalytics);
+router.get('/delivery-stats', authorizePermission('citizens', 'read'), citizenController.getDeliveryStats);
+router.post('/export', authorizePermission('citizens', 'export'), citizenController.exportCitizens);
+router.post('/bulk-status', authorizePermission('citizens', 'update'), citizenController.bulkUpdateStatus);
+router.post('/emergency-broadcast', authorizePermission('citizens', 'create'), citizenController.emergencyBroadcast);
 
 router.route('/')
-  .get(authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER, ROLES.OPERATOR), citizenController.getCitizens)
-  .post(authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), citizenController.createCitizen);
+  .get(authorizePermission('citizens', 'read'), citizenController.getCitizens)
+  .post(authorizePermission('citizens', 'create'), citizenController.createCitizen);
 
 router.route('/:id')
-  .get(citizenController.getCitizen)
-  .put(authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), validate(updateCitizenSchema), citizenController.updateCitizen)
-  .delete(authorize(ROLES.SUPER_ADMIN), citizenController.deleteCitizen);
+  .get(authorizePermission('citizens', 'read'), citizenController.getCitizen)
+  .put(authorizePermission('citizens', 'update'), citizenController.updateCitizen)
+  .delete(authorizePermission('citizens', 'delete'), citizenController.deleteCitizen);
 
-router.patch('/:id/status', authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), citizenController.updateCitizenStatus);
-router.post('/:id/test-alert', authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), citizenController.sendTestAlert);
-router.post('/:id/request-info', authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), citizenController.requestInfo);
-router.get('/:id/notifications', citizenController.getNotificationHistory);
+router.patch('/:id/status', authorizePermission('citizens', 'update'), citizenController.updateCitizenStatus);
+router.patch('/:id/read', citizenController.markAsRead);
+router.patch('/:id/acknowledge', citizenController.acknowledgeNotification);
+router.post('/:id/send-alert', authorizePermission('citizens', 'create'), citizenController.sendAlert);
+router.post('/:id/test-alert', authorizePermission('citizens', 'update'), citizenController.sendTestAlert);
+router.post('/:id/request-info', authorizePermission('citizens', 'update'), citizenController.requestInfo);
+router.get('/:id/notifications', authorizePermission('citizens', 'read'), citizenController.getNotificationHistory);
 
 module.exports = router;

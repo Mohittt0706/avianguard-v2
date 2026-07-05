@@ -1,96 +1,117 @@
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+import apiClient from './apiClient';
 
-function placeholder<T>(msg: string): Promise<T> {
-  console.log(`[API] ${msg}`);
-  return Promise.resolve({} as T);
+export interface SettingEntry {
+  key: string;
+  value: unknown;
+  label: string | null;
+}
+
+export interface SettingsByCategory {
+  [category: string]: SettingEntry[];
+}
+
+export interface SystemHealth {
+  [service: string]: { status: string; message: string; latency?: number; uptime?: number };
+}
+
+export interface AuditLogEntry {
+  id: string;
+  action: string;
+  category: string;
+  details: Record<string, unknown> | null;
+  user_name: string | null;
+  ipAddress: string | null;
+  createdAt: string;
 }
 
 export const settingsApi = {
-  saveGeneral(data: Record<string, string>): Promise<void> {
-    return placeholder(`PUT ${BASE_URL}/settings/general — Saving general settings: ${JSON.stringify(data)}`);
+  getAll(category?: string): Promise<{ success: boolean; data: SettingsByCategory }> {
+    return apiClient.get('/settings', { params: category ? { category } : {} }).then(r => r.data);
   },
-  getAiConfig(): Promise<void> {
-    return placeholder(`GET ${BASE_URL}/settings/ai — Fetching AI configuration`);
+
+  get(key: string): Promise<{ success: boolean; data: SettingEntry }> {
+    return apiClient.get(`/settings/${key}`).then(r => r.data);
   },
-  toggleAi(enabled: boolean): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/ai/toggle — ${enabled ? 'Enabling' : 'Disabling'} AI`);
+
+  update(key: string, value: unknown): Promise<{ success: boolean; data: SettingEntry; message: string }> {
+    return apiClient.put(`/settings/${key}`, { value }).then(r => r.data);
   },
-  updateAiThresholds(data: Record<string, number>): Promise<void> {
-    return placeholder(`PUT ${BASE_URL}/settings/ai/thresholds — Updating AI thresholds: ${JSON.stringify(data)}`);
+
+  bulkUpdate(settings: { key: string; value: unknown }[]): Promise<{ success: boolean; message: string }> {
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  resetAiSettings(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/ai/reset — Resetting AI settings to defaults`);
+
+  reset(key: string): Promise<{ success: boolean; message: string }> {
+    return apiClient.delete(`/settings/${key}`).then(r => r.data);
   },
-  generateTestPrediction(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/ai/test-prediction — Generating test prediction`);
+
+  getAlertThresholds(): Promise<{ success: boolean; data: Record<string, number> }> {
+    return apiClient.get('/settings/alert-thresholds').then(r => r.data);
   },
-  getAlertRules(): Promise<void> {
-    return placeholder(`GET ${BASE_URL}/settings/alert-rules — Fetching alert rules`);
+
+  updateAlertThresholds(thresholds: Record<string, number>): Promise<{ success: boolean; message: string }> {
+    return apiClient.put('/settings/alert-thresholds', thresholds).then(r => r.data);
   },
-  saveAlertRules(data: Record<string, { warning: number; critical: number }>): Promise<void> {
-    return placeholder(`PUT ${BASE_URL}/settings/alert-rules — Saving alert rules: ${JSON.stringify(data)}`);
+
+  getSystemHealth(): Promise<{ success: boolean; data: SystemHealth }> {
+    return apiClient.get('/settings/health').then(r => r.data);
   },
-  resetAlertRules(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/alert-rules/reset — Resetting alert rules to defaults`);
+
+  getAuditLogs(limit?: number, offset?: number): Promise<{ success: boolean; data: AuditLogEntry[] }> {
+    return apiClient.get('/settings/audit-logs', { params: { limit, offset } }).then(r => r.data);
   },
-  saveNotificationSettings(data: Record<string, unknown>): Promise<void> {
-    return placeholder(`PUT ${BASE_URL}/settings/notifications — Saving notification settings: ${JSON.stringify(data)}`);
+
+  logAudit(action: string, category: string, details?: Record<string, unknown>): Promise<{ success: boolean }> {
+    return apiClient.post('/settings/audit-log', { action, category, details }).then(r => r.data);
   },
-  testSms(phone: string): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/notifications/test-sms — Sending test SMS to ${phone}`);
+
+  saveGeneral(data: Record<string, unknown>): Promise<{ success: boolean; message: string }> {
+    const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  testWhatsApp(phone: string): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/notifications/test-whatsapp — Sending test WhatsApp to ${phone}`);
+
+  saveAiConfig(data: Record<string, unknown>): Promise<{ success: boolean; message: string }> {
+    const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  testEmail(email: string): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/notifications/test-email — Sending test email to ${email}`);
+
+  saveNotificationSettings(data: Record<string, unknown>): Promise<{ success: boolean; message: string }> {
+    const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  saveSensorConfig(data: Record<string, unknown>): Promise<void> {
-    return placeholder(`PUT ${BASE_URL}/settings/sensors — Saving sensor configuration: ${JSON.stringify(data)}`);
+
+  saveSensorConfig(data: Record<string, unknown>): Promise<{ success: boolean; message: string }> {
+    const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  restartAllSensors(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/sensors/restart — Restarting all sensors`);
+
+  saveSecuritySettings(data: Record<string, unknown>): Promise<{ success: boolean; message: string }> {
+    const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  testSensorConnection(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/sensors/test — Testing sensor connection`);
+
+  saveIntegrations(data: Record<string, unknown>): Promise<{ success: boolean; message: string }> {
+    const settings = Object.entries(data).map(([key, value]) => ({ key, value }));
+    return apiClient.put('/settings', { settings }).then(r => r.data);
   },
-  resyncSensorNetwork(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/sensors/resync — Resyncing sensor network`);
+
+  changePassword(currentPassword: string, newPassword: string): Promise<{ success: boolean; message: string }> {
+    return apiClient.post('/settings/change-password', { currentPassword, newPassword }).then(r => r.data);
   },
-  saveSecuritySettings(data: Record<string, unknown>): Promise<void> {
-    return placeholder(`PUT ${BASE_URL}/settings/security — Saving security settings: ${JSON.stringify(data)}`);
+
+  createBackup(): Promise<{ success: boolean; data: { filename: string; size: string; createdAt: string }; message: string }> {
+    return apiClient.post('/settings/backup').then(r => r.data);
   },
-  forceLogoutAll(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/security/force-logout — Force logging out all users`);
+
+  restoreBackup(): Promise<{ success: boolean; message: string }> {
+    return apiClient.post('/settings/restore').then(r => r.data);
   },
-  generateApiToken(): Promise<{ token: string }> {
-    return placeholder(`POST ${BASE_URL}/settings/security/generate-token — Generating API token`);
+
+  testSms(phone: string): Promise<{ success: boolean; message: string }> {
+    return apiClient.post('/settings/test-sms', { phone }).then(r => r.data);
   },
-  revokeTokens(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/security/revoke-tokens — Revoking all API tokens`);
-  },
-  refreshSystemHealth(): Promise<Record<string, string>> {
-    return placeholder(`GET ${BASE_URL}/settings/system/health — Refreshing system health status`);
-  },
-  createBackup(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/backup/create — Creating system backup`);
-  },
-  downloadBackup(): Promise<Blob> {
-    return placeholder(`GET ${BASE_URL}/settings/backup/download — Downloading backup`);
-  },
-  restoreBackup(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/backup/restore — Restoring from backup`);
-  },
-  resetSystem(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/system/reset — Resetting system`);
-  },
-  exportConfig(): Promise<Blob> {
-    return placeholder(`GET ${BASE_URL}/settings/config/export — Exporting configuration`);
-  },
-  importConfig(): Promise<void> {
-    return placeholder(`POST ${BASE_URL}/settings/config/import — Importing configuration`);
-  },
-  getAuditLogs(): Promise<void> {
-    return placeholder(`GET ${BASE_URL}/settings/audit-logs — Fetching audit logs`);
+
+  testEmail(email: string): Promise<{ success: boolean; message: string }> {
+    return apiClient.post('/settings/test-email', { email }).then(r => r.data);
   },
 };

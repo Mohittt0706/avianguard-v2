@@ -3,18 +3,27 @@ const router = express.Router();
 const reportController = require('../controllers/reportController');
 const { authenticate } = require('../middlewares/auth');
 const { authorize } = require('../middlewares/role');
-const { ROLES } = require('../utils/constants');
+const { authorizePermission } = require('../middlewares/permission');
+const { validate } = require('../middlewares/validate');
+const { createReportSchema, updateReportSchema } = require('../validations/report');
 
 router.use(authenticate);
 
+router.get('/stats', authorizePermission('reports', 'read'), reportController.getReportStats);
+router.get('/activity', authorizePermission('reports', 'read'), reportController.getRecentActivity);
+
 router.route('/')
-  .get(authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER, ROLES.OPERATOR), reportController.getReports)
-  .post(authorize(ROLES.SUPER_ADMIN, ROLES.DISTRICT_OFFICER), reportController.createReport);
+  .get(authorizePermission('reports', 'read'), reportController.getReports)
+  .post(authorizePermission('reports', 'create'), validate(createReportSchema), reportController.createReport);
+
+router.get('/share/:token', reportController.getReportByShareToken);
 
 router.route('/:id')
-  .get(reportController.getReport)
-  .delete(authorize(ROLES.SUPER_ADMIN), reportController.deleteReport);
+  .get(authorizePermission('reports', 'read'), reportController.getReport)
+  .patch(authorizePermission('reports', 'update'), validate(updateReportSchema), reportController.updateReport)
+  .delete(authorizePermission('reports', 'delete'), reportController.deleteReport);
 
-router.get('/:id/download', reportController.downloadReport);
+router.post('/:id/share', authorizePermission('reports', 'update'), reportController.shareReport);
+router.get('/:id/csv', authorizePermission('reports', 'export'), reportController.getCsvData);
 
 module.exports = router;

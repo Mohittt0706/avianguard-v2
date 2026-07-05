@@ -14,6 +14,13 @@ enum Role {
   VIEWER
 }
 
+enum AccountStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING
+}
+
 model User {
   id              String    @id @default(cuid())
   name            String
@@ -21,7 +28,16 @@ model User {
   password        String
   role            Role      @default(VIEWER)
   district        String?
+  taluka          String?
   assignedWetland String?
+  phone           String?
+  employeeId      String?   @unique
+  department      String?
+  designation     String?
+  address         String?
+  avatar          String?
+  accountStatus   AccountStatus @default(ACTIVE)
+  permissions     Json?
   isActive        Boolean   @default(true)
   refreshToken    String?
   passwordChangedAt DateTime?
@@ -29,9 +45,45 @@ model User {
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 
+  loginHistory    LoginHistory[]
+  auditLogs       AuditLog[]
+
   @@index([email])
   @@index([role])
   @@index([district])
+  @@index([accountStatus])
+  @@index([employeeId])
+}
+
+model LoginHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  device    String?
+  browser   String?
+  ipAddress String?
+  location  String?
+  success   Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  action    String
+  target    String?
+  details   Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
 }
 
 model Sensor {
@@ -57,6 +109,7 @@ model Sensor {
   updatedAt       DateTime @updatedAt
 
   readings SensorReading[]
+  alerts   Alert[]
 
   @@index([status])
   @@index([sensorId])
@@ -80,4 +133,236 @@ model SensorReading {
   @@index([sensorId])
   @@index([timestamp])
   @@index([sensorId, timestamp])
+}
+
+enum AlertSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AlertStatus {
+  ACTIVE
+  ACKNOWLEDGED
+  RESOLVED
+}
+
+model Alert {
+  id          String        @id @default(cuid())
+  sensorId    String?
+  sensorName  String?
+  wetland     String?
+  alertType   String
+  severity    AlertSeverity @default(LOW)
+  currentValue Float?
+  safeRange   String?
+  description String
+  status      AlertStatus   @default(ACTIVE)
+  citizenNotified Boolean   @default(false)
+  citizenNotifiedAt DateTime?
+  createdAt   DateTime      @default(now())
+  resolvedAt  DateTime?
+  resolvedBy  String?
+
+  sensor   Sensor? @relation(fields: [sensorId], references: [id], onDelete: SetNull)
+  citizenNotifications CitizenNotification[]
+
+  @@index([severity])
+  @@index([status])
+  @@index([createdAt])
+  @@index([sensorId])
+  @@index([wetland])
+}
+
+model CitizenNotification {
+  id             String   @id @default(cuid())
+  alertId        String?
+  alertTitle     String?
+  severity       String?
+  wetland        String?
+  sensorName     String?
+  description    String?
+  parameterValues Json?
+  aiSummary      String?
+  riskLevel      String?
+  recommendedActions String?
+  sentBy         String?
+  sentAt         DateTime @default(now())
+  deliveryStatus String   @default("sent")
+
+  createdAt DateTime @updatedAt
+
+  alert Alert? @relation(fields: [alertId], references: [id], onDelete: SetNull)
+
+  @@index([alertId])
+  @@index([wetland])
+  @@index([sentAt])
+}
+
+model Report {
+  id             String   @id @default(cuid())
+  title          String
+  type           String
+  format         String   @default("pdf")
+  district       String?
+  taluka         String?
+  wetland        String?
+  generatedBy    String
+  status         String   @default("generating")
+  fileSize       String?
+  shareToken     String?  @unique
+
+  dateFrom       DateTime?
+  dateTo         DateTime?
+
+  includeCharts    Boolean @default(true)
+  includeSensors   Boolean @default(true)
+  includeAI        Boolean @default(false)
+  includeCitizens  Boolean @default(false)
+
+  data           Json?
+  summary        Json?
+  aiAnalysis     Json?
+
+  scheduledFrequency String?
+  scheduledEnabled   Boolean @default(false)
+  scheduledRecipients String[]
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([type])
+  @@index([status])
+  @@index([wetland])
+  @@index([district])
+  @@index([createdAt])
+  @@index([generatedBy])
+}
+
+enum CitizenStatus {
+  PENDING
+  ACTIVE
+  REJECTED
+  PENDING_VERIFICATION
+  DISABLED
+}
+
+model Citizen {
+  id              String        @id @default(cuid())
+  fullName        String
+  mobile          String
+  whatsapp        String?
+  email           String?
+  dateOfBirth     String?
+  gender          String?
+  state           String        @default("Gujarat")
+  district        String
+  taluka          String?
+  village         String?
+  pincode         String?
+  nearbyWetland   String
+  gpsLocation     String?
+  latitude        Float?
+  longitude       Float?
+  distanceFromWetland String?
+  occupation      String?
+  occupationOther String?
+  alertMethods    String[]
+  alertTypes      String[]
+  language        String        @default("Hindi")
+  emergencyName   String?
+  emergencyMobile String?
+  emergencyRelationship String?
+  agree           Boolean       @default(false)
+  status          CitizenStatus @default(PENDING)
+  riskLevel       String        @default("safe")
+  rejectionReason String?
+  adminNotes      String?
+  isActive        Boolean       @default(true)
+  lastAlertAt     DateTime?
+  fcmToken        String?
+  fcmTokenUpdatedAt DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  notifications   CitizenAlertNotification[]
+  auditLogs       CitizenAuditLog[]
+
+  @@index([status])
+  @@index([district])
+  @@index([nearbyWetland])
+  @@index([mobile])
+  @@index([createdAt])
+  @@index([riskLevel])
+}
+
+model CitizenAlertNotification {
+  id              String   @id @default(cuid())
+  citizenId       String
+  title           String
+  severity        String   @default("LOW")
+  message         String
+  wetland         String?
+  alertType       String?
+  description     String?
+  recommendedAction String?
+  clickUrl        String?
+  deliveryMethod  String
+  deliveryStatus  String   @default("sent")
+  language        String?
+  sentBy          String?
+  sentAt          DateTime @default(now())
+  readAt          DateTime?
+  acknowledgedAt  DateTime?
+
+  citizen Citizen @relation(fields: [citizenId], references: [id], onDelete: Cascade)
+
+  @@index([citizenId])
+  @@index([sentAt])
+  @@index([deliveryStatus])
+}
+
+model CitizenAuditLog {
+  id        String   @id @default(cuid())
+  citizenId String
+  action    String
+  target    String?
+  details   Json?
+  performedBy String?
+  createdAt DateTime @default(now())
+
+  citizen Citizen @relation(fields: [citizenId], references: [id], onDelete: Cascade)
+
+  @@index([citizenId])
+  @@index([action])
+  @@index([createdAt])
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  category  String
+  label     String?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@index([key])
+  @@index([category])
+}
+
+model SystemAuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  category  String
+  details   Json?
+  userId    String?
+  user_name String?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([action])
+  @@index([category])
+  @@index([createdAt])
 }

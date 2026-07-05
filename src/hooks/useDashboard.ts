@@ -33,5 +33,18 @@ export function useDashboard(): UseDashboardResult {
     fetch();
   }, [fetch]);
 
+  useEffect(() => {
+    const interval = setInterval(fetch, 30000);
+    return () => clearInterval(interval);
+  }, [fetch]);
+
+  useEffect(() => {
+    function handleSensorUpdate() {
+      fetch();
+    }
+    window.addEventListener('sensor:updated', handleSensorUpdate);
+    return () => window.removeEventListener('sensor:updated', handleSensorUpdate);
+  }, [fetch]);
+
   return { data, loading, error, refetch: fetch };
 }

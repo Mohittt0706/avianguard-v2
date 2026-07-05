@@ -1,46 +1,21 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router';
 import {
-  Users, Shield, Search, Mail, Phone, MapPin, Droplets, Clock,
-  CheckCircle, XCircle, Eye, Edit3, Key, UserX, Trash2, Plus,
-  X, ChevronDown, AlertTriangle, BarChart3, MessageSquare, Calendar,
-  UserCheck, UserCog, UserMinus, Activity,
+  Users, Search, Filter, ChevronDown, Eye, Edit3, Trash2, Plus,
+  RefreshCw, AlertTriangle, Shield, Mail, Phone, MapPin, Download,
+  CheckCircle, XCircle, Ban, Clock, ChevronLeft, ChevronRight,
+  Upload, X, Loader2, Key, Building2, UserCheck, Settings,
+  AlertOctagon,
 } from 'lucide-react';
+import { toast } from 'sonner';
+import ShinyText from '../ShinyText';
+import { DarkSelect } from '../ui/DarkSelect';
+import { PermissionModal } from '../ui/PermissionModal';
+import { userApi } from '@/services/userApi';
+import { useAuth } from '@/context/AuthContext';
+import type { User, UserRole, AccountStatus, UserStats } from '@/types/auth';
 
-// ===================== TYPES =====================
-
-type OfficerRole = 'admin' | 'district-officer' | 'operator' | 'viewer';
-type OfficerStatus = 'active' | 'inactive' | 'suspended';
-
-interface Officer {
-  id: string;
-  name: string;
-  email: string;
-  mobile: string;
-  role: OfficerRole;
-  district: string;
-  taluka: string;
-  assignedWetland: string;
-  status: OfficerStatus;
-  lastLogin: string;
-  joinDate: string;
-  alertsSent: number;
-  reportsGenerated: number;
-  permissions: string[];
-}
-
-interface NewOfficerForm {
-  fullName: string;
-  email: string;
-  mobile: string;
-  role: OfficerRole;
-  district: string;
-  taluka: string;
-  assignedWetland: string;
-  tempPassword: string;
-}
-
-// ===================== MOCK DATA =====================
+// ===================== CONSTANTS =====================
 
 const districts = ['Ahmedabad', 'Mehsana', 'Jamnagar', 'Anand', 'Vadodara', 'Bharuch', 'Kutch'];
 const talukas: Record<string, string[]> = {
@@ -53,547 +28,680 @@ const talukas: Record<string, string[]> = {
   Kutch: ['Abdasa', 'Bhuj'],
 };
 const wetlands = ['Nal Sarovar', 'Thol Lake', 'Khijadiya', 'Pariej', 'Wadhvana', 'Narmada Estuary', 'Gulf of Kutch'];
-
-const initialOfficers: Officer[] = [
-  { id: 'GOF-001', name: 'Dr. Priya Sharma', email: 'priya.sharma@aviangov.in', mobile: '+91 98765 43210', role: 'admin', district: 'Ahmedabad', taluka: 'Sanand', assignedWetland: 'Nal Sarovar', status: 'active', lastLogin: '2 min ago', joinDate: '15 Jan 2025', alertsSent: 156, reportsGenerated: 89, permissions: ['all'] },
-  { id: 'GOF-002', name: 'Rajesh Verma', email: 'rajesh.verma@aviangov.in', mobile: '+91 98765 43211', role: 'district-officer', district: 'Ahmedabad', taluka: 'Sanand', assignedWetland: 'Nal Sarovar', status: 'active', lastLogin: '15 min ago', joinDate: '03 Feb 2025', alertsSent: 84, reportsGenerated: 42, permissions: ['view-sensors', 'generate-reports', 'send-alerts'] },
-  { id: 'GOF-003', name: 'Anita Desai', email: 'anita.desai@aviangov.in', mobile: '+91 98765 43212', role: 'operator', district: 'Ahmedabad', taluka: 'Daskroi', assignedWetland: 'Nal Sarovar', status: 'active', lastLogin: '1 hour ago', joinDate: '12 Mar 2025', alertsSent: 231, reportsGenerated: 67, permissions: ['view-sensors', 'send-alerts'] },
-  { id: 'GOF-004', name: 'Vikram Patel', email: 'vikram.patel@aviangov.in', mobile: '+91 98765 43213', role: 'viewer', district: 'Mehsana', taluka: 'Kadi', assignedWetland: 'Thol Lake', status: 'active', lastLogin: '3 hours ago', joinDate: '08 Apr 2025', alertsSent: 0, reportsGenerated: 12, permissions: ['view-sensors'] },
-  { id: 'GOF-005', name: 'Sunita Reddy', email: 'sunita.reddy@aviangov.in', mobile: '+91 98765 43214', role: 'viewer', district: 'Jamnagar', taluka: 'Jamnagar', assignedWetland: 'Khijadiya', status: 'inactive', lastLogin: '2 days ago', joinDate: '22 Jan 2025', alertsSent: 0, reportsGenerated: 5, permissions: ['view-sensors'] },
-  { id: 'GOF-006', name: 'Arun Kumar', email: 'arun.kumar@aviangov.in', mobile: '+91 98765 43215', role: 'operator', district: 'Vadodara', taluka: 'Padra', assignedWetland: 'Wadhvana', status: 'active', lastLogin: '45 min ago', joinDate: '05 May 2025', alertsSent: 67, reportsGenerated: 23, permissions: ['view-sensors', 'send-alerts'] },
-  { id: 'GOF-007', name: 'Meena Joshi', email: 'meena.joshi@aviangov.in', mobile: '+91 98765 43216', role: 'district-officer', district: 'Anand', taluka: 'Anand', assignedWetland: 'Pariej', status: 'active', lastLogin: '30 min ago', joinDate: '20 Feb 2025', alertsSent: 112, reportsGenerated: 54, permissions: ['view-sensors', 'generate-reports', 'send-alerts', 'manage-citizens'] },
-  { id: 'GOF-008', name: 'Ravi Deshmukh', email: 'ravi.deshmukh@aviangov.in', mobile: '+91 98765 43217', role: 'admin', district: 'Kutch', taluka: 'Abdasa', assignedWetland: 'Gulf of Kutch', status: 'active', lastLogin: '5 min ago', joinDate: '10 Jan 2025', alertsSent: 298, reportsGenerated: 134, permissions: ['all'] },
-  { id: 'GOF-009', name: 'Kavita Nair', email: 'kavita.nair@aviangov.in', mobile: '+91 98765 43218', role: 'operator', district: 'Bharuch', taluka: 'Bharuch', assignedWetland: 'Narmada Estuary', status: 'suspended', lastLogin: '5 days ago', joinDate: '15 Jun 2025', alertsSent: 23, reportsGenerated: 8, permissions: ['view-sensors', 'send-alerts'] },
-  { id: 'GOF-010', name: 'Suresh Menon', email: 'suresh.menon@aviangov.in', mobile: '+91 98765 43219', role: 'viewer', district: 'Ahmedabad', taluka: 'Sanand', assignedWetland: 'Nal Sarovar', status: 'active', lastLogin: '1 day ago', joinDate: '01 Jul 2025', alertsSent: 0, reportsGenerated: 3, permissions: ['view-sensors'] },
-];
-
-// ===================== PLACEHOLDER HANDLERS =====================
-
-const api = {
-  addOfficer: (data: NewOfficerForm) => alert(`Backend: Add officer ${data.fullName}`),
-  viewProfile: (id: string) => {}, // opens drawer
-  editOfficer: (id: string) => alert(`Backend: Edit officer ${id}`),
-  resetPassword: (id: string) => alert(`Backend: Reset password for ${id}`),
-  disableOfficer: (id: string) => alert(`Backend: Disable officer ${id}`),
-  deleteOfficer: (id: string) => alert(`Backend: Delete officer ${id}`),
+const departments = ['Environmental Science', 'Water Resources', 'Wildlife', 'Pollution Control', 'Field Operations', 'Research', 'Administration'];
+const roleLabels: Record<string, string> = { SUPER_ADMIN: 'Super Admin', ADMIN: 'Admin', OPERATOR: 'Operator', VIEWER: 'Viewer' };
+const statusLabels: Record<string, { label: string; color: string; bg: string }> = {
+  ACTIVE: { label: 'Active', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+  INACTIVE: { label: 'Inactive', color: 'text-gray-400', bg: 'bg-gray-500/10' },
+  SUSPENDED: { label: 'Suspended', color: 'text-red-400', bg: 'bg-red-500/10' },
+  PENDING: { label: 'Pending', color: 'text-amber-400', bg: 'bg-amber-500/10' },
+};
+const roleColors: Record<string, string> = {
+  SUPER_ADMIN: 'text-purple-400 bg-purple-500/10',
+  ADMIN: 'text-blue-400 bg-blue-500/10',
+  OPERATOR: 'text-emerald-400 bg-emerald-500/10',
+  VIEWER: 'text-gray-400 bg-gray-500/10',
 };
 
-// ===================== CONFIG =====================
+const INPUT_CLASS = 'w-full px-3 py-2 rounded-lg text-sm bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-700 outline-none focus:border-emerald-500/40 transition-all';
+const LABEL_CLASS = 'text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1 block';
 
-const roleConfig: Record<OfficerRole, { label: string; color: string; bg: string; icon: typeof Shield }> = {
-  admin: { label: 'Admin', color: 'text-purple-400', bg: 'bg-purple-500/10', icon: Shield },
-  'district-officer': { label: 'District Officer', color: 'text-emerald-400', bg: 'bg-emerald-500/10', icon: UserCheck },
-  operator: { label: 'Operator', color: 'text-blue-400', bg: 'bg-blue-500/10', icon: UserCog },
-  viewer: { label: 'Viewer', color: 'text-gray-400', bg: 'bg-white/[0.06]', icon: UserMinus },
-};
+// ===================== COMPONENTS =====================
 
-const statusConfig: Record<OfficerStatus, { label: string; color: string; bg: string; dot: string }> = {
-  active: { label: 'Active', color: 'text-emerald-400', bg: 'bg-emerald-500/10', dot: 'bg-emerald-500' },
-  inactive: { label: 'Inactive', color: 'text-gray-400', bg: 'bg-white/[0.04]', dot: 'bg-gray-500' },
-  suspended: { label: 'Suspended', color: 'text-red-400', bg: 'bg-red-500/10', dot: 'bg-red-500' },
-};
+function Skeleton({ className = '' }: { className?: string }) {
+  return <div className={`animate-pulse bg-white/[0.06] rounded-xl ${className}`} />;
+}
 
-// ===================== MODAL =====================
-
-function ConfirmDialog({ open, title, message, confirmLabel, onConfirm, onCancel }: {
-  open: boolean; title: string; message: string; confirmLabel: string;
-  onConfirm: () => void; onCancel: () => void;
+function SelectField({ label, value, onChange, options, placeholder }: {
+  label: string; value: string; onChange: (v: string) => void; options: string[]; placeholder?: string;
 }) {
+  const [open, setOpen] = useState(false);
   return (
-    <AnimatePresence>
+    <div className="relative">
+      <label className={LABEL_CLASS}>{label}</label>
+      <button type="button" onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white hover:border-white/[0.12] transition-all"
+      >
+        <span className={value ? 'text-white' : 'text-gray-600'}>{value || placeholder || `Select ${label}`}</span>
+        <ChevronDown size={11} className={`text-gray-500 transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
       {open && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
-          onClick={onCancel}
-        >
-          <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-            onClick={e => e.stopPropagation()}
-            className="bg-gray-900 border border-white/[0.1] rounded-xl p-5 w-full max-w-sm mx-4 shadow-2xl"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 rounded-lg bg-red-500/10"><AlertTriangle size={18} className="text-red-400" /></div>
-              <h3 className="text-sm font-bold text-white">{title}</h3>
-            </div>
-            <p className="text-xs text-gray-400 mb-4">{message}</p>
-            <div className="flex gap-2">
-              <button onClick={onCancel}
-                className="flex-1 py-2 rounded-lg text-xs font-medium text-gray-400 bg-white/[0.04] border border-white/[0.06] hover:text-white hover:bg-white/[0.08] transition-all"
-              >Cancel</button>
-              <button onClick={onConfirm}
-                className="flex-1 py-2 rounded-lg text-xs font-semibold text-white bg-red-500 hover:bg-red-600 transition-all"
-              >{confirmLabel}</button>
-            </div>
-          </motion.div>
-        </motion.div>
+        <div className="absolute z-30 top-full mt-1 left-0 right-0 bg-gray-900 border border-white/[0.1] rounded-lg max-h-40 overflow-y-auto shadow-xl">
+          <button type="button" onClick={() => { onChange(''); setOpen(false); }}
+            className={`block w-full text-left px-3 py-2 text-xs transition-colors ${!value ? 'text-emerald-400 bg-emerald-500/5' : 'text-gray-300 hover:text-white hover:bg-white/[0.04]'}`}
+          >All</button>
+          {options.map(opt => (
+            <button key={opt} type="button" onClick={() => { onChange(opt); setOpen(false); }}
+              className={`block w-full text-left px-3 py-2 text-xs transition-colors ${value === opt ? 'text-emerald-400 bg-emerald-500/5' : 'text-gray-300 hover:text-white hover:bg-white/[0.04]'}`}
+            >{opt}</button>
+          ))}
+        </div>
       )}
-    </AnimatePresence>
-  );
-}
-
-// ===================== PROFILE DRAWER =====================
-
-function ProfileDrawer({ officer, onClose }: { officer: Officer | null; onClose: () => void }) {
-  const roleCfg = officer ? roleConfig[officer.role] : null;
-  const RoleIcon = roleCfg?.icon || Shield;
-
-  return (
-    <AnimatePresence>
-      {officer && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm" onClick={onClose}
-        >
-          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            onClick={e => e.stopPropagation()}
-            className="absolute right-0 top-0 h-full w-full max-w-md bg-gray-900 border-l border-white/[0.08] shadow-2xl overflow-y-auto"
-          >
-            <div className="p-5">
-              {/* Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center text-base font-bold text-white">
-                    {officer.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <h2 className="text-base font-bold text-white">{officer.name}</h2>
-                    <span className={`text-[11px] font-medium ${roleCfg?.color || 'text-gray-400'}`}>
-                      <RoleIcon size={11} className="inline mr-1" />
-                      {roleCfg?.label}
-                    </span>
-                  </div>
-                </div>
-                <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/[0.08] text-gray-500 hover:text-white transition-all">
-                  <X size={16} />
-                </button>
-              </div>
-
-              {/* Personal Information */}
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4 mb-3">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">Personal Information</h3>
-                <div className="space-y-2.5">
-                  {[
-                    { icon: Mail, label: 'Email', value: officer.email },
-                    { icon: Phone, label: 'Mobile', value: officer.mobile },
-                    { icon: Calendar, label: 'Joined', value: officer.joinDate },
-                    { icon: Clock, label: 'Last Login', value: officer.lastLogin },
-                  ].map(d => {
-                    const Icon = d.icon;
-                    return (
-                      <div key={d.label} className="flex items-center gap-2.5">
-                        <Icon size={12} className="text-gray-500 shrink-0" />
-                        <span className="text-[10px] text-gray-500 w-20 shrink-0">{d.label}</span>
-                        <span className="text-xs text-white">{d.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Assignment */}
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4 mb-3">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">Assignment</h3>
-                <div className="space-y-2.5">
-                  {[
-                    { icon: MapPin, label: 'District', value: officer.district },
-                    { icon: MapPin, label: 'Taluka', value: officer.taluka },
-                    { icon: Droplets, label: 'Assigned Wetland', value: officer.assignedWetland },
-                  ].map(d => {
-                    const Icon = d.icon;
-                    return (
-                      <div key={d.label} className="flex items-center gap-2.5">
-                        <Icon size={12} className="text-gray-500 shrink-0" />
-                        <span className="text-[10px] text-gray-500 w-28 shrink-0">{d.label}</span>
-                        <span className="text-xs text-white">{d.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Role & Permissions */}
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4 mb-3">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">Role & Permissions</h3>
-                <div className="flex items-center gap-2 mb-3">
-                  <RoleIcon size={13} className={roleCfg?.color || 'text-gray-400'} />
-                  <span className={`text-xs font-medium ${roleCfg?.color || 'text-gray-400'}`}>{roleCfg?.label}</span>
-                  <span className={`ml-auto text-[10px] font-medium px-2 py-0.5 rounded-full ${statusConfig[officer.status].bg} ${statusConfig[officer.status].color}`}>
-                    {statusConfig[officer.status].label}
-                  </span>
-                </div>
-                {officer.permissions[0] !== 'all' ? (
-                  <div className="flex flex-wrap gap-1.5">
-                    {officer.permissions.map(p => (
-                      <span key={p} className="text-[9px] px-2 py-0.5 rounded-full bg-white/[0.04] text-gray-400 border border-white/[0.06]">
-                        {p.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-                      </span>
-                    ))}
-                  </div>
-                ) : (
-                  <span className="text-[9px] px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                    Full Access
-                  </span>
-                )}
-              </div>
-
-              {/* Stats */}
-              <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-4 mb-3">
-                <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-3">Activity</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-white/[0.04] rounded-lg p-3 text-center">
-                    <MessageSquare size={14} className="text-blue-400 mx-auto mb-1" />
-                    <div className="text-lg font-bold text-white">{officer.alertsSent}</div>
-                    <div className="text-[9px] text-gray-500">Alerts Sent</div>
-                  </div>
-                  <div className="bg-white/[0.04] rounded-lg p-3 text-center">
-                    <BarChart3 size={14} className="text-emerald-400 mx-auto mb-1" />
-                    <div className="text-lg font-bold text-white">{officer.reportsGenerated}</div>
-                    <div className="text-[9px] text-gray-500">Reports Generated</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Actions */}
-              <div className="flex gap-2">
-                <button onClick={() => { api.editOfficer(officer.id); onClose(); }}
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium text-gray-400 bg-white/[0.04] border border-white/[0.06] hover:text-white hover:bg-white/[0.08] transition-all"
-                ><Edit3 size={12} /> Edit</button>
-                <button onClick={() => { api.resetPassword(officer.id); onClose(); }}
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium text-amber-400 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 transition-all"
-                ><Key size={12} /> Reset Password</button>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
-
-// ===================== ADD OFFICER MODAL =====================
-
-function AddOfficerModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [form, setForm] = useState<NewOfficerForm>({
-    fullName: '', email: '', mobile: '', role: 'operator', district: '', taluka: '', assignedWetland: '', tempPassword: '',
-  });
-
-  const formTalukas = form.district ? talukas[form.district] || [] : [];
-
-  const update = (field: keyof NewOfficerForm, value: string) => setForm(prev => ({ ...prev, [field]: value }));
-
-  const handleSubmit = () => {
-    api.addOfficer(form);
-    onClose();
-    setForm({ fullName: '', email: '', mobile: '', role: 'operator', district: '', taluka: '', assignedWetland: '', tempPassword: '' });
-  };
-
-  const Select = ({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: string[] }) => {
-    const [open, setOpen] = useState(false);
-    return (
-      <div className="relative">
-        <label className="text-[10px] font-medium text-gray-500 mb-1 block">{label}</label>
-        <button type="button" onClick={() => setOpen(!open)}
-          className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white hover:border-white/[0.12] transition-all"
-        >
-          <span className={value ? 'text-white' : 'text-gray-600'}>{value || `Select ${label}`}</span>
-          <ChevronDown size={11} className={`text-gray-500 transition-transform ${open ? 'rotate-180' : ''}`} />
-        </button>
-        {open && (
-          <div className="absolute z-20 top-full mt-1 left-0 right-0 bg-gray-900 border border-white/[0.1] rounded-lg max-h-40 overflow-y-auto shadow-xl">
-            {options.map(opt => (
-              <button key={opt} type="button" onClick={() => { onChange(opt); setOpen(false); }}
-                className={`block w-full text-left px-3 py-2 text-xs transition-colors ${value === opt ? 'text-emerald-400 bg-emerald-500/5' : 'text-gray-300 hover:text-white hover:bg-white/[0.04]'}`}
-              >{opt}</button>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  return (
-    <AnimatePresence>
-      {open && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
-          onClick={onClose}
-        >
-          <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-            onClick={e => e.stopPropagation()}
-            className="bg-gray-900 border border-white/[0.1] rounded-xl p-5 w-full max-w-lg mx-4 shadow-2xl max-h-[90vh] overflow-y-auto"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-emerald-500/10"><Plus size={16} className="text-emerald-400" /></div>
-                <h2 className="text-sm font-bold text-white">Add Government Officer</h2>
-              </div>
-              <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/[0.08] text-gray-500 hover:text-white transition-all">
-                <X size={16} />
-              </button>
-            </div>
-
-            <div className="space-y-3">
-              <div><label className="text-[10px] font-medium text-gray-500 mb-1 block">Full Name</label>
-                <input type="text" value={form.fullName} onChange={e => update('fullName', e.target.value)}
-                  placeholder="e.g. Dr. Sharma"
-                  className="w-full px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all" />
-              </div>
-              <div className="grid grid-cols-2 gap-2.5">
-                <div><label className="text-[10px] font-medium text-gray-500 mb-1 block">Email</label>
-                  <input type="email" value={form.email} onChange={e => update('email', e.target.value)}
-                    placeholder="officer@aviangov.in"
-                    className="w-full px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all" />
-                </div>
-                <div><label className="text-[10px] font-medium text-gray-500 mb-1 block">Mobile Number</label>
-                  <input type="tel" value={form.mobile} onChange={e => update('mobile', e.target.value.replace(/\D/g, '').slice(0, 10))}
-                    placeholder="9876543210"
-                    className="w-full px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all" />
-                </div>
-              </div>
-              <Select label="Role" value={form.role} onChange={v => update('role', v as OfficerRole)} options={['admin', 'district-officer', 'operator', 'viewer']} />
-              <div className="grid grid-cols-2 gap-2.5">
-                <Select label="District" value={form.district} onChange={v => { update('district', v); update('taluka', ''); }} options={districts} />
-                <Select label="Taluka" value={form.taluka} onChange={v => update('taluka', v)} options={formTalukas} />
-              </div>
-              <Select label="Assigned Wetland" value={form.assignedWetland} onChange={v => update('assignedWetland', v)} options={wetlands} />
-              <div><label className="text-[10px] font-medium text-gray-500 mb-1 block">Temporary Password</label>
-                <input type="text" value={form.tempPassword} onChange={e => update('tempPassword', e.target.value)}
-                  placeholder="Auto-generated or enter manually"
-                  className="w-full px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all" />
-              </div>
-            </div>
-
-            <div className="flex gap-2 mt-5 pt-4 border-t border-white/[0.06]">
-              <button onClick={onClose}
-                className="flex-1 py-2 rounded-lg text-xs font-medium text-gray-400 bg-white/[0.04] border border-white/[0.06] hover:text-white hover:bg-white/[0.08] transition-all"
-              >Cancel</button>
-              <button onClick={handleSubmit}
-                className="flex-1 py-2 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 transition-all shadow-lg shadow-emerald-500/20"
-              ><Plus size={13} className="inline mr-1" /> Add Officer</button>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </div>
   );
 }
 
 // ===================== MAIN PAGE =====================
 
 export function UserManagementPage() {
-  const [officers] = useState<Officer[]>(initialOfficers);
-  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+  const { hasPermission, user: currentUser } = useAuth();
+  const canCreate = hasPermission('users', 'create') || currentUser?.role === 'SUPER_ADMIN';
+  const canUpdate = hasPermission('users', 'update') || currentUser?.role === 'SUPER_ADMIN';
+  const canDelete = hasPermission('users', 'delete') || currentUser?.role === 'SUPER_ADMIN';
+  const [users, setUsers] = useState<User[]>([]);
+  const [stats, setStats] = useState<UserStats>({ total: 0, active: 0, inactive: 0, suspended: 0, pending: 0, roles: {} });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
   const [filterRole, setFilterRole] = useState('');
   const [filterDistrict, setFilterDistrict] = useState('');
+  const [filterTaluka, setFilterTaluka] = useState('');
+  const [filterDepartment, setFilterDepartment] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [profileTarget, setProfileTarget] = useState<Officer | null>(null);
-  const [confirmAction, setConfirmAction] = useState<{ type: 'delete' | 'disable'; id: string } | null>(null);
 
-  const filtered = officers.filter(o => {
-    const q = search.toLowerCase();
-    if (q && !o.name.toLowerCase().includes(q) && !o.email.toLowerCase().includes(q) && !o.mobile.includes(q)) return false;
-    if (filterRole && o.role !== filterRole) return false;
-    if (filterDistrict && o.district !== filterDistrict) return false;
-    if (filterStatus && o.status !== filterStatus) return false;
-    return true;
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState<User | null>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [bulkAction, setBulkAction] = useState('');
+  const [bulkTarget, setBulkTarget] = useState('');
+  const [deleting, setDeleting] = useState<string | null>(null);
+  const [toggling, setToggling] = useState<string | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState<User | null>(null);
+  const [confirmToggle, setConfirmToggle] = useState<User | null>(null);
+  const [confirmBulk, setConfirmBulk] = useState<{ action: string; count: number } | null>(null);
+  const [permissionModalUser, setPermissionModalUser] = useState<User | null>(null);
+
+  const [form, setForm] = useState({
+    name: '', email: '', password: '', role: 'VIEWER' as UserRole,
+    district: '', taluka: '', assignedWetland: '', phone: '', employeeId: '',
+    department: '', designation: '', address: '', accountStatus: 'ACTIVE' as AccountStatus,
   });
 
-  const stats = [
-    { label: 'Total Officers', value: officers.length, icon: Users, color: 'text-blue-400' },
-    { label: 'Active', value: officers.filter(o => o.status === 'active').length, icon: UserCheck, color: 'text-emerald-400' },
-    { label: 'Administrators', value: officers.filter(o => o.role === 'admin').length, icon: Shield, color: 'text-purple-400' },
-    { label: 'District Officers', value: officers.filter(o => o.role === 'district-officer').length, icon: MapPin, color: 'text-emerald-400' },
-    { label: 'Operators', value: officers.filter(o => o.role === 'operator').length, icon: Activity, color: 'text-blue-400' },
-    { label: 'Viewers', value: officers.filter(o => o.role === 'viewer').length, icon: Eye, color: 'text-gray-400' },
-  ];
+  const fetchUsers = useCallback(async () => {
+    try {
+      const params: Record<string, string> = { page: String(page), limit: '20' };
+      if (searchQuery.trim()) params.search = searchQuery.trim();
+      if (filterRole) params.role = filterRole;
+      if (filterDistrict) params.district = filterDistrict;
+      if (filterTaluka) params.taluka = filterTaluka;
+      if (filterDepartment) params.department = filterDepartment;
+      if (filterStatus) params.accountStatus = filterStatus;
 
-  const SelectFilter = ({ value, onChange, options, placeholder }: { value: string; onChange: (v: string) => void; options: string[]; placeholder: string }) => {
-    const [open, setOpen] = useState(false);
+      const [userRes, statsRes] = await Promise.all([
+        userApi.getAll(params),
+        userApi.getStats(),
+      ]);
+      setUsers(userRes.data.users);
+      setTotalPages(userRes.data.pagination.pages);
+      setStats(statsRes.data);
+      setError(null);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to load users');
+    } finally {
+      setLoading(false);
+    }
+  }, [page, searchQuery, filterRole, filterDistrict, filterTaluka, filterDepartment, filterStatus]);
+
+  useEffect(() => { setLoading(true); fetchUsers(); }, [fetchUsers]);
+  useEffect(() => { setPage(1); }, [searchQuery, filterRole, filterDistrict, filterTaluka, filterDepartment, filterStatus]);
+
+  const resetForm = () => setForm({
+    name: '', email: '', password: '', role: 'VIEWER',
+    district: '', taluka: '', assignedWetland: '', phone: '', employeeId: '',
+    department: '', designation: '', address: '', accountStatus: 'ACTIVE',
+  });
+
+  const handleCreate = async () => {
+    if (!form.name || !form.email || !form.password) { toast.error('Name, email, and password are required'); return; }
+    try {
+      await userApi.create({
+        name: form.name, email: form.email, password: form.password, role: form.role,
+        district: form.district || undefined, taluka: form.taluka || undefined,
+        assignedWetland: form.assignedWetland || undefined, phone: form.phone || undefined,
+        employeeId: form.employeeId || undefined, department: form.department || undefined,
+        designation: form.designation || undefined, address: form.address || undefined,
+        accountStatus: form.accountStatus,
+      });
+      toast.success('Officer created successfully');
+      setShowAddModal(false);
+      resetForm();
+      fetchUsers();
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'Failed to create officer');
+    }
+  };
+
+  const handleEdit = async () => {
+    if (!showEditModal) return;
+    try {
+      const data: Record<string, unknown> = {};
+      if (form.name) data.name = form.name;
+      if (form.email) data.email = form.email;
+      if (form.role) data.role = form.role;
+      data.district = form.district || null;
+      data.taluka = form.taluka || null;
+      data.assignedWetland = form.assignedWetland || null;
+      data.phone = form.phone || null;
+      data.employeeId = form.employeeId || null;
+      data.department = form.department || null;
+      data.designation = form.designation || null;
+      data.address = form.address || null;
+      data.accountStatus = form.accountStatus;
+
+      await userApi.update(showEditModal.id, data as Partial<User>);
+      toast.success('Officer updated successfully');
+      setShowEditModal(null);
+      resetForm();
+      fetchUsers();
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'Failed to update officer');
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    setDeleting(id);
+    try {
+      await userApi.delete(id);
+      toast.success('Officer deleted');
+      setConfirmDelete(null);
+      fetchUsers();
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'Failed to delete');
+    } finally { setDeleting(null); }
+  };
+
+  const handleToggle = async (id: string) => {
+    setToggling(id);
+    try {
+      await userApi.toggleStatus(id);
+      toast.success('Status toggled');
+      setConfirmToggle(null);
+      fetchUsers();
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'Failed to toggle status');
+    } finally { setToggling(null); }
+  };
+
+  const handleResetPassword = async (id: string) => {
+    try {
+      const res = await userApi.resetPassword(id);
+      toast.success(`Temporary password: ${res.data.tempPassword}`, { duration: 15000 });
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'Failed to reset password');
+    }
+  };
+
+  const handleBulk = async () => {
+    if (!selectedIds.length || !bulkAction) return;
+    try {
+      const data = bulkAction === 'assignDistrict' ? { district: bulkTarget } :
+        bulkAction === 'assignWetland' ? { assignedWetland: bulkTarget } : undefined;
+      await userApi.bulkAction(selectedIds, bulkAction, data);
+      toast.success(`Bulk action completed: ${bulkAction}`);
+      setSelectedIds([]);
+      setBulkAction('');
+      setBulkTarget('');
+      setConfirmBulk(null);
+      fetchUsers();
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'Bulk action failed');
+    }
+  };
+
+  const handleExportCsv = () => {
+    const headers = ['Name', 'Email', 'Role', 'District', 'Taluka', 'Phone', 'Employee ID', 'Department', 'Status'];
+    const rows = users.map(u => [u.name, u.email, u.role, u.district || '', u.taluka || '', u.phone || '', u.employeeId || '', u.department || '', u.accountStatus]);
+    const csv = [headers.join(','), ...rows.map(r => r.join(','))];
+    const blob = new Blob([csv.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'officers.csv'; a.click(); URL.revokeObjectURL(url);
+    toast.success('CSV exported');
+  };
+
+  const openEdit = (user: User) => {
+    setForm({
+      name: user.name, email: user.email, password: '', role: user.role,
+      district: user.district || '', taluka: user.taluka || '', assignedWetland: user.assignedWetland || '',
+      phone: user.phone || '', employeeId: user.employeeId || '', department: user.department || '',
+      designation: user.designation || '', address: user.address || '', accountStatus: user.accountStatus,
+    });
+    setShowEditModal(user);
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedIds.length === users.length) setSelectedIds([]);
+    else setSelectedIds(users.map(u => u.id));
+  };
+
+  const formTalukas = form.district ? talukas[form.district] || [] : [];
+
+  if (loading && users.length === 0) {
     return (
-      <div className="relative">
-        <button type="button" onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-gray-400 hover:text-white hover:bg-white/[0.08] transition-all whitespace-nowrap"
-        >
-          {value || placeholder}
-          <ChevronDown size={11} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
-        </button>
-        {open && (
-          <div className="absolute left-0 top-full mt-1 bg-gray-900 border border-white/[0.1] rounded-lg shadow-xl z-20 min-w-[160px]">
-            <button onClick={() => { onChange(''); setOpen(false); }}
-              className="block w-full text-left px-3 py-2 text-xs text-gray-500 hover:text-white hover:bg-white/[0.04]"
-            >All</button>
-            {options.map(opt => (
-              <button key={opt} onClick={() => { onChange(opt); setOpen(false); }}
-                className={`block w-full text-left px-3 py-2 text-xs transition-colors ${value === opt ? 'text-emerald-400 bg-emerald-500/5' : 'text-gray-300 hover:text-white hover:bg-white/[0.04]'}`}
-              >{opt.charAt(0).toUpperCase() + opt.slice(1).replace('-', ' ')}</button>
-            ))}
-          </div>
-        )}
+      <div className="space-y-5">
+        <div className="flex items-center gap-3"><Skeleton className="w-12 h-12 rounded-xl" /><div className="space-y-2"><Skeleton className="h-6 w-64" /><Skeleton className="h-4 w-96" /></div></div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">{Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-20" />)}</div>
+        <Skeleton className="h-10 w-full" />
+        <div className="space-y-3">{Array.from({ length: 5 }).map((_, i) => <Skeleton key={i} className="h-16" />)}</div>
       </div>
     );
-  };
+  }
+
+  if (error && users.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-24 text-center">
+        <AlertTriangle size={40} className="text-red-400 mb-4" />
+        <p className="text-sm text-gray-400 mb-2">Failed to load officers</p>
+        <p className="text-xs text-gray-600 mb-4">{error}</p>
+        <button onClick={() => window.location.reload()} className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-600 text-xs font-semibold text-white">Retry</button>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-5">
-
-      {/* ===== HEADER ===== */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-indigo-500/10 rounded-xl">
-            <Users size={22} className="text-indigo-400" />
-          </div>
-          <div>
-            <h1 className="text-xl font-bold text-white">Government Officer Management</h1>
-            <p className="text-sm text-gray-400">Manage system users, roles, and access permissions</p>
-          </div>
+      {/* HEADER */}
+      <div className="flex items-center gap-3">
+        <div className="p-2.5 bg-blue-500/10 rounded-xl"><Users size={22} className="text-blue-400" /></div>
+        <div>
+          <h1 className="text-xl font-bold"><ShinyText text="Government Officer Management" color="#FFFFFF" shineColor="#22D3EE" spread={100} speed={3} className="text-xl font-bold" /></h1>
+          <p className="text-sm text-gray-400">Manage government officers, roles, and permissions</p>
         </div>
       </div>
 
-      {/* ===== STATISTICS ===== */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {stats.map(s => {
-          const Icon = s.icon;
-          return (
-            <div key={s.label} className="bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.06] p-4">
-              <div className="flex items-center gap-2 mb-1.5">
-                <Icon size={14} className={s.color} />
-                <span className="text-[9px] text-gray-600 uppercase tracking-wider">{s.label}</span>
-              </div>
-              <div className="text-xl font-bold text-white">{s.value}</div>
-            </div>
-          );
-        })}
+      {/* STATS */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {[
+          { label: 'Total Officers', value: stats.total, icon: Users, color: 'text-blue-400' },
+          { label: 'Active', value: stats.active, icon: UserCheck, color: 'text-emerald-400' },
+          { label: 'Inactive', value: stats.inactive, icon: XCircle, color: 'text-gray-400' },
+          { label: 'Suspended', value: stats.suspended, icon: Ban, color: 'text-red-400' },
+        ].map(s => (
+          <div key={s.label} className="bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.06] p-4 flex items-center gap-3">
+            <div className="p-2.5 rounded-lg bg-white/[0.04]"><s.icon size={18} className={s.color} /></div>
+            <div><div className="text-xl font-bold text-white">{s.value}</div><div className="text-[10px] text-gray-500">{s.label}</div></div>
+          </div>
+        ))}
       </div>
 
-      {/* ===== SEARCH + FILTERS + ADD BUTTON ===== */}
+      {/* SEARCH & FILTERS */}
       <div className="bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.06] p-4">
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="relative flex-1 min-w-[200px]">
+        <div className="flex items-center gap-3">
+          <div className="relative flex-1">
             <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
-            <input type="text" value={search} onChange={e => setSearch(e.target.value)}
-              placeholder="Search officers by name, email, or mobile..."
+            <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+              placeholder="Search by name, email, employee ID, mobile, district, role..."
               className="w-full pl-9 pr-3 py-2 rounded-lg text-xs bg-white/[0.04] border border-white/[0.06] text-white placeholder:text-gray-600 outline-none focus:border-emerald-500/40 transition-all"
             />
           </div>
-          <SelectFilter value={filterRole} onChange={setFilterRole} options={['admin', 'district-officer', 'operator', 'viewer']} placeholder="Role: All" />
-          <SelectFilter value={filterDistrict} onChange={setFilterDistrict} options={districts} placeholder="District: All" />
-          <SelectFilter value={filterStatus} onChange={setFilterStatus} options={['active', 'inactive', 'suspended']} placeholder="Status: All" />
-          <button onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 transition-all shadow-lg shadow-emerald-500/20"
-          >
-            <Plus size={14} />
-            Add Officer
-          </button>
+          <button onClick={() => setShowFilters(!showFilters)}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] hover:bg-white/[0.08] transition-all"
+          ><Filter size={13} /> Filters <ChevronDown size={11} className={`transition-transform ${showFilters ? 'rotate-180' : ''}`} /></button>
+          {canCreate && (
+            <button onClick={() => { resetForm(); setShowAddModal(true); }}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-white bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 transition-all"
+            ><Plus size={13} /> Add Officer</button>
+          )}
         </div>
+        {showFilters && (
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-3 pt-3 border-t border-white/[0.06]">
+            <SelectField label="Role" value={filterRole} onChange={setFilterRole} options={['SUPER_ADMIN', 'ADMIN', 'OPERATOR', 'VIEWER']} />
+            <SelectField label="District" value={filterDistrict} onChange={setFilterDistrict} options={districts} />
+            <SelectField label="Taluka" value={filterTaluka} onChange={setFilterTaluka} options={Object.values(talukas).flat()} />
+            <SelectField label="Department" value={filterDepartment} onChange={setFilterDepartment} options={departments} />
+            <SelectField label="Status" value={filterStatus} onChange={setFilterStatus} options={['ACTIVE', 'INACTIVE', 'SUSPENDED', 'PENDING']} />
+          </div>
+        )}
       </div>
 
-      {/* ===== USER TABLE ===== */}
+      {/* BULK ACTIONS */}
+      {selectedIds.length > 0 && (
+        <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3 flex items-center gap-3 flex-wrap">
+          <span className="text-xs text-emerald-400 font-medium">{selectedIds.length} selected</span>
+          <DarkSelect value={bulkAction} onChange={setBulkAction}
+            options={[
+              { value: '', label: 'Choose action...' },
+              { value: 'delete', label: 'Delete' },
+              { value: 'disable', label: 'Disable' },
+              { value: 'enable', label: 'Enable' },
+              { value: 'assignDistrict', label: 'Assign District' },
+              { value: 'assignWetland', label: 'Assign Wetland' },
+            ]}
+            className="w-44"
+          />
+          {(bulkAction === 'assignDistrict') && (
+            <DarkSelect value={bulkTarget} onChange={setBulkTarget}
+              options={[{ value: '', label: 'Select district' }, ...districts.map(d => ({ value: d, label: d }))]}
+              className="w-40"
+            />
+          )}
+          {(bulkAction === 'assignWetland') && (
+            <DarkSelect value={bulkTarget} onChange={setBulkTarget}
+              options={[{ value: '', label: 'Select wetland' }, ...wetlands.map(w => ({ value: w, label: w }))]}
+              className="w-40"
+            />
+          )}
+          <button onClick={handleBulk} disabled={!bulkAction || (['assignDistrict', 'assignWetland'].includes(bulkAction) && !bulkTarget)}
+            className="px-3 py-1.5 rounded-lg text-xs font-medium text-white bg-emerald-500 hover:bg-emerald-400 transition-all disabled:opacity-50"
+          >Execute</button>
+          <button onClick={() => { setSelectedIds([]); setBulkAction(''); setBulkTarget(''); }}
+            className="px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-white transition-all"
+          >Clear</button>
+        </div>
+      )}
+
+      {/* TABLE */}
       <div className="bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.06] overflow-hidden">
+        <div className="px-4 py-3 border-b border-white/[0.06] flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Users size={14} className="text-emerald-400" />
+            <h2 className="text-sm font-bold text-white">Officers</h2>
+            <span className="text-[10px] text-gray-600">({users.length} shown)</span>
+          </div>
+          <button onClick={handleExportCsv} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] hover:bg-white/[0.08] transition-all">
+            <Download size={12} /> Export CSV
+          </button>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-white/[0.06] bg-white/[0.02]">
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Officer</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Mobile</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Role</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">District</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Assigned Wetland</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Last Login</th>
-                <th className="text-left px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Joined</th>
-                <th className="text-right px-3 py-3 text-[10px] font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                <th className="px-4 py-3"><input type="checkbox" checked={selectedIds.length === users.length && users.length > 0} onChange={toggleSelectAll} className="w-3.5 h-3.5 rounded accent-emerald-500" /></th>
+                <th className="text-left px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">Officer</th>
+                <th className="text-left px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">Role</th>
+                <th className="text-left px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">District</th>
+                <th className="text-left px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">Department</th>
+                <th className="text-left px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">Status</th>
+                <th className="text-left px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">Joined</th>
+                <th className="text-right px-4 py-3 text-[10px] font-medium text-gray-500 uppercase">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/[0.04]">
-              {filtered.length === 0 ? (
-                <tr><td colSpan={9} className="px-4 py-8 text-center text-xs text-gray-600">No officers found matching your filters</td></tr>
-              ) : (
-                filtered.map(o => {
-                  const rc = roleConfig[o.role];
-                  const sc = statusConfig[o.status];
-                  const RoleIcon = rc.icon;
-                  return (
-                    <tr key={o.id} className="hover:bg-white/[0.02] transition-all">
-                      <td className="px-3 py-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center text-xs font-bold text-white shrink-0">
-                            {o.name.split(' ').map(n => n[0]).join('')}
-                          </div>
-                          <div className="min-w-0">
-                            <div className="text-xs font-semibold text-white truncate">{o.name}</div>
-                            <div className="text-[10px] text-gray-500 truncate">{o.email}</div>
-                          </div>
+              {users.length === 0 ? (
+                <tr><td colSpan={8} className="px-4 py-8 text-center text-xs text-gray-600">No officers found</td></tr>
+              ) : users.map(u => {
+                const st = statusLabels[u.accountStatus] || statusLabels.ACTIVE;
+                const rc = roleColors[u.role] || roleColors.VIEWER;
+                return (
+                  <tr key={u.id} className="hover:bg-white/[0.02] transition-all">
+                    <td className="px-4 py-3"><input type="checkbox" checked={selectedIds.includes(u.id)}
+                      onChange={() => setSelectedIds(prev => prev.includes(u.id) ? prev.filter(i => i !== u.id) : [...prev, u.id])}
+                      className="w-3.5 h-3.5 rounded accent-emerald-500" /></td>
+                    <td className="px-4 py-3">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">
+                          {u.avatar ? <img src={u.avatar} alt="" className="w-full h-full rounded-full object-cover" /> : u.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                         </div>
-                      </td>
-                      <td className="px-3 py-3 text-gray-400">{o.mobile}</td>
-                      <td className="px-3 py-3">
-                        <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${rc.bg} ${rc.color}`}>
-                          <RoleIcon size={10} />
-                          {rc.label}
-                        </span>
-                      </td>
-                      <td className="px-3 py-3 text-gray-400">{o.district}</td>
-                      <td className="px-3 py-3 text-gray-400">{o.assignedWetland}</td>
-                      <td className="px-3 py-3">
-                        <span className={`flex items-center gap-1.5 text-[10px] font-medium ${sc.color}`}>
-                          <div className={`w-1.5 h-1.5 rounded-full ${sc.dot}`} />
-                          {sc.label}
-                        </span>
-                      </td>
-                      <td className="px-3 py-3 text-gray-500">{o.lastLogin}</td>
-                      <td className="px-3 py-3 text-gray-500">{o.joinDate}</td>
-                      <td className="px-3 py-3">
-                        <div className="flex items-center justify-end gap-0.5">
-                          <button onClick={() => setProfileTarget(o)}
-                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View Profile">
-                            <Eye size={13} />
-                          </button>
-                          <button onClick={() => api.editOfficer(o.id)}
-                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-blue-400 transition-all" title="Edit">
-                            <Edit3 size={13} />
-                          </button>
-                          <button onClick={() => api.resetPassword(o.id)}
-                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-amber-400 transition-all" title="Reset Password">
-                            <Key size={13} />
-                          </button>
-                          <button onClick={() => setConfirmAction({ type: 'disable', id: o.id })}
-                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all" title={o.status === 'active' ? 'Disable' : 'Enable'}>
-                            <UserX size={13} />
-                          </button>
-                          <button onClick={() => setConfirmAction({ type: 'delete', id: o.id })}
-                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-500 transition-all" title="Delete">
-                            <Trash2 size={13} />
-                          </button>
+                        <div>
+                          <div className="text-xs font-medium text-white">{u.name}</div>
+                          <div className="text-[10px] text-gray-500">{u.email}</div>
                         </div>
-                      </td>
-                    </tr>
-                  );
-                })
-              )}
+                      </div>
+                    </td>
+                    <td className="px-4 py-3"><span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${rc}`}>{roleLabels[u.role] || u.role}</span></td>
+                    <td className="px-4 py-3 text-gray-400">{u.district || '—'}</td>
+                    <td className="px-4 py-3 text-gray-400">{u.department || '—'}</td>
+                    <td className="px-4 py-3"><span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${st.bg} ${st.color}`}>{st.label}</span></td>
+                    <td className="px-4 py-3 text-gray-400">{new Date(u.createdAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</td>
+                    <td className="px-4 py-3">
+                      <div className="flex items-center justify-end gap-1">
+                        <button onClick={() => navigate(`/dashboard/users/${u.id}`)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-emerald-400 transition-all" title="View Details"><Eye size={13} /></button>
+                        {canUpdate && (
+                          <>
+                            <button onClick={() => openEdit(u)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-blue-400 transition-all" title="Edit"><Edit3 size={13} /></button>
+                            <button onClick={() => setPermissionModalUser(u)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-purple-400 transition-all" title="Permissions"><Shield size={13} /></button>
+                          </>
+                        )}
+                        <button onClick={() => handleResetPassword(u.id)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-amber-400 transition-all" title="Reset Password"><Key size={13} /></button>
+                        {canUpdate && (
+                          <button onClick={() => setConfirmToggle(u)} disabled={toggling === u.id}
+                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-cyan-400 transition-all disabled:opacity-50" title="Toggle Status">
+                            {toggling === u.id ? <RefreshCw size={13} className="animate-spin" /> : u.accountStatus === 'ACTIVE' ? <XCircle size={13} /> : <CheckCircle size={13} />}
+                          </button>
+                        )}
+                        {canDelete && (
+                          <button onClick={() => setConfirmDelete(u)} disabled={deleting === u.id}
+                            className="p-1.5 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-red-400 transition-all disabled:opacity-50" title="Delete">
+                            {deleting === u.id ? <RefreshCw size={13} className="animate-spin" /> : <Trash2 size={13} />}
+                          </button>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-3 px-4 py-3 border-t border-white/[0.06]">
+            <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page <= 1} className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/[0.06] disabled:opacity-30 transition-all"><ChevronLeft size={14} /></button>
+            <span className="text-xs text-gray-500">Page {page} of {totalPages}</span>
+            <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page >= totalPages} className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/[0.06] disabled:opacity-30 transition-all"><ChevronRight size={14} /></button>
+          </div>
+        )}
       </div>
 
-      {/* ===== MODALS ===== */}
-      <AddOfficerModal open={showAddModal} onClose={() => setShowAddModal(false)} />
-      <ProfileDrawer officer={profileTarget} onClose={() => setProfileTarget(null)} />
-      <ConfirmDialog
-        open={confirmAction?.type === 'delete'}
-        title="Delete Officer"
-        message="This action cannot be undone. The officer account will be permanently removed from the system."
-        confirmLabel="Delete"
-        onConfirm={() => { if (confirmAction) api.deleteOfficer(confirmAction.id); setConfirmAction(null); }}
-        onCancel={() => setConfirmAction(null)}
-      />
-      <ConfirmDialog
-        open={confirmAction?.type === 'disable'}
-        title={officers.find(o => o.id === confirmAction?.id)?.status === 'active' ? 'Disable Officer' : 'Enable Officer'}
-        message="The officer will lose access to the system until re-enabled by an administrator."
-        confirmLabel={officers.find(o => o.id === confirmAction?.id)?.status === 'active' ? 'Disable' : 'Enable'}
-        onConfirm={() => { if (confirmAction) api.disableOfficer(confirmAction.id); setConfirmAction(null); }}
-        onCancel={() => setConfirmAction(null)}
-      />
+      {/* ADD OFFICER MODAL */}
+      {showAddModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowAddModal(false)} />
+          <div className="relative bg-gray-950 border border-white/[0.08] rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-bold text-white">Add New Officer</h3>
+              <button onClick={() => setShowAddModal(false)} className="p-1 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-white"><X size={16} /></button>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="col-span-2"><label className={LABEL_CLASS}>Full Name *</label><input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className={INPUT_CLASS} placeholder="Enter full name" /></div>
+              <div><label className={LABEL_CLASS}>Email *</label><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} className={INPUT_CLASS} placeholder="officer@email.com" /></div>
+              <div><label className={LABEL_CLASS}>Mobile</label><input value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className={INPUT_CLASS} placeholder="+91 XXXXX XXXXX" /></div>
+              <div><label className={LABEL_CLASS}>Employee ID</label><input value={form.employeeId} onChange={e => setForm({ ...form, employeeId: e.target.value })} className={INPUT_CLASS} placeholder="EMP-001" /></div>
+              <div><label className={LABEL_CLASS}>Department</label>
+                <DarkSelect value={form.department} onChange={v => setForm({ ...form, department: v })}
+                  options={[{ value: '', label: 'Select Department' }, ...departments.map(d => ({ value: d, label: d }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Designation</label><input value={form.designation} onChange={e => setForm({ ...form, designation: e.target.value })} className={INPUT_CLASS} placeholder="e.g. Environmental Officer" /></div>
+              <div><label className={LABEL_CLASS}>Role *</label>
+                <DarkSelect value={form.role} onChange={v => setForm({ ...form, role: v as UserRole })}
+                  options={Object.entries(roleLabels).map(([k, v]) => ({ value: k, label: v }))}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>District</label>
+                <DarkSelect value={form.district} onChange={v => setForm({ ...form, district: v, taluka: '' })}
+                  options={[{ value: '', label: 'Select District' }, ...districts.map(d => ({ value: d, label: d }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Taluka</label>
+                <DarkSelect value={form.taluka} onChange={v => setForm({ ...form, taluka: v })}
+                  options={[{ value: '', label: 'Select Taluka' }, ...formTalukas.map(t => ({ value: t, label: t }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Assigned Wetland</label>
+                <DarkSelect value={form.assignedWetland} onChange={v => setForm({ ...form, assignedWetland: v })}
+                  options={[{ value: '', label: 'Select Wetland' }, ...wetlands.map(w => ({ value: w, label: w }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Account Status</label>
+                <DarkSelect value={form.accountStatus} onChange={v => setForm({ ...form, accountStatus: v as AccountStatus })}
+                  options={Object.entries(statusLabels).map(([k, v]) => ({ value: k, label: v.label }))}
+                />
+              </div>
+              <div className="col-span-2"><label className={LABEL_CLASS}>Address</label><input value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} className={INPUT_CLASS} placeholder="Full address" /></div>
+              <div><label className={LABEL_CLASS}>Password *</label><input type="password" value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} className={INPUT_CLASS} placeholder="Min 8 characters" /></div>
+            </div>
+            <div className="flex items-center justify-end gap-2 mt-4 pt-4 border-t border-white/[0.06]">
+              <button onClick={() => setShowAddModal(false)} className="px-4 py-2 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] transition-all">Cancel</button>
+              <button onClick={handleCreate} className="px-4 py-2 rounded-lg text-xs font-medium text-white bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 transition-all">Create Officer</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* EDIT OFFICER MODAL */}
+      {showEditModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowEditModal(null)} />
+          <div className="relative bg-gray-950 border border-white/[0.08] rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-bold text-white">Edit Officer — {showEditModal.name}</h3>
+              <button onClick={() => setShowEditModal(null)} className="p-1 rounded-lg hover:bg-white/[0.06] text-gray-500 hover:text-white"><X size={16} /></button>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="col-span-2"><label className={LABEL_CLASS}>Full Name</label><input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className={INPUT_CLASS} /></div>
+              <div><label className={LABEL_CLASS}>Email</label><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} className={INPUT_CLASS} /></div>
+              <div><label className={LABEL_CLASS}>Mobile</label><input value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className={INPUT_CLASS} /></div>
+              <div><label className={LABEL_CLASS}>Employee ID</label><input value={form.employeeId} onChange={e => setForm({ ...form, employeeId: e.target.value })} className={INPUT_CLASS} /></div>
+              <div><label className={LABEL_CLASS}>Department</label>
+                <DarkSelect value={form.department} onChange={v => setForm({ ...form, department: v })}
+                  options={[{ value: '', label: 'Select Department' }, ...departments.map(d => ({ value: d, label: d }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Designation</label><input value={form.designation} onChange={e => setForm({ ...form, designation: e.target.value })} className={INPUT_CLASS} /></div>
+              <div><label className={LABEL_CLASS}>Role</label>
+                <DarkSelect value={form.role} onChange={v => setForm({ ...form, role: v as UserRole })}
+                  options={Object.entries(roleLabels).map(([k, v]) => ({ value: k, label: v }))}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>District</label>
+                <DarkSelect value={form.district} onChange={v => setForm({ ...form, district: v, taluka: '' })}
+                  options={[{ value: '', label: 'Select District' }, ...districts.map(d => ({ value: d, label: d }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Taluka</label>
+                <DarkSelect value={form.taluka} onChange={v => setForm({ ...form, taluka: v })}
+                  options={[{ value: '', label: 'Select Taluka' }, ...(talukas[form.district] || []).map(t => ({ value: t, label: t }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Assigned Wetland</label>
+                <DarkSelect value={form.assignedWetland} onChange={v => setForm({ ...form, assignedWetland: v })}
+                  options={[{ value: '', label: 'Select Wetland' }, ...wetlands.map(w => ({ value: w, label: w }))]}
+                />
+              </div>
+              <div><label className={LABEL_CLASS}>Status</label>
+                <DarkSelect value={form.accountStatus} onChange={v => setForm({ ...form, accountStatus: v as AccountStatus })}
+                  options={Object.entries(statusLabels).map(([k, v]) => ({ value: k, label: v.label }))}
+                />
+              </div>
+              <div className="col-span-2"><label className={LABEL_CLASS}>Address</label><input value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} className={INPUT_CLASS} /></div>
+            </div>
+            <div className="flex items-center justify-end gap-2 mt-4 pt-4 border-t border-white/[0.06]">
+              <button onClick={() => setShowEditModal(null)} className="px-4 py-2 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] transition-all">Cancel</button>
+              <button onClick={handleEdit} className="px-4 py-2 rounded-lg text-xs font-medium text-white bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 transition-all">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CONFIRM DELETE */}
+      {confirmDelete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setConfirmDelete(null)} />
+          <div className="relative bg-gray-950 border border-white/[0.08] rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-red-500/10 rounded-xl"><AlertOctagon size={20} className="text-red-400" /></div>
+              <div>
+                <h3 className="text-sm font-bold text-white">Delete Officer</h3>
+                <p className="text-[10px] text-gray-500">This action cannot be undone</p>
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 mb-4">
+              Are you sure you want to delete <span className="text-white font-medium">{confirmDelete.name}</span>?
+              All their data will be permanently removed.
+            </p>
+            <div className="flex items-center justify-end gap-2">
+              <button onClick={() => setConfirmDelete(null)}
+                className="px-4 py-2 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] transition-all"
+              >Cancel</button>
+              <button onClick={() => handleDelete(confirmDelete.id)} disabled={deleting === confirmDelete.id}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium text-white bg-red-500 hover:bg-red-400 transition-all disabled:opacity-50"
+              >
+                {deleting === confirmDelete.id ? <Loader2 size={12} className="animate-spin" /> : <Trash2 size={12} />}
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CONFIRM TOGGLE STATUS */}
+      {confirmToggle && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setConfirmToggle(null)} />
+          <div className="relative bg-gray-950 border border-white/[0.08] rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-cyan-500/10 rounded-xl"><Shield size={20} className="text-cyan-400" /></div>
+              <div>
+                <h3 className="text-sm font-bold text-white">
+                  {confirmToggle.accountStatus === 'ACTIVE' ? 'Deactivate' : 'Activate'} Officer
+                </h3>
+                <p className="text-[10px] text-gray-500">Change account status</p>
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 mb-4">
+              {confirmToggle.accountStatus === 'ACTIVE'
+                ? <>Deactivate <span className="text-white font-medium">{confirmToggle.name}</span>? They will lose access to the system.</>
+                : <>Activate <span className="text-white font-medium">{confirmToggle.name}</span>? They will regain access to the system.</>
+              }
+            </p>
+            <div className="flex items-center justify-end gap-2">
+              <button onClick={() => setConfirmToggle(null)}
+                className="px-4 py-2 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] transition-all"
+              >Cancel</button>
+              <button onClick={() => handleToggle(confirmToggle.id)} disabled={toggling === confirmToggle.id}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium text-white bg-cyan-500 hover:bg-cyan-400 transition-all disabled:opacity-50"
+              >
+                {toggling === confirmToggle.id ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle size={12} />}
+                {confirmToggle.accountStatus === 'ACTIVE' ? 'Deactivate' : 'Activate'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CONFIRM BULK ACTION */}
+      {confirmBulk && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setConfirmBulk(null)} />
+          <div className="relative bg-gray-950 border border-white/[0.08] rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-amber-500/10 rounded-xl"><AlertOctagon size={20} className="text-amber-400" /></div>
+              <div>
+                <h3 className="text-sm font-bold text-white">Confirm Bulk Action</h3>
+                <p className="text-[10px] text-gray-500">{confirmBulk.count} officers will be affected</p>
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 mb-4">
+              Execute <span className="text-white font-medium">{confirmBulk.action}</span> on{' '}
+              <span className="text-white font-medium">{confirmBulk.count}</span> selected officers?
+            </p>
+            <div className="flex items-center justify-end gap-2">
+              <button onClick={() => setConfirmBulk(null)}
+                className="px-4 py-2 rounded-lg text-xs text-gray-400 hover:text-white bg-white/[0.04] border border-white/[0.06] transition-all"
+              >Cancel</button>
+              <button onClick={handleBulk}
+                className="px-4 py-2 rounded-lg text-xs font-medium text-white bg-emerald-500 hover:bg-emerald-400 transition-all"
+              >Execute</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* PERMISSION MODAL */}
+      {permissionModalUser && (
+        <PermissionModal
+          user={permissionModalUser}
+          onClose={() => setPermissionModalUser(null)}
+          onSave={(updated) => {
+            setUsers(prev => prev.map(u => u.id === updated.id ? { ...u, ...updated } : u));
+            setPermissionModalUser(null);
+          }}
+        />
+      )}
     </div>
   );
 }

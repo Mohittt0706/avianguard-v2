@@ -2,6 +2,22 @@ const { Prisma } = require('@prisma/client');
 const logger = require('../utils/logger');
 const AppError = require('../utils/AppError');
 
+function extractLocation(stack) {
+  if (!stack) return null;
+  const lines = stack.split('\n');
+  for (const line of lines) {
+    const match = line.match(/at\s+(.+?)\s+\((.+?):(\d+):(\d+)\)/);
+    if (match) {
+      return { function: match[1], file: match[2].replace(/\\/g, '/').split('/').pop(), fullPath: match[2], line: parseInt(match[3]), col: parseInt(match[4]) };
+    }
+    const match2 = line.match(/at\s+(.+?):(\d+):(\d+)/);
+    if (match2) {
+      return { function: '<anonymous>', file: match2[1].replace(/\\/g, '/').split('/').pop(), fullPath: match2[1], line: parseInt(match2[2]), col: parseInt(match2[3]) };
+    }
+  }
+  return null;
+}
+
 function errorHandler(err, req, res, _next) {
   let error = { ...err, message: err.message, stack: err.stack };
 
@@ -40,7 +56,14 @@ function errorHandler(err, req, res, _next) {
   };
 
   if (isDev) {
-    response.stack = error.stack;
+    const loc = extractLocation(err.stack);
+    response.debug = {
+      stack: err.stack,
+      file: loc ? loc.file : null,
+      line: loc ? loc.line : null,
+      function: loc ? loc.function : null,
+      cause: err.cause || null,
+    };
   }
 
   if (statusCode === 500) {

@@ -36,16 +36,20 @@ const loginSchema = z.object({
 
 const createUserSchema = z.object({
   body: z.object({
-    name: z
-      .string()
-      .trim()
-      .min(2, 'Name must be at least 2 characters')
-      .max(100, 'Name must not exceed 100 characters'),
+    name: z.string().trim().min(2, 'Name must be at least 2 characters').max(100),
     email: emailSchema,
     password: passwordSchema,
     role: z.enum(ROLES),
     district: z.string().trim().optional(),
+    taluka: z.string().trim().optional(),
     assignedWetland: z.string().trim().optional(),
+    phone: z.string().trim().optional(),
+    employeeId: z.string().trim().optional(),
+    department: z.string().trim().optional(),
+    designation: z.string().trim().optional(),
+    address: z.string().trim().optional(),
+    accountStatus: z.enum(['ACTIVE', 'INACTIVE', 'SUSPENDED', 'PENDING']).optional(),
+    permissions: z.any().optional(),
   }),
 });
 
@@ -55,8 +59,17 @@ const updateUserSchema = z.object({
     email: emailSchema.optional(),
     role: z.enum(ROLES).optional(),
     district: z.string().trim().optional(),
+    taluka: z.string().trim().optional(),
     assignedWetland: z.string().trim().optional(),
+    phone: z.string().trim().optional(),
+    employeeId: z.string().trim().optional(),
+    department: z.string().trim().optional(),
+    designation: z.string().trim().optional(),
+    address: z.string().trim().optional(),
+    avatar: z.string().trim().optional(),
+    accountStatus: z.enum(['ACTIVE', 'INACTIVE', 'SUSPENDED', 'PENDING']).optional(),
     isActive: z.boolean().optional(),
+    permissions: z.any().optional(),
   }),
 });
 

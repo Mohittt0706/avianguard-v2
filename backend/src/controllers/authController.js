@@ -12,7 +12,12 @@ exports.register = catchAsync(async (req, res) => {
 
 exports.login = catchAsync(async (req, res) => {
   const { email, password } = req.body;
-  const result = await authService.login(email, password);
+  const meta = {
+    device: req.headers['user-agent'] || 'Unknown',
+    browser: (req.headers['user-agent'] || '').split(' ').pop() || 'Unknown',
+    ipAddress: req.ip || req.connection?.remoteAddress || 'Unknown',
+  };
+  const result = await authService.login(email, password, meta);
   res.json({
     success: true,
     message: 'Login successful',

@@ -1,6 +1,8 @@
 const prisma = require('../config/database');
 const AppError = require('../utils/AppError');
 const { emitSensorReading } = require('../socket');
+const alertService = require('./alertService');
+const logger = require('../utils/logger');
 
 class ReadingService {
   _calculateStatus(reading) {
@@ -47,6 +49,8 @@ class ReadingService {
     const sensor = await prisma.sensor.findUnique({ where: { id: sensorId } });
     if (!sensor) throw new AppError('Sensor not found', 404);
 
+    logger.info(`[READING] Creating reading for sensor ${sensor.sensorId} (${sensor.name})`);
+
     const reading = await prisma.sensorReading.create({
       data: {
         sensorId,
@@ -60,6 +64,8 @@ class ReadingService {
         timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
       },
     });
+
+    logger.info(`[READING] Reading saved: id=${reading.id}, temp=${data.temperature}, pH=${data.ph}, TDS=${data.tds}, DO=${data.dissolvedOxygen}, waterLevel=${data.waterLevel}, battery=${data.battery}`);
 
     const status = this._calculateStatus(data);
 
@@ -79,6 +85,18 @@ class ReadingService {
       },
     });
 
+    logger.info(`[SENSOR] Sensor ${sensor.sensorId} updated with status=${status}`);
+
+    try {
+      logger.info(`[THRESHOLD] Evaluating alerts for reading on sensor ${sensor.sensorId}`);
+      const alerts = await alertService.evaluateAndCreateAlerts(sensorId, { ...data, status });
+      if (alerts.length > 0) {
+        logger.info(`[ALERT] Created ${alerts.length} alert(s) from reading: ${alerts.map(a => `${a.alertType}=${a.severity}`).join(', ')}`);
+      }
+    } catch (err) {
+      logger.error(`[ALERT] Failed to evaluate alerts from reading: ${err.message}`);
+    }
+
     try {
       emitSensorReading({
         sensorId,
@@ -86,9 +104,7 @@ class ReadingService {
         ...data,
         status,
       });
-    } catch (_) {
-      // socket not available
-    }
+    } catch (_) {}
 
     return { reading, sensor: updatedSensor };
   }

@@ -1,0 +1,1490 @@
+[2026-07-03T07:26:30.423Z] [INFO] Socket.io initialized
+[2026-07-03T07:26:32.744Z] [INFO] Socket.io initialized
+[2026-07-03T07:26:34.031Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:27:04.122Z] [ERROR] Failed to connect to MongoDB: "connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017"
+[2026-07-03T07:27:04.125Z] [WARN] MongoDB connection failed — dashboard features may be limited
+[2026-07-03T07:27:04.150Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T07:27:04.153Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T07:34:00.700Z] [INFO] Socket.io initialized
+[2026-07-03T07:34:00.910Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:34:01.136Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:34:01.145Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T07:34:01.154Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T07:35:45.491Z] [INFO] Socket.io initialized
+[2026-07-03T07:35:45.627Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:35:45.697Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:35:45.715Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T07:35:45.717Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T07:35:54.238Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 2236.552 ms - 803[0m
+[2026-07-03T07:35:55.071Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 750.401 ms - 117[0m
+[2026-07-03T07:35:55.558Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 1210.553 ms - 396[0m
+[2026-07-03T07:36:17.440Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 52.624 ms - -[0m
+[2026-07-03T07:36:17.471Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 72.054 ms - 92[0m
+[2026-07-03T07:36:21.125Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 614.125 ms - -[0m
+[2026-07-03T07:36:24.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.777 ms - -[0m
+[2026-07-03T07:36:54.486Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.643 ms - -[0m
+[2026-07-03T07:37:10.008Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.696 ms - -[0m
+[2026-07-03T07:37:24.467Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.485 ms - -[0m
+[2026-07-03T07:37:54.491Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.682 ms - -[0m
+[2026-07-03T07:38:24.651Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.360 ms - -[0m
+[2026-07-03T07:38:54.474Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.580 ms - -[0m
+[2026-07-03T07:39:24.342Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.148 ms - -[0m
+[2026-07-03T07:39:54.337Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.359 ms - -[0m
+[2026-07-03T07:40:25.754Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.373 ms - -[0m
+[2026-07-03T07:40:54.878Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 402.370 ms - -[0m
+[2026-07-03T07:41:24.642Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 182.133 ms - -[0m
+[2026-07-03T07:41:54.500Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.970 ms - -[0m
+[2026-07-03T07:42:41.502Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.211 ms - -[0m
+[2026-07-03T07:42:56.486Z] [INFO] Socket.io initialized
+[2026-07-03T07:42:56.732Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:42:56.894Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:42:56.918Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T07:42:56.938Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T07:43:20.799Z] [INFO] Socket.io initialized
+[2026-07-03T07:43:20.921Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:43:20.980Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:43:20.991Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T07:43:20.992Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T07:43:41.765Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 277.437 ms - -[0m
+[2026-07-03T07:44:24.156Z] [INFO] Socket.io initialized
+[2026-07-03T07:44:24.418Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:44:24.514Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:44:24.575Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T07:44:45.713Z] [INFO] Socket.io initialized
+[2026-07-03T07:44:45.973Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:44:46.105Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:44:46.149Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T07:44:46.179Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T07:45:41.762Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 215.501 ms - -[0m
+[2026-07-03T07:46:41.604Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 55.461 ms - -[0m
+[2026-07-03T07:47:41.563Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 103.791 ms - -[0m
+[2026-07-03T07:48:41.495Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.143 ms - -[0m
+[2026-07-03T07:49:41.524Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.961 ms - -[0m
+[2026-07-03T07:50:41.602Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 124.184 ms - -[0m
+[2026-07-03T07:51:41.944Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 465.148 ms - -[0m
+[2026-07-03T07:52:41.494Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.088 ms - -[0m
+[2026-07-03T07:53:41.494Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.528 ms - -[0m
+[2026-07-03T07:54:41.652Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 183.290 ms - -[0m
+[2026-07-03T07:55:38.356Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.818 ms - -[0m
+[2026-07-03T07:56:07.165Z] [INFO] Socket.io initialized
+[2026-07-03T07:56:07.334Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T07:56:07.422Z] [INFO] MongoDB connected via Mongoose
+[2026-07-03T07:56:07.433Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T07:57:33.009Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 412.972 ms - -[0m
+[2026-07-03T07:58:03.485Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.587 ms - -[0m
+[2026-07-03T07:58:33.479Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.531 ms - -[0m
+[2026-07-03T07:59:03.495Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.196 ms - -[0m
+[2026-07-03T07:59:33.484Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.861 ms - -[0m
+[2026-07-03T08:00:03.501Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.492 ms - -[0m
+[2026-07-03T08:00:33.580Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 104.173 ms - -[0m
+[2026-07-03T08:01:41.501Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.105 ms - -[0m
+[2026-07-03T08:02:41.738Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 275.259 ms - -[0m
+[2026-07-03T08:03:41.573Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 113.683 ms - -[0m
+[2026-07-03T08:04:42.038Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 564.600 ms - -[0m
+[2026-07-03T08:05:41.489Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.720 ms - -[0m
+[2026-07-03T08:06:41.505Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.546 ms - -[0m
+[2026-07-03T08:07:41.500Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.809 ms - -[0m
+[2026-07-03T08:08:41.775Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 289.203 ms - -[0m
+[2026-07-03T08:09:41.504Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.344 ms - -[0m
+[2026-07-03T08:10:43.007Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.646 ms - -[0m
+[2026-07-03T08:11:42.176Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 660.025 ms - -[0m
+[2026-07-03T08:12:41.491Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.527 ms - -[0m
+[2026-07-03T08:13:26.737Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.720 ms - -[0m
+[2026-07-03T08:13:33.476Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.520 ms - -[0m
+[2026-07-03T08:14:03.912Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 451.509 ms - -[0m
+[2026-07-03T08:14:34.015Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 542.823 ms - -[0m
+[2026-07-03T08:15:05.048Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.368 ms - -[0m
+[2026-07-03T08:15:33.498Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.845 ms - -[0m
+[2026-07-03T08:16:05.123Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.510 ms - -[0m
+[2026-07-03T08:16:33.556Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 98.799 ms - -[0m
+[2026-07-03T08:17:03.481Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.929 ms - -[0m
+[2026-07-03T08:17:33.472Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.311 ms - -[0m
+[2026-07-03T08:18:03.486Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.099 ms - -[0m
+[2026-07-03T08:18:26.903Z] [INFO] Socket.io initialized
+[2026-07-03T08:18:27.035Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T08:18:27.042Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T08:18:41.483Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.782 ms - -[0m
+[2026-07-03T08:18:46.239Z] [INFO] Socket.io initialized
+[2026-07-03T08:18:46.345Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T08:18:46.352Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T08:19:25.515Z] [INFO] Socket.io initialized
+[2026-07-03T08:19:25.617Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T08:19:25.623Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T08:19:25.625Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T08:19:41.715Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 223.178 ms - -[0m
+[2026-07-03T08:20:41.497Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.343 ms - -[0m
+[2026-07-03T08:21:41.502Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.811 ms - -[0m
+[2026-07-03T08:22:41.502Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.119 ms - -[0m
+[2026-07-03T08:23:41.494Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.485 ms - -[0m
+[2026-07-03T08:24:41.574Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 104.973 ms - -[0m
+[2026-07-03T08:25:41.714Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 248.650 ms - -[0m
+[2026-07-03T08:26:41.506Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.665 ms - -[0m
+[2026-07-03T08:27:42.621Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 107.930 ms - -[0m
+[2026-07-03T08:28:41.482Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.192 ms - -[0m
+[2026-07-03T08:29:35.454Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.159 ms - -[0m
+[2026-07-03T08:29:54.921Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 136.665 ms - -[0m
+[2026-07-03T08:30:25.850Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 236.913 ms - -[0m
+[2026-07-03T08:30:55.700Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 239.753 ms - -[0m
+[2026-07-03T08:31:24.672Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.430 ms - -[0m
+[2026-07-03T08:31:26.997Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 472.145 ms - 738[0m
+[2026-07-03T08:31:55.486Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.194 ms - -[0m
+[2026-07-03T08:32:25.559Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 100.426 ms - -[0m
+[2026-07-03T08:32:55.494Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.356 ms - -[0m
+[2026-07-03T08:33:25.480Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.912 ms - -[0m
+[2026-07-03T08:33:55.502Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.248 ms - -[0m
+[2026-07-03T08:34:25.496Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.115 ms - -[0m
+[2026-07-03T08:34:55.727Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 255.152 ms - -[0m
+[2026-07-03T08:35:25.492Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.069 ms - -[0m
+[2026-07-03T08:35:55.492Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.485 ms - -[0m
+[2026-07-03T08:36:26.155Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 684.347 ms - -[0m
+[2026-07-03T08:37:42.523Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.395 ms - -[0m
+[2026-07-03T08:38:41.491Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.469 ms - -[0m
+[2026-07-03T08:39:41.779Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 304.738 ms - -[0m
+[2026-07-03T08:40:41.682Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 203.787 ms - -[0m
+[2026-07-03T08:41:42.237Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 221.894 ms - -[0m
+[2026-07-03T08:42:41.530Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.211 ms - -[0m
+[2026-07-03T08:43:40.539Z] [INFO] [0mGET /api/v1/ai/analysis [33m404[0m 1.350 ms - 82[0m
+[2026-07-03T08:43:41.500Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.524 ms - -[0m
+[2026-07-03T08:43:49.533Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 29.212 ms - -[0m
+[2026-07-03T08:43:49.536Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.889 ms - -[0m
+[2026-07-03T08:44:09.514Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.308 ms - -[0m
+[2026-07-03T08:44:20.505Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 10.787 ms - -[0m
+[2026-07-03T08:44:20.527Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.826 ms - -[0m
+[2026-07-03T08:44:42.041Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 89.543 ms - -[0m
+[2026-07-03T08:44:51.594Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.449 ms - -[0m
+[2026-07-03T08:44:51.611Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 9.523 ms - -[0m
+[2026-07-03T08:44:51.631Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.544 ms - -[0m
+[2026-07-03T08:45:22.136Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 35.225 ms - -[0m
+[2026-07-03T08:45:22.139Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.745 ms - -[0m
+[2026-07-03T08:45:22.171Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.463 ms - -[0m
+[2026-07-03T08:45:52.513Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 7.419 ms - -[0m
+[2026-07-03T08:45:52.594Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 118.431 ms - -[0m
+[2026-07-03T08:45:52.619Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.526 ms - -[0m
+[2026-07-03T08:46:22.567Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.346 ms - -[0m
+[2026-07-03T08:46:22.571Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.435 ms - -[0m
+[2026-07-03T08:46:22.588Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.065 ms - -[0m
+[2026-07-03T08:46:52.608Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 137.619 ms - -[0m
+[2026-07-03T08:46:52.751Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 291.048 ms - -[0m
+[2026-07-03T08:46:52.784Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.507 ms - -[0m
+[2026-07-03T08:47:22.490Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.763 ms - -[0m
+[2026-07-03T08:47:22.497Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 27.538 ms - -[0m
+[2026-07-03T08:47:22.519Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.297 ms - -[0m
+[2026-07-03T08:47:52.506Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.364 ms - -[0m
+[2026-07-03T08:47:52.512Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.981 ms - -[0m
+[2026-07-03T08:47:52.531Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.002 ms - -[0m
+[2026-07-03T08:48:41.481Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.528 ms - -[0m
+[2026-07-03T08:48:41.490Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 30.399 ms - -[0m
+[2026-07-03T08:48:41.511Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.803 ms - -[0m
+[2026-07-03T08:49:41.498Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.667 ms - -[0m
+[2026-07-03T08:49:41.510Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 12.539 ms - -[0m
+[2026-07-03T08:49:41.521Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.277 ms - -[0m
+[2026-07-03T08:50:41.520Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.906 ms - -[0m
+[2026-07-03T08:50:41.526Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.208 ms - -[0m
+[2026-07-03T08:50:41.544Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.861 ms - -[0m
+[2026-07-03T08:51:41.502Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 21.778 ms - -[0m
+[2026-07-03T08:51:41.578Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 99.085 ms - -[0m
+[2026-07-03T08:51:41.598Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.640 ms - -[0m
+[2026-07-03T08:52:41.626Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 128.540 ms - -[0m
+[2026-07-03T08:52:41.725Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 250.550 ms - -[0m
+[2026-07-03T08:52:41.746Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.090 ms - -[0m
+[2026-07-03T08:53:41.493Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.698 ms - -[0m
+[2026-07-03T08:53:41.499Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 27.052 ms - -[0m
+[2026-07-03T08:53:41.516Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.305 ms - -[0m
+[2026-07-03T08:54:41.515Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 9.841 ms - -[0m
+[2026-07-03T08:54:41.531Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.257 ms - -[0m
+[2026-07-03T08:54:41.549Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.361 ms - -[0m
+[2026-07-03T08:55:41.506Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.291 ms - -[0m
+[2026-07-03T08:55:41.513Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 28.113 ms - -[0m
+[2026-07-03T08:55:41.531Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.495 ms - -[0m
+[2026-07-03T08:56:41.494Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.543 ms - -[0m
+[2026-07-03T08:56:41.516Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 18.874 ms - -[0m
+[2026-07-03T08:56:41.519Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.945 ms - -[0m
+[2026-07-03T08:57:41.522Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 20.859 ms - -[0m
+[2026-07-03T08:57:41.592Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 97.257 ms - -[0m
+[2026-07-03T08:57:41.805Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 210.350 ms - -[0m
+[2026-07-03T08:58:41.512Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 29.334 ms - -[0m
+[2026-07-03T08:58:41.674Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 193.313 ms - -[0m
+[2026-07-03T08:58:41.697Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.921 ms - -[0m
+[2026-07-03T08:59:42.089Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.789 ms - -[0m
+[2026-07-03T08:59:42.097Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 29.105 ms - -[0m
+[2026-07-03T08:59:42.111Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.744 ms - -[0m
+[2026-07-03T09:00:41.508Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.183 ms - -[0m
+[2026-07-03T09:00:41.515Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 27.676 ms - -[0m
+[2026-07-03T09:00:41.534Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.242 ms - -[0m
+[2026-07-03T09:01:41.504Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.256 ms - -[0m
+[2026-07-03T09:01:41.511Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 27.336 ms - -[0m
+[2026-07-03T09:01:41.527Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.372 ms - -[0m
+[2026-07-03T09:02:41.506Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.442 ms - -[0m
+[2026-07-03T09:02:41.517Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.828 ms - -[0m
+[2026-07-03T09:02:41.530Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.948 ms - -[0m
+[2026-07-03T09:03:41.622Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 135.219 ms - -[0m
+[2026-07-03T09:03:41.707Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 222.950 ms - -[0m
+[2026-07-03T09:03:41.791Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 81.524 ms - -[0m
+[2026-07-03T09:04:41.557Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.692 ms - -[0m
+[2026-07-03T09:04:41.560Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 32.755 ms - -[0m
+[2026-07-03T09:04:41.580Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.403 ms - -[0m
+[2026-07-03T09:05:43.587Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.204 ms - -[0m
+[2026-07-03T09:05:43.590Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.432 ms - -[0m
+[2026-07-03T09:05:43.609Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.022 ms - -[0m
+[2026-07-03T09:06:41.507Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.541 ms - -[0m
+[2026-07-03T09:06:41.513Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.014 ms - -[0m
+[2026-07-03T09:06:41.530Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.306 ms - -[0m
+[2026-07-03T09:07:41.482Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.552 ms - -[0m
+[2026-07-03T09:07:41.487Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 23.714 ms - -[0m
+[2026-07-03T09:07:41.503Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.874 ms - -[0m
+[2026-07-03T09:08:41.506Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.771 ms - -[0m
+[2026-07-03T09:08:41.512Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 29.960 ms - -[0m
+[2026-07-03T09:08:41.530Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.114 ms - -[0m
+[2026-07-03T09:09:41.691Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 210.457 ms - -[0m
+[2026-07-03T09:09:41.773Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 294.656 ms - -[0m
+[2026-07-03T09:09:41.794Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.881 ms - -[0m
+[2026-07-03T09:10:41.493Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.456 ms - -[0m
+[2026-07-03T09:10:41.507Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.722 ms - -[0m
+[2026-07-03T09:10:41.524Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.031 ms - -[0m
+[2026-07-03T09:11:42.829Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1348.114 ms - -[0m
+[2026-07-03T09:11:42.835Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 1349.130 ms - -[0m
+[2026-07-03T09:11:42.855Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.349 ms - -[0m
+[2026-07-03T09:12:41.828Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 353.012 ms - -[0m
+[2026-07-03T09:12:41.994Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 153.919 ms - -[0m
+[2026-07-03T09:12:42.113Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 274.808 ms - -[0m
+[2026-07-03T09:13:41.488Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.888 ms - -[0m
+[2026-07-03T09:13:41.493Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.708 ms - -[0m
+[2026-07-03T09:13:41.512Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.359 ms - -[0m
+[2026-07-03T09:14:40.199Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 58.978 ms - -[0m
+[2026-07-03T09:14:40.212Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 68.358 ms - -[0m
+[2026-07-03T09:14:40.246Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.032 ms - -[0m
+[2026-07-03T09:15:40.664Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 495.397 ms - -[0m
+[2026-07-03T09:15:40.836Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 667.351 ms - -[0m
+[2026-07-03T09:15:40.859Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.857 ms - -[0m
+[2026-07-03T09:16:40.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.004 ms - -[0m
+[2026-07-03T09:16:40.144Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 30.787 ms - -[0m
+[2026-07-03T09:16:40.164Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.219 ms - -[0m
+[2026-07-03T09:17:40.161Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.509 ms - -[0m
+[2026-07-03T09:17:40.168Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 27.923 ms - -[0m
+[2026-07-03T09:17:40.189Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.760 ms - -[0m
+[2026-07-03T09:18:40.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.035 ms - -[0m
+[2026-07-03T09:18:40.169Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.526 ms - -[0m
+[2026-07-03T09:18:40.183Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.055 ms - -[0m
+[2026-07-03T09:19:41.727Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.770 ms - -[0m
+[2026-07-03T09:19:41.735Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.777 ms - -[0m
+[2026-07-03T09:19:41.749Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.120 ms - -[0m
+[2026-07-03T09:20:40.678Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 9.021 ms - -[0m
+[2026-07-03T09:20:41.065Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 396.956 ms - -[0m
+[2026-07-03T09:20:41.088Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.661 ms - -[0m
+[2026-07-03T09:21:40.166Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.153 ms - -[0m
+[2026-07-03T09:21:40.172Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.873 ms - -[0m
+[2026-07-03T09:21:40.196Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.550 ms - -[0m
+[2026-07-03T09:22:26.355Z] [INFO] Socket.io initialized
+[2026-07-03T09:22:27.717Z] [INFO] Socket.io initialized
+[2026-07-03T09:22:27.901Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T09:22:27.907Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T09:22:40.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.737 ms - -[0m
+[2026-07-03T09:22:40.136Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.466 ms - -[0m
+[2026-07-03T09:22:40.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.785 ms - -[0m
+[2026-07-03T09:23:45.111Z] [INFO] Socket.io initialized
+[2026-07-03T09:23:45.222Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T09:23:45.227Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T09:23:45.250Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T09:23:51.300Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 352.926 ms - -[0m
+[2026-07-03T09:23:51.305Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 347.251 ms - -[0m
+[2026-07-03T09:23:51.443Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 130.128 ms - -[0m
+[2026-07-03T09:23:53.792Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 124.192 ms - 805[0m
+[2026-07-03T09:24:06.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.550 ms - -[0m
+[2026-07-03T09:24:06.300Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 48.186 ms - -[0m
+[2026-07-03T09:24:09.139Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.428 ms - -[0m
+[2026-07-03T09:24:09.193Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACKNOWLEDGED,RESOLVED [33m400[0m 75.137 ms - 1533[0m
+[2026-07-03T09:24:11.386Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 253.899 ms - -[0m
+[2026-07-03T09:24:11.449Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 303.200 ms - -[0m
+[2026-07-03T09:24:11.465Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.597 ms - -[0m
+[2026-07-03T09:24:18.093Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 33.881 ms - -[0m
+[2026-07-03T09:24:42.124Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.978 ms - -[0m
+[2026-07-03T09:24:48.127Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 14.506 ms - -[0m
+[2026-07-03T09:25:12.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.988 ms - -[0m
+[2026-07-03T09:25:18.128Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 20.567 ms - -[0m
+[2026-07-03T09:25:42.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.736 ms - -[0m
+[2026-07-03T09:25:48.143Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 17.443 ms - -[0m
+[2026-07-03T09:26:12.150Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.736 ms - -[0m
+[2026-07-03T09:26:18.136Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 15.858 ms - -[0m
+[2026-07-03T09:26:42.131Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.074 ms - -[0m
+[2026-07-03T09:26:48.146Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 30.529 ms - -[0m
+[2026-07-03T09:27:12.141Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.219 ms - -[0m
+[2026-07-03T09:27:18.133Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 12.376 ms - -[0m
+[2026-07-03T09:28:40.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.463 ms - -[0m
+[2026-07-03T09:28:40.151Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 28.090 ms - -[0m
+[2026-07-03T09:29:40.392Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 278.271 ms - -[0m
+[2026-07-03T09:29:40.406Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 292.279 ms - -[0m
+[2026-07-03T09:30:40.172Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 41.534 ms - -[0m
+[2026-07-03T09:30:40.178Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 41.576 ms - -[0m
+[2026-07-03T09:31:40.155Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 32.881 ms - -[0m
+[2026-07-03T09:31:40.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.442 ms - -[0m
+[2026-07-03T09:32:40.156Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 29.824 ms - -[0m
+[2026-07-03T09:32:40.160Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.996 ms - -[0m
+[2026-07-03T09:33:40.191Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 16.484 ms - -[0m
+[2026-07-03T09:33:40.276Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.664 ms - -[0m
+[2026-07-03T09:34:40.138Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.349 ms - -[0m
+[2026-07-03T09:34:40.150Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 29.905 ms - -[0m
+[2026-07-03T09:35:40.691Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 576.779 ms - -[0m
+[2026-07-03T09:35:40.699Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 579.433 ms - -[0m
+[2026-07-03T09:36:40.165Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 36.872 ms - -[0m
+[2026-07-03T09:36:40.168Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.327 ms - -[0m
+[2026-07-03T09:37:41.204Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 55.833 ms - -[0m
+[2026-07-03T09:37:41.216Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 66.313 ms - -[0m
+[2026-07-03T09:38:40.142Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 16.527 ms - -[0m
+[2026-07-03T09:38:40.156Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.704 ms - -[0m
+[2026-07-03T09:39:40.160Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.144 ms - -[0m
+[2026-07-03T09:39:40.164Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 34.794 ms - -[0m
+[2026-07-03T09:40:40.233Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.144 ms - -[0m
+[2026-07-03T09:40:40.235Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 40.919 ms - -[0m
+[2026-07-03T09:41:42.446Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 296.293 ms - -[0m
+[2026-07-03T09:41:42.452Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 303.018 ms - -[0m
+[2026-07-03T09:42:40.156Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 30.680 ms - -[0m
+[2026-07-03T09:42:40.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.889 ms - -[0m
+[2026-07-03T09:43:40.151Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 25.469 ms - -[0m
+[2026-07-03T09:43:40.163Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.240 ms - -[0m
+[2026-07-03T09:44:40.140Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 15.155 ms - -[0m
+[2026-07-03T09:44:40.164Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.144 ms - -[0m
+[2026-07-03T09:45:40.139Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 14.583 ms - -[0m
+[2026-07-03T09:45:40.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.930 ms - -[0m
+[2026-07-03T09:46:40.205Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 51.290 ms - -[0m
+[2026-07-03T09:46:40.227Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 70.715 ms - -[0m
+[2026-07-03T09:47:40.429Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 299.687 ms - -[0m
+[2026-07-03T09:47:40.439Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 294.057 ms - -[0m
+[2026-07-03T09:48:40.148Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.638 ms - -[0m
+[2026-07-03T09:48:40.152Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 32.835 ms - -[0m
+[2026-07-03T09:49:41.193Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 25.294 ms - -[0m
+[2026-07-03T09:49:41.196Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.957 ms - -[0m
+[2026-07-03T09:50:40.129Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 14.729 ms - -[0m
+[2026-07-03T09:50:40.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.563 ms - -[0m
+[2026-07-03T09:51:40.146Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.868 ms - -[0m
+[2026-07-03T09:51:40.149Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 25.179 ms - -[0m
+[2026-07-03T09:52:40.144Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 22.500 ms - -[0m
+[2026-07-03T09:52:40.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.086 ms - -[0m
+[2026-07-03T09:53:14.361Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 395.365 ms - -[0m
+[2026-07-03T09:53:14.426Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 462.394 ms - -[0m
+[2026-07-03T09:53:18.132Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 19.412 ms - -[0m
+[2026-07-03T09:53:36.198Z] [INFO] Socket.io initialized
+[2026-07-03T09:53:36.379Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T09:53:37.663Z] [INFO] Socket.io initialized
+[2026-07-03T09:53:37.769Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T09:53:37.776Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T09:53:37.778Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T09:53:43.433Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 273.317 ms - -[0m
+[2026-07-03T09:53:48.145Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 32.617 ms - -[0m
+[2026-07-03T09:54:12.140Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.594 ms - -[0m
+[2026-07-03T09:54:40.133Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 12.662 ms - -[0m
+[2026-07-03T09:55:06.109Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 25.199 ms - -[0m
+[2026-07-03T09:55:06.112Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.511 ms - -[0m
+[2026-07-03T09:55:12.766Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 71.216 ms - -[0m
+[2026-07-03T09:55:18.120Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 14.783 ms - -[0m
+[2026-07-03T09:55:42.126Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.227 ms - -[0m
+[2026-07-03T09:55:48.121Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 12.467 ms - -[0m
+[2026-07-03T09:56:40.146Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.074 ms - -[0m
+[2026-07-03T09:56:40.164Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 7.957 ms - -[0m
+[2026-07-03T09:57:40.201Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 8.046 ms - -[0m
+[2026-07-03T09:57:40.361Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 109.872 ms - -[0m
+[2026-07-03T09:58:40.421Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.227 ms - -[0m
+[2026-07-03T09:58:41.313Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 1168.846 ms - -[0m
+[2026-07-03T09:58:52.414Z] [INFO] Socket connected: Rpr3GyHjwE9flhVzAAAB
+[2026-07-03T09:58:52.421Z] [DEBUG] Handler registered for socket: Rpr3GyHjwE9flhVzAAAB
+[2026-07-03T09:58:52.426Z] [DEBUG] Socket Rpr3GyHjwE9flhVzAAAB joined alerts room
+[2026-07-03T09:58:52.449Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 270.635 ms - -[0m
+[2026-07-03T09:58:52.723Z] [INFO] Socket disconnected: Rpr3GyHjwE9flhVzAAAB (transport close)
+[2026-07-03T09:58:57.119Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 394.946 ms - -[0m
+[2026-07-03T09:58:57.135Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 21.212 ms - -[0m
+[2026-07-03T09:58:57.201Z] [INFO] Socket connected: 0qzqR1Iciv5qhPZIAAAD
+[2026-07-03T09:58:57.205Z] [DEBUG] Handler registered for socket: 0qzqR1Iciv5qhPZIAAAD
+[2026-07-03T09:58:57.267Z] [DEBUG] Socket 0qzqR1Iciv5qhPZIAAAD joined alerts room
+[2026-07-03T09:59:27.128Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 10.921 ms - -[0m
+[2026-07-03T09:59:27.141Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.763 ms - -[0m
+[2026-07-03T09:59:50.140Z] [INFO] Socket disconnected: 0qzqR1Iciv5qhPZIAAAD (client namespace disconnect)
+[2026-07-03T09:59:50.158Z] [INFO] Socket connected: wNSisHnQclQySn_VAAAF
+[2026-07-03T09:59:50.160Z] [DEBUG] Handler registered for socket: wNSisHnQclQySn_VAAAF
+[2026-07-03T09:59:50.162Z] [DEBUG] Socket wNSisHnQclQySn_VAAAF joined alerts room
+[2026-07-03T09:59:57.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.107 ms - -[0m
+[2026-07-03T09:59:57.134Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 22.166 ms - -[0m
+[2026-07-03T10:00:27.133Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.500 ms - -[0m
+[2026-07-03T10:00:27.157Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 13.112 ms - -[0m
+[2026-07-03T10:00:57.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.910 ms - -[0m
+[2026-07-03T10:00:57.147Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 28.520 ms - -[0m
+[2026-07-03T10:01:27.155Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.720 ms - -[0m
+[2026-07-03T10:01:27.158Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 22.293 ms - -[0m
+[2026-07-03T10:01:57.147Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.690 ms - -[0m
+[2026-07-03T10:01:57.159Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 33.210 ms - -[0m
+[2026-07-03T10:02:40.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.854 ms - -[0m
+[2026-07-03T10:02:40.168Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 18.623 ms - -[0m
+[2026-07-03T10:03:40.209Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.336 ms - -[0m
+[2026-07-03T10:03:40.211Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 40.962 ms - -[0m
+[2026-07-03T10:04:40.334Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 196.287 ms - -[0m
+[2026-07-03T10:04:40.443Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 306.553 ms - -[0m
+[2026-07-03T10:05:40.163Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.300 ms - -[0m
+[2026-07-03T10:05:40.176Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 34.464 ms - -[0m
+[2026-07-03T10:05:56.740Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.499 ms - -[0m
+[2026-07-03T10:05:56.759Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 34.536 ms - -[0m
+[2026-07-03T10:06:08.406Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.530 ms - -[0m
+[2026-07-03T10:06:08.430Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.695 ms - -[0m
+[2026-07-03T10:06:13.023Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 21.746 ms - -[0m
+[2026-07-03T10:06:18.719Z] [INFO] Socket disconnected: wNSisHnQclQySn_VAAAF (transport close)
+[2026-07-03T10:06:19.698Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 160.817 ms - -[0m
+[2026-07-03T10:06:19.725Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 188.091 ms - -[0m
+[2026-07-03T10:06:19.734Z] [INFO] Socket connected: ichtc-C7zhQi9wrsAAAH
+[2026-07-03T10:06:19.757Z] [DEBUG] Handler registered for socket: ichtc-C7zhQi9wrsAAAH
+[2026-07-03T10:06:19.780Z] [DEBUG] Socket ichtc-C7zhQi9wrsAAAH joined alerts room
+[2026-07-03T10:06:22.629Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.267 ms - -[0m
+[2026-07-03T10:06:22.636Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.466 ms - -[0m
+[2026-07-03T10:06:50.133Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.555 ms - -[0m
+[2026-07-03T10:06:53.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.208 ms - -[0m
+[2026-07-03T10:06:53.154Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 22.684 ms - -[0m
+[2026-07-03T10:07:07.067Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 9.791 ms - -[0m
+[2026-07-03T10:07:08.006Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.394 ms - -[0m
+[2026-07-03T10:07:19.541Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.059 ms - -[0m
+[2026-07-03T10:07:22.997Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.056 ms - -[0m
+[2026-07-03T10:07:38.001Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.837 ms - -[0m
+[2026-07-03T10:07:49.544Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.967 ms - -[0m
+[2026-07-03T10:07:53.007Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.353 ms - -[0m
+[2026-07-03T10:08:08.049Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 37.297 ms - -[0m
+[2026-07-03T10:08:19.568Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.793 ms - -[0m
+[2026-07-03T10:08:22.999Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.216 ms - -[0m
+[2026-07-03T10:08:38.010Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.310 ms - -[0m
+[2026-07-03T10:08:44.289Z] [INFO] Socket.io initialized
+[2026-07-03T10:08:44.455Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:08:44.461Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:08:44.465Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:08:44.687Z] [INFO] Socket connected: 8F1kLbv0UOpZuxmkAAAB
+[2026-07-03T10:08:44.689Z] [DEBUG] Handler registered for socket: 8F1kLbv0UOpZuxmkAAAB
+[2026-07-03T10:08:44.692Z] [DEBUG] Socket 8F1kLbv0UOpZuxmkAAAB joined alerts room
+[2026-07-03T10:08:46.721Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 269.920 ms - 451[0m
+[2026-07-03T10:08:47.120Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 373.226 ms - 883[0m
+[2026-07-03T10:08:47.147Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 402.224 ms - -[0m
+[2026-07-03T10:08:47.168Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.333 ms - -[0m
+[2026-07-03T10:08:49.553Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.854 ms - -[0m
+[2026-07-03T10:08:53.016Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.454 ms - -[0m
+[2026-07-03T10:08:57.416Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 21.225 ms - -[0m
+[2026-07-03T10:08:57.420Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.434 ms - -[0m
+[2026-07-03T10:08:58.491Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 27.476 ms - 805[0m
+[2026-07-03T10:09:01.918Z] [INFO] Socket disconnected: 8F1kLbv0UOpZuxmkAAAB (transport close)
+[2026-07-03T10:09:02.697Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 65.846 ms - -[0m
+[2026-07-03T10:09:02.707Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 77.108 ms - -[0m
+[2026-07-03T10:09:02.737Z] [INFO] Socket connected: UoFctc2K47VpKogbAAAD
+[2026-07-03T10:09:02.751Z] [DEBUG] Handler registered for socket: UoFctc2K47VpKogbAAAD
+[2026-07-03T10:09:02.782Z] [DEBUG] Socket UoFctc2K47VpKogbAAAD joined alerts room
+[2026-07-03T10:09:04.114Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.454 ms - -[0m
+[2026-07-03T10:09:19.123Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.571 ms - -[0m
+[2026-07-03T10:09:33.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.201 ms - -[0m
+[2026-07-03T10:09:34.123Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.151 ms - -[0m
+[2026-07-03T10:09:49.128Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.031 ms - -[0m
+[2026-07-03T10:10:03.135Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.685 ms - -[0m
+[2026-07-03T10:10:04.129Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.607 ms - -[0m
+[2026-07-03T10:10:19.122Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.441 ms - -[0m
+[2026-07-03T10:10:33.152Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.491 ms - -[0m
+[2026-07-03T10:10:34.127Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.843 ms - -[0m
+[2026-07-03T10:11:03.141Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.022 ms - -[0m
+[2026-07-03T10:11:15.496Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.290 ms - -[0m
+[2026-07-03T10:11:19.512Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 147.917 ms - -[0m
+[2026-07-03T10:11:33.382Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.185 ms - -[0m
+[2026-07-03T10:11:34.794Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.243 ms - -[0m
+[2026-07-03T10:11:50.705Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.471 ms - -[0m
+[2026-07-03T10:12:03.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.845 ms - -[0m
+[2026-07-03T10:12:04.140Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.461 ms - -[0m
+[2026-07-03T10:12:37.021Z] [INFO] Socket.io initialized
+[2026-07-03T10:12:37.442Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:12:37.481Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:12:37.493Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:12:40.158Z] [INFO] Socket connected: GeIsJtR_GLBVBZbHAAAB
+[2026-07-03T10:12:40.160Z] [DEBUG] Handler registered for socket: GeIsJtR_GLBVBZbHAAAB
+[2026-07-03T10:12:40.164Z] [DEBUG] Socket GeIsJtR_GLBVBZbHAAAB joined alerts room
+[2026-07-03T10:12:40.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 157.345 ms - -[0m
+[2026-07-03T10:12:40.700Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 527.690 ms - -[0m
+[2026-07-03T10:13:03.429Z] [INFO] Socket.io initialized
+[2026-07-03T10:13:03.611Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:13:03.632Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:13:03.636Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:13:04.141Z] [INFO] Socket connected: K0jrarUwiA-akEH-AAAB
+[2026-07-03T10:13:04.143Z] [DEBUG] Handler registered for socket: K0jrarUwiA-akEH-AAAB
+[2026-07-03T10:13:04.151Z] [DEBUG] Socket K0jrarUwiA-akEH-AAAB joined alerts room
+[2026-07-03T10:13:14.392Z] [INFO] Socket.io initialized
+[2026-07-03T10:13:14.529Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:13:14.538Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:13:14.544Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:13:17.122Z] [INFO] Socket connected: fWKlxF_D6cPDofvLAAAB
+[2026-07-03T10:13:17.124Z] [DEBUG] Handler registered for socket: fWKlxF_D6cPDofvLAAAB
+[2026-07-03T10:13:17.129Z] [DEBUG] Socket fWKlxF_D6cPDofvLAAAB joined alerts room
+[2026-07-03T10:13:27.307Z] [INFO] Socket.io initialized
+[2026-07-03T10:13:27.523Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:13:27.528Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:13:27.530Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:13:30.134Z] [INFO] Socket connected: ECqAQ41znghzhibXAAAB
+[2026-07-03T10:13:30.136Z] [DEBUG] Handler registered for socket: ECqAQ41znghzhibXAAAB
+[2026-07-03T10:13:30.139Z] [DEBUG] Socket ECqAQ41znghzhibXAAAB joined alerts room
+[2026-07-03T10:13:40.587Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 347.743 ms - -[0m
+[2026-07-03T10:13:40.601Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 359.454 ms - -[0m
+[2026-07-03T10:13:42.355Z] [INFO] Socket disconnected: ECqAQ41znghzhibXAAAB (client namespace disconnect)
+[2026-07-03T10:13:42.368Z] [INFO] Socket connected: yctNpcj6FLyU_pVGAAAD
+[2026-07-03T10:13:42.369Z] [DEBUG] Handler registered for socket: yctNpcj6FLyU_pVGAAAD
+[2026-07-03T10:13:42.383Z] [DEBUG] Socket yctNpcj6FLyU_pVGAAAD joined alerts room
+[2026-07-03T10:13:52.128Z] [INFO] Socket disconnected: yctNpcj6FLyU_pVGAAAD (client namespace disconnect)
+[2026-07-03T10:13:52.138Z] [INFO] Socket connected: GpmfRiEH7YntGl0IAAAF
+[2026-07-03T10:13:52.139Z] [DEBUG] Handler registered for socket: GpmfRiEH7YntGl0IAAAF
+[2026-07-03T10:13:52.141Z] [DEBUG] Socket GpmfRiEH7YntGl0IAAAF joined alerts room
+[2026-07-03T10:14:40.800Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 35.035 ms - -[0m
+[2026-07-03T10:14:40.803Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 35.145 ms - -[0m
+[2026-07-03T10:15:40.142Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.947 ms - -[0m
+[2026-07-03T10:15:40.220Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.998 ms - -[0m
+[2026-07-03T10:16:40.146Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.163 ms - -[0m
+[2026-07-03T10:16:40.171Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 50.136 ms - -[0m
+[2026-07-03T10:17:40.155Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.913 ms - -[0m
+[2026-07-03T10:17:40.158Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.996 ms - -[0m
+[2026-07-03T10:18:40.137Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.028 ms - -[0m
+[2026-07-03T10:18:40.279Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 157.644 ms - -[0m
+[2026-07-03T10:18:48.466Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 97.569 ms - -[0m
+[2026-07-03T10:18:48.559Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 358.468 ms - -[0m
+[2026-07-03T10:18:50.249Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 54.830 ms - -[0m
+[2026-07-03T10:18:57.101Z] [INFO] Socket disconnected: GpmfRiEH7YntGl0IAAAF (transport close)
+[2026-07-03T10:19:00.518Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 74.468 ms - -[0m
+[2026-07-03T10:19:00.534Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 89.893 ms - -[0m
+[2026-07-03T10:19:00.548Z] [INFO] Socket connected: pdKaWe8wylZcrbW4AAAH
+[2026-07-03T10:19:00.559Z] [DEBUG] Handler registered for socket: pdKaWe8wylZcrbW4AAAH
+[2026-07-03T10:19:00.569Z] [DEBUG] Socket pdKaWe8wylZcrbW4AAAH joined alerts room
+[2026-07-03T10:19:05.881Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.052 ms - -[0m
+[2026-07-03T10:19:11.680Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 21.165 ms - -[0m
+[2026-07-03T10:19:11.691Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.779 ms - -[0m
+[2026-07-03T10:19:31.144Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.511 ms - -[0m
+[2026-07-03T10:19:42.119Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 7.063 ms - -[0m
+[2026-07-03T10:19:42.129Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.509 ms - -[0m
+[2026-07-03T10:20:01.115Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.969 ms - -[0m
+[2026-07-03T10:20:10.857Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 23.470 ms - -[0m
+[2026-07-03T10:20:12.125Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 9.919 ms - -[0m
+[2026-07-03T10:20:12.144Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.901 ms - -[0m
+[2026-07-03T10:20:13.528Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.180 ms - -[0m
+[2026-07-03T10:20:28.532Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.219 ms - -[0m
+[2026-07-03T10:20:30.444Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.110 ms - -[0m
+[2026-07-03T10:20:43.545Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.529 ms - -[0m
+[2026-07-03T10:20:57.956Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"KH-TEMP2","name":"KHEDA"}
+[2026-07-03T10:20:58.251Z] [INFO] [SENSOR] Sensor created: cmr4s98fz0000ug6wcuacrkio (KH-TEMP2)
+[2026-07-03T10:20:58.252Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor KH-TEMP2: temp=40, pH=3, TDS=1200, DO=2, waterLevel=1, battery=65
+[2026-07-03T10:20:58.258Z] [INFO] [THRESHOLD] Evaluating sensor KH-TEMP2 (KHEDA): pH=3.00, temp=40.00, TDS=1200.00, DO=2.00, waterLevel=1.00, battery=65.00
+[2026-07-03T10:20:58.261Z] [INFO] [THRESHOLD]   pH: value=3.00 safe=6.5 — 8.5 → VIOLATED
+[2026-07-03T10:20:58.272Z] [INFO] [ALERT]   Creating CRITICAL alert for pH on sensor KH-TEMP2 (value=3.00)
+[2026-07-03T10:20:58.416Z] [INFO] [ALERT]   Alert created in DB: id=cmr4s98o50001ug6winlc6hu6, severity=CRITICAL, type=pH
+[2026-07-03T10:20:58.420Z] [INFO] [ALERT]   Alert cmr4s98o50001ug6winlc6hu6 emitted via socket
+[2026-07-03T10:20:58.422Z] [INFO] [THRESHOLD]   temperature: value=40.00 safe=< 35°C → VIOLATED
+[2026-07-03T10:20:58.436Z] [INFO] [ALERT]   Creating CRITICAL alert for temperature on sensor KH-TEMP2 (value=40.00)
+[2026-07-03T10:20:58.457Z] [INFO] [ALERT]   Alert created in DB: id=cmr4s98sn0002ug6ws2a83pwv, severity=CRITICAL, type=temperature
+[2026-07-03T10:20:58.458Z] [INFO] [ALERT]   Alert cmr4s98sn0002ug6ws2a83pwv emitted via socket
+[2026-07-03T10:20:58.460Z] [INFO] [THRESHOLD]   tds: value=1200.00 safe=< 500 ppm → VIOLATED
+[2026-07-03T10:20:58.470Z] [INFO] [ALERT]   Creating CRITICAL alert for tds on sensor KH-TEMP2 (value=1200.00)
+[2026-07-03T10:20:58.473Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 32.665 ms - 1271[0m
+[2026-07-03T10:20:58.478Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 38.892 ms - 117[0m
+[2026-07-03T10:20:58.485Z] [INFO] [ALERT]   Alert created in DB: id=cmr4s98tl0003ug6wrffdz7yt, severity=CRITICAL, type=tds
+[2026-07-03T10:20:58.488Z] [INFO] [ALERT]   Alert cmr4s98tl0003ug6wrffdz7yt emitted via socket
+[2026-07-03T10:20:58.489Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=2.00 safe=> 5 mg/L → VIOLATED
+[2026-07-03T10:20:58.494Z] [INFO] [ALERT]   Creating CRITICAL alert for dissolvedOxygen on sensor KH-TEMP2 (value=2.00)
+[2026-07-03T10:20:58.502Z] [INFO] [ALERT]   Alert created in DB: id=cmr4s98uc0004ug6wt2khcgp1, severity=CRITICAL, type=dissolvedOxygen
+[2026-07-03T10:20:58.506Z] [INFO] [ALERT]   Alert cmr4s98uc0004ug6wt2khcgp1 emitted via socket
+[2026-07-03T10:20:58.508Z] [INFO] [THRESHOLD]   waterLevel: value=1.00 safe=< 9 m → OK
+[2026-07-03T10:20:58.510Z] [INFO] [THRESHOLD]   battery: value=65.00 safe=> 20% → OK
+[2026-07-03T10:20:58.519Z] [INFO] [ALERT] Evaluation complete for sensor KH-TEMP2: 4 alert(s) created
+[2026-07-03T10:20:58.521Z] [INFO] [ALERT] Created 4 alert(s) for sensor KH-TEMP2: pH=CRITICAL, temperature=CRITICAL, tds=CRITICAL, dissolvedOxygen=CRITICAL
+[2026-07-03T10:20:58.525Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 575.109 ms - 462[0m
+[2026-07-03T10:20:58.595Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 13.488 ms - 117[0m
+[2026-07-03T10:20:58.625Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 41.248 ms - -[0m
+[2026-07-03T10:20:58.660Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.610 ms - -[0m
+[2026-07-03T10:20:58.689Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 35.115 ms - -[0m
+[2026-07-03T10:20:58.724Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 51.235 ms - -[0m
+[2026-07-03T10:20:58.847Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 45.216 ms - -[0m
+[2026-07-03T10:20:58.858Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 54.491 ms - -[0m
+[2026-07-03T10:20:58.894Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.400 ms - -[0m
+[2026-07-03T10:20:58.920Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.023 ms - -[0m
+[2026-07-03T10:20:58.938Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.837 ms - -[0m
+[2026-07-03T10:21:00.441Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.987 ms - -[0m
+[2026-07-03T10:21:05.461Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 10.073 ms - 1801[0m
+[2026-07-03T10:21:05.477Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.073 ms - -[0m
+[2026-07-03T10:21:24.036Z] [INFO] [0mPATCH /api/v1/alerts/cmr4s98uc0004ug6wt2khcgp1/resolve [32m200[0m 228.250 ms - 520[0m
+[2026-07-03T10:21:24.087Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 18.360 ms - 1368[0m
+[2026-07-03T10:21:24.096Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 27.239 ms - 117[0m
+[2026-07-03T10:21:30.463Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.847 ms - -[0m
+[2026-07-03T10:21:31.600Z] [INFO] [0mPATCH /api/v1/alerts/cmr4s98tl0003ug6wrffdz7yt/acknowledge [32m200[0m 38.746 ms - 505[0m
+[2026-07-03T10:21:31.625Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 11.682 ms - 117[0m
+[2026-07-03T10:21:31.632Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 18.120 ms - 933[0m
+[2026-07-03T10:21:35.466Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.984 ms - -[0m
+[2026-07-03T10:21:35.468Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.529 ms - -[0m
+[2026-07-03T10:21:35.809Z] [INFO] [0mPATCH /api/v1/alerts/cmr4s98sn0002ug6ws2a83pwv/resolve [32m200[0m 11.472 ms - 511[0m
+[2026-07-03T10:21:35.850Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 20.026 ms - 509[0m
+[2026-07-03T10:21:35.854Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 21.490 ms - 117[0m
+[2026-07-03T10:21:38.703Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 16.008 ms - 1539[0m
+[2026-07-03T10:21:45.899Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.394 ms - -[0m
+[2026-07-03T10:21:45.903Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.554 ms - -[0m
+[2026-07-03T10:21:48.554Z] [INFO] [0mPATCH /api/v1/alerts/cmr4s98o50001ug6winlc6hu6/acknowledge [32m200[0m 9.836 ms - 488[0m
+[2026-07-03T10:21:48.585Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 13.271 ms - 92[0m
+[2026-07-03T10:21:48.587Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 14.990 ms - 117[0m
+[2026-07-03T10:22:01.143Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.242 ms - -[0m
+[2026-07-03T10:22:16.133Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.910 ms - -[0m
+[2026-07-03T10:22:16.135Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.767 ms - -[0m
+[2026-07-03T10:22:31.115Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.913 ms - -[0m
+[2026-07-03T10:22:46.140Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 16.473 ms - -[0m
+[2026-07-03T10:22:46.143Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.695 ms - -[0m
+[2026-07-03T10:23:16.150Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.107 ms - -[0m
+[2026-07-03T10:23:16.152Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 22.958 ms - -[0m
+[2026-07-03T10:23:40.143Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.204 ms - -[0m
+[2026-07-03T10:23:46.173Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 57.273 ms - -[0m
+[2026-07-03T10:23:46.709Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 592.651 ms - -[0m
+[2026-07-03T10:24:16.255Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 118.521 ms - -[0m
+[2026-07-03T10:24:16.441Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 302.925 ms - -[0m
+[2026-07-03T10:24:40.230Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 116.736 ms - -[0m
+[2026-07-03T10:24:46.146Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 22.496 ms - -[0m
+[2026-07-03T10:24:46.149Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.858 ms - -[0m
+[2026-07-03T10:25:37.110Z] [INFO] Socket disconnected: pdKaWe8wylZcrbW4AAAH (client namespace disconnect)
+[2026-07-03T10:25:37.145Z] [INFO] Socket connected: gaQmaQbcDIeG8_PZAAAJ
+[2026-07-03T10:25:37.146Z] [DEBUG] Handler registered for socket: gaQmaQbcDIeG8_PZAAAJ
+[2026-07-03T10:25:37.162Z] [DEBUG] Socket gaQmaQbcDIeG8_PZAAAJ joined alerts room
+[2026-07-03T10:25:40.130Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 7.690 ms - -[0m
+[2026-07-03T10:25:40.141Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.477 ms - -[0m
+[2026-07-03T10:25:40.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.008 ms - -[0m
+[2026-07-03T10:25:53.127Z] [INFO] Socket disconnected: gaQmaQbcDIeG8_PZAAAJ (client namespace disconnect)
+[2026-07-03T10:25:53.227Z] [INFO] Socket connected: Z91569DodHKb6a0xAAAL
+[2026-07-03T10:25:53.228Z] [DEBUG] Handler registered for socket: Z91569DodHKb6a0xAAAL
+[2026-07-03T10:25:53.282Z] [DEBUG] Socket Z91569DodHKb6a0xAAAL joined alerts room
+[2026-07-03T10:26:40.193Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 8.415 ms - -[0m
+[2026-07-03T10:26:40.209Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.734 ms - -[0m
+[2026-07-03T10:26:40.228Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.990 ms - -[0m
+[2026-07-03T10:27:00.565Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 20.748 ms - -[0m
+[2026-07-03T10:27:00.589Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.180 ms - -[0m
+[2026-07-03T10:27:00.605Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.132 ms - -[0m
+[2026-07-03T10:27:04.068Z] [INFO] Socket disconnected: Z91569DodHKb6a0xAAAL (transport close)
+[2026-07-03T10:27:04.997Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.967 ms - -[0m
+[2026-07-03T10:27:05.017Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 50.994 ms - -[0m
+[2026-07-03T10:27:05.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 104.293 ms - -[0m
+[2026-07-03T10:27:05.134Z] [INFO] Socket connected: lIU2BxIQ2kOVftulAAAN
+[2026-07-03T10:27:05.148Z] [DEBUG] Handler registered for socket: lIU2BxIQ2kOVftulAAAN
+[2026-07-03T10:27:05.166Z] [DEBUG] Socket lIU2BxIQ2kOVftulAAAN joined alerts room
+[2026-07-03T10:27:08.228Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 18.424 ms - 805[0m
+[2026-07-03T10:27:11.535Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.628 ms - -[0m
+[2026-07-03T10:27:26.528Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.412 ms - -[0m
+[2026-07-03T10:27:34.986Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.916 ms - -[0m
+[2026-07-03T10:27:41.530Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.645 ms - -[0m
+[2026-07-03T10:27:56.527Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.902 ms - -[0m
+[2026-07-03T10:28:04.972Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.800 ms - -[0m
+[2026-07-03T10:28:09.040Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"KH-PH SENSOR","name":"NAL SAROVAR"}
+[2026-07-03T10:28:09.053Z] [INFO] [SENSOR] Sensor created: cmr4sih210005ug6warhzif0u (KH-PH SENSOR)
+[2026-07-03T10:28:09.055Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor KH-PH SENSOR: temp=40, pH=1, TDS=90, DO=5, waterLevel=2, battery=95
+[2026-07-03T10:28:09.065Z] [INFO] [THRESHOLD] Evaluating sensor KH-PH SENSOR (NAL SAROVAR): pH=1.00, temp=40.00, TDS=90.00, DO=5.00, waterLevel=2.00, battery=95.00
+[2026-07-03T10:28:09.067Z] [INFO] [THRESHOLD]   pH: value=1.00 safe=6.5 — 8.5 → VIOLATED
+[2026-07-03T10:28:09.072Z] [INFO] [ALERT]   Creating CRITICAL alert for pH on sensor KH-PH SENSOR (value=1.00)
+[2026-07-03T10:28:09.083Z] [INFO] [ALERT]   Alert created in DB: id=cmr4sih2x0006ug6whv0jay33, severity=CRITICAL, type=pH
+[2026-07-03T10:28:09.086Z] [INFO] [ALERT]   Alert cmr4sih2x0006ug6whv0jay33 emitted via socket
+[2026-07-03T10:28:09.088Z] [INFO] [THRESHOLD]   temperature: value=40.00 safe=< 35°C → VIOLATED
+[2026-07-03T10:28:09.107Z] [INFO] [ALERT]   Creating CRITICAL alert for temperature on sensor KH-PH SENSOR (value=40.00)
+[2026-07-03T10:28:09.151Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 33.621 ms - 117[0m
+[2026-07-03T10:28:09.154Z] [INFO] [ALERT]   Alert created in DB: id=cmr4sih3w0007ug6wqds334y6, severity=CRITICAL, type=temperature
+[2026-07-03T10:28:09.172Z] [INFO] [ALERT]   Alert cmr4sih3w0007ug6wqds334y6 emitted via socket
+[2026-07-03T10:28:09.190Z] [INFO] [THRESHOLD]   tds: value=90.00 safe=< 500 ppm → OK
+[2026-07-03T10:28:09.200Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=5.00 safe=> 5 mg/L → OK
+[2026-07-03T10:28:09.202Z] [INFO] [THRESHOLD]   waterLevel: value=2.00 safe=< 9 m → OK
+[2026-07-03T10:28:09.205Z] [INFO] [THRESHOLD]   battery: value=95.00 safe=> 20% → OK
+[2026-07-03T10:28:09.213Z] [INFO] [ALERT] Evaluation complete for sensor KH-PH SENSOR: 2 alert(s) created
+[2026-07-03T10:28:09.215Z] [INFO] [ALERT] Created 2 alert(s) for sensor KH-PH SENSOR: pH=CRITICAL, temperature=CRITICAL
+[2026-07-03T10:28:09.219Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 202.143 ms - 471[0m
+[2026-07-03T10:28:09.268Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 147.310 ms - 1668[0m
+[2026-07-03T10:28:09.412Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 144.547 ms - 117[0m
+[2026-07-03T10:28:09.449Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 147.072 ms - -[0m
+[2026-07-03T10:28:09.499Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 57.570 ms - -[0m
+[2026-07-03T10:28:09.521Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 55.220 ms - -[0m
+[2026-07-03T10:28:09.572Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 40.187 ms - -[0m
+[2026-07-03T10:28:09.583Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 49.615 ms - -[0m
+[2026-07-03T10:28:09.634Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.334 ms - -[0m
+[2026-07-03T10:28:09.639Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 35.471 ms - -[0m
+[2026-07-03T10:28:09.681Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 31.944 ms - -[0m
+[2026-07-03T10:28:11.518Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.468 ms - -[0m
+[2026-07-03T10:28:11.929Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 9.407 ms - 959[0m
+[2026-07-03T10:28:11.969Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 46.986 ms - -[0m
+[2026-07-03T10:28:26.977Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 15.288 ms - 2290[0m
+[2026-07-03T10:28:34.970Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.729 ms - -[0m
+[2026-07-03T10:28:49.322Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.879 ms - -[0m
+[2026-07-03T10:28:49.449Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 151.729 ms - -[0m
+[2026-07-03T10:28:55.559Z] [INFO] [0mPATCH /api/v1/alerts/cmr4sih3w0007ug6wqds334y6/acknowledge [32m200[0m 16.763 ms - 507[0m
+[2026-07-03T10:28:55.582Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 8.854 ms - 522[0m
+[2026-07-03T10:28:55.592Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 17.927 ms - 117[0m
+[2026-07-03T10:28:58.111Z] [INFO] [0mPATCH /api/v1/alerts/cmr4sih2x0006ug6whv0jay33/resolve [32m200[0m 11.466 ms - 518[0m
+[2026-07-03T10:28:58.136Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 10.938 ms - 92[0m
+[2026-07-03T10:28:58.153Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 20.291 ms - 117[0m
+[2026-07-03T10:29:05.143Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.517 ms - -[0m
+[2026-07-03T10:29:20.297Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 178.703 ms - -[0m
+[2026-07-03T10:29:20.364Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 244.810 ms - -[0m
+[2026-07-03T10:29:35.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.373 ms - -[0m
+[2026-07-03T10:29:50.132Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 14.675 ms - -[0m
+[2026-07-03T10:29:50.391Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 272.376 ms - -[0m
+[2026-07-03T10:30:05.156Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.243 ms - -[0m
+[2026-07-03T10:30:20.997Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 34.016 ms - -[0m
+[2026-07-03T10:30:21.061Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 94.130 ms - -[0m
+[2026-07-03T10:30:40.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.895 ms - -[0m
+[2026-07-03T10:30:50.943Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 49.492 ms - -[0m
+[2026-07-03T10:30:50.956Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 61.500 ms - -[0m
+[2026-07-03T10:31:05.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.052 ms - -[0m
+[2026-07-03T10:31:20.129Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.712 ms - -[0m
+[2026-07-03T10:31:20.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.677 ms - -[0m
+[2026-07-03T10:31:35.151Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.349 ms - -[0m
+[2026-07-03T10:31:50.125Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.541 ms - -[0m
+[2026-07-03T10:31:50.127Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.394 ms - -[0m
+[2026-07-03T10:32:05.120Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.602 ms - -[0m
+[2026-07-03T10:32:15.332Z] [INFO] Socket.io initialized
+[2026-07-03T10:32:16.707Z] [INFO] Socket.io initialized
+[2026-07-03T10:32:16.893Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:32:17.580Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:32:17.581Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:32:17.634Z] [INFO] Socket connected: pg_LnC6Oi6FnkicTAAAB
+[2026-07-03T10:32:17.636Z] [DEBUG] Handler registered for socket: pg_LnC6Oi6FnkicTAAAB
+[2026-07-03T10:32:17.639Z] [DEBUG] Socket pg_LnC6Oi6FnkicTAAAB joined alerts room
+[2026-07-03T10:32:20.396Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 272.538 ms - -[0m
+[2026-07-03T10:32:20.438Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 317.222 ms - -[0m
+[2026-07-03T10:32:35.136Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.665 ms - -[0m
+[2026-07-03T10:32:50.134Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.592 ms - -[0m
+[2026-07-03T10:32:50.138Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.277 ms - -[0m
+[2026-07-03T10:33:05.119Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.033 ms - -[0m
+[2026-07-03T10:33:19.345Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.888 ms - -[0m
+[2026-07-03T10:33:19.350Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.888 ms - -[0m
+[2026-07-03T10:33:35.136Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.212 ms - -[0m
+[2026-07-03T10:33:50.126Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.441 ms - -[0m
+[2026-07-03T10:33:50.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.996 ms - -[0m
+[2026-07-03T10:34:05.140Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.107 ms - -[0m
+[2026-07-03T10:34:20.159Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 23.864 ms - -[0m
+[2026-07-03T10:34:20.163Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.113 ms - -[0m
+[2026-07-03T10:34:25.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.734 ms - -[0m
+[2026-07-03T10:34:31.708Z] [INFO] [SENSOR] Deleting sensor KH-PH SENSOR (cmr4sih210005ug6warhzif0u)
+[2026-07-03T10:34:31.925Z] [INFO] [SENSOR] Deleted 2 alert(s) for sensor KH-PH SENSOR
+[2026-07-03T10:34:32.140Z] [INFO] [SENSOR] Sensor KH-PH SENSOR (cmr4sih210005ug6warhzif0u) deleted successfully
+[2026-07-03T10:34:32.149Z] [INFO] [0mDELETE /api/v1/sensors/cmr4sih210005ug6warhzif0u [32m200[0m 448.892 ms - 56[0m
+[2026-07-03T10:34:32.185Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 16.340 ms - 117[0m
+[2026-07-03T10:34:32.213Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 36.355 ms - 1271[0m
+[2026-07-03T10:34:32.229Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.339 ms - -[0m
+[2026-07-03T10:34:34.968Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.178 ms - -[0m
+[2026-07-03T10:34:36.250Z] [INFO] [SENSOR] Deleting sensor KH-TEMP2 (cmr4s98fz0000ug6wcuacrkio)
+[2026-07-03T10:34:36.262Z] [INFO] [SENSOR] Deleted 4 alert(s) for sensor KH-TEMP2
+[2026-07-03T10:34:36.285Z] [INFO] [SENSOR] Sensor KH-TEMP2 (cmr4s98fz0000ug6wcuacrkio) deleted successfully
+[2026-07-03T10:34:36.290Z] [INFO] [0mDELETE /api/v1/sensors/cmr4s98fz0000ug6wcuacrkio [32m200[0m 53.592 ms - 56[0m
+[2026-07-03T10:34:36.368Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 52.818 ms - 117[0m
+[2026-07-03T10:34:36.371Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 54.656 ms - 883[0m
+[2026-07-03T10:34:36.406Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.729 ms - -[0m
+[2026-07-03T10:34:38.909Z] [INFO] [SENSOR] Deleting sensor TEMP2 (cmr4rtk0p0000ug902c2q64qq)
+[2026-07-03T10:34:38.960Z] [INFO] [SENSOR] Deleted 0 alert(s) for sensor TEMP2
+[2026-07-03T10:34:38.970Z] [INFO] [SENSOR] Sensor TEMP2 (cmr4rtk0p0000ug902c2q64qq) deleted successfully
+[2026-07-03T10:34:38.977Z] [INFO] [0mDELETE /api/v1/sensors/cmr4rtk0p0000ug902c2q64qq [32m200[0m 88.409 ms - 56[0m
+[2026-07-03T10:34:39.083Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 49.291 ms - -[0m
+[2026-07-03T10:34:39.086Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 52.416 ms - 506[0m
+[2026-07-03T10:34:39.132Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.771 ms - -[0m
+[2026-07-03T10:34:40.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.674 ms - -[0m
+[2026-07-03T10:34:56.115Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.060 ms - -[0m
+[2026-07-03T10:35:05.129Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.320 ms - -[0m
+[2026-07-03T10:35:11.134Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.958 ms - -[0m
+[2026-07-03T10:35:26.114Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.198 ms - -[0m
+[2026-07-03T10:35:35.186Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.060 ms - -[0m
+[2026-07-03T10:35:41.116Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.410 ms - -[0m
+[2026-07-03T10:35:56.115Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.834 ms - -[0m
+[2026-07-03T10:36:40.162Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.085 ms - -[0m
+[2026-07-03T10:36:40.179Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 41.339 ms - -[0m
+[2026-07-03T10:37:40.632Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 454.272 ms - -[0m
+[2026-07-03T10:37:40.838Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 648.129 ms - -[0m
+[2026-07-03T10:38:25.483Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 140.793 ms - -[0m
+[2026-07-03T10:38:25.492Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 147.427 ms - -[0m
+[2026-07-03T10:38:30.758Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.476 ms - -[0m
+[2026-07-03T10:38:30.767Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.283 ms - -[0m
+[2026-07-03T10:38:35.127Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.299 ms - -[0m
+[2026-07-03T10:39:01.154Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.394 ms - -[0m
+[2026-07-03T10:39:01.186Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.575 ms - -[0m
+[2026-07-03T10:39:05.122Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.002 ms - -[0m
+[2026-07-03T10:39:13.243Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 186.786 ms - 805[0m
+[2026-07-03T10:39:35.135Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.886 ms - -[0m
+[2026-07-03T10:39:43.120Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 12.846 ms - -[0m
+[2026-07-03T10:40:05.129Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.104 ms - -[0m
+[2026-07-03T10:40:13.133Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 16.805 ms - -[0m
+[2026-07-03T10:40:40.254Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 41.124 ms - -[0m
+[2026-07-03T10:40:43.113Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 7.306 ms - -[0m
+[2026-07-03T10:41:13.152Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 16.882 ms - -[0m
+[2026-07-03T10:41:19.852Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.962 ms - -[0m
+[2026-07-03T10:41:21.129Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.440 ms - -[0m
+[2026-07-03T10:41:32.281Z] [INFO] Socket.io initialized
+[2026-07-03T10:41:32.455Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:41:32.465Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:41:32.468Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:41:32.718Z] [INFO] Socket connected: OX-_Q5d_OVSxQOl1AAAB
+[2026-07-03T10:41:32.720Z] [DEBUG] Handler registered for socket: OX-_Q5d_OVSxQOl1AAAB
+[2026-07-03T10:41:32.723Z] [DEBUG] Socket OX-_Q5d_OVSxQOl1AAAB joined alerts room
+[2026-07-03T10:41:35.670Z] [INFO] Socket.io initialized
+[2026-07-03T10:41:35.833Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:41:35.840Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:41:35.842Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:41:35.885Z] [INFO] Socket connected: 2grgqDBU5aoWSaxOAAAB
+[2026-07-03T10:41:35.887Z] [DEBUG] Handler registered for socket: 2grgqDBU5aoWSaxOAAAB
+[2026-07-03T10:41:35.891Z] [DEBUG] Socket 2grgqDBU5aoWSaxOAAAB joined alerts room
+[2026-07-03T10:41:36.169Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 63.835 ms - -[0m
+[2026-07-03T10:41:36.350Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 350.239 ms - -[0m
+[2026-07-03T10:41:43.217Z] [INFO] Socket.io initialized
+[2026-07-03T10:41:43.434Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:41:43.447Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:41:43.461Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:41:43.803Z] [INFO] Socket connected: CI8Q7QN1ahX1l2dIAAAB
+[2026-07-03T10:41:43.805Z] [DEBUG] Handler registered for socket: CI8Q7QN1ahX1l2dIAAAB
+[2026-07-03T10:41:43.813Z] [DEBUG] Socket CI8Q7QN1ahX1l2dIAAAB joined alerts room
+[2026-07-03T10:41:51.930Z] [INFO] Socket.io initialized
+[2026-07-03T10:41:52.229Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:41:52.248Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:41:52.265Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:41:52.567Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 157.525 ms - -[0m
+[2026-07-03T10:41:53.903Z] [INFO] Socket connected: JGgj9ArXhDImGc6iAAAB
+[2026-07-03T10:41:53.907Z] [DEBUG] Handler registered for socket: JGgj9ArXhDImGc6iAAAB
+[2026-07-03T10:41:53.927Z] [DEBUG] Socket JGgj9ArXhDImGc6iAAAB joined alerts room
+[2026-07-03T10:42:05.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 195.608 ms - -[0m
+[2026-07-03T10:42:06.145Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.428 ms - -[0m
+[2026-07-03T10:42:21.142Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.377 ms - -[0m
+[2026-07-03T10:42:30.241Z] [INFO] Socket disconnected: JGgj9ArXhDImGc6iAAAB (transport close)
+[2026-07-03T10:42:33.669Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.689 ms - -[0m
+[2026-07-03T10:42:33.695Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.128 ms - -[0m
+[2026-07-03T10:42:33.758Z] [INFO] Socket connected: 5tfdH1zSmnhHvQaGAAAD
+[2026-07-03T10:42:33.760Z] [DEBUG] Handler registered for socket: 5tfdH1zSmnhHvQaGAAAD
+[2026-07-03T10:42:33.918Z] [DEBUG] Socket 5tfdH1zSmnhHvQaGAAAD joined alerts room
+[2026-07-03T10:42:49.119Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.550 ms - -[0m
+[2026-07-03T10:43:04.207Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 50.278 ms - -[0m
+[2026-07-03T10:43:04.349Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.979 ms - -[0m
+[2026-07-03T10:43:19.123Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.393 ms - -[0m
+[2026-07-03T10:43:34.146Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.772 ms - -[0m
+[2026-07-03T10:43:34.175Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.219 ms - -[0m
+[2026-07-03T10:43:49.276Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.223 ms - -[0m
+[2026-07-03T10:44:04.141Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.595 ms - -[0m
+[2026-07-03T10:44:04.145Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.002 ms - -[0m
+[2026-07-03T10:44:19.191Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.858 ms - -[0m
+[2026-07-03T10:44:27.202Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.774 ms - -[0m
+[2026-07-03T10:44:40.132Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.155 ms - -[0m
+[2026-07-03T10:44:58.118Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.085 ms - -[0m
+[2026-07-03T10:45:28.140Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.679 ms - -[0m
+[2026-07-03T10:45:40.126Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.239 ms - -[0m
+[2026-07-03T10:45:58.126Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.051 ms - -[0m
+[2026-07-03T10:46:28.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.365 ms - -[0m
+[2026-07-03T10:46:40.122Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.923 ms - -[0m
+[2026-07-03T10:46:55.064Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 274.541 ms - -[0m
+[2026-07-03T10:46:57.298Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 121.058 ms - -[0m
+[2026-07-03T10:47:03.683Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.322 ms - -[0m
+[2026-07-03T10:47:18.657Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.887 ms - -[0m
+[2026-07-03T10:47:28.258Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1069.157 ms - -[0m
+[2026-07-03T10:47:33.669Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.649 ms - -[0m
+[2026-07-03T10:47:48.668Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.921 ms - -[0m
+[2026-07-03T10:47:53.361Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"LS-TEMP 2","name":"LOKHAND SAROVAR"}
+[2026-07-03T10:47:53.855Z] [INFO] [SENSOR] Sensor created: cmr4t7uyn0000ugis0zhghkzu (LS-TEMP 2)
+[2026-07-03T10:47:53.860Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor LS-TEMP 2: temp=40, pH=1, TDS=1, DO=5, waterLevel=1, battery=69
+[2026-07-03T10:47:53.881Z] [INFO] [THRESHOLD] Evaluating sensor LS-TEMP 2 (LOKHAND SAROVAR): pH=1.00, temp=40.00, TDS=1.00, DO=5.00, waterLevel=1.00, battery=69.00
+[2026-07-03T10:47:53.883Z] [INFO] [THRESHOLD]   pH: value=1.00 safe=6.5 — 8.5 → VIOLATED
+[2026-07-03T10:47:53.928Z] [INFO] [ALERT]   Creating CRITICAL alert for pH on sensor LS-TEMP 2 (value=1.00)
+[2026-07-03T10:47:53.935Z] [INFO] [ALERT]   Alert created in DB: id=cmr4t7vbh0001ugis16jergwg, severity=CRITICAL, type=pH
+[2026-07-03T10:47:53.944Z] [INFO] [ALERT]   Alert cmr4t7vbh0001ugis16jergwg emitted via socket
+[2026-07-03T10:47:53.947Z] [INFO] [THRESHOLD]   temperature: value=40.00 safe=< 35°C → VIOLATED
+[2026-07-03T10:47:53.962Z] [INFO] [ALERT]   Creating CRITICAL alert for temperature on sensor LS-TEMP 2 (value=40.00)
+[2026-07-03T10:47:54.003Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 31.249 ms - 901[0m
+[2026-07-03T10:47:54.014Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 44.071 ms - 117[0m
+[2026-07-03T10:47:54.027Z] [INFO] [ALERT]   Alert created in DB: id=cmr4t7vcd0002ugisim2v16de, severity=CRITICAL, type=temperature
+[2026-07-03T10:47:54.030Z] [INFO] [ALERT]   Alert cmr4t7vcd0002ugisim2v16de emitted via socket
+[2026-07-03T10:47:54.035Z] [INFO] [THRESHOLD]   tds: value=1.00 safe=< 500 ppm → OK
+[2026-07-03T10:47:54.038Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=5.00 safe=> 5 mg/L → OK
+[2026-07-03T10:47:54.046Z] [INFO] [THRESHOLD]   waterLevel: value=1.00 safe=< 9 m → OK
+[2026-07-03T10:47:54.048Z] [INFO] [THRESHOLD]   battery: value=69.00 safe=> 20% → OK
+[2026-07-03T10:47:54.050Z] [INFO] [ALERT] Evaluation complete for sensor LS-TEMP 2: 2 alert(s) created
+[2026-07-03T10:47:54.055Z] [INFO] [ALERT] Created 2 alert(s) for sensor LS-TEMP 2: pH=CRITICAL, temperature=CRITICAL
+[2026-07-03T10:47:54.067Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 734.927 ms - 469[0m
+[2026-07-03T10:47:54.087Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 79.590 ms - -[0m
+[2026-07-03T10:47:54.116Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 42.266 ms - 117[0m
+[2026-07-03T10:47:54.144Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.333 ms - -[0m
+[2026-07-03T10:47:54.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.886 ms - -[0m
+[2026-07-03T10:47:54.180Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.966 ms - -[0m
+[2026-07-03T10:47:54.186Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.747 ms - -[0m
+[2026-07-03T10:47:54.221Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.734 ms - -[0m
+[2026-07-03T10:47:54.231Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.705 ms - -[0m
+[2026-07-03T10:47:54.264Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.747 ms - -[0m
+[2026-07-03T10:47:57.184Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.194 ms - -[0m
+[2026-07-03T10:48:00.857Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 10.644 ms - 981[0m
+[2026-07-03T10:48:00.888Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.931 ms - -[0m
+[2026-07-03T10:48:13.698Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 63.152 ms - 2320[0m
+[2026-07-03T10:48:20.280Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 34.231 ms - -[0m
+[2026-07-03T10:48:20.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.613 ms - -[0m
+[2026-07-03T10:48:27.183Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.537 ms - -[0m
+[2026-07-03T10:48:28.563Z] [INFO] [0mPATCH /api/v1/alerts/cmr4t7vcd0002ugisim2v16de/acknowledge [32m200[0m 189.063 ms - 518[0m
+[2026-07-03T10:48:28.633Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 8.516 ms - 117[0m
+[2026-07-03T10:48:28.640Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 13.368 ms - 533[0m
+[2026-07-03T10:48:30.511Z] [INFO] [0mPATCH /api/v1/alerts/cmr4t7vbh0001ugis16jergwg/acknowledge [32m200[0m 906.214 ms - 512[0m
+[2026-07-03T10:48:30.531Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 13.758 ms - 92[0m
+[2026-07-03T10:48:30.533Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 14.672 ms - 117[0m
+[2026-07-03T10:48:32.373Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 15.423 ms - 805[0m
+[2026-07-03T10:48:58.139Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.543 ms - -[0m
+[2026-07-03T10:49:28.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.295 ms - -[0m
+[2026-07-03T10:49:58.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.259 ms - -[0m
+[2026-07-03T10:50:28.120Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.487 ms - -[0m
+[2026-07-03T10:50:58.144Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.667 ms - -[0m
+[2026-07-03T10:51:28.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.699 ms - -[0m
+[2026-07-03T10:51:58.313Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 195.119 ms - -[0m
+[2026-07-03T10:52:28.219Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 114.121 ms - -[0m
+[2026-07-03T10:52:58.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 190.396 ms - -[0m
+[2026-07-03T10:53:07.151Z] [INFO] Socket.io initialized
+[2026-07-03T10:53:07.444Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:53:07.453Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:53:07.456Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:53:09.531Z] [INFO] Socket.io initialized
+[2026-07-03T10:53:09.676Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:53:09.682Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:53:09.683Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:53:10.145Z] [INFO] Socket connected: Z5Kla9YjxBmFCZyvAAAB
+[2026-07-03T10:53:10.147Z] [DEBUG] Handler registered for socket: Z5Kla9YjxBmFCZyvAAAB
+[2026-07-03T10:53:10.152Z] [DEBUG] Socket Z5Kla9YjxBmFCZyvAAAB joined alerts room
+[2026-07-03T10:53:18.257Z] [INFO] Socket.io initialized
+[2026-07-03T10:53:18.366Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:53:18.371Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:53:18.372Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T10:53:20.137Z] [INFO] Socket connected: B0To3_yFG1hpLPaqAAAB
+[2026-07-03T10:53:20.139Z] [DEBUG] Handler registered for socket: B0To3_yFG1hpLPaqAAAB
+[2026-07-03T10:53:20.142Z] [DEBUG] Socket B0To3_yFG1hpLPaqAAAB joined alerts room
+[2026-07-03T10:57:58.641Z] [INFO] Socket.io initialized
+[2026-07-03T10:58:01.096Z] [INFO] Socket.io initialized
+[2026-07-03T10:58:02.905Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T10:58:02.913Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T10:58:02.915Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:28:34.284Z] [INFO] Socket connected: bsTxUjkbfBe7_zCgAAAB
+[2026-07-03T11:28:34.310Z] [DEBUG] Handler registered for socket: bsTxUjkbfBe7_zCgAAAB
+[2026-07-03T11:28:34.314Z] [DEBUG] Socket bsTxUjkbfBe7_zCgAAAB joined alerts room
+[2026-07-03T11:28:35.748Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:28:35.760Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 1428.782 ms - 1185[0m
+[2026-07-03T11:28:35.951Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1627.927 ms - -[0m
+[2026-07-03T11:28:39.413Z] [INFO] Socket disconnected: bsTxUjkbfBe7_zCgAAAB (transport close)
+[2026-07-03T11:28:39.960Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.269 ms - -[0m
+[2026-07-03T11:28:39.968Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:28:39.982Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 55.171 ms - 1185[0m
+[2026-07-03T11:28:40.040Z] [INFO] Socket connected: 6jeMabwd2c2t0C8NAAAD
+[2026-07-03T11:28:40.043Z] [DEBUG] Handler registered for socket: 6jeMabwd2c2t0C8NAAAD
+[2026-07-03T11:28:40.058Z] [DEBUG] Socket 6jeMabwd2c2t0C8NAAAD joined alerts room
+[2026-07-03T11:28:40.860Z] [INFO] Socket disconnected: 6jeMabwd2c2t0C8NAAAD (transport close)
+[2026-07-03T11:28:41.397Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:28:41.558Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 201.954 ms - 1185[0m
+[2026-07-03T11:28:41.569Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 214.561 ms - -[0m
+[2026-07-03T11:28:41.572Z] [INFO] Socket connected: LExTnsxQc-1XSuO6AAAF
+[2026-07-03T11:28:41.592Z] [DEBUG] Handler registered for socket: LExTnsxQc-1XSuO6AAAF
+[2026-07-03T11:28:41.600Z] [DEBUG] Socket LExTnsxQc-1XSuO6AAAF joined alerts room
+[2026-07-03T11:28:43.045Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.312 ms - -[0m
+[2026-07-03T11:28:43.171Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 136.899 ms - -[0m
+[2026-07-03T11:28:46.077Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 323.045 ms - -[0m
+[2026-07-03T11:28:46.088Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 278.868 ms - -[0m
+[2026-07-03T11:29:00.355Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 200.525 ms - -[0m
+[2026-07-03T11:29:11.401Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.628 ms - -[0m
+[2026-07-03T11:29:15.136Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.440 ms - -[0m
+[2026-07-03T11:29:30.146Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.818 ms - -[0m
+[2026-07-03T11:29:41.379Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.661 ms - -[0m
+[2026-07-03T11:29:45.161Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.032 ms - -[0m
+[2026-07-03T11:30:00.155Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.446 ms - -[0m
+[2026-07-03T11:30:11.384Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.648 ms - -[0m
+[2026-07-03T11:30:15.154Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.009 ms - -[0m
+[2026-07-03T11:30:30.152Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.340 ms - -[0m
+[2026-07-03T11:30:41.392Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.175 ms - -[0m
+[2026-07-03T11:30:45.150Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.345 ms - -[0m
+[2026-07-03T11:31:00.149Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.625 ms - -[0m
+[2026-07-03T11:31:11.397Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.271 ms - -[0m
+[2026-07-03T11:31:15.152Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.393 ms - -[0m
+[2026-07-03T11:31:30.150Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.698 ms - -[0m
+[2026-07-03T11:31:37.394Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 11.725 ms - -[0m
+[2026-07-03T11:31:38.489Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 43.529 ms - -[0m
+[2026-07-03T11:31:38.493Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 48.539 ms - -[0m
+[2026-07-03T11:31:40.487Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:31:40.497Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 18.516 ms - 1185[0m
+[2026-07-03T11:31:41.361Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.279 ms - -[0m
+[2026-07-03T11:31:41.927Z] [INFO] Socket disconnected: LExTnsxQc-1XSuO6AAAF (transport close)
+[2026-07-03T11:31:43.187Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:31:43.203Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 63.868 ms - 1185[0m
+[2026-07-03T11:31:43.215Z] [INFO] Socket connected: GpbzmLPqoiEuds5XAAAH
+[2026-07-03T11:31:43.217Z] [DEBUG] Handler registered for socket: GpbzmLPqoiEuds5XAAAH
+[2026-07-03T11:31:43.248Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 109.699 ms - -[0m
+[2026-07-03T11:31:43.290Z] [DEBUG] Socket GpbzmLPqoiEuds5XAAAH joined alerts room
+[2026-07-03T11:31:44.124Z] [INFO] Socket disconnected: GpbzmLPqoiEuds5XAAAH (transport close)
+[2026-07-03T11:31:44.641Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:31:44.648Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 16.590 ms - 1185[0m
+[2026-07-03T11:31:44.744Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 110.962 ms - -[0m
+[2026-07-03T11:31:44.760Z] [INFO] Socket connected: WMzGc8bdz6PKmhl3AAAJ
+[2026-07-03T11:31:44.766Z] [DEBUG] Handler registered for socket: WMzGc8bdz6PKmhl3AAAJ
+[2026-07-03T11:31:44.769Z] [DEBUG] Socket WMzGc8bdz6PKmhl3AAAJ joined alerts room
+[2026-07-03T11:32:15.150Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.265 ms - -[0m
+[2026-07-03T11:32:15.157Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:32:15.160Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 8.318 ms - 1185[0m
+[2026-07-03T11:32:45.123Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:32:45.128Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 11.384 ms - 1185[0m
+[2026-07-03T11:32:45.139Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.045 ms - -[0m
+[2026-07-03T11:33:15.154Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:33:15.160Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 30.865 ms - 1185[0m
+[2026-07-03T11:33:15.163Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 35.572 ms - -[0m
+[2026-07-03T11:33:44.865Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:33:44.875Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 247.992 ms - 1185[0m
+[2026-07-03T11:33:45.062Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 435.686 ms - -[0m
+[2026-07-03T11:34:15.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.653 ms - -[0m
+[2026-07-03T11:34:15.135Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:34:15.138Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 26.092 ms - 1185[0m
+[2026-07-03T11:34:25.798Z] [INFO] Socket.io initialized
+[2026-07-03T11:34:27.616Z] [INFO] Socket.io initialized
+[2026-07-03T11:34:27.809Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:34:27.820Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T11:34:27.822Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:34:37.132Z] [INFO] Socket connected: 8YTkq5pckKizWgxOAAAB
+[2026-07-03T11:34:37.135Z] [DEBUG] Handler registered for socket: 8YTkq5pckKizWgxOAAAB
+[2026-07-03T11:34:37.144Z] [DEBUG] Socket 8YTkq5pckKizWgxOAAAB joined alerts room
+[2026-07-03T11:34:45.352Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 229.909 ms - -[0m
+[2026-07-03T11:34:45.373Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:34:45.380Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 257.447 ms - 1185[0m
+[2026-07-03T11:35:40.161Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.731 ms - -[0m
+[2026-07-03T11:35:40.180Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:35:40.186Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 10.059 ms - 1185[0m
+[2026-07-03T11:36:32.495Z] [INFO] [0mGET /api/v1/health [32m200[0m 1.717 ms - 90[0m
+[2026-07-03T11:36:40.166Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.822 ms - -[0m
+[2026-07-03T11:36:40.195Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:36:40.201Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 17.309 ms - 1185[0m
+[2026-07-03T11:36:45.243Z] [INFO] [0mGET /api/v1/dashboard [33m401[0m 0.975 ms - 1619[0m
+[2026-07-03T11:36:58.825Z] [INFO] [0mPOST /api/v1/auth/login [33m401[0m 21.338 ms - 381[0m
+[2026-07-03T11:37:00.808Z] [INFO] Socket.io initialized
+[2026-07-03T11:37:00.922Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:37:00.928Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T11:37:00.931Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:37:01.148Z] [INFO] Socket connected: dmLFCIQ9SsGOu-BIAAAB
+[2026-07-03T11:37:01.150Z] [DEBUG] Handler registered for socket: dmLFCIQ9SsGOu-BIAAAB
+[2026-07-03T11:37:01.161Z] [DEBUG] Socket dmLFCIQ9SsGOu-BIAAAB joined alerts room
+[2026-07-03T11:37:20.146Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 1379.870 ms - 803[0m
+[2026-07-03T11:37:29.610Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:37:29.620Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 20.432 ms - 1185[0m
+[2026-07-03T11:37:40.148Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:37:40.153Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 25.346 ms - 1185[0m
+[2026-07-03T11:37:40.158Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.168 ms - -[0m
+[2026-07-03T11:38:40.131Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.989 ms - -[0m
+[2026-07-03T11:38:40.138Z] [ERROR] Unhandled error: {"message":"Cannot read properties of undefined (reading 'count')","stack":"TypeError: Cannot read properties of undefined (reading 'count')\n    at DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34)\n    at DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:9:12)\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:39\n    at C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\utils\\catchAsync.js:3:21\n    at Layer.handle [as handle_request] (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at authenticate (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\middlewares\\auth.js:57:5)","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:38:40.142Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 22.270 ms - 1185[0m
+[2026-07-03T11:38:47.251Z] [INFO] Socket.io initialized
+[2026-07-03T11:38:47.781Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:38:47.806Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T11:38:47.808Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:38:49.122Z] [INFO] Socket connected: u778gQ5vORMxgZKkAAAB
+[2026-07-03T11:38:49.123Z] [DEBUG] Handler registered for socket: u778gQ5vORMxgZKkAAAB
+[2026-07-03T11:38:49.126Z] [DEBUG] Socket u778gQ5vORMxgZKkAAAB joined alerts room
+[2026-07-03T11:39:32.429Z] [INFO] Socket.io initialized
+[2026-07-03T11:39:34.493Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:39:34.503Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T11:39:34.507Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:39:34.642Z] [INFO] Socket connected: 4GNDHEO_RK-P4LjQAAAB
+[2026-07-03T11:39:34.645Z] [DEBUG] Handler registered for socket: 4GNDHEO_RK-P4LjQAAAB
+[2026-07-03T11:39:34.660Z] [DEBUG] Socket 4GNDHEO_RK-P4LjQAAAB joined alerts room
+[2026-07-03T11:39:47.881Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7736.933 ms - -[0m
+[2026-07-03T11:39:48.706Z] [ERROR] Unhandled error: {"message":"\nInvalid `prisma.citizenNotification.count()` invocation in\nC:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34\n\n  86 \n  87 async _getCitizenNotificationStats() {\n  88   const [total, sent, delivered, failed] = await Promise.all([\n→ 89     prisma.citizenNotification.count(\nThe table `public.CitizenNotification` does not exist in the current database.","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.citizenNotification.count()` invocation in\nC:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:89:34\n\n  86 \n  87 async _getCitizenNotificationStats() {\n  88   const [total, sent, delivered, failed] = await Promise.all([\n→ 89     prisma.citizenNotification.count(\nThe table `public.CitizenNotification` does not exist in the current database.\n    at ei.handleRequestError (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7268)\n    at ei.handleAndLogRequestError (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6593)\n    at ei.request (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6300)\n    at async a (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9551)\n    at async Promise.all (index 0)\n    at async DashboardService._getCitizenNotificationStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:88:46)\n    at async Promise.all (index 2)\n    at async DashboardService.getDashboardStats (C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\services\\dashboardService.js:6:60)\n    at async C:\\Users\\parma\\Downloads\\Real-time Wetland Monitoring System\\backend\\src\\controllers\\dashboardController.js:5:16","url":"/api/v1/dashboard","method":"GET"}
+[2026-07-03T11:39:48.715Z] [INFO] [0mGET /api/v1/dashboard [31m500[0m 8421.246 ms - 1475[0m
+[2026-07-03T11:40:45.680Z] [INFO] Socket.io initialized
+[2026-07-03T11:40:46.132Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:40:46.137Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T11:40:46.140Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:40:49.128Z] [INFO] Socket connected: rEGw5zpLVFEDi4ZdAAAB
+[2026-07-03T11:40:49.130Z] [DEBUG] Handler registered for socket: rEGw5zpLVFEDi4ZdAAAB
+[2026-07-03T11:40:49.134Z] [DEBUG] Socket rEGw5zpLVFEDi4ZdAAAB joined alerts room
+[2026-07-03T11:40:59.587Z] [INFO] Socket.io initialized
+[2026-07-03T11:40:59.728Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:40:59.813Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T11:41:02.220Z] [INFO] [0mGET /api/v1/health [32m200[0m 4.042 ms - 89[0m
+[2026-07-03T11:41:41.353Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1129.728 ms - -[0m
+[2026-07-03T11:41:41.736Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 1492.806 ms - 1395[0m
+[2026-07-03T11:42:40.161Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.598 ms - -[0m
+[2026-07-03T11:42:40.194Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 54.441 ms - -[0m
+[2026-07-03T11:43:09.916Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 45.051 ms - -[0m
+[2026-07-03T11:43:09.938Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 45.593 ms - -[0m
+[2026-07-03T11:43:14.694Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 64.146 ms - -[0m
+[2026-07-03T11:43:14.741Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 109.118 ms - -[0m
+[2026-07-03T11:43:14.819Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 44.607 ms - -[0m
+[2026-07-03T11:43:15.741Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.810 ms - -[0m
+[2026-07-03T11:43:19.663Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 38.681 ms - -[0m
+[2026-07-03T11:43:19.665Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.350 ms - -[0m
+[2026-07-03T11:43:45.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.429 ms - -[0m
+[2026-07-03T11:43:50.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.677 ms - -[0m
+[2026-07-03T11:43:50.139Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.813 ms - -[0m
+[2026-07-03T11:44:15.131Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.186 ms - -[0m
+[2026-07-03T11:44:20.123Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.162 ms - -[0m
+[2026-07-03T11:44:20.132Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 20.067 ms - -[0m
+[2026-07-03T11:44:50.130Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 14.100 ms - -[0m
+[2026-07-03T11:44:50.133Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.618 ms - -[0m
+[2026-07-03T11:45:20.145Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 28.947 ms - -[0m
+[2026-07-03T11:45:20.147Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.378 ms - -[0m
+[2026-07-03T11:45:40.123Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.530 ms - -[0m
+[2026-07-03T11:45:50.128Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 8.077 ms - -[0m
+[2026-07-03T11:45:50.382Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 256.078 ms - -[0m
+[2026-07-03T11:46:20.136Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.496 ms - -[0m
+[2026-07-03T11:46:20.143Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.105 ms - -[0m
+[2026-07-03T11:46:40.121Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.088 ms - -[0m
+[2026-07-03T11:47:40.134Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 16.610 ms - -[0m
+[2026-07-03T11:47:40.769Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 660.276 ms - -[0m
+[2026-07-03T11:47:40.792Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.551 ms - -[0m
+[2026-07-03T11:48:40.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.139 ms - -[0m
+[2026-07-03T11:48:40.173Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 35.021 ms - -[0m
+[2026-07-03T11:48:40.177Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.624 ms - -[0m
+[2026-07-03T11:49:21.886Z] [INFO] Socket.io initialized
+[2026-07-03T11:49:21.886Z] [INFO] Socket.io initialized
+[2026-07-03T11:49:23.915Z] [INFO] Socket.io initialized
+[2026-07-03T11:49:23.973Z] [INFO] Socket.io initialized
+[2026-07-03T11:49:24.317Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:49:24.318Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T11:49:24.324Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T11:49:24.331Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T11:49:24.394Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T11:49:27.127Z] [INFO] Socket connected: ndKLm2nGnAfzGCdfAAAB
+[2026-07-03T11:49:27.129Z] [DEBUG] Handler registered for socket: ndKLm2nGnAfzGCdfAAAB
+[2026-07-03T11:49:27.134Z] [DEBUG] Socket ndKLm2nGnAfzGCdfAAAB joined alerts room
+[2026-07-03T11:49:40.349Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 77.664 ms - -[0m
+[2026-07-03T11:49:40.548Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 391.618 ms - -[0m
+[2026-07-03T11:49:40.582Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.119 ms - -[0m
+[2026-07-03T11:50:40.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.610 ms - -[0m
+[2026-07-03T11:50:40.148Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.716 ms - -[0m
+[2026-07-03T11:50:40.184Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.811 ms - -[0m
+[2026-07-03T11:51:40.138Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.103 ms - -[0m
+[2026-07-03T11:51:40.140Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 15.059 ms - -[0m
+[2026-07-03T11:51:40.155Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.446 ms - -[0m
+[2026-07-03T11:51:58.869Z] [INFO] [0mGET /api/v1/health [32m200[0m 1.560 ms - 90[0m
+[2026-07-03T11:52:09.934Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 280.772 ms - 1395[0m
+[2026-07-03T11:52:40.144Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.304 ms - -[0m
+[2026-07-03T11:52:40.147Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 20.813 ms - -[0m
+[2026-07-03T11:52:40.162Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.049 ms - -[0m
+[2026-07-03T11:53:40.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.043 ms - -[0m
+[2026-07-03T11:53:40.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.453 ms - -[0m
+[2026-07-03T11:53:40.148Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.393 ms - -[0m
+[2026-07-03T11:54:40.151Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.319 ms - -[0m
+[2026-07-03T11:54:40.621Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 482.011 ms - -[0m
+[2026-07-03T11:54:40.959Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 335.891 ms - -[0m
+[2026-07-03T11:55:40.169Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.916 ms - -[0m
+[2026-07-03T11:55:40.177Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 26.199 ms - -[0m
+[2026-07-03T11:55:40.196Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.469 ms - -[0m
+[2026-07-03T11:56:40.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.550 ms - -[0m
+[2026-07-03T11:56:40.156Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 21.095 ms - -[0m
+[2026-07-03T11:56:40.173Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.197 ms - -[0m
+[2026-07-03T11:57:18.011Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 65.012 ms - -[0m
+[2026-07-03T11:57:18.014Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 69.332 ms - -[0m
+[2026-07-03T11:57:18.063Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.485 ms - -[0m
+[2026-07-03T11:57:19.626Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 14.319 ms - -[0m
+[2026-07-03T11:57:19.629Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.508 ms - -[0m
+[2026-07-03T11:57:19.829Z] [INFO] Socket disconnected: ndKLm2nGnAfzGCdfAAAB (transport close)
+[2026-07-03T11:57:34.237Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.313 ms - -[0m
+[2026-07-03T11:57:34.245Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 23.977 ms - -[0m
+[2026-07-03T11:57:34.298Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 45.543 ms - -[0m
+[2026-07-03T11:57:34.455Z] [INFO] Socket connected: aQMI-q94OVhXitq-AAAD
+[2026-07-03T11:57:34.456Z] [DEBUG] Handler registered for socket: aQMI-q94OVhXitq-AAAD
+[2026-07-03T11:57:34.469Z] [DEBUG] Socket aQMI-q94OVhXitq-AAAD joined alerts room
+[2026-07-03T11:57:37.836Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 48.909 ms - -[0m
+[2026-07-03T11:57:58.983Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.501 ms - -[0m
+[2026-07-03T11:58:04.501Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.146 ms - -[0m
+[2026-07-03T11:58:13.701Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.983 ms - -[0m
+[2026-07-03T11:58:28.343Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.998 ms - -[0m
+[2026-07-03T11:58:34.228Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.608 ms - -[0m
+[2026-07-03T11:58:43.352Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.949 ms - -[0m
+[2026-07-03T11:58:58.350Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.479 ms - -[0m
+[2026-07-03T11:59:04.226Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.439 ms - -[0m
+[2026-07-03T11:59:13.350Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.071 ms - -[0m
+[2026-07-03T11:59:28.353Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.777 ms - -[0m
+[2026-07-03T11:59:34.214Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.712 ms - -[0m
+[2026-07-03T11:59:43.527Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 181.967 ms - -[0m
+[2026-07-03T11:59:58.355Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.613 ms - -[0m
+[2026-07-03T12:00:04.296Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"JH -TMP 2","name":"OE2R"}
+[2026-07-03T12:00:04.512Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 221.693 ms - -[0m
+[2026-07-03T12:00:04.661Z] [INFO] [SENSOR] Sensor created: cmr4vsoo10000ugxo8n3x0df6 (JH -TMP 2)
+[2026-07-03T12:00:04.669Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor JH -TMP 2: temp=40, pH=3, TDS=1200, DO=3, waterLevel=2, battery=95
+[2026-07-03T12:00:04.681Z] [INFO] [THRESHOLD] Evaluating sensor JH -TMP 2 (OE2R): pH=3.00, temp=40.00, TDS=1200.00, DO=3.00, waterLevel=2.00, battery=95.00
+[2026-07-03T12:00:04.687Z] [INFO] [THRESHOLD]   pH: value=3.00 safe=6.5 — 8.5 → VIOLATED
+[2026-07-03T12:00:04.727Z] [INFO] [ALERT]   Creating CRITICAL alert for pH on sensor JH -TMP 2 (value=3.00)
+[2026-07-03T12:00:04.736Z] [INFO] [ALERT]   Alert created in DB: id=cmr4vsozi0001ugxoddhkz1mn, severity=CRITICAL, type=pH
+[2026-07-03T12:00:04.742Z] [INFO] [ALERT]   Alert cmr4vsozi0001ugxoddhkz1mn emitted via socket
+[2026-07-03T12:00:04.758Z] [INFO] [THRESHOLD]   temperature: value=40.00 safe=< 35°C → VIOLATED
+[2026-07-03T12:00:04.775Z] [INFO] [ALERT]   Creating CRITICAL alert for temperature on sensor JH -TMP 2 (value=40.00)
+[2026-07-03T12:00:04.791Z] [INFO] [ALERT]   Alert created in DB: id=cmr4vsp0y0002ugxofwoyzrt1, severity=CRITICAL, type=temperature
+[2026-07-03T12:00:04.801Z] [INFO] [ALERT]   Alert cmr4vsp0y0002ugxofwoyzrt1 emitted via socket
+[2026-07-03T12:00:04.807Z] [INFO] [THRESHOLD]   tds: value=1200.00 safe=< 500 ppm → VIOLATED
+[2026-07-03T12:00:04.829Z] [INFO] [ALERT]   Creating CRITICAL alert for tds on sensor JH -TMP 2 (value=1200.00)
+[2026-07-03T12:00:04.852Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 65.853 ms - 1275[0m
+[2026-07-03T12:00:04.858Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 87.847 ms - 117[0m
+[2026-07-03T12:00:04.869Z] [INFO] [ALERT]   Alert created in DB: id=cmr4vsp2e0003ugxomr0zlkbb, severity=CRITICAL, type=tds
+[2026-07-03T12:00:04.883Z] [INFO] [ALERT]   Alert cmr4vsp2e0003ugxomr0zlkbb emitted via socket
+[2026-07-03T12:00:04.919Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=3.00 safe=> 5 mg/L → VIOLATED
+[2026-07-03T12:00:04.970Z] [INFO] [ALERT]   Creating CRITICAL alert for dissolvedOxygen on sensor JH -TMP 2 (value=3.00)
+[2026-07-03T12:00:05.038Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 102.930 ms - -[0m
+[2026-07-03T12:00:05.047Z] [INFO] [ALERT]   Alert created in DB: id=cmr4vsp6i0004ugxoymnzlsml, severity=CRITICAL, type=dissolvedOxygen
+[2026-07-03T12:00:05.057Z] [INFO] [ALERT]   Alert cmr4vsp6i0004ugxoymnzlsml emitted via socket
+[2026-07-03T12:00:05.073Z] [INFO] [THRESHOLD]   waterLevel: value=2.00 safe=< 9 m → OK
+[2026-07-03T12:00:05.102Z] [INFO] [THRESHOLD]   battery: value=95.00 safe=> 20% → OK
+[2026-07-03T12:00:05.113Z] [INFO] [ALERT] Evaluation complete for sensor JH -TMP 2: 4 alert(s) created
+[2026-07-03T12:00:05.124Z] [INFO] [ALERT] Created 4 alert(s) for sensor JH -TMP 2: pH=CRITICAL, temperature=CRITICAL, tds=CRITICAL, dissolvedOxygen=CRITICAL
+[2026-07-03T12:00:05.150Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 861.708 ms - 448[0m
+[2026-07-03T12:00:05.158Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 222.194 ms - 117[0m
+[2026-07-03T12:00:05.206Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.746 ms - -[0m
+[2026-07-03T12:00:05.261Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 86.557 ms - -[0m
+[2026-07-03T12:00:05.316Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 58.100 ms - -[0m
+[2026-07-03T12:00:05.345Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 59.518 ms - -[0m
+[2026-07-03T12:00:05.400Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 58.678 ms - -[0m
+[2026-07-03T12:00:05.408Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 52.232 ms - -[0m
+[2026-07-03T12:00:05.492Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 61.874 ms - -[0m
+[2026-07-03T12:00:05.504Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 73.995 ms - -[0m
+[2026-07-03T12:00:05.691Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 157.183 ms - -[0m
+[2026-07-03T12:00:05.700Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 164.367 ms - -[0m
+[2026-07-03T12:00:05.742Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.421 ms - -[0m
+[2026-07-03T12:00:05.745Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.489 ms - -[0m
+[2026-07-03T12:00:05.773Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.334 ms - -[0m
+[2026-07-03T12:00:05.783Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.143 ms - -[0m
+[2026-07-03T12:00:05.799Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.367 ms - -[0m
+[2026-07-03T12:00:08.767Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.655 ms - -[0m
+[2026-07-03T12:00:08.769Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 18.078 ms - 1965[0m
+[2026-07-03T12:00:23.227Z] [INFO] [CITIZEN] Sending citizen notification for alert cmr4vsp6i0004ugxoymnzlsml: OE2R
+[2026-07-03T12:00:23.681Z] [INFO] [CITIZEN] Notification saved: id=cmr4vt3h50005ugxo44z8mqhy
+[2026-07-03T12:00:23.998Z] [INFO] [0mPOST /api/v1/citizen-notifications [32m201[0m 777.903 ms - 461[0m
+[2026-07-03T12:00:24.042Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 21.531 ms - 1986[0m
+[2026-07-03T12:00:24.047Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.208 ms - -[0m
+[2026-07-03T12:00:34.217Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.103 ms - -[0m
+[2026-07-03T12:00:58.693Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 19.388 ms - -[0m
+[2026-07-03T12:00:58.717Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 41.843 ms - -[0m
+[2026-07-03T12:01:04.222Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.196 ms - -[0m
+[2026-07-03T12:01:29.135Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 20.618 ms - -[0m
+[2026-07-03T12:01:29.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.378 ms - -[0m
+[2026-07-03T12:01:35.120Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.555 ms - -[0m
+[2026-07-03T12:01:59.142Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.429 ms - -[0m
+[2026-07-03T12:01:59.186Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 67.374 ms - -[0m
+[2026-07-03T12:02:05.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.414 ms - -[0m
+[2026-07-03T12:02:29.132Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 12.297 ms - -[0m
+[2026-07-03T12:02:29.134Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.233 ms - -[0m
+[2026-07-03T12:02:40.117Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.858 ms - -[0m
+[2026-07-03T12:02:59.129Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 14.142 ms - -[0m
+[2026-07-03T12:02:59.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.966 ms - -[0m
+[2026-07-03T12:03:29.136Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 16.294 ms - -[0m
+[2026-07-03T12:03:29.138Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.995 ms - -[0m
+[2026-07-03T12:03:40.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.367 ms - -[0m
+[2026-07-03T12:03:58.663Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.892 ms - -[0m
+[2026-07-03T12:03:58.666Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.131 ms - -[0m
+[2026-07-03T12:04:05.116Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.884 ms - -[0m
+[2026-07-03T12:04:29.157Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.222 ms - -[0m
+[2026-07-03T12:04:29.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.968 ms - -[0m
+[2026-07-03T12:04:35.118Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.898 ms - -[0m
+[2026-07-03T12:05:18.643Z] [INFO] Socket.io initialized
+[2026-07-03T12:05:18.905Z] [INFO] Socket.io initialized
+[2026-07-03T12:05:19.098Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T12:05:19.112Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T12:05:19.114Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T12:05:21.121Z] [INFO] Socket connected: PVLMGFmHe_dR6LeTAAAB
+[2026-07-03T12:05:22.286Z] [DEBUG] Handler registered for socket: PVLMGFmHe_dR6LeTAAAB
+[2026-07-03T12:05:22.289Z] [DEBUG] Socket PVLMGFmHe_dR6LeTAAAB joined alerts room
+[2026-07-03T12:05:22.546Z] [INFO] Socket.io initialized
+[2026-07-03T12:05:22.730Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T12:05:23.042Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T12:05:40.338Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 185.232 ms - -[0m
+[2026-07-03T12:05:40.618Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 462.887 ms - -[0m
+[2026-07-03T12:05:40.648Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.829 ms - -[0m
+[2026-07-03T12:06:40.162Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 23.880 ms - -[0m
+[2026-07-03T12:06:40.550Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 411.429 ms - -[0m
+[2026-07-03T12:06:40.597Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.483 ms - -[0m
+[2026-07-03T12:07:15.479Z] [INFO] Socket.io initialized
+[2026-07-03T12:07:15.701Z] [INFO] Socket.io initialized
+[2026-07-03T12:07:15.950Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T12:07:15.948Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T12:07:15.991Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T12:07:15.993Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T12:07:15.996Z] [ERROR] Uncaught Exception: {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":5000}
+[2026-07-03T12:07:16.154Z] [INFO] Socket connected: gx5Eju-B3q1qzMBZAAAB
+[2026-07-03T12:07:16.157Z] [DEBUG] Handler registered for socket: gx5Eju-B3q1qzMBZAAAB
+[2026-07-03T12:07:16.160Z] [DEBUG] Socket gx5Eju-B3q1qzMBZAAAB joined alerts room
+[2026-07-03T12:18:22.487Z] [INFO] Socket.io initialized
+[2026-07-03T12:18:23.306Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-03T12:18:23.324Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-03T12:18:23.329Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-03T12:18:52.968Z] [INFO] Socket connected: e60oykeFcLLlGeAwAAAB
+[2026-07-03T12:18:52.970Z] [DEBUG] Handler registered for socket: e60oykeFcLLlGeAwAAAB
+[2026-07-03T12:18:52.976Z] [DEBUG] Socket e60oykeFcLLlGeAwAAAB joined alerts room
+[2026-07-03T12:18:56.709Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 3732.963 ms - -[0m
+[2026-07-03T12:18:56.776Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 4207.794 ms - -[0m
+[2026-07-03T12:18:56.800Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.957 ms - -[0m
+[2026-07-03T12:19:20.976Z] [INFO] [CITIZEN] Sending citizen notification for alert cmr4vsp2e0003ugxomr0zlkbb: OE2R
+[2026-07-03T12:19:21.379Z] [INFO] [CITIZEN] Notification saved: id=cmr4whh5t0000ugj0dt47luyx
+[2026-07-03T12:19:21.468Z] [INFO] [0mPOST /api/v1/citizen-notifications [32m201[0m 493.870 ms - 1046[0m
+[2026-07-03T12:19:21.532Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 50.961 ms - 2007[0m
+[2026-07-03T12:19:21.555Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 73.709 ms - -[0m
+[2026-07-03T12:19:22.583Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.180 ms - -[0m
+[2026-07-03T12:19:22.591Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 30.311 ms - -[0m
+[2026-07-03T12:19:22.610Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.401 ms - -[0m
+[2026-07-03T12:19:53.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.112 ms - -[0m
+[2026-07-03T12:19:53.144Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 22.021 ms - -[0m
+[2026-07-03T12:19:53.167Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.555 ms - -[0m
+[2026-07-03T12:20:23.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.261 ms - -[0m
+[2026-07-03T12:20:23.183Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.685 ms - -[0m
+[2026-07-03T12:20:23.196Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 19.236 ms - -[0m
+[2026-07-03T12:20:52.574Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 29.200 ms - -[0m
+[2026-07-03T12:20:52.585Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.877 ms - -[0m
+[2026-07-03T12:20:52.607Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.433 ms - -[0m
+[2026-07-03T12:21:23.170Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 46.532 ms - -[0m
+[2026-07-03T12:21:23.187Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 39.534 ms - -[0m
+[2026-07-03T12:21:23.215Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.547 ms - -[0m
+[2026-07-03T12:21:53.161Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 47.448 ms - -[0m
+[2026-07-03T12:21:53.165Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 49.306 ms - -[0m
+[2026-07-03T12:21:53.192Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.105 ms - -[0m
+[2026-07-03T12:22:40.131Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.390 ms - -[0m
+[2026-07-03T12:22:40.147Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.085 ms - -[0m
+[2026-07-03T12:22:40.181Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.756 ms - -[0m
+[2026-07-03T12:23:40.143Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.825 ms - -[0m
+[2026-07-03T12:23:40.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 193.534 ms - -[0m
+[2026-07-03T12:23:40.335Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.511 ms - -[0m
+[2026-07-03T12:24:40.551Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 400.134 ms - -[0m
+[2026-07-03T12:24:40.566Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 413.074 ms - -[0m
+[2026-07-03T12:24:40.599Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.260 ms - -[0m
+[2026-07-03T12:24:59.597Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 56.441 ms - -[0m
+[2026-07-03T12:24:59.607Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 66.136 ms - -[0m
+[2026-07-03T12:25:30.152Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 29.785 ms - -[0m
+[2026-07-03T12:25:30.186Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.606 ms - -[0m
+[2026-07-03T12:25:40.144Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.348 ms - -[0m
+[2026-07-03T12:26:00.130Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 12.592 ms - -[0m
+[2026-07-03T12:26:00.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.887 ms - -[0m
+[2026-07-03T12:26:30.156Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.254 ms - -[0m
+[2026-07-03T12:26:30.158Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 18.861 ms - -[0m
+[2026-07-03T12:26:40.127Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.110 ms - -[0m
+[2026-07-03T12:27:00.149Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 28.528 ms - -[0m
+[2026-07-03T12:27:00.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.527 ms - -[0m
+[2026-07-03T12:27:30.130Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.651 ms - -[0m
+[2026-07-03T12:27:30.134Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.639 ms - -[0m
+[2026-07-03T12:27:40.122Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.766 ms - -[0m
+[2026-07-03T12:28:25.209Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 10.882 ms - -[0m
+[2026-07-03T12:28:25.229Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.797 ms - -[0m
+[2026-07-03T12:28:40.129Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.731 ms - -[0m
+[2026-07-03T12:28:56.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.974 ms - -[0m
+[2026-07-03T12:28:56.386Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 272.834 ms - -[0m
+[2026-07-03T12:29:26.135Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 16.510 ms - -[0m
+[2026-07-03T12:29:26.138Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.176 ms - -[0m
+[2026-07-03T12:29:40.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.769 ms - -[0m
+[2026-07-03T12:29:56.377Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 250.803 ms - -[0m
+[2026-07-03T12:29:56.450Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 322.786 ms - -[0m
+[2026-07-03T12:30:26.162Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 30.450 ms - -[0m
+[2026-07-03T12:30:26.164Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.724 ms - -[0m
+[2026-07-03T12:30:40.122Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.356 ms - -[0m
+[2026-07-03T12:30:43.129Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.586 ms - -[0m
+[2026-07-03T12:30:43.133Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 14.343 ms - -[0m
+[2026-07-03T12:31:13.150Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 12.762 ms - -[0m
+[2026-07-03T12:31:13.153Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.532 ms - -[0m
+[2026-07-03T12:31:40.180Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.055 ms - -[0m
+[2026-07-03T12:31:44.120Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.852 ms - -[0m
+[2026-07-03T12:31:44.124Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.949 ms - -[0m
+[2026-07-03T12:32:14.157Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.375 ms - -[0m
+[2026-07-03T12:32:14.160Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.728 ms - -[0m
+[2026-07-03T12:32:40.121Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.438 ms - -[0m
+[2026-07-03T12:32:44.113Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.608 ms - -[0m
+[2026-07-03T12:32:44.120Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 15.184 ms - -[0m
+[2026-07-03T12:33:13.148Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 15.266 ms - -[0m
+[2026-07-03T12:33:13.150Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.774 ms - -[0m
+[2026-07-03T12:33:34.167Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 40.566 ms - -[0m
+[2026-07-03T12:33:34.170Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.804 ms - -[0m
+[2026-07-03T12:33:40.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.334 ms - -[0m
+[2026-07-03T12:34:05.134Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.540 ms - -[0m
+[2026-07-03T12:34:05.230Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 112.859 ms - -[0m
+[2026-07-03T12:34:35.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.897 ms - -[0m
+[2026-07-03T12:34:35.150Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 23.667 ms - -[0m
+[2026-07-03T12:34:40.171Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.652 ms - -[0m
+[2026-07-03T12:35:05.372Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 261.375 ms - -[0m
+[2026-07-03T12:35:05.378Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 268.305 ms - -[0m
+[2026-07-03T12:35:35.133Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 18.920 ms - -[0m
+[2026-07-03T12:35:35.149Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.996 ms - -[0m
+[2026-07-03T12:35:40.120Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.695 ms - -[0m
+[2026-07-03T12:36:05.126Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 16.248 ms - -[0m
+[2026-07-03T12:36:05.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.372 ms - -[0m
+[2026-07-03T12:36:40.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.928 ms - -[0m
+[2026-07-03T12:36:40.142Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 9.959 ms - -[0m
+[2026-07-03T12:36:40.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.991 ms - -[0m
+[2026-07-03T12:37:40.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.461 ms - -[0m
+[2026-07-03T12:37:40.134Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 17.624 ms - -[0m
+[2026-07-03T12:37:40.145Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.893 ms - -[0m
+[2026-07-03T12:38:40.133Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.223 ms - -[0m
+[2026-07-03T12:38:40.140Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 20.974 ms - -[0m
+[2026-07-03T12:38:40.154Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.806 ms - -[0m
+[2026-07-03T12:39:40.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.234 ms - -[0m
+[2026-07-03T12:39:40.169Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.946 ms - -[0m
+[2026-07-03T12:39:40.250Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 126.221 ms - -[0m
+[2026-07-03T12:40:40.298Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 178.207 ms - -[0m
+[2026-07-03T12:40:40.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 190.953 ms - -[0m
+[2026-07-03T12:40:40.335Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.569 ms - -[0m
+[2026-07-03T12:41:40.177Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 8.870 ms - -[0m
+[2026-07-03T12:41:40.188Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.311 ms - -[0m
+[2026-07-03T12:41:40.199Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.161 ms - -[0m
+[2026-07-03T12:42:40.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.361 ms - -[0m
+[2026-07-03T12:42:40.151Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 15.234 ms - -[0m
+[2026-07-03T12:42:40.171Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.288 ms - -[0m
+[2026-07-03T12:43:40.149Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.659 ms - -[0m
+[2026-07-03T12:43:40.167Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 7.177 ms - -[0m
+[2026-07-03T12:43:40.179Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.397 ms - -[0m
+[2026-07-03T12:44:40.157Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 15.812 ms - -[0m
+[2026-07-03T12:44:40.159Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.836 ms - -[0m
+[2026-07-03T12:44:40.180Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.634 ms - -[0m
+[2026-07-03T12:45:40.524Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 203.211 ms - -[0m
+[2026-07-03T12:45:40.613Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 292.590 ms - -[0m
+[2026-07-03T12:45:40.629Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.537 ms - -[0m
+[2026-07-03T12:45:48.660Z] [INFO] Socket disconnected: e60oykeFcLLlGeAwAAAB (transport close)
+[2026-07-03T12:45:52.263Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 33.394 ms - -[0m
+[2026-07-03T12:45:52.290Z] [INFO] Socket connected: ARJSYyN_lCpSVGYGAAAD
+[2026-07-03T12:45:52.297Z] [DEBUG] Handler registered for socket: ARJSYyN_lCpSVGYGAAAD
+[2026-07-03T12:45:52.307Z] [DEBUG] Socket ARJSYyN_lCpSVGYGAAAD joined alerts room
+[2026-07-03T12:45:52.457Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 229.355 ms - -[0m
+[2026-07-03T12:45:52.514Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 40.450 ms - -[0m
+[2026-07-03T12:46:01.776Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 168.519 ms - 3604[0m
+[2026-07-03T12:46:16.893Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 93.069 ms - 2334[0m
+[2026-07-03T12:46:21.059Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.875 ms - -[0m
+[2026-07-03T12:46:21.085Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 47.983 ms - -[0m
+[2026-07-03T12:46:22.223Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.114 ms - -[0m
+[2026-07-03T12:46:31.246Z] [INFO] [CITIZEN] Sending citizen notification for alert cmr4vsp0y0002ugxofwoyzrt1: OE2R
+[2026-07-03T12:46:31.260Z] [INFO] [CITIZEN] Notification saved: id=cmr4xgf2o0001ugj0wxsqyzum
+[2026-07-03T12:46:31.290Z] [INFO] [0mPOST /api/v1/citizen-notifications [32m201[0m 48.382 ms - 1029[0m
+[2026-07-03T12:46:31.360Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 32.595 ms - 2028[0m
+[2026-07-03T12:46:31.401Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 65.665 ms - -[0m
+[2026-07-03T12:46:44.126Z] [INFO] [CITIZEN] Sending citizen notification for alert cmr4vsozi0001ugxoddhkz1mn: OE2R
+[2026-07-03T12:46:44.131Z] [INFO] [CITIZEN] Notification saved: id=cmr4xgp0h0002ugj05l2yu08i
+[2026-07-03T12:46:44.156Z] [INFO] [0mPOST /api/v1/citizen-notifications [32m201[0m 33.916 ms - 1028[0m
+[2026-07-03T12:46:44.213Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 22.763 ms - 2049[0m
+[2026-07-03T12:46:44.258Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 67.179 ms - -[0m
+[2026-07-03T12:46:47.961Z] [INFO] [0mPATCH /api/v1/alerts/cmr4vsozi0001ugxoddhkz1mn/acknowledge [32m200[0m 317.037 ms - 550[0m
+[2026-07-03T12:46:47.976Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 8.733 ms - 1569[0m
+[2026-07-03T12:46:47.983Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 15.165 ms - 117[0m
+[2026-07-03T12:46:51.029Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.745 ms - -[0m
+[2026-07-03T12:46:51.032Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.212 ms - -[0m
+[2026-07-03T12:46:52.234Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.268 ms - -[0m
+[2026-07-03T12:46:54.482Z] [INFO] [0mDELETE /api/v1/alerts/cmr4vsp6i0004ugxoymnzlsml [32m200[0m 1005.983 ms - 42[0m
+[2026-07-03T12:46:54.501Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 11.468 ms - 1074[0m
+[2026-07-03T12:46:54.515Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 24.650 ms - 117[0m
+[2026-07-03T12:47:08.666Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.185 ms - -[0m
+[2026-07-03T12:47:22.255Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.964 ms - -[0m
+[2026-07-03T12:47:53.133Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.338 ms - -[0m
+[2026-07-03T12:48:23.116Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.522 ms - -[0m
+[2026-07-03T12:48:56.259Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.062 ms - -[0m
+[2026-07-03T12:49:40.224Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 74.337 ms - -[0m
+[2026-07-03T12:50:42.499Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 787.368 ms - -[0m
+[2026-07-03T12:51:37.477Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 214.725 ms - -[0m
+[2026-07-03T12:51:53.126Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.110 ms - -[0m
+[2026-07-03T12:52:23.128Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.524 ms - -[0m
+[2026-07-03T12:53:40.148Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.716 ms - -[0m
+[2026-07-03T12:54:38.801Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.095 ms - -[0m
+[2026-07-03T12:54:53.123Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.058 ms - -[0m
+[2026-07-03T12:55:23.845Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.700 ms - -[0m
+[2026-07-03T12:56:40.579Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 460.871 ms - -[0m
+[2026-07-03T12:57:41.677Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 59.751 ms - -[0m
+[2026-07-03T12:58:40.773Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 167.328 ms - -[0m
+[2026-07-03T12:59:40.544Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 430.935 ms - -[0m
+[2026-07-03T13:00:41.781Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.927 ms - -[0m
+[2026-07-03T13:01:40.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.048 ms - -[0m
+[2026-07-03T13:02:40.678Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 563.304 ms - -[0m
+[2026-07-03T13:03:40.382Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.700 ms - -[0m
+[2026-07-03T13:04:08.548Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 78.481 ms - -[0m
+[2026-07-03T13:04:13.191Z] [INFO] Socket disconnected: ARJSYyN_lCpSVGYGAAAD (transport close)
+[2026-07-03T13:04:17.109Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 200.540 ms - -[0m
+[2026-07-03T13:04:17.116Z] [INFO] Socket connected: Kt7DWYyF4S6rinUQAAAF
+[2026-07-03T13:04:17.161Z] [DEBUG] Handler registered for socket: Kt7DWYyF4S6rinUQAAAF
+[2026-07-03T13:04:17.168Z] [DEBUG] Socket Kt7DWYyF4S6rinUQAAAF joined alerts room
+[2026-07-03T13:04:47.743Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.509 ms - -[0m
+[2026-07-03T13:05:17.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.432 ms - -[0m
+[2026-07-03T13:05:47.148Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.418 ms - -[0m
+[2026-07-03T13:06:17.115Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.084 ms - -[0m
+[2026-07-03T13:06:47.131Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.272 ms - -[0m
+[2026-07-03T13:07:17.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.014 ms - -[0m
+[2026-07-03T13:08:40.530Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 409.194 ms - -[0m
+[2026-07-03T13:09:40.139Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.005 ms - -[0m
+[2026-07-03T13:10:41.691Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 77.110 ms - -[0m
+[2026-07-03T13:11:40.865Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 737.071 ms - -[0m
+[2026-07-03T13:12:40.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.322 ms - -[0m
+[2026-07-03T13:13:40.141Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.019 ms - -[0m
+[2026-07-03T13:14:40.628Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 505.799 ms - -[0m
+[2026-07-03T13:15:40.150Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.652 ms - -[0m
+[2026-07-03T13:16:40.173Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 54.218 ms - -[0m
+[2026-07-03T13:17:40.151Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.169 ms - -[0m
+[2026-07-03T13:18:40.126Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.352 ms - -[0m
+[2026-07-03T13:19:40.161Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.631 ms - -[0m
+[2026-07-03T13:20:04.495Z] [INFO] Socket disconnected: Kt7DWYyF4S6rinUQAAAF (transport close)
