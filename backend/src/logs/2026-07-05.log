@@ -1,0 +1,244 @@
+[2026-07-05T07:57:07.949Z] [INFO] Socket.io initialized
+[2026-07-05T07:57:08.366Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T07:57:08.371Z] [ERROR] [node:net:2008 in Server.setupListenHandle [as _listen2]] Uncaught Exception (process staying alive): {"message":"listen EADDRINUSE: address already in use :::5000","file":"at Server.setupListenHandle [as _listen2] (node:net:2008:16)","cause":"An error escaped all error handlers","fix":"Fix the root cause in the file/line shown in the stack trace above"}
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+    at listenInCluster (node:net:2065:12)
+    at Server.listen (node:net:2170:7)
+    at startServer (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\server.js:18:12)
+[2026-07-05T08:27:30.381Z] [INFO] Socket.io initialized
+[2026-07-05T08:27:31.024Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T08:27:31.029Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T08:27:31.033Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T08:57:12.238Z] [INFO] Socket.io initialized
+[2026-07-05T08:57:12.399Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T08:57:12.406Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T08:57:12.408Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T08:57:20.080Z] [INFO] Socket.io initialized
+[2026-07-05T08:57:20.214Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T08:57:20.223Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T08:57:20.226Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:01:22.931Z] [INFO] Socket.io initialized
+[2026-07-05T09:01:23.054Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:01:23.067Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:01:23.069Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:01:40.438Z] [INFO] Socket.io initialized
+[2026-07-05T09:01:40.560Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:01:40.571Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:01:40.574Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:03:47.002Z] [INFO] Socket.io initialized
+[2026-07-05T09:03:47.324Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:03:47.372Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:03:47.397Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:04:12.531Z] [INFO] Socket.io initialized
+[2026-07-05T09:04:12.647Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:04:12.660Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:04:12.666Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:04:27.931Z] [INFO] Socket.io initialized
+[2026-07-05T09:04:28.144Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:04:28.169Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:04:28.180Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:05:08.830Z] [INFO] [0mGET /api/v1/health [32m200[0m 63.380 ms - 89[0m
+[2026-07-05T09:05:28.063Z] [INFO] [NOTIFICATION] FCM token registered for FCM Test User (9999999999) via /notifications/register-token
+[2026-07-05T09:05:28.066Z] [INFO] [0mPOST /api/v1/notifications/register-token [32m200[0m 3786.060 ms - 146[0m
+[2026-07-05T09:05:45.903Z] [INFO] [0mPOST /api/v1/auth/login [33m401[0m 164.771 ms - 469[0m
+[2026-07-05T09:05:46.912Z] [INFO] [0mPOST /api/v1/notifications/send [33m401[0m 1.537 ms - 1727[0m
+[2026-07-05T09:06:12.414Z] [INFO] Socket.io initialized
+[2026-07-05T09:06:12.517Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:06:12.521Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:06:12.523Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:06:13.755Z] [INFO] [0mGET /api/v1/health [32m200[0m 8.542 ms - 88[0m
+[2026-07-05T09:06:25.922Z] [INFO] [NOTIFICATION] FCM token registered for FCM Test User (9999999999) via /notifications/register-token
+[2026-07-05T09:06:25.924Z] [INFO] [0mPOST /api/v1/notifications/register-token [32m200[0m 165.092 ms - 145[0m
+[2026-07-05T09:06:42.522Z] [INFO] [0mPOST /api/v1/auth/login [33m401[0m 15.256 ms - 469[0m
+[2026-07-05T09:07:25.183Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 5255.339 ms - 958[0m
+[2026-07-05T09:07:39.637Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 663.155 ms - 958[0m
+[2026-07-05T09:07:39.688Z] [ERROR] [firebase.js:19 in initializeFirebase] [FIREBASE] Failed to initialize Firebase Admin SDK
+TypeError: Cannot read properties of undefined (reading 'cert')
+    at initializeFirebase (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\config\firebase.js:19:38)
+    at getMessaging (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\config\firebase.js:54:15)
+    at NotificationService.sendPushNotification (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\services\notificationService.js:6:23)
+    at C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\controllers\notificationController.js:60:44
+[2026-07-05T09:07:39.692Z] [WARN] [NOTIFICATION] Firebase not initialized, skipping push
+[2026-07-05T09:07:40.167Z] [INFO] [NOTIFICATION] Push notification sent via /notifications/send: title="Test Push Alert" citizen=cmr6qlzbv0002ugvwf4l3gc60 status=failed
+[2026-07-05T09:07:40.169Z] [INFO] [0mPOST /api/v1/notifications/send [32m200[0m 520.560 ms - 633[0m
+[2026-07-05T09:07:55.014Z] [INFO] [0mGET /api/v1/health [32m200[0m 0.897 ms - 90[0m
+[2026-07-05T09:07:55.308Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 193.946 ms - 642[0m
+[2026-07-05T09:10:58.706Z] [INFO] Socket.io initialized
+[2026-07-05T09:10:58.807Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:10:58.866Z] [ERROR] [node:net:2008 in Server.setupListenHandle [as _listen2]] Uncaught Exception (process staying alive): {"message":"listen EADDRINUSE: address already in use :::5000","file":"at Server.setupListenHandle [as _listen2] (node:net:2008:16)","cause":"An error escaped all error handlers","fix":"Fix the root cause in the file/line shown in the stack trace above"}
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+    at listenInCluster (node:net:2065:12)
+    at Server.listen (node:net:2170:7)
+    at startServer (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\server.js:18:12)
+[2026-07-05T09:15:13.382Z] [INFO] Socket.io initialized
+[2026-07-05T09:15:13.488Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:15:13.493Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:15:13.497Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:18:44.392Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 684.687 ms - 958[0m
+[2026-07-05T09:18:45.326Z] [INFO] Socket connected: zmuSizF5TZWb-ntSAAAB
+[2026-07-05T09:18:45.328Z] [DEBUG] Handler registered for socket: zmuSizF5TZWb-ntSAAAB
+[2026-07-05T09:18:45.334Z] [DEBUG] Socket zmuSizF5TZWb-ntSAAAB joined alerts room
+[2026-07-05T09:18:47.055Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1615.098 ms - -[0m
+[2026-07-05T09:18:47.518Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 2077.441 ms - -[0m
+[2026-07-05T09:19:15.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.747 ms - -[0m
+[2026-07-05T09:19:15.536Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 39.099 ms - -[0m
+[2026-07-05T09:19:45.315Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.888 ms - -[0m
+[2026-07-05T09:19:45.364Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 62.138 ms - -[0m
+[2026-07-05T09:20:03.336Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [32m200[0m 152.025 ms - 911[0m
+[2026-07-05T09:20:03.719Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 480.859 ms - 341[0m
+[2026-07-05T09:20:16.293Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1013.653 ms - -[0m
+[2026-07-05T09:20:46.223Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.412 ms - -[0m
+[2026-07-05T09:21:15.353Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 43.138 ms - -[0m
+[2026-07-05T09:21:45.311Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.100 ms - -[0m
+[2026-07-05T09:22:16.209Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.831 ms - -[0m
+[2026-07-05T09:22:46.180Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.386 ms - -[0m
+[2026-07-05T09:24:16.213Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 2031.902 ms - -[0m
+[2026-07-05T09:25:14.241Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.407 ms - -[0m
+[2026-07-05T09:25:46.891Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 259.454 ms - -[0m
+[2026-07-05T09:25:54.069Z] [INFO] Socket disconnected: zmuSizF5TZWb-ntSAAAB (transport close)
+[2026-07-05T09:26:07.865Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.935 ms - -[0m
+[2026-07-05T09:26:07.886Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 35.478 ms - -[0m
+[2026-07-05T09:26:07.962Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 35.465 ms - -[0m
+[2026-07-05T09:26:08.519Z] [INFO] Socket connected: dgsIQ1Jvj8IGzxKQAAAD
+[2026-07-05T09:26:08.520Z] [DEBUG] Handler registered for socket: dgsIQ1Jvj8IGzxKQAAAD
+[2026-07-05T09:26:08.610Z] [DEBUG] Socket dgsIQ1Jvj8IGzxKQAAAD joined alerts room
+[2026-07-05T09:26:37.844Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.855 ms - -[0m
+[2026-07-05T09:26:55.218Z] [INFO] Socket disconnected: dgsIQ1Jvj8IGzxKQAAAD (client namespace disconnect)
+[2026-07-05T09:26:55.722Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 145.871 ms - -[0m
+[2026-07-05T09:26:55.730Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 156.530 ms - -[0m
+[2026-07-05T09:26:55.739Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 160.784 ms - -[0m
+[2026-07-05T09:26:55.746Z] [INFO] Socket connected: -tpJ78thlYWulYrfAAAF
+[2026-07-05T09:26:55.757Z] [DEBUG] Handler registered for socket: -tpJ78thlYWulYrfAAAF
+[2026-07-05T09:26:55.815Z] [DEBUG] Socket -tpJ78thlYWulYrfAAAF joined alerts room
+[2026-07-05T09:27:06.963Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [33m404[0m 85.474 ms - 533[0m
+[2026-07-05T09:27:25.250Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.993 ms - -[0m
+[2026-07-05T09:27:55.250Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.428 ms - -[0m
+[2026-07-05T09:28:26.209Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.764 ms - -[0m
+[2026-07-05T09:28:56.223Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.667 ms - -[0m
+[2026-07-05T09:29:26.466Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 290.474 ms - -[0m
+[2026-07-05T09:29:56.219Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.050 ms - -[0m
+[2026-07-05T09:30:26.240Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.646 ms - -[0m
+[2026-07-05T09:30:55.957Z] [INFO] [0mGET /api/v1/health [32m200[0m 1.083 ms - 90[0m
+[2026-07-05T09:30:56.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 114.101 ms - -[0m
+[2026-07-05T09:31:26.193Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.374 ms - -[0m
+[2026-07-05T09:31:56.215Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.106 ms - -[0m
+[2026-07-05T09:32:17.391Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-05T09:32:17.485Z] [INFO] Prisma disconnected
+[2026-07-05T09:32:35.232Z] [INFO] Socket.io initialized
+[2026-07-05T09:32:35.412Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:32:35.417Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:32:35.419Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:32:38.189Z] [INFO] Socket connected: dI85qi3Ko8mxX_bOAAAB
+[2026-07-05T09:32:38.191Z] [DEBUG] Handler registered for socket: dI85qi3Ko8mxX_bOAAAB
+[2026-07-05T09:32:38.195Z] [DEBUG] Socket dI85qi3Ko8mxX_bOAAAB joined alerts room
+[2026-07-05T09:32:56.528Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 322.326 ms - -[0m
+[2026-07-05T09:33:04.084Z] [INFO] Socket disconnected: dI85qi3Ko8mxX_bOAAAB (transport close)
+[2026-07-05T09:33:23.610Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [33m404[0m 34.404 ms - 533[0m
+[2026-07-05T09:34:28.177Z] [INFO] [CITIZEN] FCM token saved for FCM Test User (9999999999)
+[2026-07-05T09:34:28.181Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 25.551 ms - 114[0m
+[2026-07-05T09:35:08.616Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [33m404[0m 5.075 ms - 533[0m
+[2026-07-05T09:35:09.252Z] [INFO] [0mPOST /api/v1/notifications/register-token [33m404[0m 4.401 ms - 321[0m
+[2026-07-05T09:35:44.079Z] [INFO] Socket.io initialized
+[2026-07-05T09:35:44.203Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:35:44.214Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:35:44.220Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:36:01.725Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [33m404[0m 30.454 ms - 533[0m
+[2026-07-05T09:36:02.055Z] [INFO] [0mPOST /api/v1/notifications/register-token [33m404[0m 5.489 ms - 321[0m
+[2026-07-05T09:36:31.844Z] [INFO] Socket.io initialized
+[2026-07-05T09:36:31.971Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:36:31.977Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:36:31.979Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:36:59.423Z] [INFO] Socket.io initialized
+[2026-07-05T09:36:59.520Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:36:59.524Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:36:59.526Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:37:02.030Z] [INFO] [0mGET /api/v1/health [32m200[0m 7.892 ms - 88[0m
+[2026-07-05T09:37:19.965Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [33m404[0m 23.235 ms - 533[0m
+[2026-07-05T09:37:47.555Z] [INFO] Socket.io initialized
+[2026-07-05T09:37:47.763Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:37:47.780Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:37:47.781Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:37:50.205Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [33m404[0m 24.386 ms - 533[0m
+[2026-07-05T09:38:45.263Z] [INFO] Socket.io initialized
+[2026-07-05T09:38:45.364Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:38:45.367Z] [WARN] Port 5000 is in use. Attempting to free it... (2 retries left)
+[2026-07-05T09:38:46.072Z] [ERROR] Could not free port 5000. Please stop the process manually.
+[2026-07-05T09:38:46.073Z] [ERROR] Run: netstat -ano | findstr :5000
+[2026-07-05T09:40:09.073Z] [INFO] Socket.io initialized
+[2026-07-05T09:40:09.232Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:40:09.238Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:40:09.239Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:40:12.416Z] [INFO] [0mGET /api/v1/health [32m200[0m 7.318 ms - 88[0m
+[2026-07-05T09:40:21.917Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 17.964 ms - 112[0m
+[2026-07-05T09:40:56.785Z] [INFO] Socket.io initialized
+[2026-07-05T09:40:56.873Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:40:56.878Z] [WARN] Port 5000 is in use. Attempting to free it... (2 retries left)
+[2026-07-05T09:40:57.534Z] [ERROR] Could not free port 5000. Please stop the process manually.
+[2026-07-05T09:40:57.536Z] [ERROR] Run: netstat -ano | findstr :5000
+[2026-07-05T09:41:28.915Z] [INFO] Socket.io initialized
+[2026-07-05T09:41:29.035Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:41:29.043Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:41:29.044Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:43:44.197Z] [INFO] Socket.io initialized
+[2026-07-05T09:43:44.312Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:43:44.317Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:43:44.319Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:43:59.667Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 25.645 ms - 240[0m
+[2026-07-05T09:57:07.976Z] [INFO] Socket.io initialized
+[2026-07-05T09:57:08.186Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:57:08.199Z] [WARN] Port 5000 is in use. Attempting to free it... (2 retries left)
+[2026-07-05T09:57:08.857Z] [ERROR] Could not free port 5000. Please stop the process manually.
+[2026-07-05T09:57:08.858Z] [ERROR] Run: netstat -ano | findstr :5000
+[2026-07-05T09:58:16.559Z] [INFO] Socket.io initialized
+[2026-07-05T09:58:16.669Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-05T09:58:16.676Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-05T09:58:16.678Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-05T09:58:31.528Z] [INFO] Socket connected: t_3KRTEaxcjsdbzfAAAB
+[2026-07-05T09:58:31.532Z] [DEBUG] Handler registered for socket: t_3KRTEaxcjsdbzfAAAB
+[2026-07-05T09:58:31.538Z] [DEBUG] Socket t_3KRTEaxcjsdbzfAAAB joined alerts room
+[2026-07-05T09:58:32.555Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 795.093 ms - -[0m
+[2026-07-05T09:58:32.707Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 949.428 ms - -[0m
+[2026-07-05T09:58:42.291Z] [INFO] [0mPOST /api/v1/auth/logout [32m200[0m 164.243 ms - 52[0m
+[2026-07-05T09:58:42.323Z] [INFO] Socket disconnected: t_3KRTEaxcjsdbzfAAAB (client namespace disconnect)
+[2026-07-05T09:58:58.830Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 52.636 ms - 240[0m
+[2026-07-05T10:19:56.479Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 1024.422 ms - 240[0m
+[2026-07-05T10:20:52.163Z] [INFO] [CITIZEN] Created citizen: M (9104588825) id=cmr7n4t600002ugs4jc2jmlgf
+[2026-07-05T10:20:52.171Z] [INFO] [0mPOST /api/v1/citizens/public-register [32m201[0m 194.414 ms - 868[0m
+[2026-07-05T10:20:52.204Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 2.836 ms - 240[0m
+[2026-07-05T10:21:07.520Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 16.951 ms - 176[0m
+[2026-07-05T10:21:19.213Z] [INFO] [CITIZEN] FCM token saved for M (9104588825)
+[2026-07-05T10:21:19.226Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 160.965 ms - 249[0m
+[2026-07-05T10:21:35.380Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 776.790 ms - 958[0m
+[2026-07-05T10:21:35.486Z] [INFO] Socket connected: 7E2dDU5DPwPD6KOOAAAD
+[2026-07-05T10:21:35.502Z] [DEBUG] Handler registered for socket: 7E2dDU5DPwPD6KOOAAAD
+[2026-07-05T10:21:35.511Z] [DEBUG] Socket 7E2dDU5DPwPD6KOOAAAD joined alerts room
+[2026-07-05T10:21:35.812Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 294.240 ms - -[0m
+[2026-07-05T10:21:36.005Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 487.752 ms - -[0m
+[2026-07-05T10:21:40.357Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [32m200[0m 353.559 ms - 1845[0m
+[2026-07-05T10:21:40.405Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 498.448 ms - 445[0m
+[2026-07-05T10:21:52.540Z] [INFO] [0mPOST /api/v1/citizens/bulk-status [33m400[0m 189.773 ms - 484[0m
+[2026-07-05T10:22:01.897Z] [INFO] [CITIZEN] Status changed for M: PENDING -> ACTIVE
+[2026-07-05T10:22:01.903Z] [INFO] [0mPATCH /api/v1/citizens/cmr7n4t600002ugs4jc2jmlgf/status [32m200[0m 36.646 ms - 1026[0m
+[2026-07-05T10:22:02.005Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [32m200[0m 43.972 ms - 1844[0m
+[2026-07-05T10:22:02.009Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 46.992 ms - 445[0m
+[2026-07-05T10:22:04.720Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [32m200[0m 29.720 ms - 1039[0m
+[2026-07-05T10:22:05.504Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.627 ms - -[0m
+[2026-07-05T10:22:26.482Z] [INFO] [CITIZEN] Alert sent to M (9104588825): flood warning [push=not_sent]
+[2026-07-05T10:22:26.485Z] [INFO] [0mPOST /api/v1/citizens/cmr7n4t600002ugs4jc2jmlgf/send-alert [32m200[0m 66.633 ms - 521[0m
+[2026-07-05T10:22:26.591Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 61.427 ms - 445[0m
+[2026-07-05T10:22:26.605Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [32m200[0m 76.777 ms - 1061[0m
+[2026-07-05T10:22:35.586Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 73.880 ms - -[0m
+[2026-07-05T10:22:49.327Z] [INFO] [CITIZEN] FCM token saved for M (9104588825)
+[2026-07-05T10:22:49.329Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 40.847 ms - 249[0m
+[2026-07-05T10:23:03.581Z] [INFO] [CITIZEN] Created citizen:  () id=cmr7n7mnw000fugs4tx28l39n
+[2026-07-05T10:23:03.584Z] [INFO] [0mPOST /api/v1/citizens/public-register [32m201[0m 37.972 ms - 793[0m
+[2026-07-05T10:23:03.652Z] [INFO] [CITIZEN] FCM token saved for M (9104588825)
+[2026-07-05T10:23:03.657Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 24.938 ms - 249[0m
+[2026-07-05T10:23:06.178Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.884 ms - -[0m
+[2026-07-05T10:23:14.683Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 13.140 ms - 557[0m
+[2026-07-05T10:23:36.178Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.822 ms - -[0m
+[2026-07-05T10:24:06.197Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.591 ms - -[0m
+[2026-07-05T10:24:27.854Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-05T10:24:28.626Z] [INFO] Prisma disconnected

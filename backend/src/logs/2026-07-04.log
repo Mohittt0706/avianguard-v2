@@ -1,0 +1,2047 @@
+[2026-07-04T07:12:36.382Z] [INFO] Socket.io initialized
+[2026-07-04T07:12:37.879Z] [INFO] Socket.io initialized
+[2026-07-04T07:12:39.350Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T07:12:39.363Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T07:12:39.366Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T08:05:40.587Z] [INFO] Socket.io initialized
+[2026-07-04T08:05:40.718Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T08:05:40.729Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T08:05:40.735Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T08:05:42.207Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 1347.059 ms - 803[0m
+[2026-07-04T08:05:42.321Z] [INFO] Socket connected: dogr-7xm1S0WXpOjAAAB
+[2026-07-04T08:05:42.323Z] [DEBUG] Handler registered for socket: dogr-7xm1S0WXpOjAAAB
+[2026-07-04T08:05:42.326Z] [DEBUG] Socket dogr-7xm1S0WXpOjAAAB joined alerts room
+[2026-07-04T08:05:42.709Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 356.599 ms - -[0m
+[2026-07-04T08:05:42.783Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 436.726 ms - 2077[0m
+[2026-07-04T08:06:12.469Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 187.100 ms - -[0m
+[2026-07-04T08:06:12.484Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 200.919 ms - -[0m
+[2026-07-04T08:06:42.332Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 55.778 ms - -[0m
+[2026-07-04T08:06:42.344Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 62.212 ms - -[0m
+[2026-07-04T08:06:46.648Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.041 ms - -[0m
+[2026-07-04T08:06:51.132Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.709 ms - -[0m
+[2026-07-04T08:06:51.148Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 22.281 ms - -[0m
+[2026-07-04T08:06:53.939Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 68.887 ms - 2235[0m
+[2026-07-04T08:07:04.701Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 69.495 ms - -[0m
+[2026-07-04T08:07:04.707Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 74.259 ms - -[0m
+[2026-07-04T08:07:12.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.850 ms - -[0m
+[2026-07-04T08:07:42.278Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.275 ms - -[0m
+[2026-07-04T08:08:13.282Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.640 ms - -[0m
+[2026-07-04T08:08:43.271Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.500 ms - -[0m
+[2026-07-04T08:09:32.278Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.143 ms - -[0m
+[2026-07-04T08:10:32.313Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.566 ms - -[0m
+[2026-07-04T08:11:32.702Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 414.993 ms - -[0m
+[2026-07-04T08:12:32.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.364 ms - -[0m
+[2026-07-04T08:13:32.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.509 ms - -[0m
+[2026-07-04T08:14:32.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.069 ms - -[0m
+[2026-07-04T08:15:22.595Z] [INFO] Socket disconnected: dogr-7xm1S0WXpOjAAAB (transport close)
+[2026-07-04T09:26:38.466Z] [INFO] Socket.io initialized
+[2026-07-04T09:26:39.636Z] [INFO] Socket.io initialized
+[2026-07-04T09:26:39.822Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T09:26:39.828Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T09:26:39.831Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T09:31:34.962Z] [INFO] Socket connected: D1p7VF3KFUXtrQQtAAAB
+[2026-07-04T09:31:34.995Z] [DEBUG] Handler registered for socket: D1p7VF3KFUXtrQQtAAAB
+[2026-07-04T09:31:35.031Z] [DEBUG] Socket D1p7VF3KFUXtrQQtAAAB joined alerts room
+[2026-07-04T09:31:36.181Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1140.854 ms - -[0m
+[2026-07-04T09:31:36.309Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 1266.242 ms - -[0m
+[2026-07-04T09:31:51.361Z] [INFO] Socket disconnected: D1p7VF3KFUXtrQQtAAAB (client namespace disconnect)
+[2026-07-04T09:31:52.250Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 624.954 ms - -[0m
+[2026-07-04T09:31:52.267Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.493 ms - -[0m
+[2026-07-04T09:33:16.555Z] [INFO] Socket connected: p2VBdxjFDZjZMrQqAAAD
+[2026-07-04T09:33:16.558Z] [DEBUG] Handler registered for socket: p2VBdxjFDZjZMrQqAAAD
+[2026-07-04T09:33:16.573Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 55.489 ms - -[0m
+[2026-07-04T09:33:16.577Z] [DEBUG] Socket p2VBdxjFDZjZMrQqAAAD joined alerts room
+[2026-07-04T09:33:16.590Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 70.479 ms - -[0m
+[2026-07-04T09:33:16.602Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.395 ms - -[0m
+[2026-07-04T09:33:32.319Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.779 ms - -[0m
+[2026-07-04T09:33:32.332Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.674 ms - -[0m
+[2026-07-04T09:33:47.287Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.326 ms - -[0m
+[2026-07-04T09:33:47.306Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.334 ms - -[0m
+[2026-07-04T09:33:47.316Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.692 ms - -[0m
+[2026-07-04T09:34:02.274Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.583 ms - -[0m
+[2026-07-04T09:34:02.284Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.920 ms - -[0m
+[2026-07-04T09:34:15.390Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.992 ms - -[0m
+[2026-07-04T09:34:17.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.799 ms - -[0m
+[2026-07-04T09:34:17.302Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.577 ms - -[0m
+[2026-07-04T09:34:31.286Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.631 ms - -[0m
+[2026-07-04T09:34:32.281Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.653 ms - -[0m
+[2026-07-04T09:34:46.267Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.468 ms - -[0m
+[2026-07-04T09:34:47.277Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.748 ms - -[0m
+[2026-07-04T09:35:01.276Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.611 ms - -[0m
+[2026-07-04T09:35:16.270Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.667 ms - -[0m
+[2026-07-04T09:35:17.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.436 ms - -[0m
+[2026-07-04T09:35:31.276Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.336 ms - -[0m
+[2026-07-04T09:35:32.267Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.884 ms - -[0m
+[2026-07-04T09:35:47.277Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.476 ms - -[0m
+[2026-07-04T09:36:32.564Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.709 ms - -[0m
+[2026-07-04T09:36:32.567Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.770 ms - -[0m
+[2026-07-04T09:36:32.581Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.046 ms - -[0m
+[2026-07-04T09:37:32.491Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 166.700 ms - -[0m
+[2026-07-04T09:37:32.532Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.651 ms - -[0m
+[2026-07-04T09:37:32.614Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 287.854 ms - -[0m
+[2026-07-04T09:38:04.216Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 45.152 ms - -[0m
+[2026-07-04T09:38:04.376Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.695 ms - -[0m
+[2026-07-04T09:38:04.388Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 44.050 ms - -[0m
+[2026-07-04T09:38:15.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.446 ms - -[0m
+[2026-07-04T09:38:16.376Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.359 ms - -[0m
+[2026-07-04T09:38:16.424Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.276 ms - -[0m
+[2026-07-04T09:38:30.328Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.890 ms - -[0m
+[2026-07-04T09:38:31.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.377 ms - -[0m
+[2026-07-04T09:38:45.324Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.868 ms - -[0m
+[2026-07-04T09:38:46.387Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.363 ms - -[0m
+[2026-07-04T09:38:46.425Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.294 ms - -[0m
+[2026-07-04T09:39:00.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.408 ms - -[0m
+[2026-07-04T09:39:01.434Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.678 ms - -[0m
+[2026-07-04T09:39:15.341Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.831 ms - -[0m
+[2026-07-04T09:39:16.394Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.997 ms - -[0m
+[2026-07-04T09:39:16.413Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.059 ms - -[0m
+[2026-07-04T09:39:30.334Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.489 ms - -[0m
+[2026-07-04T09:39:31.417Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.101 ms - -[0m
+[2026-07-04T09:39:45.349Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.698 ms - -[0m
+[2026-07-04T09:39:46.392Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.604 ms - -[0m
+[2026-07-04T09:39:46.422Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.666 ms - -[0m
+[2026-07-04T09:40:00.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.331 ms - -[0m
+[2026-07-04T09:40:01.425Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.785 ms - -[0m
+[2026-07-04T09:40:15.335Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.050 ms - -[0m
+[2026-07-04T09:40:16.377Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.952 ms - -[0m
+[2026-07-04T09:40:16.414Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.500 ms - -[0m
+[2026-07-04T09:40:30.336Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.738 ms - -[0m
+[2026-07-04T09:40:31.417Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.226 ms - -[0m
+[2026-07-04T09:40:45.341Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.884 ms - -[0m
+[2026-07-04T09:40:46.380Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.853 ms - -[0m
+[2026-07-04T09:40:46.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.404 ms - -[0m
+[2026-07-04T09:41:00.329Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.768 ms - -[0m
+[2026-07-04T09:41:01.415Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.745 ms - -[0m
+[2026-07-04T09:41:15.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.460 ms - -[0m
+[2026-07-04T09:41:16.393Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.366 ms - -[0m
+[2026-07-04T09:41:16.416Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.558 ms - -[0m
+[2026-07-04T09:41:30.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.819 ms - -[0m
+[2026-07-04T09:41:31.422Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.153 ms - -[0m
+[2026-07-04T09:41:45.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.855 ms - -[0m
+[2026-07-04T09:41:46.473Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 109.310 ms - -[0m
+[2026-07-04T09:41:46.496Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.130 ms - -[0m
+[2026-07-04T09:42:00.336Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.727 ms - -[0m
+[2026-07-04T09:42:01.424Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.876 ms - -[0m
+[2026-07-04T09:42:15.329Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.749 ms - -[0m
+[2026-07-04T09:42:16.376Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.338 ms - -[0m
+[2026-07-04T09:42:16.422Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.380 ms - -[0m
+[2026-07-04T09:42:30.328Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.715 ms - -[0m
+[2026-07-04T09:42:31.419Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.216 ms - -[0m
+[2026-07-04T09:42:45.619Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 286.942 ms - -[0m
+[2026-07-04T09:42:46.463Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 38.526 ms - -[0m
+[2026-07-04T09:42:46.603Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 235.158 ms - -[0m
+[2026-07-04T09:43:00.360Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.718 ms - -[0m
+[2026-07-04T09:43:01.434Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.313 ms - -[0m
+[2026-07-04T09:43:15.334Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.061 ms - -[0m
+[2026-07-04T09:43:16.381Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.978 ms - -[0m
+[2026-07-04T09:43:16.421Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.421 ms - -[0m
+[2026-07-04T09:43:30.325Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.671 ms - -[0m
+[2026-07-04T09:43:31.416Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.816 ms - -[0m
+[2026-07-04T09:43:45.332Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.355 ms - -[0m
+[2026-07-04T09:43:46.388Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.506 ms - -[0m
+[2026-07-04T09:43:46.415Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.885 ms - -[0m
+[2026-07-04T09:44:01.112Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.255 ms - -[0m
+[2026-07-04T09:44:01.432Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.664 ms - -[0m
+[2026-07-04T09:44:15.335Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.888 ms - -[0m
+[2026-07-04T09:44:16.376Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.179 ms - -[0m
+[2026-07-04T09:44:16.413Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.952 ms - -[0m
+[2026-07-04T09:44:30.350Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.517 ms - -[0m
+[2026-07-04T09:44:31.423Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.155 ms - -[0m
+[2026-07-04T09:44:45.316Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.610 ms - -[0m
+[2026-07-04T09:44:46.377Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.966 ms - -[0m
+[2026-07-04T09:44:46.418Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.377 ms - -[0m
+[2026-07-04T09:45:00.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.725 ms - -[0m
+[2026-07-04T09:45:03.114Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.574 ms - -[0m
+[2026-07-04T09:45:15.325Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.109 ms - -[0m
+[2026-07-04T09:45:16.382Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.236 ms - -[0m
+[2026-07-04T09:45:16.414Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.223 ms - -[0m
+[2026-07-04T09:45:30.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.446 ms - -[0m
+[2026-07-04T09:45:31.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.275 ms - -[0m
+[2026-07-04T09:45:45.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.321 ms - -[0m
+[2026-07-04T09:45:46.394Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.122 ms - -[0m
+[2026-07-04T09:45:46.418Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.720 ms - -[0m
+[2026-07-04T09:46:00.322Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.524 ms - -[0m
+[2026-07-04T09:46:01.417Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.963 ms - -[0m
+[2026-07-04T09:46:16.992Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.252 ms - -[0m
+[2026-07-04T09:46:16.994Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.419 ms - -[0m
+[2026-07-04T09:46:17.008Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.572 ms - -[0m
+[2026-07-04T09:46:30.314Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.689 ms - -[0m
+[2026-07-04T09:46:31.412Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.840 ms - -[0m
+[2026-07-04T09:46:45.405Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 79.428 ms - -[0m
+[2026-07-04T09:46:46.375Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.596 ms - -[0m
+[2026-07-04T09:46:46.413Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.656 ms - -[0m
+[2026-07-04T09:47:00.451Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.464 ms - -[0m
+[2026-07-04T09:47:01.419Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.053 ms - -[0m
+[2026-07-04T09:47:15.322Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.036 ms - -[0m
+[2026-07-04T09:47:16.379Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.121 ms - -[0m
+[2026-07-04T09:47:16.418Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.746 ms - -[0m
+[2026-07-04T09:47:32.190Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.245 ms - -[0m
+[2026-07-04T09:47:32.200Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.881 ms - -[0m
+[2026-07-04T09:47:45.328Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.307 ms - -[0m
+[2026-07-04T09:47:46.421Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.614 ms - -[0m
+[2026-07-04T09:47:46.569Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 200.849 ms - -[0m
+[2026-07-04T09:48:00.359Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.104 ms - -[0m
+[2026-07-04T09:48:01.425Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.526 ms - -[0m
+[2026-07-04T09:48:15.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.254 ms - -[0m
+[2026-07-04T09:48:16.523Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 78.264 ms - -[0m
+[2026-07-04T09:48:16.699Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 333.490 ms - -[0m
+[2026-07-04T09:48:31.125Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.828 ms - -[0m
+[2026-07-04T09:48:31.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.492 ms - -[0m
+[2026-07-04T09:48:45.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.422 ms - -[0m
+[2026-07-04T09:48:46.394Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.450 ms - -[0m
+[2026-07-04T09:48:46.433Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.642 ms - -[0m
+[2026-07-04T09:49:00.314Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.363 ms - -[0m
+[2026-07-04T09:49:01.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.836 ms - -[0m
+[2026-07-04T09:49:15.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.408 ms - -[0m
+[2026-07-04T09:49:16.395Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.624 ms - -[0m
+[2026-07-04T09:49:16.413Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.890 ms - -[0m
+[2026-07-04T09:49:30.338Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.723 ms - -[0m
+[2026-07-04T09:49:31.431Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.199 ms - -[0m
+[2026-07-04T09:49:45.325Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.809 ms - -[0m
+[2026-07-04T09:49:46.391Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.390 ms - -[0m
+[2026-07-04T09:49:46.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.186 ms - -[0m
+[2026-07-04T09:50:00.323Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.794 ms - -[0m
+[2026-07-04T09:50:02.698Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.425 ms - -[0m
+[2026-07-04T09:50:15.328Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.732 ms - -[0m
+[2026-07-04T09:50:16.379Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.459 ms - -[0m
+[2026-07-04T09:50:16.411Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.398 ms - -[0m
+[2026-07-04T09:50:30.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.621 ms - -[0m
+[2026-07-04T09:50:31.420Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.792 ms - -[0m
+[2026-07-04T09:50:45.331Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.848 ms - -[0m
+[2026-07-04T09:50:46.378Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.351 ms - -[0m
+[2026-07-04T09:50:46.422Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.119 ms - -[0m
+[2026-07-04T09:51:00.336Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.975 ms - -[0m
+[2026-07-04T09:51:01.439Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.369 ms - -[0m
+[2026-07-04T09:51:15.331Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.460 ms - -[0m
+[2026-07-04T09:51:16.383Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.888 ms - -[0m
+[2026-07-04T09:51:16.414Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.383 ms - -[0m
+[2026-07-04T09:51:30.349Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.601 ms - -[0m
+[2026-07-04T09:51:31.428Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.696 ms - -[0m
+[2026-07-04T09:51:45.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.190 ms - -[0m
+[2026-07-04T09:51:46.373Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.466 ms - -[0m
+[2026-07-04T09:51:46.414Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.113 ms - -[0m
+[2026-07-04T09:52:00.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.013 ms - -[0m
+[2026-07-04T09:52:01.421Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.567 ms - -[0m
+[2026-07-04T09:52:15.331Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.641 ms - -[0m
+[2026-07-04T09:52:16.379Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.420 ms - -[0m
+[2026-07-04T09:52:16.413Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.158 ms - -[0m
+[2026-07-04T09:52:17.778Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.079 ms - -[0m
+[2026-07-04T09:52:20.348Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.611 ms - -[0m
+[2026-07-04T09:52:20.370Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.354 ms - -[0m
+[2026-07-04T09:52:35.225Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.866 ms - -[0m
+[2026-07-04T09:52:35.242Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.605 ms - -[0m
+[2026-07-04T09:52:46.378Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.609 ms - -[0m
+[2026-07-04T09:52:51.066Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 113.832 ms - -[0m
+[2026-07-04T09:52:51.080Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.277 ms - -[0m
+[2026-07-04T09:53:05.200Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.608 ms - -[0m
+[2026-07-04T09:53:05.211Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.536 ms - -[0m
+[2026-07-04T09:53:16.484Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 120.959 ms - -[0m
+[2026-07-04T09:53:20.218Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.632 ms - -[0m
+[2026-07-04T09:53:20.236Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.616 ms - -[0m
+[2026-07-04T09:53:35.202Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.332 ms - -[0m
+[2026-07-04T09:53:35.217Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.492 ms - -[0m
+[2026-07-04T09:53:37.557Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.663 ms - -[0m
+[2026-07-04T09:53:39.438Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.971 ms - -[0m
+[2026-07-04T09:53:39.470Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.711 ms - -[0m
+[2026-07-04T09:53:46.706Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 340.595 ms - -[0m
+[2026-07-04T09:53:54.441Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.916 ms - -[0m
+[2026-07-04T09:53:54.465Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.425 ms - -[0m
+[2026-07-04T09:54:10.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.680 ms - -[0m
+[2026-07-04T09:54:10.308Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.267 ms - -[0m
+[2026-07-04T09:54:17.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.394 ms - -[0m
+[2026-07-04T09:54:25.268Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.406 ms - -[0m
+[2026-07-04T09:54:25.279Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.315 ms - -[0m
+[2026-07-04T09:54:40.268Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.460 ms - -[0m
+[2026-07-04T09:54:40.278Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.171 ms - -[0m
+[2026-07-04T09:54:47.266Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.788 ms - -[0m
+[2026-07-04T09:54:56.672Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.242 ms - -[0m
+[2026-07-04T09:54:56.680Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.878 ms - -[0m
+[2026-07-04T09:55:10.284Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.668 ms - -[0m
+[2026-07-04T09:55:10.392Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 71.204 ms - -[0m
+[2026-07-04T09:55:32.307Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.789 ms - -[0m
+[2026-07-04T09:55:32.318Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.471 ms - -[0m
+[2026-07-04T09:55:32.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.722 ms - -[0m
+[2026-07-04T09:56:32.311Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.462 ms - -[0m
+[2026-07-04T09:56:32.316Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.138 ms - -[0m
+[2026-07-04T09:56:32.333Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.799 ms - -[0m
+[2026-07-04T09:57:32.286Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.934 ms - -[0m
+[2026-07-04T09:57:32.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.093 ms - -[0m
+[2026-07-04T09:57:32.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.495 ms - -[0m
+[2026-07-04T09:58:32.440Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 135.004 ms - -[0m
+[2026-07-04T09:58:32.444Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 162.386 ms - -[0m
+[2026-07-04T09:58:32.457Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.840 ms - -[0m
+[2026-07-04T09:59:32.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 35.462 ms - -[0m
+[2026-07-04T09:59:32.346Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.093 ms - -[0m
+[2026-07-04T09:59:32.460Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 175.343 ms - -[0m
+[2026-07-04T10:00:32.305Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 35.039 ms - -[0m
+[2026-07-04T10:00:32.307Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.579 ms - -[0m
+[2026-07-04T10:00:32.316Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.181 ms - -[0m
+[2026-07-04T10:01:32.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.574 ms - -[0m
+[2026-07-04T10:01:32.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.922 ms - -[0m
+[2026-07-04T10:01:32.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.300 ms - -[0m
+[2026-07-04T10:02:32.298Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.139 ms - -[0m
+[2026-07-04T10:02:32.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.420 ms - -[0m
+[2026-07-04T10:02:32.321Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.253 ms - -[0m
+[2026-07-04T10:03:32.310Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.889 ms - -[0m
+[2026-07-04T10:03:32.312Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.074 ms - -[0m
+[2026-07-04T10:03:32.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.278 ms - -[0m
+[2026-07-04T10:04:32.436Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 126.308 ms - -[0m
+[2026-07-04T10:04:32.443Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 156.036 ms - -[0m
+[2026-07-04T10:04:32.458Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.107 ms - -[0m
+[2026-07-04T10:05:32.343Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 43.609 ms - -[0m
+[2026-07-04T10:05:32.439Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 38.278 ms - -[0m
+[2026-07-04T10:05:32.519Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 217.667 ms - -[0m
+[2026-07-04T10:06:32.326Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 40.496 ms - -[0m
+[2026-07-04T10:06:32.331Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 46.665 ms - -[0m
+[2026-07-04T10:06:32.341Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.988 ms - -[0m
+[2026-07-04T10:07:32.279Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.316 ms - -[0m
+[2026-07-04T10:07:32.297Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.188 ms - -[0m
+[2026-07-04T10:07:32.304Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.507 ms - -[0m
+[2026-07-04T10:08:32.289Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.531 ms - -[0m
+[2026-07-04T10:08:32.296Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.755 ms - -[0m
+[2026-07-04T10:08:32.306Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.230 ms - -[0m
+[2026-07-04T10:09:32.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.151 ms - -[0m
+[2026-07-04T10:09:32.320Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.754 ms - -[0m
+[2026-07-04T10:09:32.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.672 ms - -[0m
+[2026-07-04T10:10:32.417Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 121.299 ms - -[0m
+[2026-07-04T10:10:32.423Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 121.153 ms - -[0m
+[2026-07-04T10:10:32.441Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.121 ms - -[0m
+[2026-07-04T10:11:32.426Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 148.453 ms - -[0m
+[2026-07-04T10:11:32.477Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.907 ms - -[0m
+[2026-07-04T10:11:32.481Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 199.493 ms - -[0m
+[2026-07-04T10:12:32.304Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.751 ms - -[0m
+[2026-07-04T10:12:32.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.874 ms - -[0m
+[2026-07-04T10:12:32.322Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.251 ms - -[0m
+[2026-07-04T10:13:32.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.546 ms - -[0m
+[2026-07-04T10:13:32.310Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.536 ms - -[0m
+[2026-07-04T10:13:32.320Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.354 ms - -[0m
+[2026-07-04T10:14:32.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.384 ms - -[0m
+[2026-07-04T10:14:32.312Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.988 ms - -[0m
+[2026-07-04T10:14:32.319Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.236 ms - -[0m
+[2026-07-04T10:15:32.291Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.900 ms - -[0m
+[2026-07-04T10:15:32.293Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.679 ms - -[0m
+[2026-07-04T10:15:32.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.157 ms - -[0m
+[2026-07-04T10:16:32.404Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 121.871 ms - -[0m
+[2026-07-04T10:16:32.408Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 130.468 ms - -[0m
+[2026-07-04T10:16:32.421Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.543 ms - -[0m
+[2026-07-04T10:17:32.334Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 49.365 ms - -[0m
+[2026-07-04T10:17:32.388Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 43.864 ms - -[0m
+[2026-07-04T10:17:32.464Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 167.340 ms - -[0m
+[2026-07-04T10:18:32.305Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.093 ms - -[0m
+[2026-07-04T10:18:32.307Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 34.618 ms - -[0m
+[2026-07-04T10:18:32.322Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.892 ms - -[0m
+[2026-07-04T10:19:32.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.150 ms - -[0m
+[2026-07-04T10:19:32.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.731 ms - -[0m
+[2026-07-04T10:19:32.331Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.685 ms - -[0m
+[2026-07-04T10:20:33.233Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.891 ms - -[0m
+[2026-07-04T10:20:33.235Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.194 ms - -[0m
+[2026-07-04T10:20:33.245Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.459 ms - -[0m
+[2026-07-04T10:21:32.279Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.413 ms - -[0m
+[2026-07-04T10:21:32.293Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.002 ms - -[0m
+[2026-07-04T10:21:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.138 ms - -[0m
+[2026-07-04T10:22:32.399Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 106.896 ms - -[0m
+[2026-07-04T10:22:32.419Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.952 ms - -[0m
+[2026-07-04T10:22:32.432Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 102.200 ms - -[0m
+[2026-07-04T10:23:32.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.710 ms - -[0m
+[2026-07-04T10:23:32.329Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.611 ms - -[0m
+[2026-07-04T10:23:32.496Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 197.514 ms - -[0m
+[2026-07-04T10:24:32.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.361 ms - -[0m
+[2026-07-04T10:24:32.317Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.157 ms - -[0m
+[2026-07-04T10:24:32.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.601 ms - -[0m
+[2026-07-04T10:25:32.272Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.236 ms - -[0m
+[2026-07-04T10:25:32.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.995 ms - -[0m
+[2026-07-04T10:25:32.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.939 ms - -[0m
+[2026-07-04T10:26:32.287Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.777 ms - -[0m
+[2026-07-04T10:26:32.290Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.700 ms - -[0m
+[2026-07-04T10:26:32.300Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.613 ms - -[0m
+[2026-07-04T10:27:32.291Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.794 ms - -[0m
+[2026-07-04T10:27:32.316Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.913 ms - -[0m
+[2026-07-04T10:27:32.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 31.763 ms - -[0m
+[2026-07-04T10:28:32.513Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 234.822 ms - -[0m
+[2026-07-04T10:28:32.587Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 294.661 ms - -[0m
+[2026-07-04T10:28:32.616Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 96.730 ms - -[0m
+[2026-07-04T10:29:32.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.058 ms - -[0m
+[2026-07-04T10:29:32.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.559 ms - -[0m
+[2026-07-04T10:29:32.439Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 149.041 ms - -[0m
+[2026-07-04T10:30:32.299Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.457 ms - -[0m
+[2026-07-04T10:30:32.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.846 ms - -[0m
+[2026-07-04T10:30:32.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.022 ms - -[0m
+[2026-07-04T10:30:39.275Z] [INFO] Socket.io initialized
+[2026-07-04T10:30:40.666Z] [INFO] Socket.io initialized
+[2026-07-04T10:30:40.771Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T10:30:40.776Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T10:30:40.778Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T10:30:41.275Z] [INFO] Socket connected: ka1_684aSFPd504LAAAB
+[2026-07-04T10:30:41.276Z] [DEBUG] Handler registered for socket: ka1_684aSFPd504LAAAB
+[2026-07-04T10:30:41.286Z] [DEBUG] Socket ka1_684aSFPd504LAAAB joined alerts room
+[2026-07-04T10:31:32.544Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 251.069 ms - -[0m
+[2026-07-04T10:31:32.581Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 287.848 ms - -[0m
+[2026-07-04T10:31:32.596Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.992 ms - -[0m
+[2026-07-04T10:32:32.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.650 ms - -[0m
+[2026-07-04T10:32:32.291Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.354 ms - -[0m
+[2026-07-04T10:32:32.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.608 ms - -[0m
+[2026-07-04T10:33:32.288Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.354 ms - -[0m
+[2026-07-04T10:33:32.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.572 ms - -[0m
+[2026-07-04T10:33:32.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.724 ms - -[0m
+[2026-07-04T10:34:32.281Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.323 ms - -[0m
+[2026-07-04T10:34:32.298Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.447 ms - -[0m
+[2026-07-04T10:34:32.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.217 ms - -[0m
+[2026-07-04T10:35:32.340Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 32.633 ms - -[0m
+[2026-07-04T10:35:32.342Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.318 ms - -[0m
+[2026-07-04T10:35:32.366Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.787 ms - -[0m
+[2026-07-04T10:36:32.282Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.514 ms - -[0m
+[2026-07-04T10:36:32.294Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.176 ms - -[0m
+[2026-07-04T10:36:32.392Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 90.699 ms - -[0m
+[2026-07-04T10:37:32.426Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 142.284 ms - -[0m
+[2026-07-04T10:37:32.489Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 43.204 ms - -[0m
+[2026-07-04T10:37:32.538Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 249.460 ms - -[0m
+[2026-07-04T10:38:32.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.915 ms - -[0m
+[2026-07-04T10:38:32.329Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.389 ms - -[0m
+[2026-07-04T10:38:32.341Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.507 ms - -[0m
+[2026-07-04T10:39:32.300Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.823 ms - -[0m
+[2026-07-04T10:39:32.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.665 ms - -[0m
+[2026-07-04T10:39:32.324Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.275 ms - -[0m
+[2026-07-04T10:40:32.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.896 ms - -[0m
+[2026-07-04T10:40:32.328Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.282 ms - -[0m
+[2026-07-04T10:40:32.343Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.635 ms - -[0m
+[2026-07-04T10:41:32.286Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.388 ms - -[0m
+[2026-07-04T10:41:32.294Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.206 ms - -[0m
+[2026-07-04T10:41:32.303Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.638 ms - -[0m
+[2026-07-04T10:42:22.542Z] [INFO] Socket disconnected: ka1_684aSFPd504LAAAB (client namespace disconnect)
+[2026-07-04T10:43:09.009Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [32m200[0m 257.687 ms - 1075[0m
+[2026-07-04T10:43:09.026Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 273.376 ms - -[0m
+[2026-07-04T10:43:09.069Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 321.008 ms - -[0m
+[2026-07-04T10:43:09.104Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.048 ms - -[0m
+[2026-07-04T10:43:09.177Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.580 ms - -[0m
+[2026-07-04T10:43:09.181Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 39.543 ms - -[0m
+[2026-07-04T10:43:09.204Z] [INFO] Socket connected: pDd140ulaxLB3HvwAAAD
+[2026-07-04T10:43:09.206Z] [DEBUG] Handler registered for socket: pDd140ulaxLB3HvwAAAD
+[2026-07-04T10:43:09.363Z] [DEBUG] Socket pDd140ulaxLB3HvwAAAD joined alerts room
+[2026-07-04T10:43:24.288Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.647 ms - -[0m
+[2026-07-04T10:43:24.298Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 19.713 ms - -[0m
+[2026-07-04T10:43:24.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.855 ms - -[0m
+[2026-07-04T10:43:24.323Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.033 ms - -[0m
+[2026-07-04T10:43:24.325Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.695 ms - -[0m
+[2026-07-04T10:43:39.280Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.299 ms - -[0m
+[2026-07-04T10:43:39.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.222 ms - -[0m
+[2026-07-04T10:43:39.311Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 40.806 ms - -[0m
+[2026-07-04T10:43:39.323Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.565 ms - -[0m
+[2026-07-04T10:43:39.333Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.768 ms - -[0m
+[2026-07-04T10:43:39.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.154 ms - -[0m
+[2026-07-04T10:43:54.285Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.662 ms - -[0m
+[2026-07-04T10:43:54.296Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 7.637 ms - -[0m
+[2026-07-04T10:43:54.316Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.406 ms - -[0m
+[2026-07-04T10:43:54.324Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.073 ms - -[0m
+[2026-07-04T10:43:54.452Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 129.216 ms - -[0m
+[2026-07-04T10:44:09.292Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.564 ms - -[0m
+[2026-07-04T10:44:09.319Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.796 ms - -[0m
+[2026-07-04T10:44:09.322Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 24.718 ms - -[0m
+[2026-07-04T10:44:09.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.872 ms - -[0m
+[2026-07-04T10:44:09.356Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.187 ms - -[0m
+[2026-07-04T10:44:09.358Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.906 ms - -[0m
+[2026-07-04T10:44:24.279Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.363 ms - -[0m
+[2026-07-04T10:44:24.289Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 12.841 ms - -[0m
+[2026-07-04T10:44:24.299Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.049 ms - -[0m
+[2026-07-04T10:44:24.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.093 ms - -[0m
+[2026-07-04T10:44:24.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.215 ms - -[0m
+[2026-07-04T10:44:39.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.855 ms - -[0m
+[2026-07-04T10:44:42.128Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 53.573 ms - -[0m
+[2026-07-04T10:44:42.134Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 62.143 ms - -[0m
+[2026-07-04T10:44:42.185Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 78.270 ms - -[0m
+[2026-07-04T10:44:42.189Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.566 ms - -[0m
+[2026-07-04T10:44:42.213Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.867 ms - -[0m
+[2026-07-04T10:44:44.118Z] [INFO] Socket disconnected: pDd140ulaxLB3HvwAAAD (transport close)
+[2026-07-04T10:44:46.245Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.518 ms - -[0m
+[2026-07-04T10:44:46.253Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.143 ms - -[0m
+[2026-07-04T10:44:46.274Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 47.772 ms - -[0m
+[2026-07-04T10:44:46.310Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.159 ms - -[0m
+[2026-07-04T10:44:46.318Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.275 ms - -[0m
+[2026-07-04T10:44:46.324Z] [INFO] Socket connected: NYcxwyUFMnjE1vr7AAAF
+[2026-07-04T10:44:46.337Z] [DEBUG] Handler registered for socket: NYcxwyUFMnjE1vr7AAAF
+[2026-07-04T10:44:46.357Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.523 ms - -[0m
+[2026-07-04T10:44:46.359Z] [DEBUG] Socket NYcxwyUFMnjE1vr7AAAF joined alerts room
+[2026-07-04T10:45:01.234Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.700 ms - -[0m
+[2026-07-04T10:45:01.259Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 43.627 ms - -[0m
+[2026-07-04T10:45:01.262Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 43.706 ms - -[0m
+[2026-07-04T10:45:01.279Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.439 ms - -[0m
+[2026-07-04T10:45:01.297Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.174 ms - -[0m
+[2026-07-04T10:45:16.216Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.662 ms - -[0m
+[2026-07-04T10:45:16.245Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.019 ms - -[0m
+[2026-07-04T10:45:16.248Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 28.337 ms - -[0m
+[2026-07-04T10:45:16.283Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 49.852 ms - -[0m
+[2026-07-04T10:45:16.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 44.020 ms - -[0m
+[2026-07-04T10:45:16.341Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.522 ms - -[0m
+[2026-07-04T10:45:19.630Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.914 ms - -[0m
+[2026-07-04T10:45:22.680Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 44.501 ms - -[0m
+[2026-07-04T10:45:22.688Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 52.495 ms - -[0m
+[2026-07-04T10:45:22.713Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 71.926 ms - -[0m
+[2026-07-04T10:45:22.725Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.372 ms - -[0m
+[2026-07-04T10:45:22.751Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.631 ms - -[0m
+[2026-07-04T10:45:37.648Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.532 ms - -[0m
+[2026-07-04T10:45:37.661Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 25.366 ms - -[0m
+[2026-07-04T10:45:37.666Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.723 ms - -[0m
+[2026-07-04T10:45:37.691Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.776 ms - -[0m
+[2026-07-04T10:45:37.694Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.900 ms - -[0m
+[2026-07-04T10:45:46.203Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.967 ms - -[0m
+[2026-07-04T10:45:52.630Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.299 ms - -[0m
+[2026-07-04T10:45:52.632Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.622 ms - -[0m
+[2026-07-04T10:45:52.640Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 25.857 ms - -[0m
+[2026-07-04T10:45:52.661Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.977 ms - -[0m
+[2026-07-04T10:45:52.664Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.645 ms - -[0m
+[2026-07-04T10:46:07.633Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.191 ms - -[0m
+[2026-07-04T10:46:07.635Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 11.340 ms - -[0m
+[2026-07-04T10:46:07.656Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.152 ms - -[0m
+[2026-07-04T10:46:07.668Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.311 ms - -[0m
+[2026-07-04T10:46:07.684Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.816 ms - -[0m
+[2026-07-04T10:46:16.216Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.040 ms - -[0m
+[2026-07-04T10:46:22.637Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.323 ms - -[0m
+[2026-07-04T10:46:22.654Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.137 ms - -[0m
+[2026-07-04T10:46:22.656Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.808 ms - -[0m
+[2026-07-04T10:46:22.673Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.671 ms - -[0m
+[2026-07-04T10:46:22.687Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.341 ms - -[0m
+[2026-07-04T10:46:24.239Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.660 ms - -[0m
+[2026-07-04T10:46:24.255Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.681 ms - -[0m
+[2026-07-04T10:46:26.474Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 47.326 ms - -[0m
+[2026-07-04T10:46:26.477Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 48.854 ms - -[0m
+[2026-07-04T10:46:26.489Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 59.648 ms - -[0m
+[2026-07-04T10:46:26.519Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.753 ms - -[0m
+[2026-07-04T10:46:26.555Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.560 ms - -[0m
+[2026-07-04T10:46:41.411Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.070 ms - -[0m
+[2026-07-04T10:46:41.426Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 29.597 ms - -[0m
+[2026-07-04T10:46:41.428Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.000 ms - -[0m
+[2026-07-04T10:46:41.455Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.881 ms - -[0m
+[2026-07-04T10:46:41.458Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.515 ms - -[0m
+[2026-07-04T10:46:46.216Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.651 ms - -[0m
+[2026-07-04T10:46:56.416Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.999 ms - -[0m
+[2026-07-04T10:46:56.418Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 15.759 ms - -[0m
+[2026-07-04T10:46:56.433Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.964 ms - -[0m
+[2026-07-04T10:46:56.453Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.224 ms - -[0m
+[2026-07-04T10:46:56.458Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.276 ms - -[0m
+[2026-07-04T10:47:12.271Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.682 ms - -[0m
+[2026-07-04T10:47:12.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.476 ms - -[0m
+[2026-07-04T10:47:12.315Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 13.449 ms - -[0m
+[2026-07-04T10:47:12.329Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.869 ms - -[0m
+[2026-07-04T10:47:12.373Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.512 ms - -[0m
+[2026-07-04T10:47:16.273Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.600 ms - -[0m
+[2026-07-04T10:47:27.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.731 ms - -[0m
+[2026-07-04T10:47:27.310Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 18.443 ms - -[0m
+[2026-07-04T10:47:27.323Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.444 ms - -[0m
+[2026-07-04T10:47:27.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.972 ms - -[0m
+[2026-07-04T10:47:27.339Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.223 ms - -[0m
+[2026-07-04T10:47:42.288Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.405 ms - -[0m
+[2026-07-04T10:47:42.294Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 13.171 ms - -[0m
+[2026-07-04T10:47:42.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.384 ms - -[0m
+[2026-07-04T10:47:42.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.223 ms - -[0m
+[2026-07-04T10:47:42.320Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.440 ms - -[0m
+[2026-07-04T10:47:46.269Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.755 ms - -[0m
+[2026-07-04T10:47:57.277Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.245 ms - -[0m
+[2026-07-04T10:47:57.288Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 15.967 ms - -[0m
+[2026-07-04T10:47:57.290Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.200 ms - -[0m
+[2026-07-04T10:47:57.307Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.260 ms - -[0m
+[2026-07-04T10:47:57.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.113 ms - -[0m
+[2026-07-04T10:48:32.491Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 183.156 ms - -[0m
+[2026-07-04T10:48:32.541Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 28.541 ms - -[0m
+[2026-07-04T10:48:32.596Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 284.932 ms - -[0m
+[2026-07-04T10:48:32.600Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 279.711 ms - -[0m
+[2026-07-04T10:48:32.620Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.980 ms - -[0m
+[2026-07-04T10:48:32.631Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.675 ms - -[0m
+[2026-07-04T10:49:17.169Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 42.081 ms - -[0m
+[2026-07-04T10:49:17.177Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 26.796 ms - -[0m
+[2026-07-04T10:49:17.209Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 57.792 ms - -[0m
+[2026-07-04T10:49:17.244Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.178 ms - -[0m
+[2026-07-04T10:49:17.246Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.921 ms - -[0m
+[2026-07-04T10:49:17.277Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.114 ms - -[0m
+[2026-07-04T10:49:26.426Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.402 ms - -[0m
+[2026-07-04T10:49:26.431Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 28.946 ms - -[0m
+[2026-07-04T10:49:26.447Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 44.596 ms - -[0m
+[2026-07-04T10:49:26.467Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.290 ms - -[0m
+[2026-07-04T10:49:26.480Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.782 ms - -[0m
+[2026-07-04T10:49:41.410Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.091 ms - -[0m
+[2026-07-04T10:49:41.422Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 26.614 ms - -[0m
+[2026-07-04T10:49:41.439Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.302 ms - -[0m
+[2026-07-04T10:49:41.471Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.668 ms - -[0m
+[2026-07-04T10:49:41.474Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 48.584 ms - -[0m
+[2026-07-04T10:49:46.270Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.988 ms - -[0m
+[2026-07-04T10:49:56.423Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.935 ms - -[0m
+[2026-07-04T10:49:56.425Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.682 ms - -[0m
+[2026-07-04T10:49:56.428Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 30.877 ms - -[0m
+[2026-07-04T10:49:56.457Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.205 ms - -[0m
+[2026-07-04T10:49:56.460Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.712 ms - -[0m
+[2026-07-04T10:50:12.277Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.265 ms - -[0m
+[2026-07-04T10:50:12.282Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 14.615 ms - -[0m
+[2026-07-04T10:50:12.300Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.330 ms - -[0m
+[2026-07-04T10:50:12.325Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.611 ms - -[0m
+[2026-07-04T10:50:12.328Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.431 ms - -[0m
+[2026-07-04T10:50:16.271Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.143 ms - -[0m
+[2026-07-04T10:50:27.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.378 ms - -[0m
+[2026-07-04T10:50:27.303Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 17.141 ms - -[0m
+[2026-07-04T10:50:27.311Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.521 ms - -[0m
+[2026-07-04T10:50:27.320Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.932 ms - -[0m
+[2026-07-04T10:50:27.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.734 ms - -[0m
+[2026-07-04T10:50:42.287Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 14.123 ms - -[0m
+[2026-07-04T10:50:42.289Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.126 ms - -[0m
+[2026-07-04T10:50:42.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.746 ms - -[0m
+[2026-07-04T10:50:42.323Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.793 ms - -[0m
+[2026-07-04T10:50:42.325Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.890 ms - -[0m
+[2026-07-04T10:50:46.270Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.526 ms - -[0m
+[2026-07-04T10:50:57.290Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 8.423 ms - -[0m
+[2026-07-04T10:50:57.294Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.893 ms - -[0m
+[2026-07-04T10:50:57.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.881 ms - -[0m
+[2026-07-04T10:50:57.320Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.409 ms - -[0m
+[2026-07-04T10:50:57.322Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.075 ms - -[0m
+[2026-07-04T10:51:32.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.717 ms - -[0m
+[2026-07-04T10:51:32.306Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.552 ms - -[0m
+[2026-07-04T10:51:32.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.189 ms - -[0m
+[2026-07-04T10:51:32.318Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.544 ms - -[0m
+[2026-07-04T10:51:32.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.009 ms - -[0m
+[2026-07-04T10:51:32.338Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.336 ms - -[0m
+[2026-07-04T10:52:32.281Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.996 ms - -[0m
+[2026-07-04T10:52:32.292Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 19.303 ms - -[0m
+[2026-07-04T10:52:32.294Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.384 ms - -[0m
+[2026-07-04T10:52:32.320Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.633 ms - -[0m
+[2026-07-04T10:52:32.322Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.261 ms - -[0m
+[2026-07-04T10:52:32.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.184 ms - -[0m
+[2026-07-04T10:53:33.892Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 210.463 ms - -[0m
+[2026-07-04T10:53:33.954Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 272.705 ms - -[0m
+[2026-07-04T10:53:33.981Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.774 ms - -[0m
+[2026-07-04T10:53:33.993Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 310.808 ms - -[0m
+[2026-07-04T10:53:34.018Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.995 ms - -[0m
+[2026-07-04T10:53:34.029Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.317 ms - -[0m
+[2026-07-04T10:54:32.306Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 24.256 ms - -[0m
+[2026-07-04T10:54:32.308Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.114 ms - -[0m
+[2026-07-04T10:54:32.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 34.817 ms - -[0m
+[2026-07-04T10:54:32.347Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.144 ms - -[0m
+[2026-07-04T10:54:32.371Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 41.328 ms - -[0m
+[2026-07-04T10:54:32.373Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.535 ms - -[0m
+[2026-07-04T10:55:32.283Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.483 ms - -[0m
+[2026-07-04T10:55:32.287Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 15.073 ms - -[0m
+[2026-07-04T10:55:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.677 ms - -[0m
+[2026-07-04T10:55:32.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.817 ms - -[0m
+[2026-07-04T10:55:32.320Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.836 ms - -[0m
+[2026-07-04T10:55:32.332Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.763 ms - -[0m
+[2026-07-04T10:56:32.289Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.159 ms - -[0m
+[2026-07-04T10:56:32.291Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 14.790 ms - -[0m
+[2026-07-04T10:56:32.306Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.619 ms - -[0m
+[2026-07-04T10:56:32.314Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.666 ms - -[0m
+[2026-07-04T10:56:32.323Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.495 ms - -[0m
+[2026-07-04T10:56:32.334Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.494 ms - -[0m
+[2026-07-04T10:57:32.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.247 ms - -[0m
+[2026-07-04T10:57:32.310Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 22.511 ms - -[0m
+[2026-07-04T10:57:32.312Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.358 ms - -[0m
+[2026-07-04T10:57:32.332Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.968 ms - -[0m
+[2026-07-04T10:57:32.334Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.920 ms - -[0m
+[2026-07-04T10:57:32.348Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.701 ms - -[0m
+[2026-07-04T10:58:32.300Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.785 ms - -[0m
+[2026-07-04T10:58:32.309Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 16.337 ms - -[0m
+[2026-07-04T10:58:32.311Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.040 ms - -[0m
+[2026-07-04T10:58:32.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.466 ms - -[0m
+[2026-07-04T10:58:32.330Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.708 ms - -[0m
+[2026-07-04T10:58:32.342Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.893 ms - -[0m
+[2026-07-04T10:59:32.448Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 174.338 ms - -[0m
+[2026-07-04T10:59:32.575Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 302.566 ms - -[0m
+[2026-07-04T10:59:32.583Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 304.853 ms - -[0m
+[2026-07-04T10:59:32.606Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.034 ms - -[0m
+[2026-07-04T10:59:32.613Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.954 ms - -[0m
+[2026-07-04T10:59:32.625Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.869 ms - -[0m
+[2026-07-04T11:00:32.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.686 ms - -[0m
+[2026-07-04T11:00:32.315Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 20.960 ms - -[0m
+[2026-07-04T11:00:32.344Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 44.573 ms - -[0m
+[2026-07-04T11:00:32.359Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.343 ms - -[0m
+[2026-07-04T11:00:32.377Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.602 ms - -[0m
+[2026-07-04T11:00:32.390Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.078 ms - -[0m
+[2026-07-04T11:01:32.296Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.738 ms - -[0m
+[2026-07-04T11:01:32.299Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 11.643 ms - -[0m
+[2026-07-04T11:01:32.316Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.707 ms - -[0m
+[2026-07-04T11:01:32.325Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.449 ms - -[0m
+[2026-07-04T11:01:32.335Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.840 ms - -[0m
+[2026-07-04T11:01:32.348Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.168 ms - -[0m
+[2026-07-04T11:02:32.287Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.565 ms - -[0m
+[2026-07-04T11:02:32.292Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 17.196 ms - -[0m
+[2026-07-04T11:02:32.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.807 ms - -[0m
+[2026-07-04T11:02:32.317Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.041 ms - -[0m
+[2026-07-04T11:02:32.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.764 ms - -[0m
+[2026-07-04T11:02:32.336Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.204 ms - -[0m
+[2026-07-04T11:03:32.302Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.659 ms - -[0m
+[2026-07-04T11:03:32.306Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 23.307 ms - -[0m
+[2026-07-04T11:03:32.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.009 ms - -[0m
+[2026-07-04T11:03:32.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.136 ms - -[0m
+[2026-07-04T11:03:32.332Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.397 ms - -[0m
+[2026-07-04T11:03:32.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.717 ms - -[0m
+[2026-07-04T11:04:32.287Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.487 ms - -[0m
+[2026-07-04T11:04:32.290Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 19.534 ms - -[0m
+[2026-07-04T11:04:32.397Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 102.766 ms - -[0m
+[2026-07-04T11:04:32.416Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 121.395 ms - -[0m
+[2026-07-04T11:04:32.630Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 208.206 ms - -[0m
+[2026-07-04T11:04:32.650Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.149 ms - -[0m
+[2026-07-04T11:05:32.736Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 40.286 ms - -[0m
+[2026-07-04T11:05:32.776Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.931 ms - -[0m
+[2026-07-04T11:05:32.846Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 148.531 ms - -[0m
+[2026-07-04T11:05:32.852Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 153.335 ms - -[0m
+[2026-07-04T11:05:32.872Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.920 ms - -[0m
+[2026-07-04T11:05:32.888Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.434 ms - -[0m
+[2026-07-04T11:06:32.283Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.404 ms - -[0m
+[2026-07-04T11:06:32.315Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 13.456 ms - -[0m
+[2026-07-04T11:06:32.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.499 ms - -[0m
+[2026-07-04T11:06:32.337Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.978 ms - -[0m
+[2026-07-04T11:06:32.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.686 ms - -[0m
+[2026-07-04T11:06:32.362Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.547 ms - -[0m
+[2026-07-04T11:06:47.779Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 55.903 ms - -[0m
+[2026-07-04T11:06:47.900Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 156.192 ms - -[0m
+[2026-07-04T11:06:47.905Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 161.062 ms - -[0m
+[2026-07-04T11:06:47.948Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 149.020 ms - -[0m
+[2026-07-04T11:06:48.038Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 106.064 ms - -[0m
+[2026-07-04T11:06:48.168Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 83.550 ms - -[0m
+[2026-07-04T11:06:56.423Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.210 ms - -[0m
+[2026-07-04T11:06:56.451Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 43.543 ms - -[0m
+[2026-07-04T11:06:56.453Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 45.215 ms - -[0m
+[2026-07-04T11:06:56.484Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.280 ms - -[0m
+[2026-07-04T11:06:56.519Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 47.820 ms - -[0m
+[2026-07-04T11:07:12.278Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.018 ms - -[0m
+[2026-07-04T11:07:12.307Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 8.554 ms - -[0m
+[2026-07-04T11:07:12.355Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.618 ms - -[0m
+[2026-07-04T11:07:12.412Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.006 ms - -[0m
+[2026-07-04T11:07:12.442Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.774 ms - -[0m
+[2026-07-04T11:07:16.265Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.792 ms - -[0m
+[2026-07-04T11:07:27.346Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 17.117 ms - -[0m
+[2026-07-04T11:07:27.349Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.998 ms - -[0m
+[2026-07-04T11:07:27.385Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.266 ms - -[0m
+[2026-07-04T11:07:27.397Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.634 ms - -[0m
+[2026-07-04T11:07:27.422Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.946 ms - -[0m
+[2026-07-04T11:07:42.289Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.515 ms - -[0m
+[2026-07-04T11:07:42.307Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 33.703 ms - -[0m
+[2026-07-04T11:07:42.422Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.309 ms - -[0m
+[2026-07-04T11:07:42.424Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.836 ms - -[0m
+[2026-07-04T11:07:42.456Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.710 ms - -[0m
+[2026-07-04T11:07:46.261Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.272 ms - -[0m
+[2026-07-04T11:07:57.587Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.634 ms - -[0m
+[2026-07-04T11:07:57.633Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 9.306 ms - -[0m
+[2026-07-04T11:07:57.649Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.383 ms - -[0m
+[2026-07-04T11:07:57.671Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.657 ms - -[0m
+[2026-07-04T11:07:57.689Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.150 ms - -[0m
+[2026-07-04T11:08:32.302Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.550 ms - -[0m
+[2026-07-04T11:08:32.337Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 15.175 ms - -[0m
+[2026-07-04T11:08:32.363Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.595 ms - -[0m
+[2026-07-04T11:08:32.404Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.012 ms - -[0m
+[2026-07-04T11:08:32.410Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.834 ms - -[0m
+[2026-07-04T11:08:32.433Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.648 ms - -[0m
+[2026-07-04T11:09:28.005Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 62.345 ms - -[0m
+[2026-07-04T11:09:28.007Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 64.262 ms - -[0m
+[2026-07-04T11:09:28.028Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 88.718 ms - -[0m
+[2026-07-04T11:09:28.206Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 166.147 ms - -[0m
+[2026-07-04T11:09:28.235Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 191.428 ms - -[0m
+[2026-07-04T11:09:28.276Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.876 ms - -[0m
+[2026-07-04T11:09:41.445Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 36.486 ms - -[0m
+[2026-07-04T11:09:41.783Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 376.773 ms - -[0m
+[2026-07-04T11:09:41.993Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 583.804 ms - -[0m
+[2026-07-04T11:09:42.025Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 107.482 ms - -[0m
+[2026-07-04T11:09:42.149Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 117.447 ms - -[0m
+[2026-07-04T11:09:46.879Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.654 ms - -[0m
+[2026-07-04T11:09:56.944Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 212.678 ms - -[0m
+[2026-07-04T11:09:56.959Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 220.398 ms - -[0m
+[2026-07-04T11:09:56.967Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 236.376 ms - -[0m
+[2026-07-04T11:09:57.066Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 84.411 ms - -[0m
+[2026-07-04T11:09:57.078Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 93.527 ms - -[0m
+[2026-07-04T11:10:12.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.045 ms - -[0m
+[2026-07-04T11:10:12.320Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.162 ms - -[0m
+[2026-07-04T11:10:12.334Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.404 ms - -[0m
+[2026-07-04T11:10:12.359Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.097 ms - -[0m
+[2026-07-04T11:10:12.366Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 17.899 ms - -[0m
+[2026-07-04T11:10:14.336Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.931 ms - -[0m
+[2026-07-04T11:10:14.380Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 54.208 ms - -[0m
+[2026-07-04T11:10:14.382Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 56.035 ms - -[0m
+[2026-07-04T11:10:16.282Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.182 ms - -[0m
+[2026-07-04T11:10:25.294Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.439 ms - -[0m
+[2026-07-04T11:10:25.300Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 11.945 ms - -[0m
+[2026-07-04T11:10:25.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.791 ms - -[0m
+[2026-07-04T11:10:27.468Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.594 ms - -[0m
+[2026-07-04T11:10:27.470Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.699 ms - -[0m
+[2026-07-04T11:10:37.400Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.232 ms - -[0m
+[2026-07-04T11:10:37.515Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 11.974 ms - -[0m
+[2026-07-04T11:10:37.763Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 193.640 ms - -[0m
+[2026-07-04T11:10:52.371Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.005 ms - -[0m
+[2026-07-04T11:10:52.412Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 24.253 ms - -[0m
+[2026-07-04T11:10:52.450Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.400 ms - -[0m
+[2026-07-04T11:10:53.298Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.858 ms - -[0m
+[2026-07-04T11:10:53.314Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 32.425 ms - -[0m
+[2026-07-04T11:10:53.316Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.959 ms - -[0m
+[2026-07-04T11:11:08.338Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 51.150 ms - -[0m
+[2026-07-04T11:11:08.341Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 55.620 ms - -[0m
+[2026-07-04T11:11:08.375Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.906 ms - -[0m
+[2026-07-04T11:11:13.312Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.286 ms - -[0m
+[2026-07-04T11:11:13.327Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.538 ms - -[0m
+[2026-07-04T11:11:13.337Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 31.823 ms - -[0m
+[2026-07-04T11:11:28.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.088 ms - -[0m
+[2026-07-04T11:11:28.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.222 ms - -[0m
+[2026-07-04T11:11:28.325Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 34.197 ms - -[0m
+[2026-07-04T11:11:32.308Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.991 ms - -[0m
+[2026-07-04T11:11:32.310Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.151 ms - -[0m
+[2026-07-04T11:11:32.343Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.005 ms - -[0m
+[2026-07-04T11:11:43.363Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.706 ms - -[0m
+[2026-07-04T11:11:43.372Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 19.791 ms - -[0m
+[2026-07-04T11:11:43.386Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.384 ms - -[0m
+[2026-07-04T11:11:46.330Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.572 ms - -[0m
+[2026-07-04T11:11:46.341Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 16.689 ms - -[0m
+[2026-07-04T11:11:46.373Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.625 ms - -[0m
+[2026-07-04T11:11:46.385Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.526 ms - -[0m
+[2026-07-04T11:11:46.403Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.900 ms - -[0m
+[2026-07-04T11:11:59.337Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 44.686 ms - -[0m
+[2026-07-04T11:11:59.339Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 46.069 ms - -[0m
+[2026-07-04T11:12:02.273Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.699 ms - -[0m
+[2026-07-04T11:12:02.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.375 ms - -[0m
+[2026-07-04T11:12:02.295Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 27.666 ms - -[0m
+[2026-07-04T11:12:08.280Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.632 ms - -[0m
+[2026-07-04T11:12:08.283Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.221 ms - -[0m
+[2026-07-04T11:12:17.284Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.288 ms - -[0m
+[2026-07-04T11:12:17.317Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 11.600 ms - -[0m
+[2026-07-04T11:12:17.324Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.014 ms - -[0m
+[2026-07-04T11:12:23.367Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.085 ms - -[0m
+[2026-07-04T11:12:23.384Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.296 ms - -[0m
+[2026-07-04T11:12:32.292Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.664 ms - -[0m
+[2026-07-04T11:12:32.312Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.522 ms - -[0m
+[2026-07-04T11:12:32.314Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 32.048 ms - -[0m
+[2026-07-04T11:12:32.349Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.454 ms - -[0m
+[2026-07-04T11:12:38.306Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 36.239 ms - -[0m
+[2026-07-04T11:12:38.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.121 ms - -[0m
+[2026-07-04T11:12:47.276Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.703 ms - -[0m
+[2026-07-04T11:12:47.280Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 13.621 ms - -[0m
+[2026-07-04T11:12:47.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.342 ms - -[0m
+[2026-07-04T11:12:53.276Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.106 ms - -[0m
+[2026-07-04T11:12:53.293Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.161 ms - -[0m
+[2026-07-04T11:13:02.946Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 115.484 ms - -[0m
+[2026-07-04T11:13:02.965Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.291 ms - -[0m
+[2026-07-04T11:13:02.971Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 54.961 ms - -[0m
+[2026-07-04T11:13:09.282Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.500 ms - -[0m
+[2026-07-04T11:13:09.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.898 ms - -[0m
+[2026-07-04T11:13:23.287Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.432 ms - -[0m
+[2026-07-04T11:13:23.289Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.365 ms - -[0m
+[2026-07-04T11:13:32.286Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.761 ms - -[0m
+[2026-07-04T11:13:32.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.010 ms - -[0m
+[2026-07-04T11:13:32.308Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 19.663 ms - -[0m
+[2026-07-04T11:13:32.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.392 ms - -[0m
+[2026-07-04T11:14:36.597Z] [INFO] Socket.io initialized
+[2026-07-04T11:14:36.781Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:14:36.793Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:14:36.795Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:14:36.829Z] [INFO] Socket connected: 6Ipw-3g8GGol15FfAAAB
+[2026-07-04T11:14:36.832Z] [DEBUG] Handler registered for socket: 6Ipw-3g8GGol15FfAAAB
+[2026-07-04T11:14:36.843Z] [DEBUG] Socket 6Ipw-3g8GGol15FfAAAB joined alerts room
+[2026-07-04T11:14:58.704Z] [INFO] Socket.io initialized
+[2026-07-04T11:14:58.997Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:14:59.011Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:14:59.013Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:14:59.305Z] [INFO] Socket connected: snamXZ6kCiXqD5qAAAAB
+[2026-07-04T11:14:59.307Z] [DEBUG] Handler registered for socket: snamXZ6kCiXqD5qAAAAB
+[2026-07-04T11:14:59.317Z] [DEBUG] Socket snamXZ6kCiXqD5qAAAAB joined alerts room
+[2026-07-04T11:15:35.273Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 2706.421 ms - -[0m
+[2026-07-04T11:15:35.285Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 2715.669 ms - -[0m
+[2026-07-04T11:15:35.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 2735.358 ms - -[0m
+[2026-07-04T11:15:35.436Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 81.644 ms - -[0m
+[2026-07-04T11:15:35.478Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 90.576 ms - -[0m
+[2026-07-04T11:15:35.510Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.025 ms - -[0m
+[2026-07-04T11:16:32.282Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.962 ms - -[0m
+[2026-07-04T11:16:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.432 ms - -[0m
+[2026-07-04T11:16:32.323Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.514 ms - -[0m
+[2026-07-04T11:16:32.333Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.100 ms - -[0m
+[2026-07-04T11:16:32.348Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 9.743 ms - -[0m
+[2026-07-04T11:16:32.379Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.725 ms - -[0m
+[2026-07-04T11:17:32.290Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.537 ms - -[0m
+[2026-07-04T11:17:32.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.438 ms - -[0m
+[2026-07-04T11:17:32.318Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.220 ms - -[0m
+[2026-07-04T11:17:32.328Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.140 ms - -[0m
+[2026-07-04T11:17:32.346Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 10.984 ms - -[0m
+[2026-07-04T11:17:32.354Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.684 ms - -[0m
+[2026-07-04T11:18:32.316Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.314 ms - -[0m
+[2026-07-04T11:18:32.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.880 ms - -[0m
+[2026-07-04T11:18:32.327Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 35.282 ms - -[0m
+[2026-07-04T11:18:32.348Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.980 ms - -[0m
+[2026-07-04T11:18:32.353Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.623 ms - -[0m
+[2026-07-04T11:18:32.389Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.863 ms - -[0m
+[2026-07-04T11:19:32.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.069 ms - -[0m
+[2026-07-04T11:19:32.287Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.105 ms - -[0m
+[2026-07-04T11:19:32.313Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.801 ms - -[0m
+[2026-07-04T11:19:32.330Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.219 ms - -[0m
+[2026-07-04T11:19:32.358Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.910 ms - -[0m
+[2026-07-04T11:19:32.366Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 20.265 ms - -[0m
+[2026-07-04T11:20:07.453Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 111.742 ms - -[0m
+[2026-07-04T11:20:07.506Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 159.747 ms - -[0m
+[2026-07-04T11:20:07.550Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.152 ms - -[0m
+[2026-07-04T11:20:07.700Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 358.072 ms - -[0m
+[2026-07-04T11:20:07.738Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.018 ms - -[0m
+[2026-07-04T11:20:07.777Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.359 ms - -[0m
+[2026-07-04T11:20:08.290Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.521 ms - -[0m
+[2026-07-04T11:20:08.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.866 ms - -[0m
+[2026-07-04T11:20:10.925Z] [INFO] Socket disconnected: snamXZ6kCiXqD5qAAAAB (transport close)
+[2026-07-04T11:20:14.544Z] [INFO] Socket connected: vJv9ySKf-nUEn5wNAAAD
+[2026-07-04T11:20:14.545Z] [DEBUG] Handler registered for socket: vJv9ySKf-nUEn5wNAAAD
+[2026-07-04T11:20:14.547Z] [DEBUG] Socket vJv9ySKf-nUEn5wNAAAD joined alerts room
+[2026-07-04T11:20:14.841Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 37.855 ms - -[0m
+[2026-07-04T11:20:14.844Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 41.136 ms - -[0m
+[2026-07-04T11:20:14.882Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 80.399 ms - -[0m
+[2026-07-04T11:20:14.977Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 71.188 ms - -[0m
+[2026-07-04T11:20:15.007Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 48.221 ms - -[0m
+[2026-07-04T11:20:15.137Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 79.849 ms - -[0m
+[2026-07-04T11:20:29.544Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.828 ms - -[0m
+[2026-07-04T11:20:29.558Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.665 ms - -[0m
+[2026-07-04T11:20:29.574Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.444 ms - -[0m
+[2026-07-04T11:20:29.590Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.534 ms - -[0m
+[2026-07-04T11:20:29.608Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.368 ms - -[0m
+[2026-07-04T11:20:44.899Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 311.871 ms - -[0m
+[2026-07-04T11:20:44.913Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 325.119 ms - -[0m
+[2026-07-04T11:20:44.934Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 433.018 ms - -[0m
+[2026-07-04T11:20:44.980Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 34.678 ms - -[0m
+[2026-07-04T11:20:45.022Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 73.814 ms - -[0m
+[2026-07-04T11:20:45.085Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.599 ms - -[0m
+[2026-07-04T11:20:59.554Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.525 ms - -[0m
+[2026-07-04T11:20:59.557Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.810 ms - -[0m
+[2026-07-04T11:20:59.574Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 46.686 ms - -[0m
+[2026-07-04T11:20:59.606Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 32.856 ms - -[0m
+[2026-07-04T11:20:59.608Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.973 ms - -[0m
+[2026-07-04T11:21:00.005Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.296 ms - -[0m
+[2026-07-04T11:21:03.391Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 68.489 ms - -[0m
+[2026-07-04T11:21:03.397Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 76.393 ms - -[0m
+[2026-07-04T11:21:03.408Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 88.226 ms - -[0m
+[2026-07-04T11:21:03.473Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 47.715 ms - -[0m
+[2026-07-04T11:21:03.476Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 49.698 ms - -[0m
+[2026-07-04T11:21:14.512Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.243 ms - -[0m
+[2026-07-04T11:21:18.331Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.269 ms - -[0m
+[2026-07-04T11:21:18.336Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.339 ms - -[0m
+[2026-07-04T11:21:18.355Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 40.044 ms - -[0m
+[2026-07-04T11:21:18.378Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.526 ms - -[0m
+[2026-07-04T11:21:18.380Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.355 ms - -[0m
+[2026-07-04T11:21:21.938Z] [INFO] [0mGET /api/v1/ai/analysis [36m304[0m 101.413 ms - -[0m
+[2026-07-04T11:21:26.700Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.727 ms - -[0m
+[2026-07-04T11:21:26.732Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.387 ms - -[0m
+[2026-07-04T11:21:44.547Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.328 ms - -[0m
+[2026-07-04T11:21:52.289Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.007 ms - -[0m
+[2026-07-04T11:21:52.312Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 48.393 ms - -[0m
+[2026-07-04T11:21:52.318Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 53.366 ms - -[0m
+[2026-07-04T11:21:52.342Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 20.635 ms - -[0m
+[2026-07-04T11:21:52.358Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.313 ms - -[0m
+[2026-07-04T11:22:05.726Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.734 ms - -[0m
+[2026-07-04T11:22:14.544Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.032 ms - -[0m
+[2026-07-04T11:22:20.730Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.407 ms - -[0m
+[2026-07-04T11:22:35.724Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.842 ms - -[0m
+[2026-07-04T11:22:44.536Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.220 ms - -[0m
+[2026-07-04T11:22:50.728Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.616 ms - -[0m
+[2026-07-04T11:23:05.746Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.475 ms - -[0m
+[2026-07-04T11:23:14.532Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.275 ms - -[0m
+[2026-07-04T11:23:29.041Z] [INFO] Socket.io initialized
+[2026-07-04T11:23:29.291Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:23:29.302Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:23:29.303Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:23:29.355Z] [INFO] Socket connected: n-_0IL8eD8HJ4wMyAAAB
+[2026-07-04T11:23:29.357Z] [DEBUG] Handler registered for socket: n-_0IL8eD8HJ4wMyAAAB
+[2026-07-04T11:23:29.359Z] [DEBUG] Socket n-_0IL8eD8HJ4wMyAAAB joined alerts room
+[2026-07-04T11:23:29.826Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 332.507 ms - -[0m
+[2026-07-04T11:23:29.908Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 49.309 ms - -[0m
+[2026-07-04T11:23:30.289Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 751.952 ms - -[0m
+[2026-07-04T11:23:30.301Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 765.219 ms - -[0m
+[2026-07-04T11:23:30.409Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 112.392 ms - -[0m
+[2026-07-04T11:23:43.717Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 27.302 ms - -[0m
+[2026-07-04T11:23:43.742Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 51.987 ms - -[0m
+[2026-07-04T11:23:43.747Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 58.469 ms - -[0m
+[2026-07-04T11:23:43.795Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 39.840 ms - -[0m
+[2026-07-04T11:23:43.805Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 51.967 ms - -[0m
+[2026-07-04T11:23:54.597Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.618 ms - -[0m
+[2026-07-04T11:23:58.251Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.447 ms - -[0m
+[2026-07-04T11:24:13.289Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.283 ms - -[0m
+[2026-07-04T11:24:19.359Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 17.136 ms - -[0m
+[2026-07-04T11:24:19.407Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.718 ms - -[0m
+[2026-07-04T11:24:19.409Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.173 ms - -[0m
+[2026-07-04T11:24:19.442Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.735 ms - -[0m
+[2026-07-04T11:24:19.448Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.131 ms - -[0m
+[2026-07-04T11:24:24.597Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.351 ms - -[0m
+[2026-07-04T11:24:34.323Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.306 ms - -[0m
+[2026-07-04T11:24:34.326Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 25.865 ms - -[0m
+[2026-07-04T11:24:34.358Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 50.897 ms - -[0m
+[2026-07-04T11:24:34.409Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 74.381 ms - -[0m
+[2026-07-04T11:24:34.427Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 64.541 ms - -[0m
+[2026-07-04T11:24:46.934Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.364 ms - -[0m
+[2026-07-04T11:24:54.596Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.068 ms - -[0m
+[2026-07-04T11:25:02.279Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.450 ms - -[0m
+[2026-07-04T11:25:17.289Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.454 ms - -[0m
+[2026-07-04T11:25:25.278Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.406 ms - -[0m
+[2026-07-04T11:25:32.278Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.059 ms - -[0m
+[2026-07-04T11:25:47.288Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.414 ms - -[0m
+[2026-07-04T11:25:55.306Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.662 ms - -[0m
+[2026-07-04T11:26:02.272Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.540 ms - -[0m
+[2026-07-04T11:26:17.268Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.152 ms - -[0m
+[2026-07-04T11:26:25.282Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.926 ms - -[0m
+[2026-07-04T11:26:32.278Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.922 ms - -[0m
+[2026-07-04T11:27:34.668Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.365 ms - -[0m
+[2026-07-04T11:27:34.673Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.410 ms - -[0m
+[2026-07-04T11:28:33.649Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 1001.303 ms - -[0m
+[2026-07-04T11:28:33.665Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1007.054 ms - -[0m
+[2026-07-04T11:29:32.341Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 51.155 ms - -[0m
+[2026-07-04T11:29:32.347Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 56.842 ms - -[0m
+[2026-07-04T11:30:32.317Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.076 ms - -[0m
+[2026-07-04T11:30:32.368Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 73.530 ms - -[0m
+[2026-07-04T11:30:47.022Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 43.502 ms - -[0m
+[2026-07-04T11:30:54.602Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.866 ms - -[0m
+[2026-07-04T11:31:03.271Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.845 ms - -[0m
+[2026-07-04T11:31:17.284Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.186 ms - -[0m
+[2026-07-04T11:31:22.935Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.997 ms - -[0m
+[2026-07-04T11:31:23.046Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 94.170 ms - -[0m
+[2026-07-04T11:31:23.050Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 95.329 ms - -[0m
+[2026-07-04T11:31:23.110Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 125.422 ms - -[0m
+[2026-07-04T11:31:23.149Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 73.719 ms - -[0m
+[2026-07-04T11:31:24.615Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.862 ms - -[0m
+[2026-07-04T11:31:38.283Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.667 ms - -[0m
+[2026-07-04T11:31:38.293Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 15.888 ms - -[0m
+[2026-07-04T11:31:38.306Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.364 ms - -[0m
+[2026-07-04T11:31:38.317Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.644 ms - -[0m
+[2026-07-04T11:31:38.334Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.098 ms - -[0m
+[2026-07-04T11:31:52.820Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.313 ms - -[0m
+[2026-07-04T11:31:52.837Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 27.270 ms - -[0m
+[2026-07-04T11:31:52.839Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.260 ms - -[0m
+[2026-07-04T11:31:52.870Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.635 ms - -[0m
+[2026-07-04T11:31:52.873Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.201 ms - -[0m
+[2026-07-04T11:31:56.076Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.849 ms - -[0m
+[2026-07-04T11:32:07.815Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.011 ms - -[0m
+[2026-07-04T11:32:07.843Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 37.006 ms - -[0m
+[2026-07-04T11:32:07.849Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.724 ms - -[0m
+[2026-07-04T11:32:07.865Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.608 ms - -[0m
+[2026-07-04T11:32:07.924Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.739 ms - -[0m
+[2026-07-04T11:32:23.285Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.452 ms - -[0m
+[2026-07-04T11:32:23.298Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 22.401 ms - -[0m
+[2026-07-04T11:32:23.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.795 ms - -[0m
+[2026-07-04T11:32:23.310Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.842 ms - -[0m
+[2026-07-04T11:32:23.400Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.152 ms - -[0m
+[2026-07-04T11:32:27.423Z] [INFO] Socket.io initialized
+[2026-07-04T11:32:29.363Z] [INFO] Socket.io initialized
+[2026-07-04T11:32:29.604Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:32:29.623Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:32:29.628Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:32:29.704Z] [INFO] Socket connected: FlC9-fdbPEZv_F9fAAAB
+[2026-07-04T11:32:29.707Z] [DEBUG] Handler registered for socket: FlC9-fdbPEZv_F9fAAAB
+[2026-07-04T11:32:29.728Z] [DEBUG] Socket FlC9-fdbPEZv_F9fAAAB joined alerts room
+[2026-07-04T11:32:38.495Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 209.486 ms - -[0m
+[2026-07-04T11:32:38.515Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 233.544 ms - -[0m
+[2026-07-04T11:32:38.747Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 442.106 ms - -[0m
+[2026-07-04T11:32:38.840Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 67.804 ms - -[0m
+[2026-07-04T11:32:38.849Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 103.763 ms - -[0m
+[2026-07-04T11:32:53.290Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 12.853 ms - -[0m
+[2026-07-04T11:32:53.302Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.898 ms - -[0m
+[2026-07-04T11:32:53.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.694 ms - -[0m
+[2026-07-04T11:32:53.559Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 92.181 ms - -[0m
+[2026-07-04T11:32:53.562Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 96.041 ms - -[0m
+[2026-07-04T11:32:55.505Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.572 ms - -[0m
+[2026-07-04T11:33:08.281Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.449 ms - -[0m
+[2026-07-04T11:33:08.293Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.078 ms - -[0m
+[2026-07-04T11:33:08.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.816 ms - -[0m
+[2026-07-04T11:33:08.322Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.580 ms - -[0m
+[2026-07-04T11:33:08.341Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.910 ms - -[0m
+[2026-07-04T11:33:15.832Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.402 ms - -[0m
+[2026-07-04T11:33:24.594Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.022 ms - -[0m
+[2026-07-04T11:33:30.796Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.126 ms - -[0m
+[2026-07-04T11:33:45.786Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.228 ms - -[0m
+[2026-07-04T11:33:54.597Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.443 ms - -[0m
+[2026-07-04T11:34:00.785Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.303 ms - -[0m
+[2026-07-04T11:34:15.783Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.308 ms - -[0m
+[2026-07-04T11:34:16.840Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"KFNF","name":"TEMP2"}
+[2026-07-04T11:34:18.236Z] [INFO] Socket.io initialized
+[2026-07-04T11:34:18.371Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:34:18.377Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:34:18.381Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:34:18.459Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"KFNF","name":"TEMP2"}
+[2026-07-04T11:34:18.631Z] [INFO] Socket connected: zFSlTHARlUiwsguoAAAB
+[2026-07-04T11:34:18.633Z] [DEBUG] Handler registered for socket: zFSlTHARlUiwsguoAAAB
+[2026-07-04T11:34:18.637Z] [DEBUG] Socket zFSlTHARlUiwsguoAAAB joined alerts room
+[2026-07-04T11:34:18.914Z] [INFO] [SENSOR] Sensor created: cmr6abejk0000ug847n1jnenm (KFNF)
+[2026-07-04T11:34:18.917Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor KFNF: temp=30, pH=2, TDS=100, DO=2, waterLevel=2, battery=65
+[2026-07-04T11:34:18.926Z] [INFO] [THRESHOLD] Evaluating sensor KFNF (TEMP2): pH=2.00, temp=30.00, TDS=100.00, DO=2.00, waterLevel=2.00, battery=65.00
+[2026-07-04T11:34:18.930Z] [INFO] [THRESHOLD]   pH: value=2.00 safe=6.5 — 8.5 → VIOLATED
+[2026-07-04T11:34:18.989Z] [INFO] [ALERT]   Creating CRITICAL alert for pH on sensor KFNF (value=2.00)
+[2026-07-04T11:34:18.999Z] [INFO] [ALERT]   Alert created in DB: id=cmr6abey80001ug840k6u98a8, severity=CRITICAL, type=pH
+[2026-07-04T11:34:19.005Z] [INFO] [ALERT]   Alert cmr6abey80001ug840k6u98a8 emitted via socket
+[2026-07-04T11:34:19.010Z] [INFO] [THRESHOLD]   temperature: value=30.00 safe=< 35°C → OK
+[2026-07-04T11:34:19.018Z] [INFO] [THRESHOLD]   tds: value=100.00 safe=< 500 ppm → OK
+[2026-07-04T11:34:19.022Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=2.00 safe=> 5 mg/L → VIOLATED
+[2026-07-04T11:34:19.036Z] [INFO] [ALERT]   Creating CRITICAL alert for dissolvedOxygen on sensor KFNF (value=2.00)
+[2026-07-04T11:34:19.047Z] [INFO] [ALERT]   Alert created in DB: id=cmr6abezk0002ug84lfr9sg7i, severity=CRITICAL, type=dissolvedOxygen
+[2026-07-04T11:34:19.051Z] [INFO] [ALERT]   Alert cmr6abezk0002ug84lfr9sg7i emitted via socket
+[2026-07-04T11:34:19.052Z] [INFO] [THRESHOLD]   waterLevel: value=2.00 safe=< 9 m → OK
+[2026-07-04T11:34:19.055Z] [INFO] [THRESHOLD]   battery: value=65.00 safe=> 20% → OK
+[2026-07-04T11:34:19.056Z] [INFO] [ALERT] Evaluation complete for sensor KFNF: 2 alert(s) created
+[2026-07-04T11:34:19.058Z] [INFO] [ALERT] Created 2 alert(s) for sensor KFNF: pH=CRITICAL, dissolvedOxygen=CRITICAL
+[2026-07-04T11:34:19.068Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 638.433 ms - 487[0m
+[2026-07-04T11:34:19.318Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 273.323 ms - 117[0m
+[2026-07-04T11:34:19.358Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 314.646 ms - 1688[0m
+[2026-07-04T11:34:19.422Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 53.330 ms - -[0m
+[2026-07-04T11:34:19.434Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 58.225 ms - -[0m
+[2026-07-04T11:34:19.507Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 51.618 ms - -[0m
+[2026-07-04T11:34:19.517Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 64.945 ms - -[0m
+[2026-07-04T11:34:19.544Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.649 ms - -[0m
+[2026-07-04T11:34:19.560Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.059 ms - -[0m
+[2026-07-04T11:34:19.592Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.432 ms - -[0m
+[2026-07-04T11:34:19.612Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.144 ms - -[0m
+[2026-07-04T11:34:19.642Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.562 ms - -[0m
+[2026-07-04T11:34:23.511Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 45.159 ms - -[0m
+[2026-07-04T11:34:23.573Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [32m200[0m 90.778 ms - 2050[0m
+[2026-07-04T11:34:23.612Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 80.340 ms - -[0m
+[2026-07-04T11:34:23.738Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 255.193 ms - -[0m
+[2026-07-04T11:34:23.783Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 41.492 ms - -[0m
+[2026-07-04T11:34:24.606Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.026 ms - -[0m
+[2026-07-04T11:34:38.464Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.420 ms - -[0m
+[2026-07-04T11:34:38.467Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 29.156 ms - -[0m
+[2026-07-04T11:34:38.481Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 46.203 ms - -[0m
+[2026-07-04T11:34:38.527Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.265 ms - -[0m
+[2026-07-04T11:34:38.544Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 53.715 ms - -[0m
+[2026-07-04T11:34:46.853Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.909 ms - -[0m
+[2026-07-04T11:34:54.597Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.669 ms - -[0m
+[2026-07-04T11:34:56.114Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 48.733 ms - -[0m
+[2026-07-04T11:34:56.134Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 56.755 ms - -[0m
+[2026-07-04T11:34:56.136Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 58.023 ms - -[0m
+[2026-07-04T11:34:56.433Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.532 ms - -[0m
+[2026-07-04T11:34:56.450Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 34.547 ms - -[0m
+[2026-07-04T11:35:11.059Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 31.091 ms - -[0m
+[2026-07-04T11:35:11.065Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 35.909 ms - -[0m
+[2026-07-04T11:35:11.091Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 55.409 ms - -[0m
+[2026-07-04T11:35:11.143Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 49.846 ms - -[0m
+[2026-07-04T11:35:11.175Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 44.379 ms - -[0m
+[2026-07-04T11:35:11.995Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.894 ms - -[0m
+[2026-07-04T11:35:12.027Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 18.526 ms - 2049[0m
+[2026-07-04T11:35:13.482Z] [INFO] [0mGET /api/v1/ai/analysis [32m200[0m 83.714 ms - 3648[0m
+[2026-07-04T11:35:15.456Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 22.023 ms - -[0m
+[2026-07-04T11:35:15.458Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.352 ms - -[0m
+[2026-07-04T11:35:19.457Z] [INFO] [0mPATCH /api/v1/alerts/cmr6abey80001ug840k6u98a8/resolve [32m200[0m 553.069 ms - 567[0m
+[2026-07-04T11:35:19.483Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 11.205 ms - 1569[0m
+[2026-07-04T11:35:19.494Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 21.849 ms - 117[0m
+[2026-07-04T11:35:24.627Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.742 ms - -[0m
+[2026-07-04T11:35:29.740Z] [INFO] [CITIZEN] Sending citizen notification for alert cmr6abezk0002ug84lfr9sg7i: TEMP2
+[2026-07-04T11:35:30.283Z] [INFO] [CITIZEN] Notification saved: id=cmr6acxk40003ug84rmj7w3qn
+[2026-07-04T11:35:30.311Z] [INFO] [0mPOST /api/v1/citizen-notifications [32m201[0m 578.626 ms - 1112[0m
+[2026-07-04T11:35:30.352Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.314 ms - -[0m
+[2026-07-04T11:35:30.361Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 31.314 ms - 1590[0m
+[2026-07-04T11:35:46.300Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 13.097 ms - -[0m
+[2026-07-04T11:35:46.321Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.498 ms - -[0m
+[2026-07-04T11:35:55.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.623 ms - -[0m
+[2026-07-04T11:36:16.278Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 8.380 ms - -[0m
+[2026-07-04T11:36:16.290Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.650 ms - -[0m
+[2026-07-04T11:36:25.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.438 ms - -[0m
+[2026-07-04T11:36:46.283Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 10.812 ms - -[0m
+[2026-07-04T11:36:46.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.916 ms - -[0m
+[2026-07-04T11:37:16.598Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 16.167 ms - -[0m
+[2026-07-04T11:37:16.600Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.099 ms - -[0m
+[2026-07-04T11:37:32.283Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.680 ms - -[0m
+[2026-07-04T11:37:46.289Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.903 ms - -[0m
+[2026-07-04T11:37:46.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.422 ms - -[0m
+[2026-07-04T11:38:16.438Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.491 ms - -[0m
+[2026-07-04T11:38:16.440Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.444 ms - -[0m
+[2026-07-04T11:38:32.286Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.687 ms - -[0m
+[2026-07-04T11:39:32.470Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 173.964 ms - -[0m
+[2026-07-04T11:39:32.619Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 322.053 ms - -[0m
+[2026-07-04T11:39:32.637Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.758 ms - -[0m
+[2026-07-04T11:40:32.306Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 19.191 ms - -[0m
+[2026-07-04T11:40:32.328Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 40.021 ms - -[0m
+[2026-07-04T11:40:32.364Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.926 ms - -[0m
+[2026-07-04T11:41:32.297Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 12.626 ms - -[0m
+[2026-07-04T11:41:32.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.852 ms - -[0m
+[2026-07-04T11:41:32.329Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.624 ms - -[0m
+[2026-07-04T11:42:05.846Z] [INFO] Socket.io initialized
+[2026-07-04T11:42:06.250Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:42:06.309Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:42:06.310Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:42:07.289Z] [INFO] Socket connected: 3KG2T2S6rnFEcYsvAAAB
+[2026-07-04T11:42:07.295Z] [DEBUG] Handler registered for socket: 3KG2T2S6rnFEcYsvAAAB
+[2026-07-04T11:42:07.304Z] [DEBUG] Socket 3KG2T2S6rnFEcYsvAAAB joined alerts room
+[2026-07-04T11:42:32.526Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 233.224 ms - -[0m
+[2026-07-04T11:42:32.642Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 333.363 ms - -[0m
+[2026-07-04T11:42:32.677Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.335 ms - -[0m
+[2026-07-04T11:42:59.737Z] [INFO] Socket disconnected: 3KG2T2S6rnFEcYsvAAAB (transport close)
+[2026-07-04T11:43:05.686Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 162.266 ms - -[0m
+[2026-07-04T11:43:05.780Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 40.909 ms - -[0m
+[2026-07-04T11:43:05.837Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.397 ms - -[0m
+[2026-07-04T11:43:05.886Z] [INFO] Socket connected: _EoySAHViTNeYVnqAAAD
+[2026-07-04T11:43:05.887Z] [DEBUG] Handler registered for socket: _EoySAHViTNeYVnqAAAD
+[2026-07-04T11:43:05.933Z] [DEBUG] Socket _EoySAHViTNeYVnqAAAD joined alerts room
+[2026-07-04T11:43:36.311Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.600 ms - -[0m
+[2026-07-04T11:43:36.324Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 36.678 ms - -[0m
+[2026-07-04T11:43:36.373Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.735 ms - -[0m
+[2026-07-04T11:44:06.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.120 ms - -[0m
+[2026-07-04T11:44:06.310Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 25.059 ms - -[0m
+[2026-07-04T11:44:07.811Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1502.928 ms - -[0m
+[2026-07-04T11:44:36.288Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.603 ms - -[0m
+[2026-07-04T11:44:36.290Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 15.170 ms - -[0m
+[2026-07-04T11:44:36.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.486 ms - -[0m
+[2026-07-04T11:45:06.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.346 ms - -[0m
+[2026-07-04T11:45:06.310Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 31.598 ms - -[0m
+[2026-07-04T11:45:06.328Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.810 ms - -[0m
+[2026-07-04T11:45:38.551Z] [INFO] Socket.io initialized
+[2026-07-04T11:45:38.884Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T11:45:38.894Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T11:45:38.898Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T11:45:39.298Z] [INFO] Socket connected: sGZoRa7vaXCgUEz1AAAB
+[2026-07-04T11:45:39.300Z] [DEBUG] Handler registered for socket: sGZoRa7vaXCgUEz1AAAB
+[2026-07-04T11:45:39.316Z] [DEBUG] Socket sGZoRa7vaXCgUEz1AAAB joined alerts room
+[2026-07-04T12:13:00.692Z] [INFO] Socket.io initialized
+[2026-07-04T12:13:09.914Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T12:13:09.964Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T12:13:09.966Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T12:13:43.760Z] [INFO] Socket connected: ttHhSoF86ymczsldAAAB
+[2026-07-04T12:13:43.763Z] [DEBUG] Handler registered for socket: ttHhSoF86ymczsldAAAB
+[2026-07-04T12:13:43.799Z] [DEBUG] Socket ttHhSoF86ymczsldAAAB joined alerts room
+[2026-07-04T12:13:45.629Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1840.840 ms - -[0m
+[2026-07-04T12:13:45.633Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 3469.673 ms - -[0m
+[2026-07-04T12:13:57.298Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 21.378 ms - -[0m
+[2026-07-04T12:14:10.849Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [32m200[0m 47.345 ms - 1591[0m
+[2026-07-04T12:14:10.853Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 56.248 ms - -[0m
+[2026-07-04T12:14:10.861Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 67.767 ms - -[0m
+[2026-07-04T12:14:10.895Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.436 ms - -[0m
+[2026-07-04T12:14:10.906Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 34.152 ms - -[0m
+[2026-07-04T12:14:12.130Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.281 ms - -[0m
+[2026-07-04T12:14:25.563Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.404 ms - -[0m
+[2026-07-04T12:14:25.579Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 24.300 ms - -[0m
+[2026-07-04T12:14:25.596Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.040 ms - -[0m
+[2026-07-04T12:14:25.686Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.842 ms - -[0m
+[2026-07-04T12:14:25.699Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 27.226 ms - -[0m
+[2026-07-04T12:14:25.982Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.894 ms - -[0m
+[2026-07-04T12:14:25.986Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 24.790 ms - -[0m
+[2026-07-04T12:14:31.505Z] [INFO] [0mGET /api/v1/alerts/cmr6abezk0002ug84lfr9sg7i [32m200[0m 396.406 ms - 1933[0m
+[2026-07-04T12:14:42.155Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.572 ms - -[0m
+[2026-07-04T12:14:57.796Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 9.357 ms - -[0m
+[2026-07-04T12:15:05.352Z] [INFO] [SENSOR] Deleting sensor ns-temp01 (cmr3iymz10000ugso11kkjtep)
+[2026-07-04T12:15:05.555Z] [INFO] [SENSOR] Deleted 0 alert(s) for sensor ns-temp01
+[2026-07-04T12:15:05.954Z] [INFO] [SENSOR] Sensor ns-temp01 (cmr3iymz10000ugso11kkjtep) deleted successfully
+[2026-07-04T12:15:05.960Z] [INFO] [0mDELETE /api/v1/sensors/cmr3iymz10000ugso11kkjtep [32m200[0m 618.762 ms - 56[0m
+[2026-07-04T12:15:05.995Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 18.093 ms - 1275[0m
+[2026-07-04T12:15:05.999Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.658 ms - -[0m
+[2026-07-04T12:15:06.018Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.567 ms - -[0m
+[2026-07-04T12:15:09.337Z] [INFO] [SENSOR] Deleting sensor KFNF (cmr6abejk0000ug847n1jnenm)
+[2026-07-04T12:15:09.539Z] [INFO] [SENSOR] Deleted 2 alert(s) for sensor KFNF
+[2026-07-04T12:15:09.795Z] [INFO] [SENSOR] Sensor KFNF (cmr6abejk0000ug847n1jnenm) deleted successfully
+[2026-07-04T12:15:09.803Z] [INFO] [0mDELETE /api/v1/sensors/cmr6abejk0000ug847n1jnenm [32m200[0m 470.248 ms - 56[0m
+[2026-07-04T12:15:09.830Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 18.671 ms - 117[0m
+[2026-07-04T12:15:09.843Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 31.229 ms - 862[0m
+[2026-07-04T12:15:09.857Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 10.511 ms - -[0m
+[2026-07-04T12:15:12.179Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.596 ms - -[0m
+[2026-07-04T12:15:12.790Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.709 ms - -[0m
+[2026-07-04T12:15:13.205Z] [INFO] [SENSOR] Deleting sensor JH -TMP 2 (cmr4vsoo10000ugxo8n3x0df6)
+[2026-07-04T12:15:13.380Z] [INFO] [SENSOR] Deleted 3 alert(s) for sensor JH -TMP 2
+[2026-07-04T12:15:13.627Z] [INFO] [SENSOR] Sensor JH -TMP 2 (cmr4vsoo10000ugxo8n3x0df6) deleted successfully
+[2026-07-04T12:15:13.630Z] [INFO] [0mDELETE /api/v1/sensors/cmr4vsoo10000ugxo8n3x0df6 [32m200[0m 434.561 ms - 56[0m
+[2026-07-04T12:15:13.661Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 18.926 ms - 117[0m
+[2026-07-04T12:15:13.671Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 27.291 ms - 488[0m
+[2026-07-04T12:15:13.682Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.791 ms - -[0m
+[2026-07-04T12:15:17.924Z] [INFO] [SENSOR] Deleting sensor LS-TEMP 2 (cmr4t7uyn0000ugis0zhghkzu)
+[2026-07-04T12:15:18.247Z] [INFO] [SENSOR] Deleted 2 alert(s) for sensor LS-TEMP 2
+[2026-07-04T12:15:18.506Z] [INFO] [SENSOR] Sensor LS-TEMP 2 (cmr4t7uyn0000ugis0zhghkzu) deleted successfully
+[2026-07-04T12:15:18.530Z] [INFO] [0mDELETE /api/v1/sensors/cmr4t7uyn0000ugis0zhghkzu [32m200[0m 608.852 ms - 56[0m
+[2026-07-04T12:15:18.574Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 18.486 ms - 117[0m
+[2026-07-04T12:15:18.589Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 26.301 ms - 94[0m
+[2026-07-04T12:15:18.600Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.535 ms - -[0m
+[2026-07-04T12:15:27.785Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 4.670 ms - -[0m
+[2026-07-04T12:15:42.166Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.684 ms - -[0m
+[2026-07-04T12:15:42.825Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.124 ms - -[0m
+[2026-07-04T12:15:57.817Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 14.778 ms - -[0m
+[2026-07-04T12:16:11.880Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"NS-TEMP1","name":"THOL LAKE"}
+[2026-07-04T12:16:12.135Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.670 ms - -[0m
+[2026-07-04T12:16:12.364Z] [INFO] [SENSOR] Sensor created: cmr6bt9xi0000uga84ffww316 (NS-TEMP1)
+[2026-07-04T12:16:12.365Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor NS-TEMP1: temp=50, pH=3, TDS=1500, DO=2, waterLevel=1, battery=65
+[2026-07-04T12:16:12.371Z] [INFO] [THRESHOLD] Evaluating sensor NS-TEMP1 (THOL LAKE): pH=3.00, temp=50.00, TDS=1500.00, DO=2.00, waterLevel=1.00, battery=65.00
+[2026-07-04T12:16:12.374Z] [INFO] [THRESHOLD]   pH: value=3.00 safe=6.5 — 8.5 → VIOLATED
+[2026-07-04T12:16:12.381Z] [INFO] [ALERT]   Creating CRITICAL alert for pH on sensor NS-TEMP1 (value=3.00)
+[2026-07-04T12:16:12.545Z] [INFO] [ALERT]   Alert created in DB: id=cmr6btaaq0002uga87ag6ex57, severity=CRITICAL, type=pH
+[2026-07-04T12:16:12.549Z] [INFO] [ALERT]   Alert cmr6btaaq0002uga87ag6ex57 emitted via socket
+[2026-07-04T12:16:12.557Z] [INFO] [THRESHOLD]   temperature: value=50.00 safe=< 35°C → VIOLATED
+[2026-07-04T12:16:12.572Z] [INFO] [ALERT]   Creating CRITICAL alert for temperature on sensor NS-TEMP1 (value=50.00)
+[2026-07-04T12:16:12.586Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 19.916 ms - 117[0m
+[2026-07-04T12:16:12.597Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 7.988 ms - 483[0m
+[2026-07-04T12:16:12.611Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.270 ms - -[0m
+[2026-07-04T12:16:12.622Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.575 ms - -[0m
+[2026-07-04T12:16:12.784Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.056 ms - -[0m
+[2026-07-04T12:16:12.801Z] [INFO] [ALERT]   Alert created in DB: id=cmr6btag10004uga81mvxc8hd, severity=CRITICAL, type=temperature
+[2026-07-04T12:16:12.804Z] [INFO] [ALERT]   Alert cmr6btag10004uga81mvxc8hd emitted via socket
+[2026-07-04T12:16:12.808Z] [INFO] [THRESHOLD]   tds: value=1500.00 safe=< 500 ppm → VIOLATED
+[2026-07-04T12:16:12.819Z] [INFO] [ALERT]   Creating CRITICAL alert for tds on sensor NS-TEMP1 (value=1500.00)
+[2026-07-04T12:16:12.842Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.100 ms - -[0m
+[2026-07-04T12:16:12.844Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 18.737 ms - 117[0m
+[2026-07-04T12:16:12.862Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.365 ms - -[0m
+[2026-07-04T12:16:12.865Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.959 ms - -[0m
+[2026-07-04T12:16:13.057Z] [INFO] [ALERT]   Alert created in DB: id=cmr6btamz0006uga8exjreb39, severity=CRITICAL, type=tds
+[2026-07-04T12:16:13.059Z] [INFO] [ALERT]   Alert cmr6btamz0006uga8exjreb39 emitted via socket
+[2026-07-04T12:16:13.067Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=2.00 safe=> 5 mg/L → VIOLATED
+[2026-07-04T12:16:13.078Z] [INFO] [ALERT]   Creating CRITICAL alert for dissolvedOxygen on sensor NS-TEMP1 (value=2.00)
+[2026-07-04T12:16:13.099Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 24.316 ms - 117[0m
+[2026-07-04T12:16:13.102Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.957 ms - -[0m
+[2026-07-04T12:16:13.125Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.107 ms - -[0m
+[2026-07-04T12:16:13.128Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.117 ms - -[0m
+[2026-07-04T12:16:13.313Z] [INFO] [ALERT]   Alert created in DB: id=cmr6btau20008uga8zdpkxxm6, severity=CRITICAL, type=dissolvedOxygen
+[2026-07-04T12:16:13.316Z] [INFO] [ALERT]   Alert cmr6btau20008uga8zdpkxxm6 emitted via socket
+[2026-07-04T12:16:13.331Z] [INFO] [THRESHOLD]   waterLevel: value=1.00 safe=< 9 m → OK
+[2026-07-04T12:16:13.339Z] [INFO] [THRESHOLD]   battery: value=65.00 safe=> 20% → OK
+[2026-07-04T12:16:13.343Z] [INFO] [ALERT] Evaluation complete for sensor NS-TEMP1: 4 alert(s) created
+[2026-07-04T12:16:13.345Z] [INFO] [ALERT] Created 4 alert(s) for sensor NS-TEMP1: pH=CRITICAL, temperature=CRITICAL, tds=CRITICAL, dissolvedOxygen=CRITICAL
+[2026-07-04T12:16:13.350Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 1475.271 ms - 464[0m
+[2026-07-04T12:16:13.369Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.075 ms - -[0m
+[2026-07-04T12:16:13.373Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 17.223 ms - 117[0m
+[2026-07-04T12:16:13.386Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.598 ms - -[0m
+[2026-07-04T12:16:13.399Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.509 ms - -[0m
+[2026-07-04T12:16:13.458Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.929 ms - -[0m
+[2026-07-04T12:16:13.469Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.706 ms - -[0m
+[2026-07-04T12:16:13.482Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.866 ms - -[0m
+[2026-07-04T12:16:18.126Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.903 ms - -[0m
+[2026-07-04T12:16:18.134Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [32m200[0m 32.620 ms - 2022[0m
+[2026-07-04T12:16:18.153Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 51.789 ms - -[0m
+[2026-07-04T12:16:18.170Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.309 ms - -[0m
+[2026-07-04T12:16:18.201Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.952 ms - -[0m
+[2026-07-04T12:16:33.087Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.107 ms - -[0m
+[2026-07-04T12:16:33.090Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 26.718 ms - -[0m
+[2026-07-04T12:16:33.100Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 35.899 ms - -[0m
+[2026-07-04T12:16:33.138Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 34.328 ms - -[0m
+[2026-07-04T12:16:33.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.451 ms - -[0m
+[2026-07-04T12:16:35.066Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.125 ms - -[0m
+[2026-07-04T12:16:35.073Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 20.739 ms - 2021[0m
+[2026-07-04T12:16:39.522Z] [INFO] [0mGET /api/v1/alerts/cmr6btau20008uga8zdpkxxm6 [32m200[0m 15.887 ms - 849[0m
+[2026-07-04T12:16:42.151Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.337 ms - -[0m
+[2026-07-04T12:17:12.136Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.488 ms - -[0m
+[2026-07-04T12:17:14.951Z] [INFO] [CITIZEN] Sending citizen notification for alert cmr6btau20008uga8zdpkxxm6: THOL LAKE
+[2026-07-04T12:17:15.289Z] [INFO] [CITIZEN] Notification saved: id=cmr6bumlk000auga8anc3em39
+[2026-07-04T12:17:15.546Z] [INFO] [0mPOST /api/v1/citizen-notifications [32m201[0m 599.410 ms - 979[0m
+[2026-07-04T12:17:15.570Z] [INFO] [0mGET /api/v1/alerts/cmr6btau20008uga8zdpkxxm6 [32m200[0m 15.688 ms - 1770[0m
+[2026-07-04T12:17:30.538Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.792 ms - -[0m
+[2026-07-04T12:17:32.591Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 37.108 ms - -[0m
+[2026-07-04T12:17:32.615Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [32m200[0m 38.855 ms - 2043[0m
+[2026-07-04T12:17:32.623Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 47.930 ms - -[0m
+[2026-07-04T12:17:32.712Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 106.675 ms - -[0m
+[2026-07-04T12:17:32.857Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 224.275 ms - -[0m
+[2026-07-04T12:17:38.790Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.658 ms - -[0m
+[2026-07-04T12:17:42.151Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.905 ms - -[0m
+[2026-07-04T12:17:53.809Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.231 ms - -[0m
+[2026-07-04T12:18:07.477Z] [INFO] [SENSOR] Creating sensor: {"sensorId":"MS-TEMP2","name":"NAL SAROVAR"}
+[2026-07-04T12:18:07.487Z] [INFO] [SENSOR] Sensor created: cmr6bvr3v000buga83esa2r54 (MS-TEMP2)
+[2026-07-04T12:18:07.488Z] [INFO] [THRESHOLD] Evaluating thresholds for sensor MS-TEMP2: temp=25, pH=7, TDS=210, DO=6, waterLevel=3, battery=95
+[2026-07-04T12:18:07.495Z] [INFO] [THRESHOLD] Evaluating sensor MS-TEMP2 (NAL SAROVAR): pH=7.00, temp=25.00, TDS=210.00, DO=6.00, waterLevel=3.00, battery=95.00
+[2026-07-04T12:18:07.497Z] [INFO] [THRESHOLD]   pH: value=7.00 safe=6.5 — 8.5 → OK
+[2026-07-04T12:18:07.503Z] [INFO] [THRESHOLD]   temperature: value=25.00 safe=< 35°C → OK
+[2026-07-04T12:18:07.506Z] [INFO] [THRESHOLD]   tds: value=210.00 safe=< 500 ppm → OK
+[2026-07-04T12:18:07.508Z] [INFO] [THRESHOLD]   dissolvedOxygen: value=6.00 safe=> 5 mg/L → OK
+[2026-07-04T12:18:07.513Z] [INFO] [THRESHOLD]   waterLevel: value=3.00 safe=< 9 m → OK
+[2026-07-04T12:18:07.516Z] [INFO] [THRESHOLD]   battery: value=95.00 safe=> 20% → OK
+[2026-07-04T12:18:07.518Z] [INFO] [ALERT] Evaluation complete for sensor MS-TEMP2: 0 alert(s) created
+[2026-07-04T12:18:07.522Z] [INFO] [ALERT] No alerts triggered for sensor MS-TEMP2 — all values within safe thresholds
+[2026-07-04T12:18:07.525Z] [INFO] [0mPOST /api/v1/sensors [32m201[0m 63.405 ms - 471[0m
+[2026-07-04T12:18:07.565Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.157 ms - -[0m
+[2026-07-04T12:18:07.567Z] [INFO] [0mGET /api/v1/sensors?limit=200 [32m200[0m 22.020 ms - 880[0m
+[2026-07-04T12:18:07.589Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 7.660 ms - -[0m
+[2026-07-04T12:18:08.803Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.454 ms - -[0m
+[2026-07-04T12:18:11.174Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 32.015 ms - -[0m
+[2026-07-04T12:18:11.180Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.374 ms - -[0m
+[2026-07-04T12:18:11.219Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.915 ms - -[0m
+[2026-07-04T12:18:11.386Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 259.580 ms - -[0m
+[2026-07-04T12:18:11.405Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 16.950 ms - -[0m
+[2026-07-04T12:18:12.136Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.188 ms - -[0m
+[2026-07-04T12:18:26.296Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.148 ms - -[0m
+[2026-07-04T12:18:26.317Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 18.417 ms - -[0m
+[2026-07-04T12:18:26.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.691 ms - -[0m
+[2026-07-04T12:18:26.335Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.955 ms - -[0m
+[2026-07-04T12:18:26.349Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.692 ms - -[0m
+[2026-07-04T12:18:41.134Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.114 ms - -[0m
+[2026-07-04T12:18:41.151Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 23.315 ms - -[0m
+[2026-07-04T12:18:41.156Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.456 ms - -[0m
+[2026-07-04T12:18:41.193Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.875 ms - -[0m
+[2026-07-04T12:18:41.196Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.582 ms - -[0m
+[2026-07-04T12:18:42.510Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 43.398 ms - -[0m
+[2026-07-04T12:19:12.509Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 237.625 ms - -[0m
+[2026-07-04T12:19:42.314Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 43.437 ms - -[0m
+[2026-07-04T12:20:13.343Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.809 ms - -[0m
+[2026-07-04T12:20:42.143Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.534 ms - -[0m
+[2026-07-04T12:21:02.658Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.047 ms - -[0m
+[2026-07-04T12:21:02.678Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 47.370 ms - -[0m
+[2026-07-04T12:21:02.680Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 50.865 ms - -[0m
+[2026-07-04T12:21:02.715Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.696 ms - -[0m
+[2026-07-04T12:21:02.717Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.750 ms - -[0m
+[2026-07-04T12:21:12.277Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.942 ms - -[0m
+[2026-07-04T12:21:16.294Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.627 ms - -[0m
+[2026-07-04T12:21:16.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 35.304 ms - -[0m
+[2026-07-04T12:21:16.316Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 46.521 ms - -[0m
+[2026-07-04T12:21:16.336Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.539 ms - -[0m
+[2026-07-04T12:21:16.342Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 22.296 ms - -[0m
+[2026-07-04T12:21:31.300Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 32.581 ms - -[0m
+[2026-07-04T12:21:31.302Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.929 ms - -[0m
+[2026-07-04T12:21:31.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 44.941 ms - -[0m
+[2026-07-04T12:21:31.339Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.517 ms - -[0m
+[2026-07-04T12:21:31.350Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.152 ms - -[0m
+[2026-07-04T12:21:42.279Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.752 ms - -[0m
+[2026-07-04T12:21:46.286Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.302 ms - -[0m
+[2026-07-04T12:21:46.297Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.524 ms - -[0m
+[2026-07-04T12:21:46.305Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 25.944 ms - -[0m
+[2026-07-04T12:21:46.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.457 ms - -[0m
+[2026-07-04T12:21:46.325Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.674 ms - -[0m
+[2026-07-04T12:22:01.272Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.202 ms - -[0m
+[2026-07-04T12:22:01.281Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 12.400 ms - -[0m
+[2026-07-04T12:22:01.294Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.868 ms - -[0m
+[2026-07-04T12:22:01.309Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 5.466 ms - -[0m
+[2026-07-04T12:22:01.326Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.196 ms - -[0m
+[2026-07-04T12:22:12.268Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 6.929 ms - -[0m
+[2026-07-04T12:22:16.278Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.514 ms - -[0m
+[2026-07-04T12:22:16.281Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.639 ms - -[0m
+[2026-07-04T12:22:16.289Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.840 ms - -[0m
+[2026-07-04T12:22:16.305Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.176 ms - -[0m
+[2026-07-04T12:22:16.307Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.003 ms - -[0m
+[2026-07-04T12:22:31.290Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 12.747 ms - -[0m
+[2026-07-04T12:22:31.293Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.541 ms - -[0m
+[2026-07-04T12:22:31.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.465 ms - -[0m
+[2026-07-04T12:22:31.329Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.017 ms - -[0m
+[2026-07-04T12:22:31.333Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.722 ms - -[0m
+[2026-07-04T12:22:42.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.056 ms - -[0m
+[2026-07-04T12:22:46.282Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.936 ms - -[0m
+[2026-07-04T12:22:46.306Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 20.716 ms - -[0m
+[2026-07-04T12:22:46.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.071 ms - -[0m
+[2026-07-04T12:22:46.315Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.246 ms - -[0m
+[2026-07-04T12:22:46.345Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.776 ms - -[0m
+[2026-07-04T12:23:01.322Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.515 ms - -[0m
+[2026-07-04T12:23:01.324Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 41.291 ms - -[0m
+[2026-07-04T12:23:01.338Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 54.119 ms - -[0m
+[2026-07-04T12:23:01.404Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.595 ms - -[0m
+[2026-07-04T12:23:01.406Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 32.867 ms - -[0m
+[2026-07-04T12:23:12.566Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 152.199 ms - -[0m
+[2026-07-04T12:23:16.294Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 9.997 ms - -[0m
+[2026-07-04T12:23:16.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 25.571 ms - -[0m
+[2026-07-04T12:23:16.360Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.564 ms - -[0m
+[2026-07-04T12:23:16.392Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.122 ms - -[0m
+[2026-07-04T12:23:16.537Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.970 ms - -[0m
+[2026-07-04T12:23:31.293Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 12.600 ms - -[0m
+[2026-07-04T12:23:31.307Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 25.320 ms - -[0m
+[2026-07-04T12:23:31.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 41.473 ms - -[0m
+[2026-07-04T12:23:31.337Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.000 ms - -[0m
+[2026-07-04T12:23:31.349Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.950 ms - -[0m
+[2026-07-04T12:23:42.286Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.797 ms - -[0m
+[2026-07-04T12:23:46.282Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.613 ms - -[0m
+[2026-07-04T12:23:46.295Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.009 ms - -[0m
+[2026-07-04T12:23:46.303Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.888 ms - -[0m
+[2026-07-04T12:23:46.321Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.914 ms - -[0m
+[2026-07-04T12:23:46.326Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 23.942 ms - -[0m
+[2026-07-04T12:24:01.307Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.853 ms - -[0m
+[2026-07-04T12:24:01.312Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 22.149 ms - -[0m
+[2026-07-04T12:24:01.324Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.939 ms - -[0m
+[2026-07-04T12:24:01.339Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.492 ms - -[0m
+[2026-07-04T12:24:01.342Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.198 ms - -[0m
+[2026-07-04T12:24:12.274Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.071 ms - -[0m
+[2026-07-04T12:24:16.580Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 303.924 ms - -[0m
+[2026-07-04T12:24:16.589Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 311.567 ms - -[0m
+[2026-07-04T12:24:16.640Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 42.608 ms - -[0m
+[2026-07-04T12:24:16.755Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 480.323 ms - -[0m
+[2026-07-04T12:24:16.780Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.296 ms - -[0m
+[2026-07-04T12:24:31.288Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 8.641 ms - -[0m
+[2026-07-04T12:24:31.299Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 29.125 ms - -[0m
+[2026-07-04T12:24:31.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.788 ms - -[0m
+[2026-07-04T12:24:31.317Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 11.082 ms - -[0m
+[2026-07-04T12:24:31.336Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.992 ms - -[0m
+[2026-07-04T12:24:42.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.705 ms - -[0m
+[2026-07-04T12:24:46.303Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 24.131 ms - -[0m
+[2026-07-04T12:24:46.305Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.824 ms - -[0m
+[2026-07-04T12:24:46.311Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 35.434 ms - -[0m
+[2026-07-04T12:24:46.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.258 ms - -[0m
+[2026-07-04T12:24:46.335Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.687 ms - -[0m
+[2026-07-04T12:25:01.393Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.139 ms - -[0m
+[2026-07-04T12:25:01.445Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 13.902 ms - -[0m
+[2026-07-04T12:25:01.475Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.813 ms - -[0m
+[2026-07-04T12:25:01.495Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.214 ms - -[0m
+[2026-07-04T12:25:01.528Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.071 ms - -[0m
+[2026-07-04T12:25:12.278Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.798 ms - -[0m
+[2026-07-04T12:25:16.301Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 26.419 ms - -[0m
+[2026-07-04T12:25:16.497Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.255 ms - -[0m
+[2026-07-04T12:25:16.561Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.669 ms - -[0m
+[2026-07-04T12:25:16.582Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.139 ms - -[0m
+[2026-07-04T12:25:16.596Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.062 ms - -[0m
+[2026-07-04T12:25:31.293Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 8.775 ms - -[0m
+[2026-07-04T12:25:31.305Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.047 ms - -[0m
+[2026-07-04T12:25:31.342Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.850 ms - -[0m
+[2026-07-04T12:25:31.351Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.714 ms - -[0m
+[2026-07-04T12:25:31.370Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.944 ms - -[0m
+[2026-07-04T12:25:42.326Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.420 ms - -[0m
+[2026-07-04T12:25:46.554Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.910 ms - -[0m
+[2026-07-04T12:25:46.619Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 10.579 ms - -[0m
+[2026-07-04T12:25:46.656Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.484 ms - -[0m
+[2026-07-04T12:25:46.710Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.279 ms - -[0m
+[2026-07-04T12:25:46.727Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.445 ms - -[0m
+[2026-07-04T12:26:32.278Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 6.622 ms - -[0m
+[2026-07-04T12:26:32.309Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 6.788 ms - -[0m
+[2026-07-04T12:26:32.334Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.760 ms - -[0m
+[2026-07-04T12:26:32.344Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 19.766 ms - -[0m
+[2026-07-04T12:26:32.377Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.957 ms - -[0m
+[2026-07-04T12:26:32.395Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 7.920 ms - -[0m
+[2026-07-04T12:27:05.935Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 125.421 ms - -[0m
+[2026-07-04T12:27:05.948Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 138.189 ms - -[0m
+[2026-07-04T12:27:05.965Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 153.687 ms - -[0m
+[2026-07-04T12:27:06.012Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 33.567 ms - -[0m
+[2026-07-04T12:27:06.052Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 70.618 ms - -[0m
+[2026-07-04T12:27:06.288Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 217.731 ms - -[0m
+[2026-07-04T12:27:12.142Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.257 ms - -[0m
+[2026-07-04T12:27:16.291Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 18.455 ms - -[0m
+[2026-07-04T12:27:16.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.957 ms - -[0m
+[2026-07-04T12:27:16.310Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 24.993 ms - -[0m
+[2026-07-04T12:27:16.354Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 49.405 ms - -[0m
+[2026-07-04T12:27:16.359Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 53.700 ms - -[0m
+[2026-07-04T12:27:31.585Z] [INFO] Socket.io initialized
+[2026-07-04T12:27:31.909Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T12:27:31.922Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T12:27:31.926Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T12:27:32.140Z] [INFO] Socket connected: HexCLfehRHFge9KtAAAB
+[2026-07-04T12:27:32.142Z] [DEBUG] Handler registered for socket: HexCLfehRHFge9KtAAAB
+[2026-07-04T12:27:32.155Z] [DEBUG] Socket HexCLfehRHFge9KtAAAB joined alerts room
+[2026-07-04T12:27:32.555Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 477.449 ms - -[0m
+[2026-07-04T12:27:32.571Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 464.922 ms - -[0m
+[2026-07-04T12:27:32.647Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 57.236 ms - -[0m
+[2026-07-04T12:27:32.658Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 69.297 ms - -[0m
+[2026-07-04T12:27:33.075Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 969.745 ms - -[0m
+[2026-07-04T12:27:42.459Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 73.918 ms - -[0m
+[2026-07-04T12:27:46.485Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 17.586 ms - -[0m
+[2026-07-04T12:27:46.504Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 10.827 ms - -[0m
+[2026-07-04T12:27:46.649Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.883 ms - -[0m
+[2026-07-04T12:27:46.660Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 37.642 ms - -[0m
+[2026-07-04T12:27:46.696Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.016 ms - -[0m
+[2026-07-04T13:02:38.350Z] [INFO] Socket.io initialized
+[2026-07-04T13:02:40.109Z] [INFO] Socket.io initialized
+[2026-07-04T13:02:41.930Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T13:02:41.938Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T13:02:41.949Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T13:02:50.300Z] [INFO] Socket connected: -Zf4XnmAjrQqvWAJAAAB
+[2026-07-04T13:02:50.302Z] [DEBUG] Handler registered for socket: -Zf4XnmAjrQqvWAJAAAB
+[2026-07-04T13:02:50.307Z] [DEBUG] Socket -Zf4XnmAjrQqvWAJAAAB joined alerts room
+[2026-07-04T13:02:53.382Z] [INFO] [0mGET /api/v1/reports/stats [32m200[0m 2088.244 ms - 105[0m
+[2026-07-04T13:02:53.389Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1899.375 ms - -[0m
+[2026-07-04T13:02:53.398Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [32m200[0m 2105.664 ms - 26[0m
+[2026-07-04T13:02:53.403Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [32m200[0m 2113.983 ms - 93[0m
+[2026-07-04T13:03:06.028Z] [INFO] Socket.io initialized
+[2026-07-04T13:03:06.205Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T13:03:06.218Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T13:03:06.221Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T13:03:06.632Z] [INFO] Socket connected: t-8aX5x2qV9XhFKeAAAB
+[2026-07-04T13:03:06.635Z] [DEBUG] Handler registered for socket: t-8aX5x2qV9XhFKeAAAB
+[2026-07-04T13:03:06.661Z] [DEBUG] Socket t-8aX5x2qV9XhFKeAAAB joined alerts room
+[2026-07-04T13:03:21.917Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 254.261 ms - -[0m
+[2026-07-04T13:03:21.933Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 273.023 ms - -[0m
+[2026-07-04T13:03:21.964Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 301.941 ms - -[0m
+[2026-07-04T13:03:22.592Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 934.539 ms - -[0m
+[2026-07-04T13:03:51.316Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 35.481 ms - -[0m
+[2026-07-04T13:03:51.320Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 41.389 ms - -[0m
+[2026-07-04T13:03:51.327Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 51.738 ms - -[0m
+[2026-07-04T13:03:51.333Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 52.996 ms - -[0m
+[2026-07-04T13:04:21.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.934 ms - -[0m
+[2026-07-04T13:04:21.335Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 33.673 ms - -[0m
+[2026-07-04T13:04:21.338Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 35.553 ms - -[0m
+[2026-07-04T13:04:21.350Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 24.693 ms - -[0m
+[2026-07-04T13:05:23.334Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 23.773 ms - -[0m
+[2026-07-04T13:05:23.338Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.784 ms - -[0m
+[2026-07-04T13:05:23.349Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 32.959 ms - -[0m
+[2026-07-04T13:05:23.354Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 32.840 ms - -[0m
+[2026-07-04T13:05:50.799Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.557 ms - -[0m
+[2026-07-04T13:05:50.806Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 21.208 ms - -[0m
+[2026-07-04T13:05:50.811Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 25.698 ms - -[0m
+[2026-07-04T13:05:50.814Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 27.425 ms - -[0m
+[2026-07-04T13:06:20.820Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 31.904 ms - -[0m
+[2026-07-04T13:06:20.836Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 46.282 ms - -[0m
+[2026-07-04T13:06:20.842Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 53.950 ms - -[0m
+[2026-07-04T13:06:20.879Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 79.834 ms - -[0m
+[2026-07-04T13:06:29.224Z] [INFO] Socket.io initialized
+[2026-07-04T13:06:29.338Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T13:06:29.343Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T13:06:29.345Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T13:06:29.424Z] [INFO] [REPORT] Created report cmr6dly980000ug48ro621on5: Daily Water Quality — Nal Sarovar — Jul 4, 2026
+[2026-07-04T13:06:29.440Z] [INFO] [0mPOST /api/v1/reports [32m201[0m 36.844 ms - 706[0m
+[2026-07-04T13:06:29.795Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [32m200[0m 321.677 ms - 1360[0m
+[2026-07-04T13:06:29.805Z] [INFO] [0mGET /api/v1/reports/stats [32m200[0m 325.345 ms - 105[0m
+[2026-07-04T13:06:29.818Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [32m200[0m 334.419 ms - 359[0m
+[2026-07-04T13:06:30.615Z] [INFO] [REPORT] Report cmr6dly980000ug48ro621on5 generated successfully
+[2026-07-04T13:06:31.654Z] [INFO] Socket connected: 9rSrOrU5gqONQr0YAAAB
+[2026-07-04T13:06:31.658Z] [DEBUG] Handler registered for socket: 9rSrOrU5gqONQr0YAAAB
+[2026-07-04T13:06:31.665Z] [DEBUG] Socket 9rSrOrU5gqONQr0YAAAB joined alerts room
+[2026-07-04T13:06:51.786Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [32m200[0m 101.732 ms - 2591[0m
+[2026-07-04T13:06:51.789Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [32m200[0m 109.130 ms - 361[0m
+[2026-07-04T13:06:51.796Z] [INFO] [0mGET /api/v1/reports/stats [32m200[0m 112.732 ms - 105[0m
+[2026-07-04T13:06:51.802Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 114.324 ms - -[0m
+[2026-07-04T13:07:21.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.429 ms - -[0m
+[2026-07-04T13:07:21.304Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 34.166 ms - -[0m
+[2026-07-04T13:07:21.307Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 35.737 ms - -[0m
+[2026-07-04T13:07:21.313Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 42.092 ms - -[0m
+[2026-07-04T13:08:32.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.000 ms - -[0m
+[2026-07-04T13:08:32.333Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 19.824 ms - -[0m
+[2026-07-04T13:08:32.335Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 21.455 ms - -[0m
+[2026-07-04T13:08:32.352Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 5.993 ms - -[0m
+[2026-07-04T13:09:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.239 ms - -[0m
+[2026-07-04T13:09:32.320Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 15.955 ms - -[0m
+[2026-07-04T13:09:32.324Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 19.236 ms - -[0m
+[2026-07-04T13:09:32.345Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 6.166 ms - -[0m
+[2026-07-04T13:10:32.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.863 ms - -[0m
+[2026-07-04T13:10:32.318Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 25.699 ms - -[0m
+[2026-07-04T13:10:32.328Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 19.650 ms - -[0m
+[2026-07-04T13:10:32.330Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 22.636 ms - -[0m
+[2026-07-04T13:11:32.956Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 662.860 ms - -[0m
+[2026-07-04T13:11:32.961Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 681.883 ms - -[0m
+[2026-07-04T13:11:32.995Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 675.260 ms - -[0m
+[2026-07-04T13:11:33.037Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 720.992 ms - -[0m
+[2026-07-04T13:12:22.592Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 269.465 ms - -[0m
+[2026-07-04T13:12:22.643Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 327.955 ms - -[0m
+[2026-07-04T13:12:22.657Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 328.536 ms - -[0m
+[2026-07-04T13:12:22.662Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 332.207 ms - -[0m
+[2026-07-04T13:12:30.370Z] [INFO] [0mGET /api/v1/reports/cmr6dly980000ug48ro621on5 [32m200[0m 7.547 ms - 1899[0m
+[2026-07-04T13:12:37.619Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 16.044 ms - -[0m
+[2026-07-04T13:12:37.636Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 30.732 ms - -[0m
+[2026-07-04T13:12:37.638Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 32.147 ms - -[0m
+[2026-07-04T13:12:39.154Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 13.058 ms - -[0m
+[2026-07-04T13:12:44.714Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 19.145 ms - -[0m
+[2026-07-04T13:12:44.719Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 23.357 ms - -[0m
+[2026-07-04T13:12:44.735Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 35.633 ms - -[0m
+[2026-07-04T13:12:50.800Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.359 ms - -[0m
+[2026-07-04T13:13:01.815Z] [INFO] [0mPOST /api/v1/reports/cmr6dly980000ug48ro621on5/share [32m200[0m 25.964 ms - 77[0m
+[2026-07-04T13:13:15.699Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 42.173 ms - -[0m
+[2026-07-04T13:13:15.702Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 45.807 ms - -[0m
+[2026-07-04T13:13:15.713Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [32m200[0m 54.665 ms - 2625[0m
+[2026-07-04T13:13:20.798Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.931 ms - -[0m
+[2026-07-04T13:13:51.428Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.917 ms - -[0m
+[2026-07-04T13:14:21.280Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.537 ms - -[0m
+[2026-07-04T13:15:32.279Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.988 ms - -[0m
+[2026-07-04T13:16:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.093 ms - -[0m
+[2026-07-04T13:17:32.699Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 434.547 ms - -[0m
+[2026-07-04T13:43:31.901Z] [INFO] Socket.io initialized
+[2026-07-04T13:43:33.169Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T13:43:33.177Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T13:43:33.179Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T13:43:33.964Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 648.738 ms - -[0m
+[2026-07-04T13:43:34.272Z] [INFO] Socket connected: fz3UGOiv3sCbDsziAAAB
+[2026-07-04T13:43:34.274Z] [DEBUG] Handler registered for socket: fz3UGOiv3sCbDsziAAAB
+[2026-07-04T13:43:34.277Z] [DEBUG] Socket fz3UGOiv3sCbDsziAAAB joined alerts room
+[2026-07-04T13:43:43.521Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.838 ms - -[0m
+[2026-07-04T13:43:45.043Z] [INFO] Socket disconnected: fz3UGOiv3sCbDsziAAAB (transport close)
+[2026-07-04T13:43:46.146Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.186 ms - -[0m
+[2026-07-04T13:43:46.199Z] [INFO] Socket connected: LVjtwFcWZNrWpQ9vAAAD
+[2026-07-04T13:43:46.202Z] [DEBUG] Handler registered for socket: LVjtwFcWZNrWpQ9vAAAD
+[2026-07-04T13:43:46.234Z] [INFO] [0mGET /api/v1/users/stats [32m200[0m 75.706 ms - 135[0m
+[2026-07-04T13:43:46.243Z] [DEBUG] Socket LVjtwFcWZNrWpQ9vAAAD joined alerts room
+[2026-07-04T13:43:46.249Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [32m200[0m 118.443 ms - 1304[0m
+[2026-07-04T13:43:52.161Z] [INFO] [USER] Reset password for: Default Viewer (viewer@avianguard.org)
+[2026-07-04T13:43:52.165Z] [INFO] [0mPOST /api/v1/users/cmr3d504y0002ug0cgyhswk5r/reset-password [32m200[0m 761.094 ms - 155[0m
+[2026-07-04T13:43:55.309Z] [INFO] [USER] Reset password for: Default Viewer (viewer@avianguard.org)
+[2026-07-04T13:43:55.311Z] [INFO] [0mPOST /api/v1/users/cmr3d504y0002ug0cgyhswk5r/reset-password [32m200[0m 533.546 ms - 155[0m
+[2026-07-04T13:43:55.881Z] [INFO] [USER] Reset password for: Default Viewer (viewer@avianguard.org)
+[2026-07-04T13:43:55.883Z] [INFO] [0mPOST /api/v1/users/cmr3d504y0002ug0cgyhswk5r/reset-password [32m200[0m 535.120 ms - 155[0m
+[2026-07-04T13:44:16.139Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.045 ms - -[0m
+[2026-07-04T13:44:46.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.188 ms - -[0m
+[2026-07-04T13:45:16.127Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.227 ms - -[0m
+[2026-07-04T13:45:46.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.149 ms - -[0m
+[2026-07-04T13:46:16.280Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.793 ms - -[0m
+[2026-07-04T13:46:46.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.740 ms - -[0m
+[2026-07-04T13:47:32.289Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.859 ms - -[0m
+[2026-07-04T13:48:32.292Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.213 ms - -[0m
+[2026-07-04T13:49:32.605Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 338.351 ms - -[0m
+[2026-07-04T13:50:32.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.148 ms - -[0m
+[2026-07-04T13:51:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.697 ms - -[0m
+[2026-07-04T13:52:32.298Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.084 ms - -[0m
+[2026-07-04T13:53:08.319Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [32m200[0m 10.225 ms - 1304[0m
+[2026-07-04T13:53:08.344Z] [INFO] [0mGET /api/v1/users/stats [36m304[0m 33.908 ms - -[0m
+[2026-07-04T13:53:27.307Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [36m304[0m 11.608 ms - -[0m
+[2026-07-04T13:53:27.339Z] [INFO] [0mGET /api/v1/users/stats [36m304[0m 12.389 ms - -[0m
+[2026-07-04T13:53:32.466Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.715 ms - -[0m
+[2026-07-04T13:53:45.311Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [36m304[0m 27.022 ms - -[0m
+[2026-07-04T13:53:45.316Z] [INFO] [0mGET /api/v1/users/stats [36m304[0m 30.947 ms - -[0m
+[2026-07-04T13:54:04.287Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [36m304[0m 10.148 ms - -[0m
+[2026-07-04T13:54:04.289Z] [INFO] [0mGET /api/v1/users/stats [36m304[0m 11.966 ms - -[0m
+[2026-07-04T13:54:32.300Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.849 ms - -[0m
+[2026-07-04T13:55:32.670Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 396.801 ms - -[0m
+[2026-07-04T13:56:05.762Z] [INFO] Socket disconnected: LVjtwFcWZNrWpQ9vAAAD (transport close)
+[2026-07-04T13:59:35.171Z] [INFO] Socket connected: 1-AvUOAI5W0pLfHIAAAF
+[2026-07-04T13:59:35.178Z] [DEBUG] Handler registered for socket: 1-AvUOAI5W0pLfHIAAAF
+[2026-07-04T13:59:35.211Z] [DEBUG] Socket 1-AvUOAI5W0pLfHIAAAF joined alerts room
+[2026-07-04T13:59:43.441Z] [INFO] [0mGET /api/v1/users/cmr3d504y0002ug0cgyhswk5r/login-history [32m200[0m 734.168 ms - 26[0m
+[2026-07-04T13:59:43.452Z] [INFO] [0mGET /api/v1/users/cmr3d504y0002ug0cgyhswk5r [32m200[0m 748.335 ms - 558[0m
+[2026-07-04T13:59:43.463Z] [INFO] [0mGET /api/v1/users/cmr3d504y0002ug0cgyhswk5r/audit-logs [32m200[0m 755.958 ms - 26[0m
+[2026-07-04T14:00:04.642Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 18.972 ms - -[0m
+[2026-07-04T14:00:33.997Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [36m304[0m 199.438 ms - -[0m
+[2026-07-04T14:00:34.204Z] [INFO] [0mGET /api/v1/users/stats [36m304[0m 406.097 ms - -[0m
+[2026-07-04T14:00:36.713Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.230 ms - -[0m
+[2026-07-04T14:00:38.381Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [32m200[0m 17.517 ms - 26[0m
+[2026-07-04T14:00:38.408Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [32m200[0m 37.862 ms - 26[0m
+[2026-07-04T14:00:38.418Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [32m200[0m 56.163 ms - 564[0m
+[2026-07-04T14:01:04.630Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.498 ms - -[0m
+[2026-07-04T14:01:35.306Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.081 ms - -[0m
+[2026-07-04T14:02:05.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.357 ms - -[0m
+[2026-07-04T14:02:35.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.533 ms - -[0m
+[2026-07-04T14:03:32.336Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.515 ms - -[0m
+[2026-07-04T14:04:32.281Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.643 ms - -[0m
+[2026-07-04T14:05:32.288Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.452 ms - -[0m
+[2026-07-04T14:06:32.603Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 327.655 ms - -[0m
+[2026-07-04T14:07:32.294Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.006 ms - -[0m
+[2026-07-04T14:08:24.986Z] [INFO] Socket.io initialized
+[2026-07-04T14:08:25.262Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:08:25.271Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:08:25.273Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:08:26.276Z] [INFO] Socket connected: upoXtif712bni7rUAAAB
+[2026-07-04T14:08:26.278Z] [DEBUG] Handler registered for socket: upoXtif712bni7rUAAAB
+[2026-07-04T14:08:26.281Z] [DEBUG] Socket upoXtif712bni7rUAAAB joined alerts room
+[2026-07-04T14:08:32.257Z] [INFO] Socket.io initialized
+[2026-07-04T14:08:32.429Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:08:32.478Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:08:32.505Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:08:32.870Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 277.075 ms - -[0m
+[2026-07-04T14:08:34.281Z] [INFO] Socket connected: lYN_sULJogFQp4PoAAAB
+[2026-07-04T14:08:34.283Z] [DEBUG] Handler registered for socket: lYN_sULJogFQp4PoAAAB
+[2026-07-04T14:08:34.286Z] [DEBUG] Socket lYN_sULJogFQp4PoAAAB joined alerts room
+[2026-07-04T14:08:46.191Z] [INFO] Socket.io initialized
+[2026-07-04T14:08:46.318Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:08:46.329Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:08:46.331Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:08:47.281Z] [INFO] Socket connected: X9v7af6b24TCsZCZAAAB
+[2026-07-04T14:08:47.282Z] [DEBUG] Handler registered for socket: X9v7af6b24TCsZCZAAAB
+[2026-07-04T14:08:47.285Z] [DEBUG] Socket X9v7af6b24TCsZCZAAAB joined alerts room
+[2026-07-04T14:08:59.825Z] [INFO] Socket.io initialized
+[2026-07-04T14:08:59.946Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:08:59.953Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:08:59.955Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:09:01.275Z] [INFO] Socket connected: amw17D4czFXdskb2AAAB
+[2026-07-04T14:09:01.277Z] [DEBUG] Handler registered for socket: amw17D4czFXdskb2AAAB
+[2026-07-04T14:09:01.281Z] [DEBUG] Socket amw17D4czFXdskb2AAAB joined alerts room
+[2026-07-04T14:09:24.350Z] [INFO] Socket.io initialized
+[2026-07-04T14:09:24.493Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:09:24.500Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:09:24.505Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:09:26.328Z] [INFO] Socket connected: tuwfciRUDFpW3cdtAAAB
+[2026-07-04T14:09:26.337Z] [DEBUG] Handler registered for socket: tuwfciRUDFpW3cdtAAAB
+[2026-07-04T14:09:26.348Z] [DEBUG] Socket tuwfciRUDFpW3cdtAAAB joined alerts room
+[2026-07-04T14:09:32.545Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 266.976 ms - -[0m
+[2026-07-04T14:09:35.594Z] [INFO] Socket.io initialized
+[2026-07-04T14:09:35.719Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:09:35.735Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:09:35.742Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:09:37.289Z] [INFO] Socket connected: PP4w9DSBqZGD1GfSAAAB
+[2026-07-04T14:09:37.290Z] [DEBUG] Handler registered for socket: PP4w9DSBqZGD1GfSAAAB
+[2026-07-04T14:09:37.309Z] [DEBUG] Socket PP4w9DSBqZGD1GfSAAAB joined alerts room
+[2026-07-04T14:10:03.762Z] [INFO] Socket.io initialized
+[2026-07-04T14:10:03.870Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:10:03.876Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:10:03.886Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:10:05.348Z] [INFO] Socket connected: GC6o3vbCDxXrX-TIAAAB
+[2026-07-04T14:10:05.358Z] [DEBUG] Handler registered for socket: GC6o3vbCDxXrX-TIAAAB
+[2026-07-04T14:10:05.438Z] [DEBUG] Socket GC6o3vbCDxXrX-TIAAAB joined alerts room
+[2026-07-04T14:10:32.639Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 249.831 ms - -[0m
+[2026-07-04T14:10:33.314Z] [INFO] Socket disconnected: GC6o3vbCDxXrX-TIAAAB (client namespace disconnect)
+[2026-07-04T14:10:33.357Z] [INFO] Socket connected: IP-X3ZP0ixzBKt2WAAAD
+[2026-07-04T14:10:33.359Z] [DEBUG] Handler registered for socket: IP-X3ZP0ixzBKt2WAAAD
+[2026-07-04T14:10:33.363Z] [DEBUG] Socket IP-X3ZP0ixzBKt2WAAAD joined alerts room
+[2026-07-04T14:10:33.413Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 44.456 ms - -[0m
+[2026-07-04T14:10:33.422Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 45.448 ms - -[0m
+[2026-07-04T14:10:33.439Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 61.731 ms - -[0m
+[2026-07-04T14:10:33.453Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 82.443 ms - -[0m
+[2026-07-04T14:11:04.288Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.458 ms - -[0m
+[2026-07-04T14:11:09.282Z] [INFO] Socket disconnected: IP-X3ZP0ixzBKt2WAAAD (client namespace disconnect)
+[2026-07-04T14:11:09.307Z] [INFO] Socket connected: T1SxpJ78E2Ta7O3yAAAF
+[2026-07-04T14:11:09.309Z] [DEBUG] Handler registered for socket: T1SxpJ78E2Ta7O3yAAAF
+[2026-07-04T14:11:09.324Z] [DEBUG] Socket T1SxpJ78E2Ta7O3yAAAF joined alerts room
+[2026-07-04T14:11:09.343Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.357 ms - -[0m
+[2026-07-04T14:11:09.347Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 32.609 ms - -[0m
+[2026-07-04T14:11:09.362Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 45.933 ms - -[0m
+[2026-07-04T14:11:09.371Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 59.511 ms - -[0m
+[2026-07-04T14:11:40.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.049 ms - -[0m
+[2026-07-04T14:12:10.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.399 ms - -[0m
+[2026-07-04T14:12:40.280Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.733 ms - -[0m
+[2026-07-04T14:13:10.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.741 ms - -[0m
+[2026-07-04T14:13:40.292Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.195 ms - -[0m
+[2026-07-04T14:14:32.287Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.101 ms - -[0m
+[2026-07-04T14:14:45.305Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 12.303 ms - -[0m
+[2026-07-04T14:14:45.323Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 28.539 ms - -[0m
+[2026-07-04T14:14:45.327Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 35.642 ms - -[0m
+[2026-07-04T14:14:58.323Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 20.627 ms - -[0m
+[2026-07-04T14:14:58.327Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 26.606 ms - -[0m
+[2026-07-04T14:14:58.347Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 4.731 ms - -[0m
+[2026-07-04T14:15:30.307Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 16.120 ms - -[0m
+[2026-07-04T14:15:30.310Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 15.705 ms - -[0m
+[2026-07-04T14:15:30.414Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 123.250 ms - -[0m
+[2026-07-04T14:15:32.298Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.673 ms - -[0m
+[2026-07-04T14:15:59.766Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 291.186 ms - -[0m
+[2026-07-04T14:15:59.822Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 22.428 ms - -[0m
+[2026-07-04T14:15:59.828Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 20.320 ms - -[0m
+[2026-07-04T14:16:32.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.164 ms - -[0m
+[2026-07-04T14:17:32.420Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 22.811 ms - -[0m
+[2026-07-04T14:18:02.358Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 54.965 ms - -[0m
+[2026-07-04T14:18:33.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.263 ms - -[0m
+[2026-07-04T14:18:51.642Z] [INFO] Socket.io initialized
+[2026-07-04T14:18:51.768Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:18:51.778Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:18:51.785Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:18:53.285Z] [INFO] Socket connected: fTh299y2b0HCRwdLAAAB
+[2026-07-04T14:18:53.287Z] [DEBUG] Handler registered for socket: fTh299y2b0HCRwdLAAAB
+[2026-07-04T14:18:53.291Z] [DEBUG] Socket fTh299y2b0HCRwdLAAAB joined alerts room
+[2026-07-04T14:19:03.513Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 223.463 ms - -[0m
+[2026-07-04T14:19:06.492Z] [INFO] Socket.io initialized
+[2026-07-04T14:19:06.645Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:19:06.669Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:19:06.682Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:19:08.303Z] [INFO] Socket connected: kKzX6UbsJ28TaloJAAAB
+[2026-07-04T14:19:08.305Z] [DEBUG] Handler registered for socket: kKzX6UbsJ28TaloJAAAB
+[2026-07-04T14:19:08.320Z] [DEBUG] Socket kKzX6UbsJ28TaloJAAAB joined alerts room
+[2026-07-04T14:19:33.553Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 283.477 ms - -[0m
+[2026-07-04T14:19:37.582Z] [INFO] Socket.io initialized
+[2026-07-04T14:19:37.728Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:19:37.738Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:19:37.754Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:19:39.284Z] [INFO] Socket connected: zrr_ohwxaAscnJeTAAAB
+[2026-07-04T14:19:39.286Z] [DEBUG] Handler registered for socket: zrr_ohwxaAscnJeTAAAB
+[2026-07-04T14:19:39.289Z] [DEBUG] Socket zrr_ohwxaAscnJeTAAAB joined alerts room
+[2026-07-04T14:19:55.868Z] [INFO] Socket.io initialized
+[2026-07-04T14:19:56.013Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:19:56.023Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:19:56.027Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:19:56.284Z] [INFO] Socket connected: jPTaofA2sS-mMXdFAAAB
+[2026-07-04T14:19:56.286Z] [DEBUG] Handler registered for socket: jPTaofA2sS-mMXdFAAAB
+[2026-07-04T14:19:56.295Z] [DEBUG] Socket jPTaofA2sS-mMXdFAAAB joined alerts room
+[2026-07-04T14:20:03.539Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 254.769 ms - -[0m
+[2026-07-04T14:20:10.074Z] [INFO] Socket.io initialized
+[2026-07-04T14:20:10.277Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:20:10.283Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:20:10.286Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:20:12.287Z] [INFO] Socket connected: 3C62FSXX2VHUiYH6AAAB
+[2026-07-04T14:20:12.289Z] [DEBUG] Handler registered for socket: 3C62FSXX2VHUiYH6AAAB
+[2026-07-04T14:20:12.293Z] [DEBUG] Socket 3C62FSXX2VHUiYH6AAAB joined alerts room
+[2026-07-04T14:20:26.267Z] [INFO] Socket.io initialized
+[2026-07-04T14:20:26.540Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T14:20:26.550Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T14:20:26.552Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T14:20:28.309Z] [INFO] Socket connected: 6_k4POVFkzy0ITDkAAAB
+[2026-07-04T14:20:28.608Z] [DEBUG] Handler registered for socket: 6_k4POVFkzy0ITDkAAAB
+[2026-07-04T14:20:28.626Z] [DEBUG] Socket 6_k4POVFkzy0ITDkAAAB joined alerts room
+[2026-07-04T14:20:33.506Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 229.147 ms - -[0m
+[2026-07-04T14:21:16.399Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.173 ms - -[0m
+[2026-07-04T14:21:20.392Z] [INFO] Socket disconnected: 6_k4POVFkzy0ITDkAAAB (transport close)
+[2026-07-04T14:21:23.356Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.802 ms - -[0m
+[2026-07-04T14:21:23.383Z] [INFO] Socket connected: n1V1ADbFugREneY_AAAD
+[2026-07-04T14:21:23.390Z] [DEBUG] Handler registered for socket: n1V1ADbFugREneY_AAAD
+[2026-07-04T14:21:23.395Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/login-history [36m304[0m 75.762 ms - -[0m
+[2026-07-04T14:21:23.401Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur/audit-logs [36m304[0m 76.673 ms - -[0m
+[2026-07-04T14:21:23.426Z] [DEBUG] Socket n1V1ADbFugREneY_AAAD joined alerts room
+[2026-07-04T14:21:23.465Z] [INFO] [0mGET /api/v1/users/cmr3d4zr60001ug0c6vimtpur [36m304[0m 149.501 ms - -[0m
+[2026-07-04T14:21:53.346Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.914 ms - -[0m
+[2026-07-04T14:22:02.501Z] [INFO] [0mGET /api/v1/users?page=1&limit=20 [36m304[0m 17.934 ms - -[0m
+[2026-07-04T14:22:02.505Z] [INFO] [0mGET /api/v1/users/stats [36m304[0m 20.656 ms - -[0m
+[2026-07-04T14:22:11.685Z] [INFO] [USER] Reset password for: Default Viewer (viewer@avianguard.org)
+[2026-07-04T14:22:11.703Z] [INFO] [0mPOST /api/v1/users/cmr3d504y0002ug0cgyhswk5r/reset-password [32m200[0m 1016.575 ms - 155[0m
+[2026-07-04T14:22:15.628Z] [INFO] [USER] Reset password for: Default Viewer (viewer@avianguard.org)
+[2026-07-04T14:22:15.637Z] [INFO] [0mPOST /api/v1/users/cmr3d504y0002ug0cgyhswk5r/reset-password [32m200[0m 663.723 ms - 155[0m
+[2026-07-04T14:22:16.459Z] [INFO] [USER] Reset password for: Default Viewer (viewer@avianguard.org)
+[2026-07-04T14:22:16.474Z] [INFO] [0mPOST /api/v1/users/cmr3d504y0002ug0cgyhswk5r/reset-password [32m200[0m 1052.110 ms - 155[0m
+[2026-07-04T14:22:23.332Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.591 ms - -[0m
+[2026-07-04T14:22:54.289Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.059 ms - -[0m
+[2026-07-04T14:23:24.276Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.290 ms - -[0m
+[2026-07-04T14:23:54.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.511 ms - -[0m
+[2026-07-04T14:24:24.271Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.401 ms - -[0m
+[2026-07-04T14:25:32.490Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 205.436 ms - -[0m
+[2026-07-04T14:26:32.481Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 210.371 ms - -[0m
+[2026-07-04T14:27:32.308Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.142 ms - -[0m
+[2026-07-04T15:58:48.519Z] [INFO] Socket.io initialized
+[2026-07-04T15:58:49.953Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T15:58:49.965Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T15:58:49.972Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T16:08:29.728Z] [INFO] Socket connected: zNdaVZgQt6--jtARAAAB
+[2026-07-04T16:08:29.731Z] [DEBUG] Handler registered for socket: zNdaVZgQt6--jtARAAAB
+[2026-07-04T16:08:29.734Z] [DEBUG] Socket zNdaVZgQt6--jtARAAAB joined alerts room
+[2026-07-04T16:08:32.287Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1915.978 ms - -[0m
+[2026-07-04T16:08:32.306Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [32m200[0m 2565.255 ms - 94[0m
+[2026-07-04T16:08:32.316Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 2572.506 ms - 212[0m
+[2026-07-04T16:08:34.507Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [32m200[0m 15.998 ms - 94[0m
+[2026-07-04T16:08:35.789Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=REJECTED [32m200[0m 6.577 ms - 94[0m
+[2026-07-04T16:08:42.207Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 17.969 ms - -[0m
+[2026-07-04T16:08:43.396Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [36m304[0m 17.144 ms - -[0m
+[2026-07-04T16:08:44.111Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=REJECTED [36m304[0m 13.609 ms - -[0m
+[2026-07-04T16:08:44.666Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=DISABLED [32m200[0m 9.705 ms - 94[0m
+[2026-07-04T16:08:46.513Z] [INFO] [0mGET /api/v1/citizens/analytics [32m200[0m 118.554 ms - 204[0m
+[2026-07-04T16:08:53.363Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 21.238 ms - -[0m
+[2026-07-04T16:08:59.620Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.444 ms - -[0m
+[2026-07-04T16:09:29.603Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.041 ms - -[0m
+[2026-07-04T16:10:00.293Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.894 ms - -[0m
+[2026-07-04T16:10:30.288Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.966 ms - -[0m
+[2026-07-04T16:11:00.275Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.768 ms - -[0m
+[2026-07-04T16:11:30.315Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.562 ms - -[0m
+[2026-07-04T16:12:32.270Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.760 ms - -[0m
+[2026-07-04T16:13:32.714Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 436.114 ms - -[0m
+[2026-07-04T16:13:59.628Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 45.977 ms - -[0m
+[2026-07-04T16:14:30.272Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.995 ms - -[0m
+[2026-07-04T16:15:00.283Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.010 ms - -[0m
+[2026-07-04T16:15:32.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.602 ms - -[0m
+[2026-07-04T16:16:32.287Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.337 ms - -[0m
+[2026-07-04T16:17:32.286Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.809 ms - -[0m
+[2026-07-04T16:18:32.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.002 ms - -[0m
+[2026-07-04T16:19:32.615Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 343.980 ms - -[0m
+[2026-07-04T16:20:32.300Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 35.400 ms - -[0m
+[2026-07-04T16:21:32.307Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.652 ms - -[0m
+[2026-07-04T16:22:32.299Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.268 ms - -[0m
+[2026-07-04T16:23:32.305Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.229 ms - -[0m
+[2026-07-04T16:24:20.912Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 48.024 ms - -[0m
+[2026-07-04T16:24:29.588Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.187 ms - -[0m
+[2026-07-04T16:25:00.547Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 297.300 ms - -[0m
+[2026-07-04T16:25:30.275Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.674 ms - -[0m
+[2026-07-04T16:26:32.313Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.644 ms - -[0m
+[2026-07-04T16:27:32.275Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.806 ms - -[0m
+[2026-07-04T16:28:32.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.884 ms - -[0m
+[2026-07-04T16:29:32.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.416 ms - -[0m
+[2026-07-04T16:30:32.571Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 295.411 ms - -[0m
+[2026-07-04T16:31:32.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.266 ms - -[0m
+[2026-07-04T16:32:32.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 35.987 ms - -[0m
+[2026-07-04T16:33:32.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.773 ms - -[0m
+[2026-07-04T16:34:32.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.800 ms - -[0m
+[2026-07-04T16:35:32.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.051 ms - -[0m
+[2026-07-04T16:36:32.652Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 397.756 ms - -[0m
+[2026-07-04T16:37:32.286Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.539 ms - -[0m
+[2026-07-04T16:38:32.269Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.345 ms - -[0m
+[2026-07-04T16:39:32.336Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.414 ms - -[0m
+[2026-07-04T16:45:26.458Z] [INFO] Socket.io initialized
+[2026-07-04T16:45:26.735Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T16:45:26.741Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T16:45:26.744Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T16:45:31.306Z] [INFO] Socket connected: LslTJ7ZTnKuCDy39AAAB
+[2026-07-04T16:45:31.308Z] [DEBUG] Handler registered for socket: LslTJ7ZTnKuCDy39AAAB
+[2026-07-04T16:45:31.310Z] [DEBUG] Socket LslTJ7ZTnKuCDy39AAAB joined alerts room
+[2026-07-04T16:45:32.532Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 239.936 ms - -[0m
+[2026-07-04T16:46:32.319Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.001 ms - -[0m
+[2026-07-04T16:47:32.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.179 ms - -[0m
+[2026-07-04T16:48:32.280Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.892 ms - -[0m
+[2026-07-04T16:49:32.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.716 ms - -[0m
+[2026-07-04T16:50:32.382Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 105.043 ms - -[0m
+[2026-07-04T16:51:32.489Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 215.333 ms - -[0m
+[2026-07-04T16:52:32.290Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.191 ms - -[0m
+[2026-07-04T16:53:32.347Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 75.886 ms - -[0m
+[2026-07-04T16:53:36.251Z] [INFO] Socket disconnected: LslTJ7ZTnKuCDy39AAAB (transport close)
+[2026-07-04T16:54:10.375Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-04T16:54:10.379Z] [INFO] HTTP server closed
+[2026-07-04T16:54:10.432Z] [INFO] Prisma disconnected
+[2026-07-04T16:54:16.361Z] [INFO] Socket.io initialized
+[2026-07-04T16:54:16.575Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T16:54:16.581Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T16:54:16.584Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T17:13:44.646Z] [INFO] [0mGET /api/v1/settings [33m404[0m 36.014 ms - 79[0m
+[2026-07-04T17:13:44.661Z] [INFO] [0mGET /api/v1/settings/health [33m404[0m 51.843 ms - 86[0m
+[2026-07-04T17:13:44.666Z] [INFO] [0mGET /api/v1/settings/audit-logs?limit=30 [33m404[0m 56.180 ms - 99[0m
+[2026-07-04T17:13:44.700Z] [INFO] Socket connected: qoe92x6efgrMbSwMAAAB
+[2026-07-04T17:13:44.715Z] [DEBUG] Handler registered for socket: qoe92x6efgrMbSwMAAAB
+[2026-07-04T17:13:44.825Z] [DEBUG] Socket qoe92x6efgrMbSwMAAAB joined alerts room
+[2026-07-04T17:13:45.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 679.141 ms - -[0m
+[2026-07-04T17:13:48.927Z] [INFO] Socket disconnected: qoe92x6efgrMbSwMAAAB (transport close)
+[2026-07-04T17:13:49.643Z] [INFO] [0mGET /api/v1/settings [33m404[0m 7.556 ms - 79[0m
+[2026-07-04T17:13:49.666Z] [INFO] [0mGET /api/v1/settings/health [33m404[0m 24.768 ms - 86[0m
+[2026-07-04T17:13:49.694Z] [INFO] [0mGET /api/v1/settings/audit-logs?limit=30 [33m404[0m 51.663 ms - 99[0m
+[2026-07-04T17:13:49.738Z] [INFO] Socket connected: pMg7XjTZnJDgbX9FAAAD
+[2026-07-04T17:13:49.746Z] [DEBUG] Handler registered for socket: pMg7XjTZnJDgbX9FAAAD
+[2026-07-04T17:13:49.806Z] [DEBUG] Socket pMg7XjTZnJDgbX9FAAAD joined alerts room
+[2026-07-04T17:13:49.829Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 194.525 ms - -[0m
+[2026-07-04T17:14:20.488Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.829 ms - -[0m
+[2026-07-04T17:14:50.285Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.366 ms - -[0m
+[2026-07-04T17:15:20.291Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.827 ms - -[0m
+[2026-07-04T17:15:50.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.018 ms - -[0m
+[2026-07-04T17:15:59.874Z] [INFO] Socket.io initialized
+[2026-07-04T17:16:00.166Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T17:16:00.192Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T17:16:00.194Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T17:16:01.296Z] [INFO] Socket connected: 6N4jX6YiK10VauSkAAAB
+[2026-07-04T17:16:01.297Z] [DEBUG] Handler registered for socket: 6N4jX6YiK10VauSkAAAB
+[2026-07-04T17:16:01.301Z] [DEBUG] Socket 6N4jX6YiK10VauSkAAAB joined alerts room
+[2026-07-04T17:21:40.399Z] [INFO] Socket.io initialized
+[2026-07-04T17:21:40.510Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T17:21:40.517Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T17:21:40.519Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T17:22:21.539Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 235.981 ms - -[0m
+[2026-07-04T17:22:21.630Z] [INFO] [0mGET /api/v1/settings/health [32m200[0m 325.730 ms - 333[0m
+[2026-07-04T17:22:21.660Z] [INFO] Socket connected: 8U5Hgn-TUgqMUnsPAAAB
+[2026-07-04T17:22:21.662Z] [DEBUG] Handler registered for socket: 8U5Hgn-TUgqMUnsPAAAB
+[2026-07-04T17:22:21.706Z] [DEBUG] Socket 8U5Hgn-TUgqMUnsPAAAB joined alerts room
+[2026-07-04T17:22:21.903Z] [INFO] [0mGET /api/v1/settings/audit-logs?limit=30 [32m200[0m 597.430 ms - 67[0m
+[2026-07-04T17:22:22.430Z] [INFO] SettingService: seeded 36 default settings
+[2026-07-04T17:22:22.437Z] [INFO] [0mGET /api/v1/settings [32m200[0m 1133.739 ms - 2559[0m
+[2026-07-04T17:22:51.316Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 29.129 ms - -[0m
+[2026-07-04T17:23:22.284Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.704 ms - -[0m
+[2026-07-04T17:23:51.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.922 ms - -[0m
+[2026-07-04T17:24:21.288Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.842 ms - -[0m
+[2026-07-04T17:24:51.292Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.477 ms - -[0m
+[2026-07-04T17:25:21.295Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.028 ms - -[0m
+[2026-07-04T17:25:52.279Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.223 ms - -[0m
+[2026-07-04T17:26:21.306Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.878 ms - -[0m
+[2026-07-04T17:26:51.392Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 109.652 ms - -[0m
+[2026-07-04T17:27:21.301Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.240 ms - -[0m
+[2026-07-04T17:27:51.488Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 218.271 ms - -[0m
+[2026-07-04T17:28:21.297Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 27.767 ms - -[0m
+[2026-07-04T17:28:35.037Z] [INFO] [0mGET /api/v1/dashboard [32m200[0m 105.396 ms - 1815[0m
+[2026-07-04T17:28:51.298Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.223 ms - -[0m
+[2026-07-04T17:29:05.315Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 46.997 ms - -[0m
+[2026-07-04T17:29:21.304Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.767 ms - -[0m
+[2026-07-04T17:29:35.293Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 24.408 ms - -[0m
+[2026-07-04T17:29:51.293Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.214 ms - -[0m
+[2026-07-04T17:30:05.287Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 22.321 ms - -[0m
+[2026-07-04T17:30:21.306Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.871 ms - -[0m
+[2026-07-04T17:30:35.277Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 19.023 ms - -[0m
+[2026-07-04T17:30:52.275Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.344 ms - -[0m
+[2026-07-04T17:31:05.288Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 18.103 ms - -[0m
+[2026-07-04T17:31:21.309Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.486 ms - -[0m
+[2026-07-04T17:31:35.287Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 26.197 ms - -[0m
+[2026-07-04T17:31:51.302Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.988 ms - -[0m
+[2026-07-04T17:32:05.388Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 119.649 ms - -[0m
+[2026-07-04T17:32:22.296Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.403 ms - -[0m
+[2026-07-04T17:32:35.300Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 34.479 ms - -[0m
+[2026-07-04T17:32:51.299Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.292 ms - -[0m
+[2026-07-04T17:33:05.629Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 359.036 ms - -[0m
+[2026-07-04T17:33:21.307Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 25.802 ms - -[0m
+[2026-07-04T17:33:35.303Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 42.058 ms - -[0m
+[2026-07-04T17:34:32.289Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.921 ms - -[0m
+[2026-07-04T17:34:32.309Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 31.630 ms - -[0m
+[2026-07-04T17:35:32.307Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 20.146 ms - -[0m
+[2026-07-04T17:35:32.356Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.780 ms - -[0m
+[2026-07-04T17:36:32.301Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 30.731 ms - -[0m
+[2026-07-04T17:36:32.303Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.792 ms - -[0m
+[2026-07-04T17:37:32.305Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 23.990 ms - -[0m
+[2026-07-04T17:37:32.471Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 189.891 ms - -[0m
+[2026-07-04T17:38:32.618Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 339.544 ms - -[0m
+[2026-07-04T17:38:32.625Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 347.101 ms - -[0m
+[2026-07-04T17:39:32.345Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 34.720 ms - -[0m
+[2026-07-04T17:39:32.373Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 64.207 ms - -[0m
+[2026-07-04T17:40:32.350Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 51.891 ms - -[0m
+[2026-07-04T17:40:32.353Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 55.345 ms - -[0m
+[2026-07-04T17:41:32.334Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 35.651 ms - -[0m
+[2026-07-04T17:41:32.337Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.411 ms - -[0m
+[2026-07-04T17:42:32.342Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 44.537 ms - -[0m
+[2026-07-04T17:42:32.354Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 59.610 ms - -[0m
+[2026-07-04T17:43:32.358Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.587 ms - -[0m
+[2026-07-04T17:43:32.462Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 147.683 ms - -[0m
+[2026-07-04T17:44:32.517Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 221.361 ms - -[0m
+[2026-07-04T17:44:32.545Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 255.805 ms - -[0m
+[2026-07-04T17:45:32.365Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 61.699 ms - -[0m
+[2026-07-04T17:45:32.370Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 71.215 ms - -[0m
+[2026-07-04T17:46:32.343Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.974 ms - -[0m
+[2026-07-04T17:46:32.347Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 42.849 ms - -[0m
+[2026-07-04T17:47:32.345Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 41.314 ms - -[0m
+[2026-07-04T17:47:32.347Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.372 ms - -[0m
+[2026-07-04T17:48:32.311Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 28.870 ms - -[0m
+[2026-07-04T17:48:32.322Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 40.068 ms - -[0m
+[2026-07-04T17:49:32.349Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 42.655 ms - -[0m
+[2026-07-04T17:49:32.448Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 145.593 ms - -[0m
+[2026-07-04T17:50:32.494Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 204.507 ms - -[0m
+[2026-07-04T17:50:32.516Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 227.775 ms - -[0m
+[2026-07-04T17:51:32.349Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 49.972 ms - -[0m
+[2026-07-04T17:51:32.359Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 65.888 ms - -[0m
+[2026-07-04T17:52:32.332Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 39.057 ms - -[0m
+[2026-07-04T17:52:32.335Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 43.014 ms - -[0m
+[2026-07-04T17:53:32.346Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 38.874 ms - -[0m
+[2026-07-04T17:53:32.383Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 21.362 ms - -[0m
+[2026-07-04T17:54:32.359Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 36.315 ms - -[0m
+[2026-07-04T17:54:32.361Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 39.804 ms - -[0m
+[2026-07-04T17:55:32.800Z] [INFO] Socket disconnected: 8U5Hgn-TUgqMUnsPAAAB (transport close)
+[2026-07-04T18:23:02.072Z] [INFO] Socket connected: WUjQ0Pu3qLTniTpOAAAD
+[2026-07-04T18:23:02.089Z] [DEBUG] Handler registered for socket: WUjQ0Pu3qLTniTpOAAAD
+[2026-07-04T18:23:02.106Z] [DEBUG] Socket WUjQ0Pu3qLTniTpOAAAD joined alerts room
+[2026-07-04T18:23:08.517Z] [INFO] [0mPOST /api/v1/auth/logout [32m200[0m 631.985 ms - 52[0m
+[2026-07-04T18:23:08.533Z] [INFO] Socket disconnected: WUjQ0Pu3qLTniTpOAAAD (client namespace disconnect)
+[2026-07-04T18:48:36.087Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-04T18:48:36.678Z] [INFO] HTTP server closed
+[2026-07-04T18:48:37.134Z] [INFO] Prisma disconnected
+[2026-07-04T19:08:15.551Z] [INFO] Socket.io initialized
+[2026-07-04T19:08:15.665Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T19:08:15.673Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T19:08:15.674Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T19:09:31.299Z] [INFO] Socket.io initialized
+[2026-07-04T19:09:31.414Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-04T19:09:31.419Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-04T19:09:31.421Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-04T19:09:44.801Z] [INFO] [0mGET /api/v1/health [32m200[0m 7.356 ms - 89[0m
+[2026-07-04T19:09:58.728Z] [INFO] [0mGET /api/v1/settings/health [33m401[0m 2.658 ms - 1731[0m
+[2026-07-04T19:10:14.737Z] [INFO] [0mPOST /api/v1/citizens/public-register [33m400[0m 706.941 ms - 2475[0m
+[2026-07-04T19:10:26.221Z] [INFO] [CITIZEN] Created citizen: FCM Test User (9999999999) id=cmr6qlzbv0002ugvwf4l3gc60
+[2026-07-04T19:10:26.229Z] [INFO] [0mPOST /api/v1/citizens/public-register [32m201[0m 417.086 ms - 839[0m
+[2026-07-04T19:10:34.761Z] [INFO] [CITIZEN] FCM token saved for FCM Test User (9999999999)
+[2026-07-04T19:10:34.763Z] [INFO] [0mPOST /api/v1/citizens/fcm-token [32m200[0m 71.543 ms - 127[0m
+[2026-07-04T19:10:44.160Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 48.277 ms - 184[0m
