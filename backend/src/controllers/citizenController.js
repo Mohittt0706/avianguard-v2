@@ -156,3 +156,25 @@ exports.acknowledgeNotification = catchAsync(async (req, res) => {
   const notification = await citizenService.acknowledgeNotification(req.params.id);
   res.json({ success: true, message: 'Notification acknowledged', data: { notification } });
 });
+
+exports.getUnreadCount = catchAsync(async (req, res) => {
+  const { mobile } = req.query;
+  if (!mobile) {
+    return res.status(400).json({ success: false, message: 'Mobile number is required' });
+  }
+  const result = await citizenService.getUnreadCount(mobile);
+  res.json({ success: true, data: result });
+});
+
+exports.getNotificationDetail = catchAsync(async (req, res) => {
+  const notification = await citizenService.getNotificationDetail(req.params.notificationId);
+  if (!notification.readAt) {
+    await citizenService.markNotificationAsRead(req.params.notificationId);
+  }
+  res.json({ success: true, data: { notification } });
+});
+
+exports.getDeliveryLog = catchAsync(async (req, res) => {
+  const result = await citizenService.getDeliveryLog(req.query);
+  res.json({ success: true, data: result });
+});
