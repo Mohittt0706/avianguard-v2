@@ -2,6 +2,7 @@ const prisma = require('../config/database');
 const AppError = require('../utils/AppError');
 const logger = require('../utils/logger');
 const notificationService = require('./notificationService');
+const { emitEvent } = require('../socket');
 
 class CitizenService {
   async getCitizens(filters = {}) {
@@ -122,6 +123,8 @@ class CitizenService {
     await this.auditLog(citizen.id, 'create', 'citizen', { fullName: citizen.fullName, mobile: citizen.mobile });
     logger.info(`[CITIZEN] Created citizen: ${citizen.fullName} (${citizen.mobile}) id=${citizen.id}`);
 
+    try { emitEvent('citizen:created', { id: citizen.id, fullName: citizen.fullName, status: citizen.status, district: citizen.district, nearbyWetland: citizen.nearbyWetland, createdAt: citizen.createdAt }); } catch {}
+
     return citizen;
   }
 
@@ -156,6 +159,8 @@ class CitizenService {
     await this.auditLog(id, 'update', 'citizen', { fields: Object.keys(updateData), previousStatus: citizen.status, newStatus: updated.status });
     logger.info(`[CITIZEN] Updated citizen: ${updated.fullName} (${updated.mobile}) id=${id}`);
 
+    try { emitEvent('citizen:updated', { id, fullName: updated.fullName, status: updated.status, district: updated.district }); } catch {}
+
     return updated;
   }
 
@@ -167,6 +172,8 @@ class CitizenService {
     await prisma.citizen.delete({ where: { id } });
 
     logger.info(`[CITIZEN] Deleted citizen: ${citizen.fullName} (${citizen.mobile}) id=${id}`);
+
+    try { emitEvent('citizen:deleted', { id, fullName: citizen.fullName }); } catch {}
   }
 
   async updateStatus(id, status, reason) {
@@ -191,6 +198,8 @@ class CitizenService {
     const updated = await prisma.citizen.update({ where: { id }, data: updateData });
 
     logger.info(`[CITIZEN] Status changed for ${citizen.fullName}: ${citizen.status} -> ${status}`);
+
+    try { emitEvent('citizen:status_changed', { id, fullName: citizen.fullName, previousStatus: citizen.status, newStatus: status, district: citizen.district }); } catch {}
 
     return updated;
   }
@@ -334,6 +343,8 @@ class CitizenService {
 
     logger.info(`[CITIZEN] Alert sent to ${citizen.fullName} (${citizen.mobile}): ${data.title} [push=${pushStatus}]`);
 
+    try { emitEvent('notification:sent', { citizenId, citizenName: citizen.fullName, title: data.title, severity: data.severity, deliveryMethod, pushStatus, sentAt: notification.sentAt }); } catch {}
+
     return notification;
   }
 
@@ -421,6 +432,8 @@ class CitizenService {
     }
 
     logger.info(`[CITIZEN] Emergency broadcast to wetland "${wetland}": total=${citizens.length} sent=${sent} failed=${failed} push_success=${pushResults.successCount}`);
+
+    try { emitEvent('notification:broadcast', { wetland, title: data.title, severity: data.severity, total: citizens.length, sent, failed, sentBy: data.sentBy }); } catch {}
 
     return { total: citizens.length, sent, failed, deliveryStats };
   }
@@ -627,20 +640,59 @@ class CitizenService {
     const notifications = await prisma.citizenAlertNotification.findMany({
       where: { citizenId: citizen.id },
       orderBy: { sentAt: 'desc' },
-      take: 100,
+      take: 200,
       select: {
         id: true, title: true, severity: true, message: true, wetland: true,
         alertType: true, description: true, recommendedAction: true, clickUrl: true,
-        deliveryMethod: true, deliveryStatus: true, language: true,
+        deliveryMethod: true, deliveryStatus: true, language: true, sentBy: true,
         sentAt: true, readAt: true, acknowledgedAt: true,
       },
     });
 
     return {
-      citizen: { id: citizen.id, fullName: citizen.fullName, mobile: citizen.mobile, nearbyWetland: citizen.nearbyWetland },
+      citizen: {
+        id: citizen.id,
+        fullName: citizen.fullName,
+        mobile: citizen.mobile,
+        nearbyWetland: citizen.nearbyWetland,
+        district: citizen.district,
+        taluka: citizen.taluka,
+        village: citizen.village,
+      },
       notifications,
       unreadCount: notifications.filter(n => !n.readAt).length,
     };
+  }
+
+  async getUnreadCount(mobile) {
+    if (!mobile) throw new AppError('Mobile number is required', 400);
+
+    const citizen = await prisma.citizen.findFirst({ where: { mobile } });
+    if (!citizen) throw new AppError('Citizen not found with this mobile number', 404);
+
+    const unreadCount = await prisma.citizenAlertNotification.count({
+      where: { citizenId: citizen.id, readAt: null },
+    });
+
+    return { unreadCount };
+  }
+
+  async getNotificationDetail(notificationId) {
+    const notification = await prisma.citizenAlertNotification.findUnique({
+      where: { id: notificationId },
+      include: {
+        citizen: {
+          select: {
+            id: true, fullName: true, mobile: true, district: true,
+            taluka: true, village: true, nearbyWetland: true,
+          },
+        },
+      },
+    });
+
+    if (!notification) throw new AppError('Notification not found', 404);
+
+    return notification;
   }
 
   async markNotificationAsRead(notificationId) {
@@ -651,6 +703,8 @@ class CitizenService {
       where: { id: notificationId },
       data: { readAt: notification.readAt || new Date() },
     });
+
+    try { emitEvent('notification:read', { notificationId, citizenId: notification.citizenId, title: notification.title }); } catch {}
 
     return updated;
   }
@@ -668,6 +722,37 @@ class CitizenService {
     });
 
     return updated;
+  }
+
+  async getDeliveryLog(filters = {}) {
+    const where = {};
+    if (filters.deliveryStatus) where.deliveryStatus = filters.deliveryStatus;
+    if (filters.severity) where.severity = filters.severity;
+    if (filters.deliveryMethod) where.deliveryMethod = filters.deliveryMethod;
+
+    const page = Math.max(1, parseInt(filters.page, 10) || 1);
+    const limit = Math.min(Math.max(1, parseInt(filters.limit, 10) || 50), 100);
+    const skip = (page - 1) * limit;
+
+    const [notifications, total] = await Promise.all([
+      prisma.citizenAlertNotification.findMany({
+        where,
+        orderBy: { sentAt: 'desc' },
+        skip,
+        take: limit,
+        include: {
+          citizen: {
+            select: { id: true, fullName: true, mobile: true, nearbyWetland: true, district: true, taluka: true, village: true },
+          },
+        },
+      }),
+      prisma.citizenAlertNotification.count({ where }),
+    ]);
+
+    return {
+      notifications,
+      pagination: { page, limit, total, pages: Math.ceil(total / limit) },
+    };
   }
 }
 

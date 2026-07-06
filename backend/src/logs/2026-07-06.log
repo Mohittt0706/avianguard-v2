@@ -1,0 +1,283 @@
+[2026-07-06T11:05:27.423Z] [INFO] Socket.io initialized
+[2026-07-06T11:05:43.366Z] [ERROR] [library.js:112 in r] Failed to connect to database: {"message":"Can't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","cause":"PostgreSQL may not be running, or DATABASE_URL is wrong in .env","fix":"Start PostgreSQL and verify DATABASE_URL in backend/.env matches your database"}
+PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at r (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\node_modules\@prisma\client\runtime\library.js:112:2770)
+    at async connectDatabase (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\config\db.js:6:5)
+    at async startServer (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\server.js:70:5)
+[2026-07-06T11:05:43.492Z] [ERROR] [library.js:112 in r] Failed to start server: {"message":"Can't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","cause":"Database connection failed","fix":"Check that PostgreSQL is running and DATABASE_URL is correct in .env"}
+PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at r (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\node_modules\@prisma\client\runtime\library.js:112:2770)
+    at async connectDatabase (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\config\db.js:6:5)
+    at async startServer (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\server.js:70:5)
+[2026-07-06T11:16:46.551Z] [INFO] Socket.io initialized
+[2026-07-06T11:16:46.737Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T11:16:46.749Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T11:16:46.750Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T11:17:12.433Z] [INFO] Socket.io initialized
+[2026-07-06T11:17:12.559Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T11:17:12.598Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T11:17:12.629Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T11:34:10.157Z] [INFO] Socket.io initialized
+[2026-07-06T11:34:10.415Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T11:34:10.419Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T11:34:10.421Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T16:23:48.951Z] [INFO] Socket.io initialized
+[2026-07-06T16:23:50.053Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:23:50.059Z] [WARN] Port 5000 is in use. Attempting to free it... (2 retries left)
+[2026-07-06T16:23:54.070Z] [ERROR] Could not free port 5000. Please stop the process manually.
+[2026-07-06T16:23:54.072Z] [ERROR] Run: netstat -ano | findstr :5000
+[2026-07-06T16:24:50.892Z] [INFO] Socket.io initialized
+[2026-07-06T16:24:51.146Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:24:51.154Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T16:24:51.161Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T16:37:13.074Z] [INFO] Socket.io initialized
+[2026-07-06T16:37:13.333Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:37:13.339Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T16:37:13.340Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T16:39:33.751Z] [INFO] Socket.io initialized
+[2026-07-06T16:39:34.150Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:39:34.156Z] [WARN] Port 5000 is in use. Attempting to free it... (2 retries left)
+[2026-07-06T16:39:35.589Z] [ERROR] Could not free port 5000. Please stop the process manually.
+[2026-07-06T16:39:35.591Z] [ERROR] Run: netstat -ano | findstr :5000
+[2026-07-06T16:39:59.995Z] [INFO] Socket.io initialized
+[2026-07-06T16:40:00.220Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:40:00.250Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T16:40:00.283Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T16:47:26.200Z] [INFO] Socket.io initialized
+[2026-07-06T16:47:26.421Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:47:26.431Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T16:47:26.433Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T16:47:37.085Z] [INFO] Socket.io initialized
+[2026-07-06T16:47:37.218Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:47:37.228Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T16:47:37.230Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T16:52:50.702Z] [INFO] Socket.io initialized
+[2026-07-06T16:52:51.150Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T16:52:51.159Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T16:52:51.161Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:00:45.218Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 1365.929 ms - 637[0m
+[2026-07-06T17:00:49.391Z] [INFO] [0mPATCH /api/v1/citizens/cmr7n6u0x000cugs4kz8znws1/read [32m200[0m 253.714 ms - 534[0m
+[2026-07-06T17:00:49.430Z] [INFO] [0mGET /api/v1/citizens/notifications/inbox/cmr7n6u0x000cugs4kz8znws1 [32m200[0m 168.958 ms - 680[0m
+[2026-07-06T17:01:10.284Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 80.813 ms - 659[0m
+[2026-07-06T17:01:14.820Z] [INFO] [0mGET /api/v1/citizens/notifications/inbox/unread-count?mobile=9104588825 [32m200[0m 446.639 ms - 41[0m
+[2026-07-06T17:02:01.332Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 2148.895 ms - 933[0m
+[2026-07-06T17:02:01.685Z] [INFO] Socket connected: Dbqo5ZVD7GNbBGkXAAAB
+[2026-07-06T17:02:01.687Z] [DEBUG] Handler registered for socket: Dbqo5ZVD7GNbBGkXAAAB
+[2026-07-06T17:02:01.690Z] [DEBUG] Socket Dbqo5ZVD7GNbBGkXAAAB joined alerts room
+[2026-07-06T17:02:02.935Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 1190.599 ms - -[0m
+[2026-07-06T17:02:03.157Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 1420.675 ms - -[0m
+[2026-07-06T17:02:13.067Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.932 ms - -[0m
+[2026-07-06T17:02:13.105Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 9.643 ms - 2042[0m
+[2026-07-06T17:02:17.208Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 24.982 ms - -[0m
+[2026-07-06T17:02:21.020Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 15.169 ms - -[0m
+[2026-07-06T17:02:21.026Z] [INFO] [0mGET /api/v1/alerts?status=ACTIVE&limit=200 [36m304[0m 21.036 ms - -[0m
+[2026-07-06T17:02:21.040Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.997 ms - -[0m
+[2026-07-06T17:02:21.070Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 26.895 ms - -[0m
+[2026-07-06T17:02:21.073Z] [INFO] [0mGET /api/v1/sensors?limit=200 [36m304[0m 30.916 ms - -[0m
+[2026-07-06T17:02:26.411Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 399.272 ms - -[0m
+[2026-07-06T17:02:26.460Z] [INFO] [0mGET /api/v1/reports/stats [32m200[0m 449.576 ms - 105[0m
+[2026-07-06T17:02:26.598Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 588.297 ms - -[0m
+[2026-07-06T17:02:31.416Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.460 ms - -[0m
+[2026-07-06T17:02:32.519Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [32m200[0m 25.519 ms - 2576[0m
+[2026-07-06T17:02:32.736Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 241.252 ms - 496[0m
+[2026-07-06T17:02:39.938Z] [INFO] [0mGET /api/v1/citizens/cmr7n7mnw000fugs4tx28l39n/notifications [32m200[0m 40.354 ms - 26[0m
+[2026-07-06T17:02:39.958Z] [INFO] [0mGET /api/v1/citizens/cmr7n7mnw000fugs4tx28l39n [32m200[0m 61.203 ms - 1034[0m
+[2026-07-06T17:02:47.123Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 57.619 ms - -[0m
+[2026-07-06T17:02:47.126Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 57.044 ms - -[0m
+[2026-07-06T17:02:48.614Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [32m200[0m 72.481 ms - 1061[0m
+[2026-07-06T17:03:00.463Z] [INFO] [0mGET /api/v1/citizens/delivery-stats [32m200[0m 70.647 ms - 338[0m
+[2026-07-06T17:03:00.536Z] [INFO] Socket disconnected: Dbqo5ZVD7GNbBGkXAAAB (client namespace disconnect)
+[2026-07-06T17:03:19.878Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 63.243 ms - -[0m
+[2026-07-06T17:03:19.899Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 83.086 ms - -[0m
+[2026-07-06T17:03:19.911Z] [INFO] Socket connected: 6PjKj8AqPMfoX5OcAAAD
+[2026-07-06T17:03:19.917Z] [DEBUG] Handler registered for socket: 6PjKj8AqPMfoX5OcAAAD
+[2026-07-06T17:03:19.931Z] [DEBUG] Socket 6PjKj8AqPMfoX5OcAAAD joined alerts room
+[2026-07-06T17:03:21.958Z] [INFO] [0mGET /api/v1/reports/stats [36m304[0m 21.977 ms - -[0m
+[2026-07-06T17:03:21.964Z] [INFO] [0mGET /api/v1/reports?page=1&limit=15 [36m304[0m 29.685 ms - -[0m
+[2026-07-06T17:03:21.970Z] [INFO] [0mGET /api/v1/reports/activity?limit=8 [36m304[0m 34.753 ms - -[0m
+[2026-07-06T17:03:24.436Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 92.191 ms - -[0m
+[2026-07-06T17:03:24.439Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 95.034 ms - -[0m
+[2026-07-06T17:03:50.325Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.994 ms - -[0m
+[2026-07-06T17:04:20.324Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 19.779 ms - -[0m
+[2026-07-06T17:04:50.325Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.353 ms - -[0m
+[2026-07-06T17:05:20.324Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.089 ms - -[0m
+[2026-07-06T17:05:50.752Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 422.892 ms - -[0m
+[2026-07-06T17:06:10.739Z] [INFO] [0mPOST /api/v1/auth/logout [32m200[0m 200.610 ms - 52[0m
+[2026-07-06T17:06:10.768Z] [INFO] Socket disconnected: 6PjKj8AqPMfoX5OcAAAD (client namespace disconnect)
+[2026-07-06T17:07:24.031Z] [INFO] [0mPOST /api/v1/auth/login [33m401[0m 696.910 ms - 469[0m
+[2026-07-06T17:11:29.644Z] [INFO] Socket.io initialized
+[2026-07-06T17:11:30.541Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:11:30.549Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:11:30.552Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:11:38.299Z] [INFO] Socket.io initialized
+[2026-07-06T17:11:39.681Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:11:39.689Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:11:39.696Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:11:58.282Z] [INFO] Socket.io initialized
+[2026-07-06T17:11:58.736Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:11:58.746Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:11:58.754Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:12:13.401Z] [INFO] Socket.io initialized
+[2026-07-06T17:12:13.550Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:12:13.561Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:12:13.563Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:12:30.542Z] [INFO] Socket.io initialized
+[2026-07-06T17:12:30.653Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:12:30.666Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:12:30.667Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:12:54.418Z] [INFO] Socket.io initialized
+[2026-07-06T17:12:54.622Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:12:54.647Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:12:54.660Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:13:18.487Z] [INFO] Socket.io initialized
+[2026-07-06T17:13:18.820Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:13:18.830Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:13:18.832Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:13:39.136Z] [INFO] Socket.io initialized
+[2026-07-06T17:13:39.293Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:13:39.301Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:13:39.303Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:13:56.682Z] [INFO] Socket.io initialized
+[2026-07-06T17:14:01.874Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:14:01.887Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:14:01.889Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:17:17.482Z] [INFO] [0mPOST /api/v1/auth/login [32m200[0m 3933.095 ms - 958[0m
+[2026-07-06T17:17:17.752Z] [INFO] Socket connected: jdMchIaoreV4i3_tAAAB
+[2026-07-06T17:17:17.754Z] [DEBUG] Handler registered for socket: jdMchIaoreV4i3_tAAAB
+[2026-07-06T17:17:17.799Z] [DEBUG] Socket jdMchIaoreV4i3_tAAAB joined alerts room
+[2026-07-06T17:17:18.470Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 666.290 ms - -[0m
+[2026-07-06T17:17:18.566Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 757.349 ms - -[0m
+[2026-07-06T17:17:18.570Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 760.815 ms - -[0m
+[2026-07-06T17:17:23.773Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 188.933 ms - -[0m
+[2026-07-06T17:17:48.325Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.603 ms - -[0m
+[2026-07-06T17:17:54.337Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 22.264 ms - -[0m
+[2026-07-06T17:18:18.337Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.323 ms - -[0m
+[2026-07-06T17:18:24.347Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 26.122 ms - -[0m
+[2026-07-06T17:18:48.320Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.154 ms - -[0m
+[2026-07-06T17:18:54.330Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 27.417 ms - -[0m
+[2026-07-06T17:19:18.395Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 86.757 ms - -[0m
+[2026-07-06T17:19:24.327Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 31.461 ms - -[0m
+[2026-07-06T17:19:48.312Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 13.331 ms - -[0m
+[2026-07-06T17:19:54.337Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 34.223 ms - -[0m
+[2026-07-06T17:20:18.336Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.999 ms - -[0m
+[2026-07-06T17:20:24.329Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 22.568 ms - -[0m
+[2026-07-06T17:21:46.343Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.694 ms - -[0m
+[2026-07-06T17:21:46.360Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 28.038 ms - -[0m
+[2026-07-06T17:22:46.504Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 155.397 ms - -[0m
+[2026-07-06T17:22:46.610Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 292.328 ms - -[0m
+[2026-07-06T17:23:46.377Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 29.988 ms - -[0m
+[2026-07-06T17:23:46.404Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.898 ms - -[0m
+[2026-07-06T17:24:46.440Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 30.863 ms - -[0m
+[2026-07-06T17:24:46.464Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 127.330 ms - -[0m
+[2026-07-06T17:25:46.377Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 37.488 ms - -[0m
+[2026-07-06T17:25:46.412Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.012 ms - -[0m
+[2026-07-06T17:26:46.372Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 22.433 ms - -[0m
+[2026-07-06T17:26:46.410Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 9.429 ms - -[0m
+[2026-07-06T17:27:46.339Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 18.696 ms - -[0m
+[2026-07-06T17:27:46.361Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.751 ms - -[0m
+[2026-07-06T17:28:46.584Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 189.829 ms - -[0m
+[2026-07-06T17:28:46.658Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 329.741 ms - -[0m
+[2026-07-06T17:28:53.648Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 87.046 ms - -[0m
+[2026-07-06T17:29:17.653Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.922 ms - -[0m
+[2026-07-06T17:29:23.604Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 49.959 ms - -[0m
+[2026-07-06T17:29:47.756Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 127.654 ms - -[0m
+[2026-07-06T17:29:53.603Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 49.400 ms - -[0m
+[2026-07-06T17:30:18.335Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.292 ms - -[0m
+[2026-07-06T17:30:24.337Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 26.009 ms - -[0m
+[2026-07-06T17:30:48.359Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 44.660 ms - -[0m
+[2026-07-06T17:30:54.350Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 42.028 ms - -[0m
+[2026-07-06T17:31:18.322Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.157 ms - -[0m
+[2026-07-06T17:31:24.328Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 15.886 ms - -[0m
+[2026-07-06T17:32:46.399Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 46.133 ms - -[0m
+[2026-07-06T17:32:46.403Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 50.333 ms - -[0m
+[2026-07-06T17:33:46.387Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 29.817 ms - -[0m
+[2026-07-06T17:33:46.397Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 33.718 ms - -[0m
+[2026-07-06T17:34:47.898Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 829.101 ms - -[0m
+[2026-07-06T17:34:48.225Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 1297.175 ms - -[0m
+[2026-07-06T17:35:08.486Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 518.763 ms - -[0m
+[2026-07-06T17:35:17.643Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.723 ms - -[0m
+[2026-07-06T17:35:24.377Z] [INFO] [0mGET /api/v1/dashboard [36m304[0m 41.204 ms - -[0m
+[2026-07-06T17:35:33.432Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 38.887 ms - -[0m
+[2026-07-06T17:35:33.458Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 64.550 ms - -[0m
+[2026-07-06T17:35:40.564Z] [INFO] [0mGET /api/v1/alerts/cmr6btau20008uga8zdpkxxm6 [36m304[0m 137.486 ms - -[0m
+[2026-07-06T17:35:47.640Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 10.797 ms - -[0m
+[2026-07-06T17:35:53.810Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [36m304[0m 11.220 ms - -[0m
+[2026-07-06T17:35:53.840Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 37.676 ms - -[0m
+[2026-07-06T17:36:04.962Z] [INFO] [0mPATCH /api/v1/alerts/cmr6btamz0006uga8exjreb39/acknowledge [32m200[0m 119.074 ms - 560[0m
+[2026-07-06T17:36:04.987Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 13.831 ms - 1552[0m
+[2026-07-06T17:36:04.990Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 15.607 ms - 117[0m
+[2026-07-06T17:36:06.392Z] [INFO] [0mPATCH /api/v1/alerts/cmr6btau20008uga8zdpkxxm6/acknowledge [32m200[0m 14.848 ms - 579[0m
+[2026-07-06T17:36:06.427Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&status=ACTIVE [32m200[0m 21.875 ms - 1043[0m
+[2026-07-06T17:36:06.429Z] [INFO] [0mGET /api/v1/alerts/stats [32m200[0m 23.552 ms - 117[0m
+[2026-07-06T17:36:11.347Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.419 ms - -[0m
+[2026-07-06T17:36:11.367Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&severity=MEDIUM&status=ACTIVE [32m200[0m 37.201 ms - 92[0m
+[2026-07-06T17:36:15.138Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&severity=HIGH&status=ACTIVE [32m200[0m 13.184 ms - 92[0m
+[2026-07-06T17:36:15.157Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 31.740 ms - -[0m
+[2026-07-06T17:36:17.644Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 8.261 ms - -[0m
+[2026-07-06T17:36:45.159Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&severity=HIGH&status=ACTIVE [36m304[0m 23.246 ms - -[0m
+[2026-07-06T17:36:45.162Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 24.864 ms - -[0m
+[2026-07-06T17:36:47.635Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.124 ms - -[0m
+[2026-07-06T17:37:15.160Z] [INFO] [0mGET /api/v1/alerts?page=1&limit=20&severity=HIGH&status=ACTIVE [36m304[0m 30.473 ms - -[0m
+[2026-07-06T17:37:15.163Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 32.691 ms - -[0m
+[2026-07-06T17:37:17.659Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 20.916 ms - -[0m
+[2026-07-06T17:37:27.287Z] [INFO] Socket connected: v28TZ2FsUW1rMRByAAAD
+[2026-07-06T17:37:27.289Z] [DEBUG] Handler registered for socket: v28TZ2FsUW1rMRByAAAD
+[2026-07-06T17:37:27.294Z] [DEBUG] Socket v28TZ2FsUW1rMRByAAAD joined alerts room
+[2026-07-06T17:37:27.497Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50 [36m304[0m 188.215 ms - -[0m
+[2026-07-06T17:37:27.507Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 198.239 ms - -[0m
+[2026-07-06T17:37:29.361Z] [INFO] Socket disconnected: v28TZ2FsUW1rMRByAAAD (client namespace disconnect)
+[2026-07-06T17:37:29.391Z] [INFO] Socket connected: nODPr8HuKprQw0TkAAAF
+[2026-07-06T17:37:29.431Z] [DEBUG] Handler registered for socket: nODPr8HuKprQw0TkAAAF
+[2026-07-06T17:37:29.438Z] [DEBUG] Socket nODPr8HuKprQw0TkAAAF joined alerts room
+[2026-07-06T17:37:29.487Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [36m304[0m 14.509 ms - -[0m
+[2026-07-06T17:37:47.659Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 15.757 ms - -[0m
+[2026-07-06T17:38:17.649Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 16.000 ms - -[0m
+[2026-07-06T17:38:48.325Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 12.961 ms - -[0m
+[2026-07-06T17:39:17.642Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 14.377 ms - -[0m
+[2026-07-06T17:39:47.754Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 119.965 ms - -[0m
+[2026-07-06T17:40:19.444Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 655.944 ms - -[0m
+[2026-07-06T17:40:40.592Z] [ERROR] [firebase.js:19 in initializeFirebase] [FIREBASE] Failed to initialize Firebase Admin SDK
+TypeError: Cannot read properties of undefined (reading 'cert')
+    at initializeFirebase (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\config\firebase.js:19:38)
+    at getMessaging (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\config\firebase.js:54:15)
+    at NotificationService.sendPushNotification (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\services\notificationService.js:6:23)
+    at CitizenService.sendAlert (C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\services\citizenService.js:294:50)
+    at async C:\Users\parma\Downloads\Real-time Wetland Monitoring System\backend\src\controllers\citizenController.js:55:24
+[2026-07-06T17:40:40.598Z] [WARN] [NOTIFICATION] Firebase not initialized, skipping push
+[2026-07-06T17:40:40.676Z] [INFO] [CITIZEN] Alert sent to M (9104588825): pool, [push=failed]
+[2026-07-06T17:40:40.684Z] [INFO] [0mPOST /api/v1/citizens/cmr7n4t600002ugs4jc2jmlgf/send-alert [32m200[0m 224.652 ms - 501[0m
+[2026-07-06T17:40:40.782Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [32m200[0m 72.863 ms - 1061[0m
+[2026-07-06T17:40:40.798Z] [INFO] [0mGET /api/v1/citizens/stats [32m200[0m 87.857 ms - 496[0m
+[2026-07-06T17:40:40.862Z] [INFO] [0mGET /api/v1/citizens/stats [36m304[0m 56.596 ms - -[0m
+[2026-07-06T17:40:40.881Z] [INFO] [0mGET /api/v1/citizens?page=1&limit=50&status=ACTIVE [36m304[0m 84.174 ms - -[0m
+[2026-07-06T17:40:48.983Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 11.115 ms - -[0m
+[2026-07-06T17:41:15.465Z] [INFO] Socket disconnected: jdMchIaoreV4i3_tAAAB (transport close)
+[2026-07-06T17:41:15.474Z] [INFO] Socket disconnected: nODPr8HuKprQw0TkAAAF (transport close)
+[2026-07-06T17:41:17.644Z] [INFO] [0mGET /api/v1/alerts/stats [36m304[0m 17.145 ms - -[0m
+[2026-07-06T17:41:17.861Z] [INFO] Socket connected: KMhrAKZ1Hns0A-omAAAH
+[2026-07-06T17:41:17.862Z] [DEBUG] Handler registered for socket: KMhrAKZ1Hns0A-omAAAH
+[2026-07-06T17:41:17.865Z] [DEBUG] Socket KMhrAKZ1Hns0A-omAAAH joined alerts room
+[2026-07-06T17:41:18.063Z] [INFO] Socket connected: p_bB0GihHX_Xnr33AAAJ
+[2026-07-06T17:41:18.064Z] [DEBUG] Handler registered for socket: p_bB0GihHX_Xnr33AAAJ
+[2026-07-06T17:41:18.066Z] [DEBUG] Socket p_bB0GihHX_Xnr33AAAJ joined alerts room
+[2026-07-06T17:41:19.743Z] [INFO] [0mPOST /api/v1/auth/logout [32m200[0m 30.052 ms - 52[0m
+[2026-07-06T17:41:19.754Z] [INFO] Socket disconnected: KMhrAKZ1Hns0A-omAAAH (client namespace disconnect)
+[2026-07-06T17:41:19.759Z] [INFO] Socket disconnected: p_bB0GihHX_Xnr33AAAJ (client namespace disconnect)
+[2026-07-06T17:43:11.741Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-06T17:43:11.747Z] [INFO] HTTP server closed
+[2026-07-06T17:43:11.882Z] [INFO] Prisma disconnected
+[2026-07-06T17:43:25.083Z] [INFO] Socket.io initialized
+[2026-07-06T17:43:25.217Z] [INFO] PostgreSQL connected via Prisma
+[2026-07-06T17:43:25.258Z] [INFO] AvianGuard server running on port 5000 in development mode
+[2026-07-06T17:43:25.259Z] [INFO] API available at http://localhost:5000/api/v1
+[2026-07-06T17:47:43.855Z] [INFO] [0mGET /api/v1/citizens/notifications/inbox/unread-count?mobile=9104588825 [32m200[0m 233.431 ms - 41[0m
+[2026-07-06T17:48:04.611Z] [INFO] [0mGET /api/v1/citizens/notifications/inbox/unread-count?mobile=9104588825 [36m304[0m 33.704 ms - -[0m
+[2026-07-06T17:48:37.603Z] [INFO] [0mPOST /api/v1/citizens/notifications/inbox [32m200[0m 251.633 ms - 1044[0m
+[2026-07-06T17:53:59.136Z] [INFO] [0mGET /api/v1/citizens/notifications/inbox/unread-count?mobile=9104588825 [36m304[0m 210.412 ms - -[0m
+[2026-07-06T17:56:46.624Z] [INFO] SIGINT received. Shutting down gracefully...
+[2026-07-06T17:56:46.636Z] [INFO] HTTP server closed
+[2026-07-06T17:56:46.809Z] [INFO] Prisma disconnected
